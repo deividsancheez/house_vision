@@ -152,6 +152,21 @@ Development helpers:
 
 ## Redeploy
 
+**Live:** <https://deividsancheez.github.io/house_vision/>. It is served from the `gh-pages`
+branch of <https://github.com/deividsancheez/house_vision> (the code is on `main`). To publish
+changes:
+
+```bash
+npm run build
+npx playwright test tests/e2e/privacy.spec.js --project=desktop   # no photos/plans/address in dist/
+npx gh-pages -d dist --nojekyll                                    # pushes dist/ to the gh-pages branch
+node tools/smoke-live.mjs https://deividsancheez.github.io/house_vision/ .   # after about a minute
+```
+
+The privacy test looks for words from the home address listed in `tests/e2e/private-words.txt`.
+That file is git-ignored on purpose; keep it only on this computer.
+
+
 The app is a static site: `npm run build` and upload the **contents of `dist/`** anywhere that serves
 files. All paths are relative, so it works at a domain root or in a sub-folder.
 
