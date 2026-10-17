@@ -1,0 +1,1628 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-10-16",
+  "project": "Organic modern refresh, Los Angeles apartment (rental: no paint, no permanent changes)",
+  "units": "inches",
+  "coordinate_convention": {
+    "position": "Every placed object has a bbox (min/max corners) and position_center in its room's coordinates. z=0 is the finished floor.",
+    "rotation_deg_z": "Yaw about +z, counter-clockwise when viewed from above. 0 means the object's front faces +y; -90 faces +x; 90 faces -x; 180 faces -y.",
+    "wall_items": "Wall positions use 'along' = distance along the wall from its 'from' point."
+  },
+  "estimated_flag": "Any field with status/dims_status 'ESTIMATED' was not measured; design-notes.md explains each estimate.",
+  "rooms": [
+    {
+      "id": "living",
+      "name": "Living room + dining (Salon + Comedor)",
+      "units": "inches",
+      "origin": {
+        "corner": "North-east interior corner, where the TV wall (north) meets the window wall (east), at floor level",
+        "axes": {
+          "+x": "west, along the TV wall",
+          "+y": "south, along the window wall",
+          "+z": "up"
+        },
+        "handedness": "right-handed (viewed from above with north up, +x points left/west and +y points down/south)",
+        "compass_note": "The window wall faces east (stated by the owner). On the RenoPlan drawing this is the bottom wall, so plan-up = west."
+      },
+      "source_of_truth": {
+        "wall_lengths": "RenoPlan floor plan supplied by the owner (plans/floor-plan-renoplan.png)",
+        "everything_else": "Owner's wall photos (Oct 15, 2026); positions marked ESTIMATED were scaled from photos using the known wall lengths"
+      },
+      "ceiling_height": {
+        "value": 96,
+        "status": "ESTIMATED",
+        "how": "Scaled from the entry door (assumed standard 80\" tall) in the window-wall photo: ceiling sits about 1.2x the door height. Measure to confirm."
+      },
+      "floor_polygon": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 160
+        },
+        {
+          "x": 113,
+          "y": 160
+        },
+        {
+          "x": 113,
+          "y": 261
+        },
+        {
+          "x": 222,
+          "y": 261
+        },
+        {
+          "x": 222,
+          "y": 0
+        }
+      ],
+      "floor_area_sqft": 323.1,
+      "zones": [
+        {
+          "id": "LR-ZONE-LIVING",
+          "name": "Living area",
+          "rect": {
+            "x0": 0,
+            "y0": 0,
+            "x1": 222,
+            "y1": 160
+          }
+        },
+        {
+          "id": "LR-ZONE-DINING",
+          "name": "Dining nook",
+          "rect": {
+            "x0": 113,
+            "y0": 160,
+            "x1": 222,
+            "y1": 261
+          }
+        }
+      ],
+      "walls": [
+        {
+          "id": "LR-W-EAST",
+          "name": "Window wall (faces east)",
+          "from": {
+            "x": 0,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": 160
+          },
+          "length": 160,
+          "plan_label": "13'4\""
+        },
+        {
+          "id": "LR-W-NORTH",
+          "name": "TV wall",
+          "from": {
+            "x": 0,
+            "y": 0
+          },
+          "to": {
+            "x": 222,
+            "y": 0
+          },
+          "length": 222,
+          "plan_label": "18'6\""
+        },
+        {
+          "id": "LR-W-WEST",
+          "name": "West wall (closet door, hallway, art)",
+          "from": {
+            "x": 222,
+            "y": 0
+          },
+          "to": {
+            "x": 222,
+            "y": 261
+          },
+          "length": 261,
+          "plan_label": "21'9\""
+        },
+        {
+          "id": "LR-W-SOUTH",
+          "name": "Dining end wall",
+          "from": {
+            "x": 113,
+            "y": 261
+          },
+          "to": {
+            "x": 222,
+            "y": 261
+          },
+          "length": 109,
+          "plan_label": "9'1\""
+        },
+        {
+          "id": "LR-W-PASS",
+          "name": "Kitchen pass-through wall",
+          "from": {
+            "x": 0,
+            "y": 160
+          },
+          "to": {
+            "x": 113,
+            "y": 160
+          },
+          "length": 113,
+          "plan_label": "9'5\""
+        },
+        {
+          "id": "LR-EDGE-KITCHEN",
+          "name": "Open edge to kitchen (no wall; plan draws it as the room boundary)",
+          "from": {
+            "x": 113,
+            "y": 160
+          },
+          "to": {
+            "x": 113,
+            "y": 261
+          },
+          "length": 101,
+          "plan_label": "8'5\"",
+          "open": true,
+          "status": "ESTIMATED",
+          "how": "Dining photo shows the kitchen counter and cabinets running straight into the dining nook with no wall between them"
+        }
+      ],
+      "openings": [
+        {
+          "id": "LR-WIN-1",
+          "type": "window",
+          "wall": "LR-W-EAST",
+          "along_from": 13,
+          "along_to": 107,
+          "width": 94,
+          "sill_z": 30,
+          "head_z": 86,
+          "height": 56,
+          "description": "Large horizontal sliding window, aluminum frame, faces east onto a tree",
+          "status": "ESTIMATED",
+          "how": "Scaled from the window-wall photo using the 160\" wall length (8.7 px per inch); heights scaled from the 80\" door"
+        },
+        {
+          "id": "LR-DOOR-ENTRY",
+          "type": "door",
+          "wall": "LR-W-EAST",
+          "along_from": 122,
+          "along_to": 158,
+          "width": 36,
+          "height": 80,
+          "swing": "inward",
+          "hinge_side": "south (y=158)",
+          "swing_radius": 36,
+          "description": "Front door, white",
+          "status": "ESTIMATED",
+          "how": "Position scaled from photo; hinges are visible on the south edge and the knob on the north edge; 36\" x 80\" assumed standard entry size"
+        },
+        {
+          "id": "LR-PASS-THROUGH",
+          "type": "interior opening",
+          "wall": "LR-W-PASS",
+          "along_from": 57,
+          "along_to": 102,
+          "width": 45,
+          "sill_z": 44,
+          "head_z": 80,
+          "description": "Kitchen pass-through window (no glass), white returns",
+          "status": "ESTIMATED",
+          "how": "Scaled from the pass-through photo; this wall photo has wide-angle distortion, so treat as +/-6\""
+        },
+        {
+          "id": "LR-HALL",
+          "type": "cased opening",
+          "wall": "LR-W-WEST",
+          "along_from": 105,
+          "along_to": 139,
+          "width": 34,
+          "height": 80,
+          "description": "Hallway opening to the bedroom and bath",
+          "status": "ESTIMATED",
+          "how": "Scaled from the long-view photo across the room"
+        },
+        {
+          "id": "LR-DOOR-CLOSET",
+          "type": "door",
+          "wall": "LR-W-WEST",
+          "along_from": 161,
+          "along_to": 189,
+          "width": 28,
+          "height": 80,
+          "swing": "inward (assumed)",
+          "hinge_side": "south (assumed)",
+          "swing_radius": 28,
+          "description": "White flush door (closet or utility)",
+          "status": "ESTIMATED",
+          "how": "Scaled from the long-view photo; swing direction not visible"
+        },
+        {
+          "id": "LR-KITCHEN-EDGE",
+          "type": "open boundary",
+          "wall": "LR-EDGE-KITCHEN",
+          "along_from": 0,
+          "along_to": 101,
+          "width": 101,
+          "height": 96,
+          "description": "Open to kitchen",
+          "status": "ESTIMATED"
+        }
+      ],
+      "electrical": [
+        {
+          "id": "LR-OUT-1",
+          "type": "duplex outlet",
+          "wall": "LR-W-EAST",
+          "along": 12,
+          "z": 12,
+          "status": "ESTIMATED",
+          "how": "Below the north end of the window in photo"
+        },
+        {
+          "id": "LR-SW-1",
+          "type": "double light switch",
+          "wall": "LR-W-EAST",
+          "along": 115,
+          "z": 48,
+          "status": "ESTIMATED",
+          "how": "Between window and front door in photo; standard switch height"
+        },
+        {
+          "id": "LR-OUT-2",
+          "type": "duplex outlet (TV cords plugged here)",
+          "wall": "LR-W-WEST",
+          "along": 4,
+          "z": 12,
+          "status": "ESTIMATED",
+          "how": "Corner of TV wall photo"
+        },
+        {
+          "id": "LR-OUT-3",
+          "type": "duplex outlet",
+          "wall": "LR-W-WEST",
+          "along": 66,
+          "z": 12,
+          "status": "ESTIMATED",
+          "how": "Long-view photo"
+        },
+        {
+          "id": "LR-SW-2",
+          "type": "double light switch (dining fan/light)",
+          "wall": "LR-W-SOUTH",
+          "along": 7,
+          "z": 48,
+          "status": "ESTIMATED",
+          "how": "Dining photo, next to the kitchen counter"
+        },
+        {
+          "id": "LR-PLATE-1",
+          "type": "round blank wall plate (not an outlet)",
+          "wall": "LR-W-PASS",
+          "along": 35,
+          "z": 46,
+          "status": "ESTIMATED",
+          "how": "Pass-through photo"
+        }
+      ],
+      "hvac": [
+        {
+          "id": "LR-RETURN",
+          "type": "return-air grille",
+          "wall": "LR-W-WEST",
+          "along_from": 89,
+          "along_to": 101,
+          "z_from": 78,
+          "z_to": 90,
+          "status": "ESTIMATED"
+        },
+        {
+          "id": "LR-REGISTER",
+          "type": "floor-level supply register",
+          "wall": "LR-W-WEST",
+          "along_from": 88,
+          "along_to": 100,
+          "z_from": 2,
+          "z_to": 8,
+          "status": "ESTIMATED"
+        }
+      ],
+      "finishes": {
+        "floor": {
+          "material": "Light gray-washed oak-look plank (laminate or LVP; cannot tell from photos), planks run east-west",
+          "hex": "#9A897C",
+          "hex_source": "Sampled from photo, exposure-corrected so the walls read as paint white; camera-dependent"
+        },
+        "walls": {
+          "material": "Flat painted drywall, white (renter: do not repaint)",
+          "hex": "#F5F4F0",
+          "hex_source": "ESTIMATED: photos are underexposed (raw wall pixels #98958E); rendered as paint white"
+        },
+        "ceiling": {
+          "material": "Flat painted drywall, white",
+          "hex": "#F5F4F0",
+          "hex_source": "ESTIMATED"
+        },
+        "trim": {
+          "material": "Painted MDF baseboard about 4\" tall, white; door casings white",
+          "hex": "#F5F4F0",
+          "baseboard_height": 4,
+          "status": "ESTIMATED"
+        },
+        "kitchen_visible": {
+          "cabinets": "#F5F4F0 white shaker-style with brushed nickel bar pulls",
+          "counter": "#1F1F1F black quartz-look",
+          "status": "ESTIMATED"
+        }
+      },
+      "window_treatments_existing": [
+        {
+          "id": "LR-BLINDS",
+          "type": "vertical blinds",
+          "opening": "LR-WIN-1",
+          "color_hex": "#F2F1EC",
+          "material": "PVC vanes",
+          "headrail": {
+            "along_from": 4,
+            "along_to": 111,
+            "z": 88
+          },
+          "keep": true,
+          "note": "Stay in place behind the new curtains (renter)",
+          "status": "ESTIMATED"
+        }
+      ],
+      "ceiling_fixtures": [
+        {
+          "id": "LR-FAN",
+          "type": "ceiling fan with LED light kit",
+          "position": {
+            "x": 167.5,
+            "y": 210.5,
+            "z": 84
+          },
+          "blade_span": 52,
+          "finish": "brushed nickel body, black blades, white glass dome",
+          "status": "ESTIMATED",
+          "how": "Centered over the dining nook in photos; light kit about 12\" below ceiling"
+        }
+      ],
+      "daylight": {
+        "window": "LR-WIN-1",
+        "faces": "east",
+        "sun": "Direct morning sun through the window until about noon, then indirect light. A tree outside filters the light (dappled green).",
+        "sun_vector_morning": {
+          "x": 1,
+          "y": 0.15,
+          "z": -0.45
+        },
+        "sun_vector_note": "Room coordinates: light travels from the east window (+x is west) and slightly southward in fall/winter mornings; ESTIMATED"
+      }
+    },
+    {
+      "id": "bedroom",
+      "name": "Bedroom (Habitacion)",
+      "units": "inches",
+      "origin": {
+        "corner": "North-west interior corner, where the headboard wall (north) meets the window wall (west), at floor level",
+        "axes": {
+          "+x": "south, along the window wall",
+          "+y": "east, along the headboard wall",
+          "+z": "up"
+        },
+        "handedness": "right-handed (viewed from above with north up, +x points down/south and +y points right/east)",
+        "compass_note": "The bedroom window faces west (confirmed by the owner, Oct 16)."
+      },
+      "orientation_status": "ESTIMATED",
+      "orientation_how": "Matched photos to the plan: the closet in photos is about 52\" wide and sits in the corner next to the long blank wall, which matches the 4'5\" segment with the 6\" step on the plan. That puts the window on the 10'1\" wall and the headboard on the 10'10\" wall.",
+      "source_of_truth": {
+        "wall_lengths": "RenoPlan floor plan supplied by the owner",
+        "everything_else": "Owner's wall photos; ESTIMATED items scaled from photos"
+      },
+      "ceiling_height": {
+        "value": 96,
+        "status": "ESTIMATED",
+        "how": "Scaled from the bedroom door (assumed 80\" tall). Measure to confirm."
+      },
+      "floor_polygon": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 121,
+          "y": 0
+        },
+        {
+          "x": 121,
+          "y": 136
+        },
+        {
+          "x": 69,
+          "y": 136
+        },
+        {
+          "x": 69,
+          "y": 130
+        },
+        {
+          "x": 0,
+          "y": 130
+        }
+      ],
+      "floor_area_sqft": 111.4,
+      "plan_discrepancy": "The plan's window wall reads 10'1\" (121\") but the opposite wall's segments add to 10'2\" (122\"). 121\" is used; the 1\" is absorbed in the closet segment (52\" instead of 53\").",
+      "walls": [
+        {
+          "id": "BR-W-WEST",
+          "name": "Window wall",
+          "from": {
+            "x": 0,
+            "y": 0
+          },
+          "to": {
+            "x": 121,
+            "y": 0
+          },
+          "length": 121,
+          "plan_label": "10'1\""
+        },
+        {
+          "id": "BR-W-NORTH",
+          "name": "Headboard wall (door at east end)",
+          "from": {
+            "x": 0,
+            "y": 0
+          },
+          "to": {
+            "x": 0,
+            "y": 130
+          },
+          "length": 130,
+          "plan_label": "10'10\""
+        },
+        {
+          "id": "BR-W-SOUTH",
+          "name": "Desk wall",
+          "from": {
+            "x": 121,
+            "y": 0
+          },
+          "to": {
+            "x": 121,
+            "y": 136
+          },
+          "length": 136,
+          "plan_label": "11'4\""
+        },
+        {
+          "id": "BR-W-EAST",
+          "name": "East wall, blank section (mirror)",
+          "from": {
+            "x": 0,
+            "y": 130
+          },
+          "to": {
+            "x": 69,
+            "y": 130
+          },
+          "length": 69,
+          "plan_label": "5'9\""
+        },
+        {
+          "id": "BR-W-JOG",
+          "name": "6\" return into closet recess",
+          "from": {
+            "x": 69,
+            "y": 130
+          },
+          "to": {
+            "x": 69,
+            "y": 136
+          },
+          "length": 6,
+          "plan_label": "6\""
+        },
+        {
+          "id": "BR-W-CLOSET",
+          "name": "Closet front (recessed 6\")",
+          "from": {
+            "x": 69,
+            "y": 136
+          },
+          "to": {
+            "x": 121,
+            "y": 136
+          },
+          "length": 52,
+          "plan_label": "4'5\""
+        }
+      ],
+      "openings": [
+        {
+          "id": "BR-WIN-1",
+          "type": "window",
+          "wall": "BR-W-WEST",
+          "along_from": 27,
+          "along_to": 99,
+          "width": 72,
+          "sill_z": 36,
+          "head_z": 84,
+          "height": 48,
+          "description": "Horizontal sliding window",
+          "status": "ESTIMATED",
+          "how": "Scaled from the window-wall photo using the 121\" wall length"
+        },
+        {
+          "id": "BR-DOOR",
+          "type": "door",
+          "wall": "BR-W-NORTH",
+          "along_from": 98,
+          "along_to": 128,
+          "width": 30,
+          "height": 80,
+          "swing": "inward",
+          "hinge_side": "east (y=128)",
+          "swing_radius": 30,
+          "description": "White flush door from the hallway",
+          "status": "ESTIMATED",
+          "how": "Hinges visible on the east edge in photos; 30\" x 80\" assumed"
+        },
+        {
+          "id": "BR-CLOSET",
+          "type": "closet",
+          "wall": "BR-W-CLOSET",
+          "along_from": 0,
+          "along_to": 52,
+          "width": 52,
+          "depth": 24,
+          "lower": {
+            "type": "2 bypass sliding doors",
+            "z_from": 0,
+            "z_to": 70
+          },
+          "upper": {
+            "type": "2 pairs of hinged cabinet doors",
+            "z_from": 72,
+            "z_to": 94
+          },
+          "hardware": "brushed nickel bar pulls",
+          "status": "ESTIMATED",
+          "how": "Width matches the plan's 4'5\" recess; heights scaled from photos; depth 24\" assumed (standard)"
+        }
+      ],
+      "electrical": [
+        {
+          "id": "BR-SW-1",
+          "type": "light switch (fan/light)",
+          "wall": "BR-W-NORTH",
+          "along": 89,
+          "z": 48,
+          "status": "ESTIMATED",
+          "how": "Between bed and door in photo"
+        },
+        {
+          "id": "BR-OUT-1",
+          "type": "duplex outlet",
+          "wall": "BR-W-SOUTH",
+          "along": 42,
+          "z": 12,
+          "status": "ESTIMATED",
+          "how": "Desk-wall photo"
+        },
+        {
+          "id": "BR-PLATE-1",
+          "type": "round blank wall plate",
+          "wall": "BR-W-EAST",
+          "along": 28,
+          "z": 36,
+          "status": "ESTIMATED"
+        },
+        {
+          "id": "BR-SMOKE",
+          "type": "smoke detector",
+          "wall": "BR-W-NORTH",
+          "along": 92,
+          "z": 90,
+          "status": "ESTIMATED"
+        },
+        {
+          "id": "BR-OUT-UNSEEN",
+          "type": "note",
+          "description": "Outlets behind the bed and under the window are hidden in photos. The nightstand lamp assumes an outlet on the headboard wall; confirm.",
+          "status": "ESTIMATED"
+        }
+      ],
+      "finishes": {
+        "floor": {
+          "material": "Same light oak-look plank as the living room",
+          "hex": "#9C8980",
+          "hex_source": "Sampled from photo, exposure-corrected"
+        },
+        "walls": {
+          "material": "Flat painted drywall, white",
+          "hex": "#F5F4F0",
+          "hex_source": "ESTIMATED"
+        },
+        "ceiling": {
+          "material": "Flat painted drywall, white",
+          "hex": "#F5F4F0",
+          "hex_source": "ESTIMATED"
+        },
+        "trim": {
+          "material": "Painted baseboard about 4\" tall, white",
+          "hex": "#F5F4F0",
+          "baseboard_height": 4,
+          "status": "ESTIMATED"
+        },
+        "closet": {
+          "material": "Painted white doors with brushed nickel bar pulls",
+          "hex": "#F5F4F0"
+        }
+      },
+      "window_treatments_existing": [
+        {
+          "id": "BR-BLINDS",
+          "type": "horizontal 2\" faux-wood blinds (not vertical)",
+          "opening": "BR-WIN-1",
+          "color_hex": "#F2F1EC",
+          "headrail": {
+            "along_from": 25,
+            "along_to": 101,
+            "z": 86
+          },
+          "keep": true,
+          "note": "Stay in place behind the new curtains",
+          "status": "ESTIMATED"
+        }
+      ],
+      "ceiling_fixtures": [
+        {
+          "id": "BR-FAN",
+          "type": "ceiling fan with LED light kit, pull chains",
+          "position": {
+            "x": 60.5,
+            "y": 65,
+            "z": 84
+          },
+          "blade_span": 44,
+          "finish": "brushed nickel, silver blades, white glass dome",
+          "status": "ESTIMATED"
+        }
+      ],
+      "daylight": {
+        "window": "BR-WIN-1",
+        "faces": "west (confirmed by the owner)",
+        "sun": "Afternoon and evening sun through the west window; photos show strong light through the blinds.",
+        "sun_vector_afternoon": {
+          "x": 0.1,
+          "y": 1,
+          "z": -0.4
+        },
+        "sun_vector_note": "Light travels from the west window (+y is east); angle is typical for LA fall afternoons"
+      }
+    }
+  ],
+  "existing_pieces": [
+    {
+      "id": "EX-LR-SECTIONAL",
+      "room": "living",
+      "name": "Chocolate chenille reclining sectional (L-shape, corner at the east end)",
+      "keep": true,
+      "color_hex": "#27221E",
+      "color_source": "Sampled from photo, exposure-corrected (very dark chocolate brown)",
+      "material": "Chenille upholstery, power/manual recliners, cupholder console",
+      "dims_status": "ESTIMATED",
+      "dims_how": "From photos: long side about 128\" including the corner, short side about 92\" including the corner, 40\" deep, 40\" back height, 19\" seat. Measure each side.",
+      "components": [
+        {
+          "part": "long leg (faces the TV, north)",
+          "bbox": {
+            "min": {
+              "x": 76,
+              "y": 84,
+              "z": 0
+            },
+            "max": {
+              "x": 164,
+              "y": 124,
+              "z": 40
+            }
+          },
+          "rotation_deg_z": 180
+        },
+        {
+          "part": "corner wedge",
+          "bbox": {
+            "min": {
+              "x": 36,
+              "y": 84,
+              "z": 0
+            },
+            "max": {
+              "x": 76,
+              "y": 124,
+              "z": 40
+            }
+          },
+          "rotation_deg_z": 180
+        },
+        {
+          "part": "short leg with recliner (faces west, back to the window)",
+          "bbox": {
+            "min": {
+              "x": 36,
+              "y": 32,
+              "z": 0
+            },
+            "max": {
+              "x": 76,
+              "y": 84,
+              "z": 40
+            }
+          },
+          "rotation_deg_z": -90
+        }
+      ],
+      "anchor": "floor",
+      "placement": "default layout; moved about 3 ft off the window so the curtains and window stay clear (photos show it closer to the glass)",
+      "mount": "floor"
+    },
+    {
+      "id": "EX-LR-TVCONSOLE",
+      "room": "living",
+      "name": "Black glass TV console with brass-tipped legs (2 tiers)",
+      "keep": true,
+      "color_hex": "#1A1A1A",
+      "color_source": "ESTIMATED (black glass; photo shows reflections)",
+      "accent_hex": "#B08D57",
+      "material": "Black tempered glass shelves, black metal frame, brass leg tips",
+      "dims": {
+        "w": 52,
+        "d": 16,
+        "h": 20
+      },
+      "dims_status": "ESTIMATED",
+      "dims_how": "Same width as the TV in the TV-wall photo",
+      "bbox": {
+        "min": {
+          "x": 98,
+          "y": 2,
+          "z": 0
+        },
+        "max": {
+          "x": 150,
+          "y": 18,
+          "z": 20
+        }
+      },
+      "rotation_deg_z": 0,
+      "anchor": "floor",
+      "wall": "LR-W-NORTH",
+      "mount": "floor"
+    },
+    {
+      "id": "EX-LR-TV",
+      "room": "living",
+      "name": "Flat-screen TV on its feet (about 55\" class)",
+      "keep": true,
+      "color_hex": "#111111",
+      "dims": {
+        "w": 48.4,
+        "d": 3,
+        "h": 30
+      },
+      "dims_status": "ESTIMATED",
+      "dims_how": "Screen width scaled from the TV-wall photo",
+      "bbox": {
+        "min": {
+          "x": 99.8,
+          "y": 6,
+          "z": 20
+        },
+        "max": {
+          "x": 148.2,
+          "y": 9,
+          "z": 50
+        }
+      },
+      "rotation_deg_z": 0,
+      "anchor": "on EX-LR-TVCONSOLE",
+      "mount": "floor"
+    },
+    {
+      "id": "EX-LR-DININGTABLE",
+      "room": "living",
+      "name": "Round black dining table with brass legs",
+      "keep": true,
+      "keep_status": "Assumed kept (not on the owner's keep list, but it is the only dining table). Confirm.",
+      "color_hex": "#1C1C1E",
+      "color_source": "ESTIMATED (black top with wood edge; photo glare)",
+      "accent_hex": "#A8875A",
+      "material": "Black laminate top, brass-finish metal legs",
+      "dims": {
+        "w": 40,
+        "d": 40,
+        "h": 30
+      },
+      "dims_status": "ESTIMATED",
+      "bbox": {
+        "min": {
+          "x": 147.5,
+          "y": 195,
+          "z": 0
+        },
+        "max": {
+          "x": 187.5,
+          "y": 235,
+          "z": 30
+        }
+      },
+      "rotation_deg_z": 0,
+      "anchor": "floor",
+      "mount": "floor"
+    },
+    {
+      "id": "EX-LR-DININGCHAIRS",
+      "room": "living",
+      "name": "Black channel-tufted dining chairs (x4)",
+      "keep": true,
+      "color_hex": "#141514",
+      "color_source": "Sampled from photo",
+      "material": "Black faux-leather upholstery, black metal legs",
+      "dims": {
+        "w": 20,
+        "d": 22,
+        "h": 33
+      },
+      "dims_status": "ESTIMATED",
+      "instances": [
+        {
+          "bbox": {
+            "min": {
+              "x": 157.5,
+              "y": 171,
+              "z": 0
+            },
+            "max": {
+              "x": 177.5,
+              "y": 193,
+              "z": 33
+            }
+          },
+          "rotation_deg_z": 0
+        },
+        {
+          "bbox": {
+            "min": {
+              "x": 157.5,
+              "y": 237,
+              "z": 0
+            },
+            "max": {
+              "x": 177.5,
+              "y": 259,
+              "z": 33
+            }
+          },
+          "rotation_deg_z": 180
+        },
+        {
+          "bbox": {
+            "min": {
+              "x": 125,
+              "y": 205,
+              "z": 0
+            },
+            "max": {
+              "x": 147,
+              "y": 225,
+              "z": 33
+            }
+          },
+          "rotation_deg_z": -90
+        },
+        {
+          "bbox": {
+            "min": {
+              "x": 188,
+              "y": 205,
+              "z": 0
+            },
+            "max": {
+              "x": 210,
+              "y": 225,
+              "z": 33
+            }
+          },
+          "rotation_deg_z": 90
+        }
+      ],
+      "anchor": "floor",
+      "mount": "floor"
+    },
+    {
+      "id": "EX-LR-TVSTAND",
+      "room": "living",
+      "name": "Rolling TV mount stand with shelf",
+      "keep": false,
+      "default_visible": false,
+      "note": "Owner is removing it (Oct 16). Replaced by the LR-WIFI cabinet in the same corner, which holds the WiFi router and hides the cables.",
+      "dims": {
+        "w": 30,
+        "d": 24,
+        "h": 60
+      },
+      "dims_status": "ESTIMATED"
+    },
+    {
+      "id": "EX-BR-BED",
+      "room": "bedroom",
+      "name": "Queen bed frame with charcoal upholstered headboard and wood shelf top",
+      "keep": true,
+      "color_hex": "#353639",
+      "color_source": "Sampled from photo (charcoal tufted fabric)",
+      "accent_hex": "#8A6A50",
+      "accent_source": "ESTIMATED (wood shelf; photo glare)",
+      "material": "Upholstered fabric headboard, wood shelf, built-in outlet/USB",
+      "mattress": {
+        "size": "Queen",
+        "w": 60,
+        "l": 80,
+        "top_z": 22
+      },
+      "dims": {
+        "w": 62,
+        "d": 84,
+        "h": 44
+      },
+      "dims_status": "ESTIMATED",
+      "dims_how": "Owner confirmed a queen bed (60x80 mattress). Frame and headboard width 62\" and length 84\" are typical queen frame sizes; headboard top about 44\" from photos",
+      "bbox": {
+        "min": {
+          "x": 0,
+          "y": 6,
+          "z": 0
+        },
+        "max": {
+          "x": 84,
+          "y": 68,
+          "z": 44
+        }
+      },
+      "rotation_deg_z": -90,
+      "anchor": "floor",
+      "wall": "BR-W-NORTH",
+      "components": [
+        {
+          "part": "headboard with wood shelf",
+          "bbox": {
+            "min": {
+              "x": 0,
+              "y": 6,
+              "z": 0
+            },
+            "max": {
+              "x": 4,
+              "y": 68,
+              "z": 44
+            }
+          },
+          "rotation_deg_z": -90
+        },
+        {
+          "part": "frame and Queen mattress (top at 22 in)",
+          "bbox": {
+            "min": {
+              "x": 4,
+              "y": 6,
+              "z": 0
+            },
+            "max": {
+              "x": 84,
+              "y": 68,
+              "z": 22
+            }
+          },
+          "rotation_deg_z": -90
+        }
+      ],
+      "placement": "Shifted about 18\" west from where it is now (closer to the window) so the desk, chair clearance and closet all fit",
+      "mount": "floor"
+    },
+    {
+      "id": "EX-BR-MIRROR",
+      "room": "bedroom",
+      "name": "Arched walnut floor mirror (leaning)",
+      "keep": true,
+      "color_hex": "#4F2E25",
+      "color_source": "Sampled from photo, exposure-corrected",
+      "material": "Walnut-finish wood frame, mirror glass",
+      "dims": {
+        "w": 22,
+        "d": 1.5,
+        "h": 65
+      },
+      "dims_status": "ESTIMATED",
+      "lean_deg": 8,
+      "bbox": {
+        "min": {
+          "x": 36,
+          "y": 120,
+          "z": 0
+        },
+        "max": {
+          "x": 58,
+          "y": 130,
+          "z": 65
+        }
+      },
+      "rotation_deg_z": 180,
+      "anchor": "floor, leaning on BR-W-EAST",
+      "mount": "floor"
+    },
+    {
+      "id": "EX-BR-FLAG",
+      "room": "bedroom",
+      "name": "UCLA flag (blue and gold, grommets)",
+      "keep": true,
+      "color_hex": "#2675D3",
+      "accent_hex": "#E4CD8D",
+      "color_source": "Sampled from photo (official UCLA blue is #2774AE, gold #FFD100)",
+      "material": "Polyester flag",
+      "dims": {
+        "w": 36,
+        "d": 0.1,
+        "h": 24
+      },
+      "dims_status": "ESTIMATED",
+      "dims_how": "Looks like a standard 2' x 3' flag in photos",
+      "moved": "From above the bed to above the desk",
+      "bbox": {
+        "min": {
+          "x": 120.9,
+          "y": 66,
+          "z": 45
+        },
+        "max": {
+          "x": 121,
+          "y": 102,
+          "z": 69
+        }
+      },
+      "rotation_deg_z": 90,
+      "anchor": "wall",
+      "wall": "BR-W-SOUTH",
+      "mount": "wall"
+    },
+    {
+      "id": "EX-BR-NIGHTSTAND-GRAY",
+      "room": "bedroom",
+      "name": "Small gray side table / nightstand (owner keeps it)",
+      "keep": true,
+      "color_hex": "#434242",
+      "color_source": "Sampled from photo, exposure-corrected",
+      "material": "Gray wood-look laminate, black metal frame",
+      "dims": {
+        "w": 16,
+        "d": 16,
+        "h": 22
+      },
+      "dims_status": "ESTIMATED",
+      "dims_how": "Scaled from the headboard-wall photo against the bed",
+      "bbox": {
+        "min": {
+          "x": 72,
+          "y": 140,
+          "z": 0
+        },
+        "max": {
+          "x": 88,
+          "y": 156,
+          "z": 22
+        }
+      },
+      "rotation_deg_z": 180,
+      "anchor": "floor",
+      "placement": "Stored inside the closet (owner may keep it in the wardrobe). Alternate spot: west side of the bed is too tight now (6\" gap), so the closet is the default",
+      "mount": "floor"
+    },
+    {
+      "id": "EX-BR-DRAWERS",
+      "room": "bedroom",
+      "name": "Clear plastic drawer cart",
+      "keep": false,
+      "default_visible": false,
+      "note": "Moves into the closet (lookbook plan)."
+    }
+  ],
+  "lighting": {
+    "living": [
+      {
+        "id": "L-LR-FAN",
+        "source": "LR-FAN (existing ceiling fan light kit)",
+        "position": {
+          "x": 167.5,
+          "y": 210.5,
+          "z": 84
+        },
+        "type": "ceiling, diffused dome",
+        "color_temp_k": 2700,
+        "lumens": 800,
+        "lumens_status": "ESTIMATED",
+        "note": "Existing bulbs look cooler than 2700K in photos; swap to 2700K if the kit takes standard bulbs.",
+        "day_mode": "off",
+        "night_mode": "on, dimmed if possible"
+      },
+      {
+        "id": "L-LR-FLOOR",
+        "source": "LR-FLOORLAMP (LAUTERS)",
+        "position": {
+          "x": 56,
+          "y": 16,
+          "z": 52
+        },
+        "type": "floor lamp, fabric shade",
+        "color_temp_k": 2700,
+        "lumens": 800,
+        "bulb": "E26 LED, about 8-9 W (lamp max 13 W)",
+        "day_mode": "off",
+        "night_mode": "on"
+      },
+      {
+        "id": "L-LR-SCONCE-E",
+        "source": "LR-SCONCE east",
+        "position": {
+          "x": 85.8,
+          "y": 6,
+          "z": 60
+        },
+        "type": "plug-in wall sconce, woven shade",
+        "color_temp_k": 2700,
+        "lumens": 450,
+        "bulb": "E26 LED, about 5 W (fixture max 60 W)",
+        "day_mode": "off",
+        "night_mode": "on"
+      },
+      {
+        "id": "L-LR-SCONCE-W",
+        "source": "LR-SCONCE west",
+        "position": {
+          "x": 162.2,
+          "y": 6,
+          "z": 60
+        },
+        "type": "plug-in wall sconce, woven shade",
+        "color_temp_k": 2700,
+        "lumens": 450,
+        "bulb": "E26 LED, about 5 W",
+        "day_mode": "off",
+        "night_mode": "on"
+      },
+      {
+        "id": "L-LR-TABLE",
+        "source": "LR-TABLELAMP (on dining table)",
+        "position": {
+          "x": 167.5,
+          "y": 215,
+          "z": 40
+        },
+        "type": "table lamp, pleated shade",
+        "color_temp_k": 2700,
+        "lumens": 450,
+        "bulb": "E26 LED, about 5 W (lamp max 40 W)",
+        "day_mode": "off",
+        "night_mode": "on"
+      },
+      {
+        "id": "L-LR-CANDLE",
+        "source": "LR-DECOR (candle on coffee table)",
+        "position": {
+          "x": 110,
+          "y": 50,
+          "z": 23.5
+        },
+        "type": "candle flame",
+        "color_temp_k": 1900,
+        "lumens": 12,
+        "note": "Decorative; flame is warmer than 2700K by nature",
+        "day_mode": "off",
+        "night_mode": "optional"
+      },
+      {
+        "id": "L-LR-DAY",
+        "source": "LR-WIN-1 daylight",
+        "type": "window (directional sun + sky)",
+        "faces": "east",
+        "day_mode": "on (strong in the morning)",
+        "night_mode": "off; blinds and curtains closed"
+      }
+    ],
+    "bedroom": [
+      {
+        "id": "L-BR-FAN",
+        "source": "BR-FAN (existing ceiling fan light kit)",
+        "position": {
+          "x": 60.5,
+          "y": 65,
+          "z": 84
+        },
+        "type": "ceiling, diffused dome",
+        "color_temp_k": 2700,
+        "lumens": 800,
+        "lumens_status": "ESTIMATED",
+        "day_mode": "off",
+        "night_mode": "on or off"
+      },
+      {
+        "id": "L-BR-BED",
+        "source": "BR-BEDLAMP (STORSEGEL)",
+        "position": {
+          "x": 8,
+          "y": 75,
+          "z": 32
+        },
+        "type": "table lamp, fabric shade",
+        "color_temp_k": 2700,
+        "lumens": 450,
+        "bulb": "LED about 5 W (lamp max 9 W)",
+        "day_mode": "off",
+        "night_mode": "on"
+      },
+      {
+        "id": "L-BR-DESK",
+        "source": "BR-DESKLAMP (TERTIAL)",
+        "position": {
+          "x": 104,
+          "y": 72,
+          "z": 52
+        },
+        "type": "task lamp, metal shade aimed at the desk",
+        "color_temp_k": 2700,
+        "lumens": 800,
+        "bulb": "E26 LED about 8-9 W (lamp max 13 W)",
+        "day_mode": "optional",
+        "night_mode": "on"
+      },
+      {
+        "id": "L-BR-CANDLE",
+        "source": "BR-DECOR (candle on nightstand)",
+        "position": {
+          "x": 10.5,
+          "y": 82.5,
+          "z": 27.5
+        },
+        "type": "candle flame",
+        "color_temp_k": 1900,
+        "lumens": 12,
+        "day_mode": "off",
+        "night_mode": "optional"
+      },
+      {
+        "id": "L-BR-DAY",
+        "source": "BR-WIN-1 daylight",
+        "type": "window",
+        "faces": "west",
+        "day_mode": "on (strong in the afternoon)",
+        "night_mode": "off"
+      }
+    ]
+  },
+  "fit_checks": {
+    "summary": "38 pass, 0 fail, 1 intentional exception",
+    "checks": [
+      {
+        "room": "living",
+        "check": "front door swing",
+        "zone": {
+          "x0": 0,
+          "y0": 122,
+          "x1": 36,
+          "y1": 158
+        },
+        "result": "PASS",
+        "blocking": []
+      },
+      {
+        "room": "living",
+        "check": "closet door swing",
+        "zone": {
+          "x0": 194,
+          "y0": 161,
+          "x1": 222,
+          "y1": 189
+        },
+        "result": "PASS",
+        "blocking": []
+      },
+      {
+        "room": "living",
+        "check": "hallway opening approach",
+        "zone": {
+          "x0": 192,
+          "y0": 105,
+          "x1": 222,
+          "y1": 139
+        },
+        "result": "PASS",
+        "blocking": []
+      },
+      {
+        "room": "living",
+        "check": "walkway: behind sectional, door to dining/hall (36\")",
+        "zone": {
+          "x0": 0,
+          "y0": 124,
+          "x1": 222,
+          "y1": 160
+        },
+        "result": "PASS",
+        "blocking": []
+      },
+      {
+        "room": "living",
+        "check": "walkway: behind short leg along window (32\" clear of curtains)",
+        "zone": {
+          "x0": 4,
+          "y0": 32,
+          "x1": 36,
+          "y1": 124
+        },
+        "result": "PASS",
+        "blocking": []
+      },
+      {
+        "room": "living",
+        "check": "walkway: west of sectional to hallway (58\")",
+        "zone": {
+          "x0": 164,
+          "y0": 28,
+          "x1": 222,
+          "y1": 124
+        },
+        "result": "PASS",
+        "blocking": []
+      },
+      {
+        "room": "living",
+        "check": "kitchen access from dining (30\")",
+        "zone": {
+          "x0": 113,
+          "y0": 160,
+          "x1": 125,
+          "y1": 200
+        },
+        "result": "PASS",
+        "blocking": []
+      },
+      {
+        "room": "living",
+        "check": "every floor item inside the room outline",
+        "result": "PASS",
+        "outside": []
+      },
+      {
+        "room": "bedroom",
+        "check": "bedroom door swing",
+        "zone": {
+          "x0": 0,
+          "y0": 98,
+          "x1": 30,
+          "y1": 128
+        },
+        "result": "PASS",
+        "blocking": []
+      },
+      {
+        "room": "bedroom",
+        "check": "closet access (30\" in front of the closet)",
+        "zone": {
+          "x0": 69,
+          "y0": 106,
+          "x1": 121,
+          "y1": 136
+        },
+        "result": "PASS",
+        "blocking": []
+      },
+      {
+        "room": "bedroom",
+        "check": "30\" clearance behind desk chair",
+        "zone": {
+          "x0": 45,
+          "y0": 72,
+          "x1": 75,
+          "y1": 96
+        },
+        "result": "PASS",
+        "blocking": []
+      },
+      {
+        "room": "bedroom",
+        "check": "walkway: door to closet/desk, between bed and mirror (50\")",
+        "zone": {
+          "x0": 30,
+          "y0": 70,
+          "x1": 69,
+          "y1": 120
+        },
+        "result": "PASS",
+        "blocking": []
+      },
+      {
+        "room": "bedroom",
+        "check": "walkway: bed foot to south wall (37\")",
+        "zone": {
+          "x0": 84,
+          "y0": 6,
+          "x1": 121,
+          "y1": 62
+        },
+        "result": "PASS",
+        "blocking": []
+      },
+      {
+        "room": "bedroom",
+        "check": "every floor item inside the room outline",
+        "result": "PASS",
+        "outside": []
+      },
+      {
+        "room": "living",
+        "check": "LR-CURTAIN north panel, open (stacked) clear of doors/windows on LR-W-EAST",
+        "result": "PASS"
+      },
+      {
+        "room": "living",
+        "check": "LR-CURTAIN south panel, open (stacked) clear of doors/windows on LR-W-EAST",
+        "result": "PASS"
+      },
+      {
+        "room": "living",
+        "check": "LR-ROD clear of doors/windows on LR-W-EAST",
+        "result": "PASS"
+      },
+      {
+        "room": "living",
+        "check": "LR-SCONCE east of TV clear of doors/windows on LR-W-NORTH",
+        "result": "PASS"
+      },
+      {
+        "room": "living",
+        "check": "LR-SCONCE west of TV clear of doors/windows on LR-W-NORTH",
+        "result": "PASS"
+      },
+      {
+        "room": "living",
+        "check": "LR-ART clear of doors/windows on LR-W-WEST",
+        "result": "PASS"
+      },
+      {
+        "room": "living",
+        "check": "LR-MIRROR clear of doors/windows on LR-W-WEST",
+        "result": "PASS"
+      },
+      {
+        "room": "living",
+        "check": "LR-CABLE baseboard run from the TV console to the WiFi cabinet (54\") clear of doors/windows on LR-W-NORTH",
+        "result": "PASS"
+      },
+      {
+        "room": "bedroom",
+        "check": "BR-ART clear of doors/windows on BR-W-NORTH",
+        "result": "PASS"
+      },
+      {
+        "room": "bedroom",
+        "check": "BR-CURTAIN north panel, open clear of doors/windows on BR-W-WEST",
+        "result": "PASS"
+      },
+      {
+        "room": "bedroom",
+        "check": "BR-CURTAIN south panel, open clear of doors/windows on BR-W-WEST",
+        "result": "PASS"
+      },
+      {
+        "room": "bedroom",
+        "check": "BR-ROD clear of doors/windows on BR-W-WEST",
+        "result": "PASS"
+      },
+      {
+        "room": "living",
+        "check": "rug under sectional front legs",
+        "result": "PASS",
+        "detail": "rug reaches y=114 (long-leg front legs y=87) and x=64 (short-leg front legs x=73)"
+      },
+      {
+        "room": "living",
+        "check": "rod 2-4\" below ceiling",
+        "result": "PASS",
+        "detail": "rod z=93, ceiling 96 (ESTIMATED)"
+      },
+      {
+        "room": "living",
+        "check": "rod 8-12\" past each side of window",
+        "result": "PASS",
+        "detail": "window y=13-107, rod y=3-117"
+      },
+      {
+        "room": "bedroom",
+        "check": "rod 2-4\" below ceiling",
+        "result": "PASS",
+        "detail": "rod z=93, ceiling 96 (ESTIMATED)"
+      },
+      {
+        "room": "bedroom",
+        "check": "rod 8-12\" past each side of window",
+        "result": "PASS",
+        "detail": "window x=27-99, rod x=17-109"
+      },
+      {
+        "room": "bedroom",
+        "check": "rod length within product range",
+        "result": "PASS",
+        "detail": "92\" on HUGAD 82 3/4-151 1/2\""
+      },
+      {
+        "room": "living",
+        "check": "art centered 57\" from floor",
+        "result": "PASS",
+        "detail": "z center 57.0"
+      },
+      {
+        "room": "bedroom",
+        "check": "UCLA flag centered 57\" from floor",
+        "result": "PASS",
+        "detail": "z 45-69, center 57"
+      },
+      {
+        "room": "bedroom",
+        "check": "art above bed centered 57\" from floor",
+        "result": "FAIL",
+        "detail": "INTENTIONAL EXCEPTION: centered at 63\" to clear the 44\" headboard (see slot BR-ART)"
+      },
+      {
+        "room": "living",
+        "check": "coffee table 14-18\" from seat",
+        "result": "PASS",
+        "detail": "16\" from long-leg seat front, 18\" from short-leg seat front"
+      },
+      {
+        "room": "bedroom",
+        "check": "30\" clearance behind desk chair",
+        "result": "PASS",
+        "detail": "chair back at x=75; nothing but the flat rug from x=45 to 75 (see keep-out check)"
+      },
+      {
+        "room": "living",
+        "check": "nothing above the sill in front of LR-WIN-1 (24\" zone)",
+        "zone": {
+          "x0": 0,
+          "y0": 13,
+          "x1": 24,
+          "y1": 107
+        },
+        "result": "PASS",
+        "blocking": [],
+        "detail": "sill 30 in; items in the zone, all lower than the sill: none"
+      },
+      {
+        "room": "bedroom",
+        "check": "nothing above the sill in front of BR-WIN-1 (24\" zone)",
+        "zone": {
+          "x0": 27,
+          "y0": 0,
+          "x1": 99,
+          "y1": 24
+        },
+        "result": "PASS",
+        "blocking": [],
+        "detail": "sill 36 in; items in the zone, all lower than the sill: EX-BR-BED:frame and Queen mattress (top 22 in), BR-DUVET (top 24 in)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,3791 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-10-16",
+  "currency": "USD",
+  "tax_rate": 0.0975,
+  "image_folder": "product-images/ (one JPEG per product, named <product id>.jpg)",
+  "products": [
+    {
+      "id": "LR-RUG-A",
+      "room": "living",
+      "category": "Area rug, 8x10",
+      "role": "core",
+      "name": "ÄRENDE rug, high pile, 7'10\" x 10', off-white",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 149.99,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 149.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/aerende-rug-high-pile-off-white-80635451/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/aerende-rug-high-pile-off-white__1495132_pe1004961_s5.jpg?f=s",
+      "image_file": "product-images/LR-RUG-A.jpg",
+      "dimensions_in": {
+        "w": 94,
+        "d": 120,
+        "h": 1.25
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "IKEA: 7'10\" x 10', pile 1 1/4\"",
+      "main_color_hex": "#E4DCD1",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Pile: 100% polypropylene; backing: synthetic rubber",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find"
+      ],
+      "rating": "4.3 · 252 reviews",
+      "description": "A full 8x10-size cream rug for half the price of most. Center it on the TV wall so every front leg of the sectional sits on it.",
+      "image_status": "saved",
+      "slot": "LR-RUG",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-RUG-B",
+      "room": "living",
+      "category": "Area rug, 8x10",
+      "role": "alternate",
+      "name": "STOENSE rug, low pile, 7'10\" x 10', off-white",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 249.99,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 249.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/stoense-rug-low-pile-off-white-20635449/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/stoense-rug-low-pile-off-white__1495129_pe1004956_s5.jpg?f=s",
+      "image_file": "product-images/LR-RUG-B.jpg",
+      "dimensions_in": {
+        "w": 94,
+        "d": 120,
+        "h": 0.75
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "IKEA: 7'10\" x 10', thickness 3/4\"",
+      "main_color_hex": "#CEBEAE",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Pile: 100% polypropylene; backing: synthetic rubber",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "From my Excel",
+        "Wait for Black Friday"
+      ],
+      "rating": "4.6 · 6,129 reviews",
+      "description": "Splurge later. Low pile is easier to vacuum and it's rated by 6,000+ buyers. Worth watching on Black Friday.",
+      "image_status": "saved",
+      "slot": "LR-RUG",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "LR-CURTAIN-A",
+      "room": "living",
+      "category": "Curtains, 98\" + black rod",
+      "role": "core",
+      "name": "GINSTMOTT curtains, 1 pair, 57x98\", beige",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 34.99,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 34.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/ginstmott-curtains-1-pair-beige-with-heading-tape-80597171/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/ginstmott-curtains-1-pair-beige-with-heading-tape__1308585_pe939896_s5.jpg?f=s",
+      "image_file": "product-images/LR-CURTAIN-A.jpg",
+      "dimensions_in": {
+        "w": 57,
+        "d": 0.5,
+        "h": 98
+      },
+      "dimensions_estimated": [
+        "d"
+      ],
+      "dimensions_source": "IKEA: each panel 57\" W x 98\" L; 1 pair = 2 panels. Fabric depth ESTIMATED 0.5\" (flat panel)",
+      "main_color_hex": "#C2BCAD",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "100% polyester (min. 90% recycled), light-filtering, heading tape",
+      "model_3d_url": "https://web-api.ikea.com/dimma/assets/1.2/80597171/LPT_S02_NV01/rqp3/glb_draco/7ee69831449ddcbc3acb2bb1edb00522-80597171_LPT_S02_NV01_RQP3_4.0.glb?cn=pip",
+      "model_3d_status": "IKEA 3D model, link checked",
+      "model_3d_format": "glTF binary (.glb), Draco-compressed when the URL says glb_draco",
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "From my Excel"
+      ],
+      "rating": "4.5 · 454 reviews",
+      "description": "Light-filtering beige panels hung in front of the vertical blinds. One pair covers the window; add a second pair later for fuller folds.",
+      "unit_note": "one unit = 2 panels",
+      "image_status": "saved",
+      "slot": "LR-CURTAIN",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-ROD-A",
+      "room": "living",
+      "category": "Curtains, 98\" + black rod",
+      "role": "core",
+      "name": "HUGAD curtain rod set, 82¾–151½\", black",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 25.0,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 25.0,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/hugad-curtain-rod-combination-with-wall-ceiling-brackets-with-finials-black-s89634089/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/hugad-curtain-rod-combination-with-wall-ceiling-brackets-with-finials-black__1560959_pe1025519_s5.jpg?f=s",
+      "image_file": "product-images/LR-ROD-A.jpg",
+      "dimensions_in": {
+        "w": 114,
+        "d": 4,
+        "h": 1
+      },
+      "dimensions_estimated": [
+        "d",
+        "h"
+      ],
+      "dimensions_source": "IKEA: adjustable 82 3/4\"-151 1/2\" (set to 114\" here), max load 22 lb. Bracket projection 4\" and rod/finial profile 1\" are ESTIMATED (not published)",
+      "main_color_hex": "#323137",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Steel rod and brackets, epoxy/polyester powder coat; polypropylene finials",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "From my Excel"
+      ],
+      "rating": "4.3 · 33 reviews",
+      "description": "Rod, brackets and finials in matte black to echo your TV console. Mount it high and 8–12\" past each side of the window.",
+      "image_status": "saved",
+      "slot": "LR-ROD",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-CURTAIN-B",
+      "room": "living",
+      "category": "Curtains, 98\" + black rod",
+      "role": "alternate",
+      "name": "European Linen Curtain, flax, 48x96\" (per panel)",
+      "brand": "Quince",
+      "retailer": "Quince",
+      "price": 82.0,
+      "regular_price": 129.0,
+      "qty": 1,
+      "line_total": 82.0,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.quince.com/home/european-linen-curtain?color=flax",
+      "backup_search_url": null,
+      "image_url": "https://images.quince.com/1c6a6mD9PYiu2PV7I47vof/1351815446c99e4323c34f01e635661c/U-WNDW-2-FLX_1.jpg?w=700&q=60&fm=webp",
+      "image_file": "product-images/LR-CURTAIN-B.jpg",
+      "dimensions_in": {
+        "w": 48,
+        "d": 0.5,
+        "h": 96
+      },
+      "dimensions_estimated": [
+        "d"
+      ],
+      "dimensions_source": "Quince: 48\" x 96\" single panel (you need 2). Depth ESTIMATED",
+      "main_color_hex": "#D8CBB3",
+      "color_source": "Picked by eye from the official product photo (automatic sampling caught the photo background)",
+      "material": "European linen",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Available (Quince, $82 sale, $129 regular)",
+      "checked": "2026-10-16",
+      "tags": [
+        "From my Excel",
+        "Deal"
+      ],
+      "rating": "795 reviews (no star rating shown)",
+      "description": "Splurge later. Real European linen in a warm flax. You'd need 2 panels ($164).",
+      "unit_note": "qty counts panels",
+      "image_status": "saved",
+      "slot": "LR-CURTAIN",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "LR-FLOORLAMP-A",
+      "room": "living",
+      "category": "Floor lamp",
+      "role": "core",
+      "name": "LAUTERS floor lamp, ash/white",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 79.99,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 79.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/lauters-floor-lamp-ash-white-00405048/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/lauters-floor-lamp-ash-white__0663863_pe712536_s5.jpg?f=s",
+      "image_file": "product-images/LR-FLOORLAMP-A.jpg",
+      "dimensions_in": {
+        "w": 24,
+        "d": 24,
+        "h": 59
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "IKEA: base diameter 24\", shade width 15\", height 47-59\" (59\" used)",
+      "main_color_hex": "#B9977A",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Solid ash legs, clear acrylic lacquer; shade 100% recycled polyester and polystyrene",
+      "model_3d_url": "https://web-api.ikea.com/dimma/assets/geomagical/30405042/PS01_S01_NV_01/simple/glb_draco/b183c7db4d5f43e998fabdf5411506a3-G-30405042-44570173597fa99aca0187105b23b71dfdcc3683-simple+draco.glb?cn=pip",
+      "model_3d_status": "IKEA 3D model, link checked",
+      "model_3d_format": "glTF binary (.glb), Draco-compressed when the URL says glb_draco",
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "From my Excel"
+      ],
+      "rating": "4.7 · 1,479 reviews",
+      "description": "Solid ash tripod with a soft shade. Goes in the corner by the chaise with a 2700K bulb as your main evening light.",
+      "bulb_spec": "E26, max 13 W",
+      "image_status": "saved",
+      "slot": "LR-FLOORLAMP",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-FLOORLAMP-B",
+      "room": "living",
+      "category": "Floor lamp",
+      "role": "alternate",
+      "name": "STOCKHOLM 2025 floor lamp, 63\", textile/brass, travertine base",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 169.99,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 169.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/stockholm-2025-floor-lamp-white-textile-brass-plated-00585921/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/stockholm-2025-floor-lamp-white-textile-brass-plated__1285165_pe933236_s5.jpg?f=s",
+      "image_file": "product-images/LR-FLOORLAMP-B.jpg",
+      "dimensions_in": {
+        "w": 20,
+        "d": 20,
+        "h": 63
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "IKEA: shade diameter 20\", total height 63\". Footprint = shade diameter",
+      "main_color_hex": "#F2EFE6",
+      "color_source": "Picked by eye from the official product photo (automatic sampling caught the photo background)",
+      "material": "Limestone base; nickel-plated steel tube; shade 70% polyester / 30% linen",
+      "model_3d_url": "https://web-api.ikea.com/dimma/assets/geomagical/50585914/PS01_S01_NV_01/simple/glb/6bf0c9c854b5f344623770bd9af0c8ed-G-50585914-946724db44baf3d8a2fca4277770ecb48f556f20-simple.glb?cn=pip",
+      "model_3d_status": "IKEA 3D model, link checked",
+      "model_3d_format": "glTF binary (.glb), Draco-compressed when the URL says glb_draco",
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "From my Excel",
+        "Wait for Black Friday"
+      ],
+      "rating": "4.3 · 119 reviews",
+      "description": "Splurge later. Travertine and a little brass in one piece, the full organic modern signature.",
+      "bulb_spec": "max 16 W",
+      "image_status": "saved",
+      "slot": "LR-FLOORLAMP",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "LR-TABLELAMP-A",
+      "room": "living",
+      "category": "Table lamp",
+      "role": "core",
+      "name": "Ceramic Lamp with Scallop Shade, Sour Cream/Oatmeal",
+      "brand": "Hearth & Hand with Magnolia",
+      "retailer": "Target",
+      "price": 24.99,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 24.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.target.com/p/-/A-94688355",
+      "backup_search_url": null,
+      "image_url": "https://target.scene7.com/is/image/Target/GUEST_bbd149be-493f-4db6-920a-621c41bd2906?wid=640&hei=640&qlt=80&fmt=webp",
+      "image_file": "product-images/LR-TABLELAMP-A.jpg",
+      "dimensions_in": {
+        "w": 8.5,
+        "d": 8.5,
+        "h": 14
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "Target: 14\" H x 8.5\" W x 8.5\" D; shade 8.75\" bottom diameter",
+      "main_color_hex": "#DED8D3",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Ceramic body; polyester/polystyrene shade",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock (ship and Culver City pickup)",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find"
+      ],
+      "rating": "4.6 · 73 reviews",
+      "description": "Matte cream ceramic with a pleated oat shade. Sits on one end of the black console for a low, warm glow.",
+      "bulb_spec": "E26, max 40 W",
+      "image_status": "saved",
+      "slot": "LR-TABLELAMP",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-SCONCE-A",
+      "room": "living",
+      "category": "Plug-in wall sconces",
+      "role": "core",
+      "name": "Rattan plug-in wall sconces, set of 2, 9.84 ft cords",
+      "brand": "FRIDEKO HOME",
+      "retailer": "Walmart",
+      "price": 35.99,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 35.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.walmart.com/ip/5544519875",
+      "backup_search_url": null,
+      "image_url": "https://i5.walmartimages.com/seo/Motent-2-Pack-Plug-in-Wall-Light-with-Cord-Rattan-Lights-Farmhouse-Lighting-for-Bedroom-Living-Room_6e069fd4-0bc6-4cd8-92d7-145e1a71e59e.9a9693ddd981bbc930908847d29f4c45.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
+      "image_file": "product-images/LR-SCONCE-A.jpg",
+      "dimensions_in": {
+        "w": 8.3,
+        "d": 9.0,
+        "h": 13
+      },
+      "dimensions_estimated": [
+        "d",
+        "h"
+      ],
+      "dimensions_source": "Walmart listing: shade 8.26\" dia x 6.69\" H; wood holder 8.26\" x 0.94\" x 9.84\". Overall 8.3 W x 9.0 D x 13 H is ESTIMATED from those parts. Price is for a set of 2",
+      "main_color_hex": "#9B7251",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Hand-woven paper rope shade, wood holder, metal",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock (Walmart)",
+      "checked": "2026-10-16",
+      "tags": [
+        "From my Excel"
+      ],
+      "rating": "4.5 · 114 reviews",
+      "description": "Plug-in, so no electrician. One on each side of the TV at about 60\" high, cords run down inside the cord cover.",
+      "bulb_spec": "E26, max 60 W, plug-in with on/off switch, 9.84 ft cord",
+      "unit_note": "one unit = 2 sconces",
+      "image_status": "saved",
+      "slot": "LR-SCONCE",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-SCONCE-B",
+      "room": "living",
+      "category": "Plug-in wall sconces",
+      "role": "alternate",
+      "name": "Rattan Wall Sconce Light, brass (each)",
+      "brand": "Threshold",
+      "retailer": "Target",
+      "price": 75.0,
+      "regular_price": 90.0,
+      "qty": 1,
+      "line_total": 75.0,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.target.com/p/-/A-90548927",
+      "backup_search_url": null,
+      "image_url": "https://target.scene7.com/is/image/Target/GUEST_721b9b2b-dd6d-4765-8aa4-6b49690bc658?wid=640&hei=640&qlt=80&fmt=webp",
+      "image_file": "product-images/LR-SCONCE-B.jpg",
+      "dimensions_in": {
+        "w": 11.5,
+        "d": 14.25,
+        "h": 16.75
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "Target: 16.75\" H x 11.5\" W x 14.25\" D. Price is per sconce",
+      "main_color_hex": "#C9A46E",
+      "color_source": "Picked by eye from the official product photo (automatic sampling caught the photo background)",
+      "material": "Rattan shade, metal body (brass finish)",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Ships; not available for Culver City pickup",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find",
+        "Deal"
+      ],
+      "rating": "5.0 · 4 reviews",
+      "description": "Splurge later. Sturdier rattan with brass, and it can plug in or be hardwired. Priced per sconce; you'd want two.",
+      "bulb_spec": "E26, max 60 W, plug-in or hardwire",
+      "image_status": "saved",
+      "slot": "LR-SCONCE",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "LR-COFFEE-A",
+      "room": "living",
+      "category": "Round coffee table",
+      "role": "core",
+      "name": "Round Wood Coffee Table, dark walnut, tapered legs",
+      "brand": "Artesia",
+      "retailer": "OfferUp",
+      "price": 45.0,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 45.0,
+      "taxed": false,
+      "condition": "used",
+      "buy_url": "https://offerup.com/item/detail/3cdb1082-b10d-32f3-ade6-6f51542df50d",
+      "backup_search_url": "https://offerup.com/search?q=round%20wood%20coffee%20table&price_max=120",
+      "image_url": "https://images.offerup.com/04gY4MSxHVMz49U84PKoOHIZKuk=/1536x2048/bfbb/bfbb5e540fc34f4c8eb82067bbe49979.jpg",
+      "image_file": "product-images/LR-COFFEE-A.jpg",
+      "dimensions_in": {
+        "w": 36,
+        "d": 36,
+        "h": 20.5
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "OfferUp listing: 36\" wide, 20 1/2\" tall (round)",
+      "main_color_hex": "#8C684C",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Wood, dark walnut finish, tapered legs",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Listed on OfferUp (state LISTED)",
+      "checked": "2026-10-16",
+      "tags": [
+        "Used",
+        "New find"
+      ],
+      "rating": null,
+      "description": "Replaces the folding tray. Walnut and tapered legs read mid-century and warm against the cream rug. Seller notes light scuffs.",
+      "image_status": "saved",
+      "slot": "LR-COFFEE",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-COFFEE-B",
+      "room": "living",
+      "category": "Round coffee table",
+      "role": "alternate",
+      "name": "Round Fluted Oak Coffee Table",
+      "brand": "Los Angeles",
+      "retailer": "Facebook Marketplace",
+      "price": 100.0,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 100.0,
+      "taxed": false,
+      "condition": "used",
+      "buy_url": "https://www.facebook.com/marketplace/item/1105863208664347/",
+      "backup_search_url": "https://www.facebook.com/marketplace/la/search?query=round%20wood%20coffee%20table&maxPrice=120",
+      "image_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.84726-6/841500027_1632456998590779_311339894051459401_n.jpg?stp=dst-jpg_tt6&cstp=mx1320x1686&ctp=p600x600&_nc_cat=109&ccb=1-7&_nc_sid=c5055e&_nc_ohc=I3cMG7Z-XLgQ7kNvwHgtB8J&_nc_oc=AdqRH_UhSkiApVQdZx-FZgOpiq7OzoUI7MlxW7_LkpyPTjr8hN1N7VLbVV920aCJeucLI1KzEQM1Eij5hyCsUmcK&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=432woIMSjbtLMLNyLqwRow&_nc_ss=79289&oh=00_AQPfl2w-6RzmJVrSJnpt4QQMmT4IkmfcWJkZ8laTPcpYCw&oe=6AD6D5A0",
+      "image_file": "product-images/LR-COFFEE-B.jpg",
+      "dimensions_in": {
+        "w": 36,
+        "d": 36,
+        "h": 16
+      },
+      "dimensions_estimated": [
+        "w",
+        "d",
+        "h"
+      ],
+      "dimensions_source": "Not stated in the listing. ESTIMATED 36\" dia x 16\" H (typical round coffee table)",
+      "main_color_hex": "#A37540",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Wood, light oak finish, fluted tambour base",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Listed on Facebook Marketplace",
+      "checked": "2026-10-16",
+      "tags": [
+        "Used",
+        "From my Excel"
+      ],
+      "rating": null,
+      "description": "The better match: light oak with a fluted base, listed as like new. Worth the extra $55 if it's still there.",
+      "image_status": "saved",
+      "slot": "LR-COFFEE",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "LR-PILLOW-NEUTRAL-A",
+      "room": "living",
+      "category": "Pillows, 20\" with inserts",
+      "role": "core",
+      "name": "GURLI cushion cover, 20x20\", unbleached",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 4.99,
+      "regular_price": null,
+      "qty": 2,
+      "line_total": 9.98,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/gurli-cushion-cover-unbleached-20598729/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/gurli-cushion-cover-unbleached__1409327_pe972205_s5.jpg?f=s",
+      "image_file": "product-images/LR-PILLOW-NEUTRAL-A.jpg",
+      "dimensions_in": {
+        "w": 20,
+        "d": 5,
+        "h": 20
+      },
+      "dimensions_estimated": [
+        "d"
+      ],
+      "dimensions_source": "IKEA: 20\" x 20\". Filled depth 5\" ESTIMATED",
+      "main_color_hex": "#D3C6B5",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "100% cotton cover",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "From my Excel"
+      ],
+      "rating": "4.6 · 813 reviews",
+      "description": "Two calm cotton covers to break up the big block of brown.",
+      "image_status": "saved",
+      "slot": "LR-PILLOW-NEUTRAL",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-PILLOW-ACCENT-A",
+      "room": "living",
+      "category": "Pillows, 20\" with inserts",
+      "role": "core",
+      "name": "KRYDDBUSKE cushion cover, 20x20\", brown-red",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 9.99,
+      "regular_price": null,
+      "qty": 2,
+      "line_total": 19.98,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/kryddbuske-cushion-cover-brown-red-00636954/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/kryddbuske-cushion-cover-brown-red__1478222_pe1007674_s5.jpg?f=s",
+      "image_file": "product-images/LR-PILLOW-ACCENT-A.jpg",
+      "dimensions_in": {
+        "w": 20,
+        "d": 5,
+        "h": 20
+      },
+      "dimensions_estimated": [
+        "d"
+      ],
+      "dimensions_source": "IKEA: 20\" x 20\". Filled depth 5\" ESTIMATED",
+      "main_color_hex": "#793C21",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "100% recycled polyester cover",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "From my Excel"
+      ],
+      "rating": "4.9 · 191 reviews",
+      "description": "Your terracotta accent. Pair with the cream covers so the rust reads warm, not dark.",
+      "image_status": "saved",
+      "slot": "LR-PILLOW-ACCENT",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-PILLOW-INSERT-A",
+      "room": "living",
+      "category": "Pillows, 20\" with inserts",
+      "role": "core",
+      "name": "INNER inner cushion, 20x20\"",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 9.0,
+      "regular_price": null,
+      "qty": 4,
+      "line_total": 36.0,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/inner-cushion-white-indoor-outdoor-30586976/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/inner-inner-cushion-white-indoor-outdoor__1138127_pe879848_s5.jpg?f=s",
+      "image_file": "product-images/LR-PILLOW-INSERT-A.jpg",
+      "dimensions_in": {
+        "w": 20,
+        "d": 5,
+        "h": 20
+      },
+      "dimensions_estimated": [
+        "d"
+      ],
+      "dimensions_source": "IKEA: 20\" x 20\". Depth ESTIMATED",
+      "main_color_hex": "#E8E7E2",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "100% recycled polyester fabric and hollow-fiber fill",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find"
+      ],
+      "rating": "3.9 · 2,075 reviews",
+      "description": "One insert per cover. $3 less each than the feather FJÄDRAR in the Excel plan.",
+      "image_status": "saved",
+      "slot": "LR-PILLOW-INSERT",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-PILLOW-ACCENT-B",
+      "room": "living",
+      "category": "Pillows, 20\" with inserts",
+      "role": "alternate",
+      "name": "Linen pillow covers, 20x20\", rust, pack of 2",
+      "brand": "MIULEE",
+      "retailer": "Amazon",
+      "price": 16.99,
+      "regular_price": 26.99,
+      "qty": 1,
+      "line_total": 16.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.amazon.com/dp/B0D3D2RSZ9",
+      "backup_search_url": null,
+      "image_url": "https://m.media-amazon.com/images/I/716ioXvL1XL._AC_SL640_.jpg",
+      "image_file": "product-images/LR-PILLOW-ACCENT-B.jpg",
+      "dimensions_in": {
+        "w": 20,
+        "d": 5,
+        "h": 20
+      },
+      "dimensions_estimated": [
+        "d"
+      ],
+      "dimensions_source": "Amazon: 20\" x 20\", pack of 2. Depth ESTIMATED",
+      "main_color_hex": "#652F1C",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Linen covers (inserts not included)",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock (Amazon), $16.99, list $26.99",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find",
+        "Deal"
+      ],
+      "rating": "4.3 · 3,491 ratings",
+      "description": "Deal swap for the rust pair: real linen texture for about the same money. Shipping is free with Prime or on $35+ orders.",
+      "unit_note": "one unit = 2 covers",
+      "image_status": "saved",
+      "slot": "LR-PILLOW-ACCENT",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "LR-THROW-A",
+      "room": "living",
+      "category": "Throw",
+      "role": "core",
+      "name": "VALLKRASSING throw, 59x79\", off-white",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 19.99,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 19.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/vallkrassing-throw-off-white-20570928/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/vallkrassing-throw-off-white__1207651_pe908114_s5.jpg?f=s",
+      "image_file": "product-images/LR-THROW-A.jpg",
+      "dimensions_in": {
+        "w": 59,
+        "d": 0.3,
+        "h": 79
+      },
+      "dimensions_estimated": [
+        "d"
+      ],
+      "dimensions_source": "IKEA: 59\" x 79\". Thickness ESTIMATED",
+      "main_color_hex": "#E3D9C5",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "100% cotton, crinkled",
+      "model_3d_url": "https://web-api.ikea.com/dimma/assets/geomagical/20570928/PS01_S01_NV_01/simple/glb/ac4ce3acf3c300660bf1640510005b90-G-20570928-8cb2576b13a731e38a1eab4ab040193b2c1f0711-simple.glb?cn=pip",
+      "model_3d_status": "IKEA 3D model, link checked",
+      "model_3d_format": "glTF binary (.glb), Draco-compressed when the URL says glb_draco",
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "From my Excel"
+      ],
+      "rating": "4.7 · 435 reviews",
+      "description": "Crinkled cotton draped over the chaise. Big enough to actually use.",
+      "image_status": "saved",
+      "slot": "LR-THROW",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-ART-A",
+      "room": "living",
+      "category": "Large wall art",
+      "role": "core",
+      "name": "Large canvas wall art, 48x32\", birch trees",
+      "brand": "Oxnard",
+      "retailer": "Facebook Marketplace",
+      "price": 35.0,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 35.0,
+      "taxed": false,
+      "condition": "used",
+      "buy_url": "https://www.facebook.com/marketplace/item/1107899645122803/",
+      "backup_search_url": "https://www.facebook.com/marketplace/la/search?query=large%20wall%20art&maxPrice=100",
+      "image_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.84726-6/842871415_1987523548556270_8580624192764525321_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=p600x600&_nc_cat=102&ccb=1-7&_nc_sid=c5055e&_nc_ohc=pBg7GZ4o6McQ7kNvwEc2TMs&_nc_oc=AdpPGJutOSBeP3-aIsMHPrX1eS0N-cj0__c7EFlWU5zpLqh08e1ZGgYB3wQHuznPxSP7udklfB_E-gM5Ubu_4p4L&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=jaybEiGeuhrRzfnc7aeclA&_nc_ss=79289&oh=00_AQPjHt4-ztUizkIAMuP31JuJLlKZpFC8LuqS9gSc6KpGhw&oe=6AD6F50B",
+      "image_file": "product-images/LR-ART-A.jpg",
+      "dimensions_in": {
+        "w": 48,
+        "d": 1.5,
+        "h": 32
+      },
+      "dimensions_estimated": [
+        "d"
+      ],
+      "dimensions_source": "Facebook listing: 48 x 32. Canvas depth 1.5\" ESTIMATED",
+      "main_color_hex": "#969691",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Printed canvas on frame",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Listed on Facebook Marketplace",
+      "checked": "2026-10-16",
+      "tags": [
+        "Used",
+        "From my Excel"
+      ],
+      "rating": null,
+      "description": "Soft olive, sand and white birches: on palette and big enough for the long blank wall. Oxnard is about an hour away.",
+      "image_status": "saved",
+      "slot": "LR-ART",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-ART-B",
+      "room": "living",
+      "category": "Large wall art",
+      "role": "alternate",
+      "name": "47\"x16\" Large Landscape Framed Wall Art",
+      "brand": "Threshold designed with Studio McGee",
+      "retailer": "Target",
+      "price": 105.0,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 105.0,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.target.com/p/-/A-94857455",
+      "backup_search_url": null,
+      "image_url": "https://target.scene7.com/is/image/Target/GUEST_dfe21579-af70-455c-8f12-842fda6fafe3?wid=640&hei=640&qlt=80&fmt=webp",
+      "image_file": "product-images/LR-ART-B.jpg",
+      "dimensions_in": {
+        "w": 47,
+        "d": 1.25,
+        "h": 16
+      },
+      "dimensions_estimated": [
+        "d"
+      ],
+      "dimensions_source": "Target: 16\" H x 47\" W. Depth ESTIMATED",
+      "main_color_hex": "#6E6B52",
+      "color_source": "Picked by eye from the official product photo (automatic sampling caught the photo background)",
+      "material": "Framed print, polystyrene frame",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock (ship and Culver City pickup)",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find"
+      ],
+      "rating": "4.5 · 20 reviews",
+      "description": "A long, quiet landscape that fits over the sectional back. New and framed, no drive needed.",
+      "image_status": "saved",
+      "slot": "LR-ART",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "LR-MIRROR-A",
+      "room": "living",
+      "category": "Round mirror",
+      "role": "core",
+      "name": "Round black mirror, 24\"",
+      "brand": "Santa Monica",
+      "retailer": "Facebook Marketplace",
+      "price": 25.0,
+      "regular_price": 70.0,
+      "qty": 1,
+      "line_total": 25.0,
+      "taxed": false,
+      "condition": "used",
+      "buy_url": "https://www.facebook.com/marketplace/item/1533188118839409/",
+      "backup_search_url": "https://www.facebook.com/marketplace/la/search?query=round%20mirror&maxPrice=80",
+      "image_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.84726-6/785885969_1646743650350621_5271264989001293373_n.jpg?stp=dst-jpg_tt6&cstp=mx1537x2048&ctp=p600x600&_nc_cat=111&ccb=1-7&_nc_sid=c5055e&_nc_ohc=un4WdAexNCUQ7kNvwGcZ9ay&_nc_oc=AdrIwWHpNLgWLSGDKmLcaD0ef1wsvdYY1K41HwDU-IzS6AHXmSJCTXnvEx2qP8iyK9g8jX0YVo815voMtgYuZu7h&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=kLC15fnD0KWpbmRL_uneUQ&_nc_ss=79289&oh=00_AQO5CuwczPyzEnqTa4xLQPZwQxApc_HNf9zeymB9dsBqWA&oe=6AD6F0A9",
+      "image_file": "product-images/LR-MIRROR-A.jpg",
+      "dimensions_in": {
+        "w": 24,
+        "d": 1,
+        "h": 24
+      },
+      "dimensions_estimated": [
+        "d"
+      ],
+      "dimensions_source": "Facebook listing: 24\" diameter. Depth 1\" ESTIMATED",
+      "main_color_hex": "#2F343C",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Mirror glass, black frame, rope hanger",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Listed on Facebook Marketplace",
+      "checked": "2026-10-16",
+      "tags": [
+        "Used",
+        "Deal",
+        "From my Excel"
+      ],
+      "rating": null,
+      "description": "Black frame with a rope hanger, listed as like new. Hang it near the entry to bounce window light into the room.",
+      "image_status": "saved",
+      "slot": "LR-MIRROR",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-MIRROR-B",
+      "room": "living",
+      "category": "Round mirror",
+      "role": "alternate",
+      "name": "34\" Round Decorative Wall Mirror, black",
+      "brand": "Threshold designed with Studio McGee",
+      "retailer": "Target",
+      "price": 120.0,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 120.0,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.target.com/p/-/A-78207922",
+      "backup_search_url": null,
+      "image_url": "https://target.scene7.com/is/image/Target/GUEST_97bd8fc5-e7cc-4aa0-99aa-2a87e177efaf?wid=640&hei=640&qlt=80&fmt=webp",
+      "image_file": "product-images/LR-MIRROR-B.jpg",
+      "dimensions_in": {
+        "w": 34,
+        "d": 1.27,
+        "h": 34
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "Target: 34\" x 34\" x 1.27\"",
+      "main_color_hex": "#1E1E1E",
+      "color_source": "Picked by eye from the official product photo (automatic sampling caught the photo background)",
+      "material": "Metal frame, mirror glass",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Ships; not available for Culver City pickup",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find",
+        "Wait for Black Friday"
+      ],
+      "rating": "4.5 · 859 reviews",
+      "description": "Splurge later. Bigger and new, with 850+ reviews. A Black Friday candidate.",
+      "image_status": "saved",
+      "slot": "LR-MIRROR",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "LR-PLANT-A",
+      "room": "living",
+      "category": "Faux plant",
+      "role": "core",
+      "name": "4 ft artificial olive tree",
+      "brand": "DR.Planzen",
+      "retailer": "Walmart",
+      "price": 25.99,
+      "regular_price": 39.89,
+      "qty": 1,
+      "line_total": 25.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.walmart.com/ip/2871299567",
+      "backup_search_url": null,
+      "image_url": "https://i5.walmartimages.com/seo/4-ft-Artificial-Olive-Plants-Realistic-Leaves-Natural-Trunk-Silk-Fake-Potted-Tree-Wood-Branches-Fruits-Faux-Olive-Tree-Office-Home_51bf5a0e-e38c-46d5-97db-346dc0cb64cd.4b9f75ae4d62132674e095d2e0349096.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
+      "image_file": "product-images/LR-PLANT-A.jpg",
+      "dimensions_in": {
+        "w": 20,
+        "d": 20,
+        "h": 48
+      },
+      "dimensions_estimated": [
+        "w",
+        "d"
+      ],
+      "dimensions_source": "Walmart: 4 ft (48\") tall. Canopy width 20\" is ESTIMATED (not published)",
+      "main_color_hex": "#6E7A4F",
+      "color_source": "Picked by eye from the official product photo (automatic sampling caught the photo background)",
+      "material": "Plastic leaves, natural wood trunk, black plastic nursery pot, concrete weight",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock (Walmart)",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find",
+        "Deal"
+      ],
+      "rating": "4.5 · 7,883 reviews",
+      "description": "Olive leaves bring the tree outside your window indoors. It comes in a black nursery pot; drop it into a basket later.",
+      "image_status": "saved",
+      "slot": "LR-PLANT",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-CABLE-A",
+      "room": "living",
+      "category": "Cable covers",
+      "role": "core",
+      "name": "Peel-and-stick cord raceway kit, 54\"",
+      "brand": "Wire Trak",
+      "retailer": "Walmart",
+      "price": 14.96,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 14.96,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.walmart.com/ip/342180027",
+      "backup_search_url": null,
+      "image_url": "https://i5.walmartimages.com/seo/Wire-Trak-Wire-Management-Kit-1-x-1-2-Peel-and-Stick-Adhesive-Raceway-54_937e7bd8-9c1f-4c29-993e-4fc9d627f60a.8857e6761825e812b40ffa78bd73540f.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
+      "image_file": "product-images/LR-CABLE-A.jpg",
+      "dimensions_in": {
+        "w": 54,
+        "d": 1,
+        "h": 0.5
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "Walmart: raceway 1\" x 1/2\", 54\" total length (cut to fit)",
+      "main_color_hex": "#E7E9DE",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "PVC adhesive raceway",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock (Walmart)",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find"
+      ],
+      "rating": "4.5 · 431 reviews",
+      "description": "Adhesive, paintable, removable. Hides the sconce cords and the cables crossing the floor to the console.",
+      "image_status": "saved",
+      "slot": "LR-CABLE",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-DECOR-A",
+      "room": "living",
+      "category": "Small decor",
+      "role": "core",
+      "name": "Small Perforated Ceramic Jar Candle, Oak and Embers, cream, 6oz",
+      "brand": "Hearth & Hand with Magnolia",
+      "retailer": "Target",
+      "price": 7.64,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 7.64,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.target.com/p/-/A-95001439",
+      "backup_search_url": null,
+      "image_url": "https://target.scene7.com/is/image/Target/GUEST_8e68ff1b-7555-4fc8-aff3-fe7a5fbe0474?wid=640&hei=640&qlt=80&fmt=webp",
+      "image_file": "product-images/LR-DECOR-A.jpg",
+      "dimensions_in": {
+        "w": 4.13,
+        "d": 4.13,
+        "h": 2.36
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "Target: 2.36\" H x 4.13\" W x 4.13\" D",
+      "main_color_hex": "#E6D9CC",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Ceramic vessel; paraffin and soy wax",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Ships; not available for Culver City pickup",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find"
+      ],
+      "rating": "4.7 · 54 reviews",
+      "description": "Cream ceramic that you keep as a little vessel after the candle is done. Goes on the coffee table.",
+      "image_status": "saved",
+      "slot": "LR-DECOR",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-DECOR-B",
+      "room": "living",
+      "category": "Small decor",
+      "role": "alternate",
+      "name": "Short Hexagon Ceramic Vase",
+      "brand": "Threshold designed with Studio McGee",
+      "retailer": "Target",
+      "price": 20.0,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 20.0,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.target.com/p/-/A-94922641",
+      "backup_search_url": null,
+      "image_url": "https://target.scene7.com/is/image/Target/GUEST_3db8dfd6-d7cc-42e2-a5a8-927422b6501c?wid=640&hei=640&qlt=80&fmt=webp",
+      "image_file": "product-images/LR-DECOR-B.jpg",
+      "dimensions_in": {
+        "w": 5.39,
+        "d": 5.39,
+        "h": 8.86
+      },
+      "dimensions_estimated": [
+        "d"
+      ],
+      "dimensions_source": "Target: 8.86\" H x 5.39\" W. Depth taken equal to width (hexagon) ESTIMATED",
+      "main_color_hex": "#7A2905",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Ceramic",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Ships; not available for Culver City pickup",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find"
+      ],
+      "rating": "4.5 · 8 reviews",
+      "description": "Add a few dried stems for height on the console next to the lamp.",
+      "image_status": "saved",
+      "slot": "LR-DECOR",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "BR-DUVET-A",
+      "room": "bedroom",
+      "category": "Duvet cover set, Full/Queen",
+      "role": "core",
+      "name": "ÄNGSLILJA duvet cover + 2 pillowcases, Full/Queen, natural",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 39.99,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 39.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/aengslilja-duvet-cover-and-pillowcase-s-natural-30591987/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/aengslilja-duvet-cover-and-pillowcase-s-natural__1599549_pe1042382_s5.jpg?f=s",
+      "image_file": "product-images/BR-DUVET-A.jpg",
+      "dimensions_in": {
+        "w": 86,
+        "d": 86,
+        "h": 0.5
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "IKEA: duvet cover 86\" x 86\"; 2 pillowcases 20\" x 30\"",
+      "main_color_hex": "#EEE2CB",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "100% cotton, 125 thread count",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "From my Excel"
+      ],
+      "rating": "4.1 · 1,617 reviews",
+      "description": "Replaces the gray stripes with an undyed natural tone. The biggest bedroom change per dollar.",
+      "image_status": "saved",
+      "slot": "BR-DUVET",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "BR-DUVET-B",
+      "room": "bedroom",
+      "category": "Duvet cover set, Full/Queen",
+      "role": "alternate",
+      "name": "Heavyweight Linen Blend Duvet Cover & Sham Set, Full/Queen, Natural",
+      "brand": "Casaluna",
+      "retailer": "Target",
+      "price": 129.0,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 129.0,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.target.com/p/-/A-78622598",
+      "backup_search_url": null,
+      "image_url": "https://target.scene7.com/is/image/Target/GUEST_b7f9289b-a67a-45e4-84fb-df24e149eb33?wid=640&hei=640&qlt=80&fmt=webp",
+      "image_file": "product-images/BR-DUVET-B.jpg",
+      "dimensions_in": {
+        "w": 92,
+        "d": 96,
+        "h": 0.5
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "Target: duvet cover 96\" L x 92\" W; 2 shams 28\" x 20\"",
+      "main_color_hex": "#D3C9BF",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "30% linen, 70% rayon; 100% cotton backing",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock (ship and Culver City pickup)",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find",
+        "Wait for Black Friday"
+      ],
+      "rating": "3.6 · 2,039 reviews",
+      "description": "Splurge later. Heavier, drapier linen-blend look. Reviews are mixed (3.6), so wait for a Black Friday price.",
+      "image_status": "saved",
+      "slot": "BR-DUVET",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "BR-NIGHTSTAND-A",
+      "room": "bedroom",
+      "category": "Nightstand",
+      "role": "core",
+      "name": "Boho Wood and Rattan Nightstand",
+      "brand": "Sherman Oaks",
+      "retailer": "Facebook Marketplace",
+      "price": 30.0,
+      "regular_price": 40.0,
+      "qty": 1,
+      "line_total": 30.0,
+      "taxed": false,
+      "condition": "used",
+      "buy_url": "https://www.facebook.com/marketplace/item/1716325222760564/",
+      "backup_search_url": "https://www.facebook.com/marketplace/la/search?query=wood%20nightstand&maxPrice=70",
+      "image_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.84726-6/825279980_1555656396605663_6619868708207429413_n.jpg?stp=dst-jpg_tt6&cstp=mx1558x2048&ctp=p600x600&_nc_cat=107&ccb=1-7&_nc_sid=c5055e&_nc_ohc=hyMNQkZs0MgQ7kNvwG_7fqG&_nc_oc=AdrbEhropGKqe7cBPkZ9l1dsMbFy9jOZeiH3R_9Dsxmf1uULyrB0jXh3niwVrqXmaSMLfp-UlyeyMfnYwjZoD61O&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=APN5S1mo4jYSudEFacLMag&_nc_ss=79289&oh=00_AQN4i5TIPiQnG8QmHSSYEa-bOQXHraV0poMpsSMWvaCA_g&oe=6AD6C2A8",
+      "image_file": "product-images/BR-NIGHTSTAND-A.jpg",
+      "dimensions_in": {
+        "w": 16,
+        "d": 14,
+        "h": 24
+      },
+      "dimensions_estimated": [
+        "w",
+        "d",
+        "h"
+      ],
+      "dimensions_source": "Not stated in the listing. ESTIMATED 16\" W x 14\" D x 24\" H from listing photo proportions; ask the seller",
+      "main_color_hex": "#876237",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Wood with rattan; 2 shelves, 1 drawer (seller: drawer front loose, legs slightly wobbly)",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Listed on Facebook Marketplace",
+      "checked": "2026-10-16",
+      "tags": [
+        "Used",
+        "Deal",
+        "From my Excel"
+      ],
+      "rating": null,
+      "description": "Light brown wood and rattan with a drawer. Replaces the plastic cart (move that into the closet). Small scuffs on top.",
+      "image_status": "saved",
+      "slot": "BR-NIGHTSTAND",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "BR-NIGHTSTAND-B",
+      "room": "bedroom",
+      "category": "Nightstand",
+      "role": "alternate",
+      "name": "TARVA nightstand, solid pine",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 79.99,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 79.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/tarva-nightstand-pine-50219609/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/tarva-nightstand-pine__0624428_pe691835_s5.jpg?f=s",
+      "image_file": "product-images/BR-NIGHTSTAND-B.jpg",
+      "dimensions_in": {
+        "w": 18.875,
+        "d": 15.375,
+        "h": 24.375
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "IKEA: 18 7/8\" W x 15 3/8\" D x 24 3/8\" H",
+      "main_color_hex": "#F3DDB9",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Solid pine, fiberboard back",
+      "model_3d_url": "https://web-api.ikea.com/dimma/assets/1.2/50219609/PS01_S01_NV01/iqp3/glb_draco/e6c118f023804243bab51243c35b4821-50219609_PS01_S01_NV01_IQP3_2.0.glb?cn=pip",
+      "model_3d_status": "IKEA 3D model, link checked",
+      "model_3d_format": "glTF binary (.glb), Draco-compressed when the URL says glb_draco",
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "From my Excel"
+      ],
+      "rating": "4.1 · 212 reviews",
+      "description": "New solid wood that lasts for years. Leave it natural or give it a warm stain.",
+      "image_status": "saved",
+      "slot": "BR-NIGHTSTAND",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "BR-BEDLAMP-A",
+      "room": "bedroom",
+      "category": "Bedside lamp",
+      "role": "core",
+      "name": "STORSEGEL table lamp, ash/white",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 14.99,
+      "regular_price": 19.99,
+      "qty": 1,
+      "line_total": 14.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/storsegel-table-lamp-ash-white-60573576/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/storsegel-table-lamp-ash-white__1285773_pe933400_s5.jpg?f=s",
+      "image_file": "product-images/BR-BEDLAMP-A.jpg",
+      "dimensions_in": {
+        "w": 7,
+        "d": 7,
+        "h": 12
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "IKEA: diameter 7\", height 12\"",
+      "main_color_hex": "#C7C3BC",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Solid ash leg; recycled polyester shade; polystyrene diffuser",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock online (IKEA). $14.99 is the IKEA Family member price (free signup); regular $19.99",
+      "checked": "2026-10-16",
+      "tags": [
+        "From my Excel",
+        "Deal"
+      ],
+      "rating": "4.8 · 515 reviews",
+      "description": "A small ash tripod for reading in bed. Use a warm 2700K bulb.",
+      "bulb_spec": "max 9 W",
+      "image_status": "saved",
+      "slot": "BR-BEDLAMP",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "BR-RUG-A",
+      "room": "bedroom",
+      "category": "Bedroom rug",
+      "role": "core",
+      "name": "Jute Diamond Accent Rug, 2'x3', tan/ivory",
+      "brand": "Threshold",
+      "retailer": "Target",
+      "price": 20.0,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 20.0,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.target.com/p/-/A-94259116",
+      "backup_search_url": null,
+      "image_url": "https://target.scene7.com/is/image/Target/GUEST_a9db55a4-fa48-4136-a108-e2a7ddc5a29e?wid=640&hei=640&qlt=80&fmt=webp",
+      "image_file": "product-images/BR-RUG-A.jpg",
+      "dimensions_in": {
+        "w": 24,
+        "d": 36,
+        "h": 0.4
+      },
+      "dimensions_estimated": [
+        "h"
+      ],
+      "dimensions_source": "Target: 24\" x 36\", low pile under 1/2\" (0.4\" ESTIMATED)",
+      "main_color_hex": "#9C8268",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "51% jute, 24% wool, 21% rayon; cotton backing",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock (ship and Culver City pickup)",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find"
+      ],
+      "rating": "4.4 · 46 reviews",
+      "description": "Natural jute on the open side of the bed, so your first step in the morning isn't on cold floor.",
+      "image_status": "saved",
+      "slot": "BR-RUG",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "BR-RUG-B",
+      "room": "bedroom",
+      "category": "Bedroom rug",
+      "role": "alternate",
+      "name": "Jute Diamond Area Rug, 4'x6', tan/ivory",
+      "brand": "Threshold",
+      "retailer": "Target",
+      "price": 60.0,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 60.0,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.target.com/p/-/A-94259000",
+      "backup_search_url": null,
+      "image_url": "https://target.scene7.com/is/image/Target/GUEST_7719dd87-e617-41a1-b866-512f7f5162b0?wid=640&hei=640&qlt=80&fmt=webp",
+      "image_file": "product-images/BR-RUG-B.jpg",
+      "dimensions_in": {
+        "w": 48,
+        "d": 72,
+        "h": 0.4
+      },
+      "dimensions_estimated": [
+        "h"
+      ],
+      "dimensions_source": "Target: 48\" x 72\", low pile (0.4\" ESTIMATED)",
+      "main_color_hex": "#CBB398",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "51% jute, 24% wool, 21% rayon; cotton backing",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "UNAVAILABLE today (not shipping, not in store)",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find"
+      ],
+      "rating": "4.4 · 46 reviews",
+      "description": "The same rug in a size that reads as a real bedside rug.",
+      "image_status": "saved",
+      "slot": "BR-RUG",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "BR-DESK-A",
+      "room": "bedroom",
+      "category": "Desk, 40–48\"",
+      "role": "core",
+      "name": "Mid-Century Modern Wood Desk with 3 Drawers",
+      "brand": "El Segundo",
+      "retailer": "Facebook Marketplace",
+      "price": 50.0,
+      "regular_price": 150.0,
+      "qty": 1,
+      "line_total": 50.0,
+      "taxed": false,
+      "condition": "used",
+      "buy_url": "https://www.facebook.com/marketplace/item/1064722389899091/",
+      "backup_search_url": "https://www.facebook.com/marketplace/la/search?query=mid%20century%20desk&maxPrice=200",
+      "image_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.84726-6/843591988_975737141554427_4516988122665738688_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=p600x600&_nc_cat=102&ccb=1-7&_nc_sid=c5055e&_nc_ohc=1qt_iThVyb4Q7kNvwH1V_M7&_nc_oc=AdpQmecJVuqVXtbE_Yc6ujpNFrIDsmwLRdDuvtIN7uuFH5dpoe66xupdfT23I4cQpptVuOCnGjFiJLjcJbKf7hel&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=5fugx1AxSBMG9Mx1RMAOYA&_nc_ss=79289&oh=00_AQN8k1tRltChX0weVrhdqHwLUZeunsPRmxjL6asOIEyIZA&oe=6AD6BEE1",
+      "image_file": "product-images/BR-DESK-A.jpg",
+      "dimensions_in": {
+        "w": 44,
+        "d": 22,
+        "h": 30
+      },
+      "dimensions_estimated": [
+        "w",
+        "d",
+        "h"
+      ],
+      "dimensions_source": "Not stated in the listing. ESTIMATED 44\" W x 22\" D x 30\" H (typical 3-drawer mid-century desk); ask the seller before buying",
+      "main_color_hex": "#A8661E",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Solid wood, 3 side drawers + lap drawer",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Listed on Facebook Marketplace",
+      "checked": "2026-10-16",
+      "tags": [
+        "Used",
+        "Deal",
+        "From my Excel"
+      ],
+      "rating": null,
+      "description": "Solid wood, warm oak finish, three drawers plus a lap drawer. Goes on the wall right of the closet. Ask the seller for the width.",
+      "image_status": "saved",
+      "slot": "BR-DESK",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "BR-DESK-B",
+      "room": "bedroom",
+      "category": "Desk, 40–48\"",
+      "role": "alternate",
+      "name": "Mid Century Modern Style Desk and Chair",
+      "brand": "Burbank",
+      "retailer": "OfferUp",
+      "price": 100.0,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 100.0,
+      "taxed": false,
+      "condition": "used",
+      "buy_url": "https://offerup.com/item/detail/3ff2c1ea-ab1b-3d3b-a7ec-4c7396ab3013",
+      "backup_search_url": "https://offerup.com/search?q=mid%20century%20desk&price_max=150",
+      "image_url": "https://images.offerup.com/RTYvqYbgE30PFcmwpI_QlQMyS2s=/1440x1920/6f89/6f897612763c41d3925f09d1cefe1a9d.jpg",
+      "image_file": "product-images/BR-DESK-B.jpg",
+      "dimensions_in": {
+        "w": 42,
+        "d": 20,
+        "h": 30
+      },
+      "dimensions_estimated": [
+        "w",
+        "d",
+        "h"
+      ],
+      "dimensions_source": "Not stated in the listing. ESTIMATED 42\" W x 20\" D x 30\" H",
+      "main_color_hex": "#2B1008",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Wood (mid-century style); includes a chair",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Listed on OfferUp (state LISTED)",
+      "checked": "2026-10-16",
+      "tags": [
+        "Used",
+        "New find"
+      ],
+      "rating": null,
+      "description": "Desk and chair together, near IKEA Burbank. The seller mentions a few flaws; check the photos.",
+      "image_status": "saved",
+      "slot": "BR-DESK",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "BR-CHAIR-A",
+      "room": "bedroom",
+      "category": "Desk chair",
+      "role": "core",
+      "name": "Brown Leather Swivel Chair",
+      "brand": "Los Angeles",
+      "retailer": "Facebook Marketplace",
+      "price": 20.0,
+      "regular_price": 80.0,
+      "qty": 1,
+      "line_total": 20.0,
+      "taxed": false,
+      "condition": "used",
+      "buy_url": "https://www.facebook.com/marketplace/item/1381725777389820/",
+      "backup_search_url": "https://www.facebook.com/marketplace/la/search?query=leather%20office%20chair&maxPrice=70",
+      "image_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.84726-6/756440972_2040596703221065_8724117911892322194_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=p600x600&_nc_cat=104&ccb=1-7&_nc_sid=c5055e&_nc_ohc=9rlnbBLW6EQQ7kNvwGbZftN&_nc_oc=AdpLjaCSMiv-hsVnPjyuAdIaRJ_2sASNgGoZT2iohNxQ_7Aox6mPjtwZdIZ3ldW0Czdc6uM7YjIf4pP9MtO4Sd9h&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=pyPZYHWto_PxTEnALFTy5Q&_nc_ss=79289&oh=00_AQMv-GQd5ylNISzBJmOMl75INilnRIYFt4Bu0zUgSOlVRg&oe=6AD6D578",
+      "image_file": "product-images/BR-CHAIR-A.jpg",
+      "dimensions_in": {
+        "w": 24,
+        "d": 24,
+        "h": 36
+      },
+      "dimensions_estimated": [
+        "w",
+        "d",
+        "h"
+      ],
+      "dimensions_source": "Not stated in the listing. ESTIMATED 24\" x 24\" x 36\" (typical swivel office chair)",
+      "main_color_hex": "#1F1E1D",
+      "color_source": "Picked by eye from the official product photo (automatic sampling caught the photo background)",
+      "material": "Leather upholstery, swivel base",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Listed on Facebook Marketplace",
+      "checked": "2026-10-16",
+      "tags": [
+        "Used",
+        "Deal",
+        "From my Excel"
+      ],
+      "rating": null,
+      "description": "Brown leather echoes your sectional; listed as like new, pickup in Mid-Wilshire. Check the seams before you buy.",
+      "image_status": "saved",
+      "color_note": "Listing title says brown leather, but the listing photo looks black. Ask the seller",
+      "slot": "BR-CHAIR",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "BR-CHAIR-B",
+      "room": "bedroom",
+      "category": "Desk chair",
+      "role": "alternate",
+      "name": "FLINTAN office chair, beige",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 99.99,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 99.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/flintan-office-chair-beige-00492205/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/flintan-office-chair-beige__1007198_pe825954_s5.jpg?f=s",
+      "image_file": "product-images/BR-CHAIR-B.jpg",
+      "dimensions_in": {
+        "w": 28,
+        "d": 28,
+        "h": 44.875
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "IKEA: 28\" W x 28\" D, max height 44 7/8\", seat 17 3/4-22 7/8\"",
+      "main_color_hex": "#C5B7B0",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Powder-coated steel, polyester mesh and fabric, PU foam",
+      "model_3d_url": "https://web-api.ikea.com/dimma/assets/geomagical/70492202/PS01_S01_NV_01/simple/glb_draco/9bf4ff3b54bd4752b2349cdc8979c141-G-70492202-641c74d0828b70a1b58b01cae0fd9712388f83a1-simple+draco.glb?cn=pip",
+      "model_3d_status": "IKEA 3D model, link checked",
+      "model_3d_format": "glTF binary (.glb), Draco-compressed when the URL says glb_draco",
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "From my Excel"
+      ],
+      "rating": "4.4 · 1,365 reviews",
+      "description": "New and ergonomic, better for long work sessions.",
+      "image_status": "saved",
+      "slot": "BR-CHAIR",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "BR-DESKLAMP-A",
+      "room": "bedroom",
+      "category": "Desk lamp",
+      "role": "core",
+      "name": "TERTIAL work lamp, dark gray",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 19.99,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 19.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/tertial-work-lamp-dark-gray-20355434/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/tertial-work-lamp-dark-gray__0609306_pe684440_s5.jpg?f=s",
+      "image_file": "product-images/BR-DESKLAMP-A.jpg",
+      "dimensions_in": {
+        "w": 7,
+        "d": 20,
+        "h": 26
+      },
+      "dimensions_estimated": [
+        "d",
+        "h"
+      ],
+      "dimensions_source": "IKEA publishes only shade diameter 7\". Arm reach 20\" and working height 26\" are ESTIMATED",
+      "main_color_hex": "#4D4D4E",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Powder-coated steel arm and shade; ABS clamp",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "From my Excel"
+      ],
+      "rating": "4.6 · 2,179 reviews",
+      "description": "A design classic with an adjustable arm. Clamps to the desk edge to save surface space.",
+      "bulb_spec": "E26, max 13 W",
+      "image_status": "saved",
+      "slot": "BR-DESKLAMP",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "BR-DESKLAMP-B",
+      "room": "bedroom",
+      "category": "Desk lamp",
+      "role": "alternate",
+      "name": "Crosby Schoolhouse Desk Lamp, black",
+      "brand": "Threshold",
+      "retailer": "Target",
+      "price": 50.0,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 50.0,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.target.com/p/-/A-17303197",
+      "backup_search_url": null,
+      "image_url": "https://target.scene7.com/is/image/Target/GUEST_97ef5156-1a02-44ac-9b17-db506c37eb74?wid=640&hei=640&qlt=80&fmt=webp",
+      "image_file": "product-images/BR-DESKLAMP-B.jpg",
+      "dimensions_in": {
+        "w": 7.5,
+        "d": 18,
+        "h": 18
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "Target: 18\" H x 7.5\" W x 18\" D",
+      "main_color_hex": "#1E1E1E",
+      "color_source": "Picked by eye from the official product photo (automatic sampling caught the photo background)",
+      "material": "Metal body and bell shade",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Ships; not available for Culver City pickup",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find"
+      ],
+      "rating": "4.2 · 185 reviews",
+      "description": "Black metal schoolhouse shape; looks more finished than a task lamp.",
+      "bulb_spec": "E26",
+      "image_status": "saved",
+      "slot": "BR-DESKLAMP",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "BR-ART-A",
+      "room": "bedroom",
+      "category": "Art above the bed",
+      "role": "core",
+      "name": "BLODFLÄDER picture, two birds, 15¾x19¾\", oak-effect frame",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 39.99,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 39.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/blodflaeder-picture-two-birds-00601921/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/blodflaeder-picture-two-birds__1392148_pe966012_s5.jpg?f=s",
+      "image_file": "product-images/BR-ART-A.jpg",
+      "dimensions_in": {
+        "w": 16.5,
+        "d": 1.25,
+        "h": 20.5
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "IKEA: frame 16 1/2\" x 20 1/2\" x 1 1/4\"",
+      "main_color_hex": "#A9B3AD",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Poster 80% recycled polyester / 20% linen; fiberboard frame with paper foil",
+      "model_3d_url": "https://web-api.ikea.com/dimma/assets/1.2/00601921/PS01_S01_NV01/rqp3/glb_draco/ea9c552bc00d727ac275442d6bca1165-00601921_PS01_S01_NV01_RQP3_4.0.glb?cn=pip",
+      "model_3d_status": "IKEA 3D model, link checked",
+      "model_3d_format": "glTF binary (.glb), Draco-compressed when the URL says glb_draco",
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "From my Excel"
+      ],
+      "rating": "5.0 · 23 reviews",
+      "description": "Abstract white shapes in an oak frame. Center it 8–10\" above the headboard; add a second piece later to widen it.",
+      "image_status": "saved",
+      "slot": "BR-ART",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "BR-ART-B",
+      "room": "bedroom",
+      "category": "Art above the bed",
+      "role": "alternate",
+      "name": "PJÄTTERYD picture, Swedish sand dunes, 22x22\"",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 69.99,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 69.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/pjaetteryd-picture-swedish-sand-dunes-40602018/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/pjaetteryd-picture-swedish-sand-dunes__1385657_pe963379_s5.jpg?f=s",
+      "image_file": "product-images/BR-ART-B.jpg",
+      "dimensions_in": {
+        "w": 22,
+        "d": 1,
+        "h": 22
+      },
+      "dimensions_estimated": [
+        "d"
+      ],
+      "dimensions_source": "IKEA: set of 3 canvases, each 22\" x 22\" (package quantity 3). Canvas depth ESTIMATED. Hung in a row with 1.5\" gaps it is about 69\" wide, wider than the 58\" headboard",
+      "main_color_hex": "#BABCBC",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "100% polyester poster; fiberboard frame",
+      "model_3d_url": "https://web-api.ikea.com/dimma/assets/geomagical/40602018/PS01_S01_NV_01/simple/glb_draco/688deeb7ed2975344f480be3047f8ca6-G-40602018-abe5f4391b7daacb6bc7594cd29ff59528744abc-simple+draco.glb?cn=pip",
+      "model_3d_status": "IKEA 3D model, link checked",
+      "model_3d_format": "glTF binary (.glb), Draco-compressed when the URL says glb_draco",
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find"
+      ],
+      "rating": "4.4 · 23 reviews",
+      "description": "Sand, sea grass and sky in exactly your palette. The best-looking upgrade if the budget allows.",
+      "image_status": "saved",
+      "pieces": 3,
+      "slot": "BR-ART",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "BR-CURTAIN-A",
+      "room": "bedroom",
+      "category": "Curtains + rod",
+      "role": "core",
+      "name": "GINSTMOTT curtains, 1 pair, 57x98\", beige",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 34.99,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 34.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/ginstmott-curtains-1-pair-beige-with-heading-tape-80597171/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/ginstmott-curtains-1-pair-beige-with-heading-tape__1308585_pe939896_s5.jpg?f=s",
+      "image_file": "product-images/BR-CURTAIN-A.jpg",
+      "dimensions_in": {
+        "w": 57,
+        "d": 0.5,
+        "h": 98
+      },
+      "dimensions_estimated": [
+        "d"
+      ],
+      "dimensions_source": "IKEA: each panel 57\" W x 98\" L; 1 pair = 2 panels",
+      "main_color_hex": "#C2BCAD",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "100% polyester (min. 90% recycled)",
+      "model_3d_url": "https://web-api.ikea.com/dimma/assets/1.2/80597171/LPT_S02_NV01/rqp3/glb_draco/7ee69831449ddcbc3acb2bb1edb00522-80597171_LPT_S02_NV01_RQP3_4.0.glb?cn=pip",
+      "model_3d_status": "IKEA 3D model, link checked",
+      "model_3d_format": "glTF binary (.glb), Draco-compressed when the URL says glb_draco",
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "From my Excel"
+      ],
+      "rating": "4.5 · 454 reviews",
+      "description": "Same panels as the living room so the apartment reads as one place. Hang in front of the white blinds.",
+      "unit_note": "one unit = 2 panels",
+      "image_status": "saved",
+      "slot": "BR-CURTAIN",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "BR-ROD-A",
+      "room": "bedroom",
+      "category": "Curtains + rod",
+      "role": "core",
+      "name": "HUGAD curtain rod set, 82 3/4-151 1/2\", black",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 25.0,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 25.0,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/hugad-curtain-rod-combination-with-wall-ceiling-brackets-with-finials-black-s89634089/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/hugad-curtain-rod-combination-with-wall-ceiling-brackets-with-finials-black__1560959_pe1025519_s5.jpg?f=s",
+      "image_file": "product-images/BR-ROD-A.jpg",
+      "dimensions_in": {
+        "w": 92,
+        "d": 4,
+        "h": 1
+      },
+      "dimensions_estimated": [
+        "d",
+        "h"
+      ],
+      "dimensions_source": "IKEA: adjustable 82 3/4\"-151 1/2\" (set to 92\" here). Bracket projection and profile ESTIMATED",
+      "main_color_hex": "#323137",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Steel rod and brackets, powder coat; polypropylene finials",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "Core pick",
+        "Changed for fit"
+      ],
+      "rating": "4.3 · 33 reviews",
+      "description": "Same long rod as the living room. Replaces the shorter set, which cannot reach 8-12\" past each side of the bedroom window.",
+      "image_status": "saved",
+      "slot": "BR-ROD",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "BR-ROD-B",
+      "room": "bedroom",
+      "category": "Curtains + rod",
+      "role": "alternate",
+      "name": "HUGAD curtain rod set, 47¼–82¾\", black",
+      "brand": "IKEA",
+      "retailer": "IKEA",
+      "price": 18.5,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 18.5,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.ikea.com/us/en/p/hugad-curtain-rod-combination-with-wall-ceiling-brackets-with-finials-black-s59634076/",
+      "backup_search_url": null,
+      "image_url": "https://www.ikea.com/us/en/images/products/hugad-curtain-rod-combination-with-wall-ceiling-brackets-with-finials-black__1560959_pe1025519_s5.jpg?f=s",
+      "image_file": "product-images/BR-ROD-B.jpg",
+      "dimensions_in": {
+        "w": 82.75,
+        "d": 4,
+        "h": 1
+      },
+      "dimensions_estimated": [
+        "d",
+        "h"
+      ],
+      "dimensions_source": "IKEA: adjustable 47 1/4\"-82 3/4\". TOO SHORT for the estimated 72\" window plus 8-12\" each side (needs 88-96\"). Kept only as a fallback",
+      "main_color_hex": "#323137",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Steel, powder coat; polypropylene finials",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock online (IKEA)",
+      "checked": "2026-10-16",
+      "tags": [
+        "Alternate",
+        "Too short for this window (fallback only)"
+      ],
+      "rating": "4.3 · 33 reviews",
+      "description": "The shorter set for the bedroom window.",
+      "image_status": "saved",
+      "slot": "BR-ROD",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "BR-HAMPER-A",
+      "room": "bedroom",
+      "category": "Hamper",
+      "role": "core",
+      "name": "Canvas Rectangle Laundry Hamper, beige, 80L",
+      "brand": "Brightroom",
+      "retailer": "Target",
+      "price": 13.0,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 13.0,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.target.com/p/-/A-89700574",
+      "backup_search_url": null,
+      "image_url": "https://target.scene7.com/is/image/Target/GUEST_afeac4da-73b2-4022-8cad-e0d5e6af6259?wid=640&hei=640&qlt=80&fmt=webp",
+      "image_file": "product-images/BR-HAMPER-A.jpg",
+      "dimensions_in": {
+        "w": 13,
+        "d": 18,
+        "h": 22
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "Target: 22\" H x 13\" W x 18\" D, 80 L",
+      "main_color_hex": "#DAD0C6",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "100% recycled PET canvas",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Ships; not available for Culver City pickup",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find"
+      ],
+      "rating": "4.2 · 285 reviews",
+      "description": "Gets the clothes off the floor and the bed. Lives in the closet.",
+      "image_status": "saved",
+      "slot": "BR-HAMPER",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "BR-HAMPER-B",
+      "room": "bedroom",
+      "category": "Hamper",
+      "role": "alternate",
+      "name": "Coiled Rope Laundry Hamper",
+      "brand": "Brightroom",
+      "retailer": "Target",
+      "price": 32.0,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 32.0,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.target.com/p/-/A-89700567",
+      "backup_search_url": null,
+      "image_url": "https://target.scene7.com/is/image/Target/GUEST_c95f0064-a30d-4477-a2b4-73a99687457b?wid=640&hei=640&qlt=80&fmt=webp",
+      "image_file": "product-images/BR-HAMPER-B.jpg",
+      "dimensions_in": {
+        "w": 15,
+        "d": 14,
+        "h": 22
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "Target: 22\" H x 15\" W x 14\" D",
+      "main_color_hex": "#EDECEC",
+      "color_source": "Sampled from the official product photo (dominant color, center of image); approximate because of photo lighting",
+      "material": "Polyester and cotton rope",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Ships; not available for Culver City pickup",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find"
+      ],
+      "rating": "4.6 · 77 reviews",
+      "description": "Woven rope you can leave out in the room as decor.",
+      "image_status": "saved",
+      "slot": "BR-HAMPER",
+      "is_default_in_slot": false
+    },
+    {
+      "id": "BR-PLANT-A",
+      "room": "bedroom",
+      "category": "Faux plant",
+      "role": "core",
+      "name": "14\" artificial olive plant in two-tone ceramic vase",
+      "brand": "Better Homes & Gardens",
+      "retailer": "Walmart",
+      "price": 15.72,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 15.72,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.walmart.com/ip/5066677723",
+      "backup_search_url": null,
+      "image_url": "https://i5.walmartimages.com/seo/Better-Homes-Gardens-14in-Indoor-Artificial-Olive-Plant-in-2-Tone-Ceramic-Vase_01ca3d35-a9a4-4548-b6a5-d47d13ca8aeb.32cfbc918f352a3f6607d2f3be4629ac.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
+      "image_file": "product-images/BR-PLANT-A.jpg",
+      "dimensions_in": {
+        "w": 10,
+        "d": 10,
+        "h": 14
+      },
+      "dimensions_estimated": [
+        "w",
+        "d"
+      ],
+      "dimensions_source": "Walmart: 14\" tall. Width 10\" ESTIMATED",
+      "main_color_hex": "#6F7B55",
+      "color_source": "Picked by eye from the official product photo (automatic sampling caught the photo background)",
+      "material": "Polyester leaves, ceramic vase",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock (Walmart)",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find"
+      ],
+      "rating": "4.6 · 1,237 reviews",
+      "description": "Tabletop olive for the desk or nightstand, matching the tree in the living room.",
+      "image_status": "saved",
+      "price_note": "Walmart raised the price from $14.97 (lookbook, Oct 15) to $15.72 on Oct 16",
+      "slot": "BR-PLANT",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "BR-DECOR-A",
+      "room": "bedroom",
+      "category": "Small decor",
+      "role": "core",
+      "name": "Ceramic Cypress and Santal Scented Jar Candle, 6oz",
+      "brand": "Hearth & Hand with Magnolia",
+      "retailer": "Target",
+      "price": 8.99,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 8.99,
+      "taxed": true,
+      "condition": "new",
+      "buy_url": "https://www.target.com/p/-/A-95161127",
+      "backup_search_url": null,
+      "image_url": "https://target.scene7.com/is/image/Target/GUEST_18b48f70-1b76-490f-9057-810aa724fed6?wid=640&hei=640&qlt=80&fmt=webp",
+      "image_file": "product-images/BR-DECOR-A.jpg",
+      "dimensions_in": {
+        "w": 3.03,
+        "d": 3.03,
+        "h": 3.15
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "Target: 3.15\" H x 3.03\" W x 3.03\" D",
+      "main_color_hex": "#EDE7DA",
+      "color_source": "Picked by eye from the official product photo (automatic sampling caught the photo background)",
+      "material": "Ceramic jar; soy wax blend",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "In stock to ship (Target TCIN 95161127), $8.99. The lookbook linked the parent page, which opens on the Balsam & Berry scent",
+      "checked": "2026-10-16",
+      "tags": [
+        "New find"
+      ],
+      "rating": null,
+      "description": "A woody scent in a ceramic jar for the nightstand. New this season, so no reviews yet.",
+      "image_status": "saved",
+      "image_note": "Target's official photo for this scent shows the off-white jar with a red interior and a holiday label",
+      "slot": "BR-DECOR",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-WIFI-A",
+      "room": "living",
+      "category": "WiFi and cable cabinet",
+      "role": "core",
+      "name": "Rattan Side Table (cabinet with cane door and open top shelf)",
+      "brand": "Used (private seller)",
+      "retailer": "Facebook Marketplace",
+      "price": 25.0,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 25.0,
+      "taxed": false,
+      "condition": "used",
+      "buy_url": "https://www.facebook.com/marketplace/item/1695399738207375/",
+      "backup_search_url": "https://www.facebook.com/marketplace/la/search?query=rattan%20cabinet&maxPrice=50",
+      "image_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.84726-6/777825401_943471672116215_4060072093479530835_n.jpg?stp=dst-jpg_tt6&cstp=mx1537x2048&ctp=p600x600&_nc_cat=101&ccb=1-7&_nc_sid=c5055e&_nc_ohc=f71Zhn1e27UQ7kNvwH40mCf&_nc_oc=AdoBeerM3K8X6j_pf3phglLTfsNuXxi7I8XCCkaDJvDKfnwl3OeUg2zNMqsW3AjwniVr220Z2e0FnGkFQpv6OYjf&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=05Zxx-pbvE2zFM-yFmpGNw&_nc_ss=7b289&oh=00_AQOIDuagx05iIM49gtAO5CPuNymCh2UfKscVj5oFxuHKdQ&oe=6AD89EEA",
+      "image_file": "product-images/LR-WIFI-A.jpg",
+      "dimensions_in": {
+        "w": 15.5,
+        "d": 16,
+        "h": 28
+      },
+      "dimensions_estimated": [],
+      "dimensions_source": "Facebook listing: 28\" H x 15 1/2\" W x 16\" L",
+      "main_color_hex": "#B98E5A",
+      "color_source": "Picked by eye from the listing photo (automatic sampling caught the cane holes and dark floor)",
+      "material": "Light oak-look wood, cane door, tapered legs",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Listed on Facebook Marketplace (Long Beach), used, acceptable: scratches on top. Listed 8 weeks ago, so message the seller first",
+      "checked": "2026-10-16",
+      "tags": [
+        "Used",
+        "Core pick",
+        "New find",
+        "Over budget (approved)"
+      ],
+      "rating": null,
+      "description": "Holds the router and modem behind a cane door that lets the WiFi signal and air through; the open shelf takes the speaker. Matches the rattan sconces.",
+      "image_status": "saved",
+      "slot": "LR-WIFI",
+      "is_default_in_slot": true
+    },
+    {
+      "id": "LR-WIFI-B",
+      "room": "living",
+      "category": "WiFi and cable cabinet",
+      "role": "alternate",
+      "name": "Rattan cabinet, 59\" tall, black frame with rattan doors",
+      "brand": "Used (private seller)",
+      "retailer": "Facebook Marketplace",
+      "price": 50.0,
+      "regular_price": null,
+      "qty": 1,
+      "line_total": 50.0,
+      "taxed": false,
+      "condition": "used",
+      "buy_url": "https://www.facebook.com/marketplace/item/1822845165414944/",
+      "backup_search_url": "https://www.facebook.com/marketplace/la/search?query=rattan%20cabinet&maxPrice=60",
+      "image_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.84726-6/842870114_2558473327949063_6535041773752891903_n.jpg?stp=dst-jpg_tt6&cstp=mx1086x1448&ctp=p600x600&_nc_cat=108&ccb=1-7&_nc_sid=c5055e&_nc_ohc=AaejyHsW1gUQ7kNvwGlVGPA&_nc_oc=Ado4aWA3kfzv3Vui3511e4SsnMREquLusJFbK4NRBaNmUSTocG4V0WSh8g91ftKeVuojQ8j2fFs0PmSS-RGgAcOL&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=8eZU9xDlqoOTH5ENexCn3Q&_nc_ss=7b289&oh=00_AQMe6E0kjLhgb0-qR4_Slu3cPNE1KFOMfXJuUZ3F8Hm3NQ&oe=6AD87861",
+      "image_file": "product-images/LR-WIFI-B.jpg",
+      "dimensions_in": {
+        "w": 24,
+        "d": 14,
+        "h": 59
+      },
+      "dimensions_estimated": [
+        "w",
+        "d"
+      ],
+      "dimensions_source": "Facebook listing: 59\" tall. Width 24\" and depth 14\" ESTIMATED from the listing photo",
+      "main_color_hex": "#C09264",
+      "color_source": "Sampled from the listing photo",
+      "material": "Rattan doors, black metal frame and X-base",
+      "model_3d_url": null,
+      "model_3d_status": "none offered by the retailer",
+      "model_3d_format": null,
+      "status_today": "Listed on Facebook Marketplace (Los Angeles), used, like new",
+      "checked": "2026-10-16",
+      "tags": [
+        "Used",
+        "Alternate",
+        "New find"
+      ],
+      "rating": null,
+      "description": "Taller statement piece: hides more equipment and balances the TV wall. $25 more than option A.",
+      "image_status": "saved",
+      "slot": "LR-WIFI",
+      "is_default_in_slot": false
+    }
+  ],
+  "slots": [
+    {
+      "slot_id": "LR-RUG",
+      "room": "living",
+      "label": "Area rug, 8x10",
+      "options": [
+        "LR-RUG-A",
+        "LR-RUG-B"
+      ],
+      "default_option": "LR-RUG-A",
+      "anchor": "floor",
+      "wall": null,
+      "on_top_of": null,
+      "rule_applied": "Rug under the sectional's front legs: 26\" under the long leg (front legs at y=87), 12\" under the short leg (front legs at x=73)",
+      "notes": "Long side runs east-west. Starts 2\" in front of the console so the console sits on the floor.",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 64,
+              "y": 20,
+              "z": 0
+            },
+            "max": {
+              "x": 184,
+              "y": 114,
+              "z": 1.25
+            }
+          },
+          "position_center": {
+            "x": 124.0,
+            "y": 67.0,
+            "z": 0.62
+          },
+          "rotation_deg_z": 90
+        }
+      ],
+      "mount": "floor"
+    },
+    {
+      "slot_id": "LR-CURTAIN",
+      "room": "living",
+      "label": "Curtains (1 pair)",
+      "options": [
+        "LR-CURTAIN-A",
+        "LR-CURTAIN-B"
+      ],
+      "default_option": "LR-CURTAIN-A",
+      "anchor": "wall",
+      "wall": "LR-W-EAST",
+      "on_top_of": null,
+      "rule_applied": "Hung from the rod 3\" below the ceiling; panels hang to 1/2\" above the floor",
+      "notes": "Closed state: each panel spans 57\" so together they cover y=3 to y=117. GINSTMOTT is 98\" long; the drop from the rings is about 91.5\", so hem about 6.5\" (IKEA panels have adjustable heading tape). Quince option needs 2 panels at 96\": hem about 4.5\".",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 1,
+              "y": 3,
+              "z": 0.5
+            },
+            "max": {
+              "x": 2,
+              "y": 17,
+              "z": 92
+            }
+          },
+          "position_center": {
+            "x": 1.5,
+            "y": 10.0,
+            "z": 46.25
+          },
+          "rotation_deg_z": -90,
+          "label": "north panel, open (stacked)"
+        },
+        {
+          "bbox": {
+            "min": {
+              "x": 1,
+              "y": 103,
+              "z": 0.5
+            },
+            "max": {
+              "x": 2,
+              "y": 117,
+              "z": 92
+            }
+          },
+          "position_center": {
+            "x": 1.5,
+            "y": 110.0,
+            "z": 46.25
+          },
+          "rotation_deg_z": -90,
+          "label": "south panel, open (stacked)"
+        }
+      ],
+      "mount": "wall"
+    },
+    {
+      "slot_id": "LR-ROD",
+      "room": "living",
+      "label": "Curtain rod",
+      "options": [
+        "LR-ROD-A"
+      ],
+      "default_option": "LR-ROD-A",
+      "anchor": "wall",
+      "wall": "LR-W-EAST",
+      "on_top_of": null,
+      "rule_applied": "Rod 3\" below the ceiling (z=93) and 10\" past each side of the window (window y=13 to 107)",
+      "notes": "Set the adjustable rod to 114\". South end stops 5\" short of the front-door casing.",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 0,
+              "y": 3,
+              "z": 92.5
+            },
+            "max": {
+              "x": 4,
+              "y": 117,
+              "z": 93.5
+            }
+          },
+          "position_center": {
+            "x": 2.0,
+            "y": 60.0,
+            "z": 93.0
+          },
+          "rotation_deg_z": -90
+        }
+      ],
+      "mount": "wall"
+    },
+    {
+      "slot_id": "LR-FLOORLAMP",
+      "room": "living",
+      "label": "Floor lamp",
+      "options": [
+        "LR-FLOORLAMP-A",
+        "LR-FLOORLAMP-B"
+      ],
+      "default_option": "LR-FLOORLAMP-A",
+      "anchor": "floor",
+      "wall": null,
+      "on_top_of": null,
+      "rule_applied": null,
+      "notes": "Beside the recliner end of the short leg, as the main evening light.",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 44,
+              "y": 4,
+              "z": 0
+            },
+            "max": {
+              "x": 68,
+              "y": 28,
+              "z": 59
+            }
+          },
+          "position_center": {
+            "x": 56.0,
+            "y": 16.0,
+            "z": 29.5
+          },
+          "rotation_deg_z": 0
+        }
+      ],
+      "mount": "floor"
+    },
+    {
+      "slot_id": "LR-TABLELAMP",
+      "room": "living",
+      "label": "Table lamp",
+      "options": [
+        "LR-TABLELAMP-A"
+      ],
+      "default_option": "LR-TABLELAMP-A",
+      "anchor": "on top of",
+      "wall": null,
+      "on_top_of": "EX-LR-DININGTABLE",
+      "rule_applied": null,
+      "notes": "Moved from the console to the dining table: the TV (about 48\" wide) fills the 52\" console, so a lamp there would block the screen. Cord to the dining-wall outlet is not confirmed.",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 163.25,
+              "y": 210.75,
+              "z": 30
+            },
+            "max": {
+              "x": 171.75,
+              "y": 219.25,
+              "z": 44
+            }
+          },
+          "position_center": {
+            "x": 167.5,
+            "y": 215.0,
+            "z": 37.0
+          },
+          "rotation_deg_z": 0
+        }
+      ],
+      "mount": "floor",
+      "mount_note": "Floor-supported: rests on EX-LR-DININGTABLE"
+    },
+    {
+      "slot_id": "LR-SCONCE",
+      "room": "living",
+      "label": "Plug-in wall sconces (pair)",
+      "options": [
+        "LR-SCONCE-A",
+        "LR-SCONCE-B"
+      ],
+      "default_option": "LR-SCONCE-A",
+      "anchor": "wall",
+      "wall": "LR-W-NORTH",
+      "on_top_of": null,
+      "rule_applied": "Center height 60\", 10\" outside each edge of the TV",
+      "notes": "Cords drop to the floor in the cord raceway.",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 81.65,
+              "y": 0,
+              "z": 53.5
+            },
+            "max": {
+              "x": 89.95,
+              "y": 9,
+              "z": 66.5
+            }
+          },
+          "position_center": {
+            "x": 85.8,
+            "y": 4.5,
+            "z": 60.0
+          },
+          "rotation_deg_z": 0,
+          "label": "east of TV"
+        },
+        {
+          "bbox": {
+            "min": {
+              "x": 158.05,
+              "y": 0,
+              "z": 53.5
+            },
+            "max": {
+              "x": 166.35,
+              "y": 9,
+              "z": 66.5
+            }
+          },
+          "position_center": {
+            "x": 162.2,
+            "y": 4.5,
+            "z": 60.0
+          },
+          "rotation_deg_z": 0,
+          "label": "west of TV"
+        }
+      ],
+      "mount": "wall"
+    },
+    {
+      "slot_id": "LR-COFFEE",
+      "room": "living",
+      "label": "Round coffee table",
+      "options": [
+        "LR-COFFEE-A",
+        "LR-COFFEE-B"
+      ],
+      "default_option": "LR-COFFEE-A",
+      "anchor": "floor",
+      "wall": null,
+      "on_top_of": null,
+      "rule_applied": "16\" from the long-leg seat front (y=84) and 18\" from the short-leg seat front (x=76)",
+      "notes": null,
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 94,
+              "y": 32,
+              "z": 0
+            },
+            "max": {
+              "x": 130,
+              "y": 68,
+              "z": 20.5
+            }
+          },
+          "position_center": {
+            "x": 112.0,
+            "y": 50.0,
+            "z": 10.25
+          },
+          "rotation_deg_z": 0
+        }
+      ],
+      "mount": "floor"
+    },
+    {
+      "slot_id": "LR-PILLOW-NEUTRAL",
+      "room": "living",
+      "label": "Pillow covers, cream (x2)",
+      "options": [
+        "LR-PILLOW-NEUTRAL-A"
+      ],
+      "default_option": "LR-PILLOW-NEUTRAL-A",
+      "anchor": "on top of",
+      "wall": null,
+      "on_top_of": "EX-LR-SECTIONAL",
+      "rule_applied": null,
+      "notes": null,
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 130,
+              "y": 100,
+              "z": 19
+            },
+            "max": {
+              "x": 150,
+              "y": 105,
+              "z": 39
+            }
+          },
+          "position_center": {
+            "x": 140.0,
+            "y": 102.5,
+            "z": 29.0
+          },
+          "rotation_deg_z": 0,
+          "label": "long leg, west seat"
+        },
+        {
+          "bbox": {
+            "min": {
+              "x": 80,
+              "y": 100,
+              "z": 19
+            },
+            "max": {
+              "x": 100,
+              "y": 105,
+              "z": 39
+            }
+          },
+          "position_center": {
+            "x": 90.0,
+            "y": 102.5,
+            "z": 29.0
+          },
+          "rotation_deg_z": 0,
+          "label": "long leg, by the corner"
+        }
+      ],
+      "mount": "floor",
+      "mount_note": "Floor-supported: rests on EX-LR-SECTIONAL"
+    },
+    {
+      "slot_id": "LR-PILLOW-ACCENT",
+      "room": "living",
+      "label": "Pillow covers, rust (x2)",
+      "options": [
+        "LR-PILLOW-ACCENT-A",
+        "LR-PILLOW-ACCENT-B"
+      ],
+      "default_option": "LR-PILLOW-ACCENT-A",
+      "anchor": "on top of",
+      "wall": null,
+      "on_top_of": "EX-LR-SECTIONAL",
+      "rule_applied": null,
+      "notes": null,
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 50,
+              "y": 90,
+              "z": 19
+            },
+            "max": {
+              "x": 70,
+              "y": 95,
+              "z": 39
+            }
+          },
+          "position_center": {
+            "x": 60.0,
+            "y": 92.5,
+            "z": 29.0
+          },
+          "rotation_deg_z": 0,
+          "label": "corner"
+        },
+        {
+          "bbox": {
+            "min": {
+              "x": 41,
+              "y": 40,
+              "z": 19
+            },
+            "max": {
+              "x": 46,
+              "y": 60,
+              "z": 39
+            }
+          },
+          "position_center": {
+            "x": 43.5,
+            "y": 50.0,
+            "z": 29.0
+          },
+          "rotation_deg_z": -90,
+          "label": "short leg"
+        }
+      ],
+      "mount": "floor",
+      "mount_note": "Floor-supported: rests on EX-LR-SECTIONAL"
+    },
+    {
+      "slot_id": "LR-PILLOW-INSERT",
+      "room": "living",
+      "label": "Pillow inserts (x4)",
+      "options": [
+        "LR-PILLOW-INSERT-A"
+      ],
+      "default_option": "LR-PILLOW-INSERT-A",
+      "anchor": "on top of",
+      "wall": null,
+      "on_top_of": "EX-LR-SECTIONAL",
+      "rule_applied": null,
+      "notes": "Same positions as the four covers; render inside them (not visible).",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 130,
+              "y": 100,
+              "z": 19
+            },
+            "max": {
+              "x": 150,
+              "y": 105,
+              "z": 39
+            }
+          },
+          "position_center": {
+            "x": 140.0,
+            "y": 102.5,
+            "z": 29.0
+          },
+          "rotation_deg_z": 0,
+          "label": "inside cream cover 1"
+        },
+        {
+          "bbox": {
+            "min": {
+              "x": 80,
+              "y": 100,
+              "z": 19
+            },
+            "max": {
+              "x": 100,
+              "y": 105,
+              "z": 39
+            }
+          },
+          "position_center": {
+            "x": 90.0,
+            "y": 102.5,
+            "z": 29.0
+          },
+          "rotation_deg_z": 0,
+          "label": "inside cream cover 2"
+        },
+        {
+          "bbox": {
+            "min": {
+              "x": 50,
+              "y": 90,
+              "z": 19
+            },
+            "max": {
+              "x": 70,
+              "y": 95,
+              "z": 39
+            }
+          },
+          "position_center": {
+            "x": 60.0,
+            "y": 92.5,
+            "z": 29.0
+          },
+          "rotation_deg_z": 0,
+          "label": "inside rust cover 1"
+        },
+        {
+          "bbox": {
+            "min": {
+              "x": 41,
+              "y": 40,
+              "z": 19
+            },
+            "max": {
+              "x": 46,
+              "y": 60,
+              "z": 39
+            }
+          },
+          "position_center": {
+            "x": 43.5,
+            "y": 50.0,
+            "z": 29.0
+          },
+          "rotation_deg_z": -90,
+          "label": "inside rust cover 2"
+        }
+      ],
+      "mount": "floor",
+      "mount_note": "Floor-supported: rests on EX-LR-SECTIONAL"
+    },
+    {
+      "slot_id": "LR-THROW",
+      "room": "living",
+      "label": "Throw",
+      "options": [
+        "LR-THROW-A"
+      ],
+      "default_option": "LR-THROW-A",
+      "anchor": "on top of",
+      "wall": null,
+      "on_top_of": "EX-LR-SECTIONAL",
+      "rule_applied": null,
+      "notes": "Folded and draped over the recliner end of the short leg.",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 38,
+              "y": 34,
+              "z": 19
+            },
+            "max": {
+              "x": 74,
+              "y": 70,
+              "z": 21
+            }
+          },
+          "position_center": {
+            "x": 56.0,
+            "y": 52.0,
+            "z": 20.0
+          },
+          "rotation_deg_z": -90
+        }
+      ],
+      "mount": "floor",
+      "mount_note": "Floor-supported: rests on EX-LR-SECTIONAL"
+    },
+    {
+      "slot_id": "LR-ART",
+      "room": "living",
+      "label": "Large wall art",
+      "options": [
+        "LR-ART-A",
+        "LR-ART-B"
+      ],
+      "default_option": "LR-ART-A",
+      "anchor": "wall",
+      "wall": "LR-W-WEST",
+      "on_top_of": null,
+      "rule_applied": "Centered 57\" from the floor",
+      "notes": "On the open north part of the west wall, facing the sectional's short leg and visible from the front door. Clear of the outlet (z=12) and the return grille (y=89+). Option B (47x16) uses the same center.",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 220.5,
+              "y": 24,
+              "z": 41
+            },
+            "max": {
+              "x": 222,
+              "y": 72,
+              "z": 73
+            }
+          },
+          "position_center": {
+            "x": 221.25,
+            "y": 48.0,
+            "z": 57.0
+          },
+          "rotation_deg_z": 90
+        }
+      ],
+      "mount": "wall"
+    },
+    {
+      "slot_id": "LR-MIRROR",
+      "room": "living",
+      "label": "Round mirror",
+      "options": [
+        "LR-MIRROR-A",
+        "LR-MIRROR-B"
+      ],
+      "default_option": "LR-MIRROR-A",
+      "anchor": "wall",
+      "wall": "LR-W-WEST",
+      "on_top_of": null,
+      "rule_applied": "Centered 62\" (mirrors hang a little higher than art so they reflect at eye level; 57\" rule applies to art)",
+      "notes": "In the dining nook, across from the east window, to bounce morning light. The lookbook said 'by the entry', but the front door swings open flat against the only wall next to it.",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 221,
+              "y": 216,
+              "z": 50
+            },
+            "max": {
+              "x": 222,
+              "y": 240,
+              "z": 74
+            }
+          },
+          "position_center": {
+            "x": 221.5,
+            "y": 228.0,
+            "z": 62.0
+          },
+          "rotation_deg_z": 90
+        }
+      ],
+      "mount": "wall"
+    },
+    {
+      "slot_id": "LR-PLANT",
+      "room": "living",
+      "label": "Faux olive tree",
+      "options": [
+        "LR-PLANT-A"
+      ],
+      "default_option": "LR-PLANT-A",
+      "anchor": "floor",
+      "wall": null,
+      "on_top_of": null,
+      "rule_applied": null,
+      "notes": "On the TV wall next to the WiFi cabinet, so the corner reads as one styled group (moved from the window corner so it doesn't stand in front of the glass).",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 184,
+              "y": 2,
+              "z": 0
+            },
+            "max": {
+              "x": 204,
+              "y": 22,
+              "z": 48
+            }
+          },
+          "position_center": {
+            "x": 194.0,
+            "y": 12.0,
+            "z": 24.0
+          },
+          "rotation_deg_z": 0
+        }
+      ],
+      "mount": "floor"
+    },
+    {
+      "slot_id": "LR-WIFI",
+      "room": "living",
+      "label": "WiFi and cable cabinet (replaces rolling TV stand)",
+      "options": [
+        "LR-WIFI-A",
+        "LR-WIFI-B"
+      ],
+      "default_option": "LR-WIFI-A",
+      "anchor": "floor",
+      "wall": "LR-W-NORTH",
+      "on_top_of": null,
+      "rule_applied": null,
+      "notes": "North-west corner, over the corner outlet (LR-OUT-2) so the router, modem and power strip plug in behind it. Router goes behind the cane door (cane lets the WiFi signal and air through). Option B (taller rattan cabinet, about 24x14x59) uses the same corner.",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 206,
+              "y": 0,
+              "z": 0
+            },
+            "max": {
+              "x": 221.5,
+              "y": 16,
+              "z": 28
+            }
+          },
+          "position_center": {
+            "x": 213.75,
+            "y": 8.0,
+            "z": 14.0
+          },
+          "rotation_deg_z": 0
+        }
+      ],
+      "mount": "floor"
+    },
+    {
+      "slot_id": "LR-CABLE",
+      "room": "living",
+      "label": "Cord raceway",
+      "options": [
+        "LR-CABLE-A"
+      ],
+      "default_option": "LR-CABLE-A",
+      "anchor": "wall",
+      "wall": "LR-W-NORTH",
+      "on_top_of": null,
+      "rule_applied": null,
+      "notes": "Hides the TV, console and router cables along the baseboard into the WiFi cabinet. The two vertical sconce cords are not covered; that needs about 2 more kits (see design-notes).",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 151,
+              "y": 0,
+              "z": 0
+            },
+            "max": {
+              "x": 205,
+              "y": 0.5,
+              "z": 1
+            }
+          },
+          "position_center": {
+            "x": 178.0,
+            "y": 0.25,
+            "z": 0.5
+          },
+          "rotation_deg_z": 0,
+          "label": "baseboard run from the TV console to the WiFi cabinet (54\")"
+        }
+      ],
+      "mount": "wall"
+    },
+    {
+      "slot_id": "LR-DECOR",
+      "room": "living",
+      "label": "Small decor",
+      "options": [
+        "LR-DECOR-A",
+        "LR-DECOR-B"
+      ],
+      "default_option": "LR-DECOR-A",
+      "anchor": "on top of",
+      "wall": null,
+      "on_top_of": "LR-COFFEE",
+      "rule_applied": null,
+      "notes": null,
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 107.9,
+              "y": 47.9,
+              "z": 20.5
+            },
+            "max": {
+              "x": 112.03,
+              "y": 52.03,
+              "z": 22.86
+            }
+          },
+          "position_center": {
+            "x": 109.97,
+            "y": 49.97,
+            "z": 21.68
+          },
+          "rotation_deg_z": 0
+        }
+      ],
+      "mount": "floor",
+      "mount_note": "Floor-supported: rests on LR-COFFEE"
+    },
+    {
+      "slot_id": "BR-DUVET",
+      "room": "bedroom",
+      "label": "Duvet cover set, Full/Queen",
+      "options": [
+        "BR-DUVET-A",
+        "BR-DUVET-B"
+      ],
+      "default_option": "BR-DUVET-A",
+      "anchor": "on top of",
+      "wall": null,
+      "on_top_of": "EX-BR-BED",
+      "rule_applied": null,
+      "notes": "86x86 duvet on a 60x80 queen mattress drapes about 13\" down each side. Folded back at the head so the pillowcases show; tuck the window side (6\" gap).",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 16,
+              "y": 5,
+              "z": 8
+            },
+            "max": {
+              "x": 84,
+              "y": 69,
+              "z": 24
+            }
+          },
+          "position_center": {
+            "x": 50.0,
+            "y": 37.0,
+            "z": 16.0
+          },
+          "rotation_deg_z": -90
+        }
+      ],
+      "mount": "floor",
+      "mount_note": "Floor-supported: rests on EX-BR-BED"
+    },
+    {
+      "slot_id": "BR-NIGHTSTAND",
+      "room": "bedroom",
+      "label": "Nightstand",
+      "options": [
+        "BR-NIGHTSTAND-A",
+        "BR-NIGHTSTAND-B"
+      ],
+      "default_option": "BR-NIGHTSTAND-A",
+      "anchor": "floor",
+      "wall": null,
+      "on_top_of": null,
+      "rule_applied": null,
+      "notes": "East side of the bed, where the plastic cart is now. TARVA option is 18.9\" wide: place at y=70 to 89 (still clear of the door swing, which starts at y=98).",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 1,
+              "y": 70,
+              "z": 0
+            },
+            "max": {
+              "x": 15,
+              "y": 86,
+              "z": 24
+            }
+          },
+          "position_center": {
+            "x": 8.0,
+            "y": 78.0,
+            "z": 12.0
+          },
+          "rotation_deg_z": -90
+        }
+      ],
+      "mount": "floor"
+    },
+    {
+      "slot_id": "BR-BEDLAMP",
+      "room": "bedroom",
+      "label": "Bedside lamp",
+      "options": [
+        "BR-BEDLAMP-A"
+      ],
+      "default_option": "BR-BEDLAMP-A",
+      "anchor": "on top of",
+      "wall": null,
+      "on_top_of": "BR-NIGHTSTAND",
+      "rule_applied": null,
+      "notes": null,
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 4.5,
+              "y": 71.5,
+              "z": 24
+            },
+            "max": {
+              "x": 11.5,
+              "y": 78.5,
+              "z": 36
+            }
+          },
+          "position_center": {
+            "x": 8.0,
+            "y": 75.0,
+            "z": 30.0
+          },
+          "rotation_deg_z": 0
+        }
+      ],
+      "mount": "floor",
+      "mount_note": "Floor-supported: rests on BR-NIGHTSTAND"
+    },
+    {
+      "slot_id": "BR-RUG",
+      "room": "bedroom",
+      "label": "Bedside rug",
+      "options": [
+        "BR-RUG-A",
+        "BR-RUG-B"
+      ],
+      "default_option": "BR-RUG-A",
+      "anchor": "floor",
+      "wall": null,
+      "on_top_of": null,
+      "rule_applied": null,
+      "notes": "Open (east) side of the bed. The 4x6 option is unavailable today; if bought later, center it at the same point with the long side north-south.",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 24,
+              "y": 70,
+              "z": 0
+            },
+            "max": {
+              "x": 60,
+              "y": 94,
+              "z": 0.4
+            }
+          },
+          "position_center": {
+            "x": 42.0,
+            "y": 82.0,
+            "z": 0.2
+          },
+          "rotation_deg_z": -90
+        }
+      ],
+      "mount": "floor"
+    },
+    {
+      "slot_id": "BR-DESK",
+      "room": "bedroom",
+      "label": "Desk",
+      "options": [
+        "BR-DESK-A",
+        "BR-DESK-B"
+      ],
+      "default_option": "BR-DESK-A",
+      "anchor": "floor",
+      "wall": "BR-W-SOUTH",
+      "on_top_of": null,
+      "rule_applied": "Desk ends 30\" short of the closet front so the closet stays usable",
+      "notes": "Width is ESTIMATED (44\"). If the real desk is wider than 44\", the extra must go west (toward the window), not east.",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 99,
+              "y": 62,
+              "z": 0
+            },
+            "max": {
+              "x": 121,
+              "y": 106,
+              "z": 30
+            }
+          },
+          "position_center": {
+            "x": 110.0,
+            "y": 84.0,
+            "z": 15.0
+          },
+          "rotation_deg_z": 90
+        }
+      ],
+      "mount": "floor"
+    },
+    {
+      "slot_id": "BR-CHAIR",
+      "room": "bedroom",
+      "label": "Desk chair",
+      "options": [
+        "BR-CHAIR-A",
+        "BR-CHAIR-B"
+      ],
+      "default_option": "BR-CHAIR-A",
+      "anchor": "floor",
+      "wall": null,
+      "on_top_of": null,
+      "rule_applied": "30\" clear behind the chair: x=45 to 75 between y=72 and 96 holds only the flat rug (bed edge is at y=68)",
+      "notes": null,
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 75,
+              "y": 72,
+              "z": 0
+            },
+            "max": {
+              "x": 99,
+              "y": 96,
+              "z": 36
+            }
+          },
+          "position_center": {
+            "x": 87.0,
+            "y": 84.0,
+            "z": 18.0
+          },
+          "rotation_deg_z": 90
+        }
+      ],
+      "mount": "floor"
+    },
+    {
+      "slot_id": "BR-DESKLAMP",
+      "room": "bedroom",
+      "label": "Desk lamp",
+      "options": [
+        "BR-DESKLAMP-A",
+        "BR-DESKLAMP-B"
+      ],
+      "default_option": "BR-DESKLAMP-A",
+      "anchor": "on top of",
+      "wall": null,
+      "on_top_of": "BR-DESK",
+      "rule_applied": null,
+      "notes": "TERTIAL clamps to the back west corner of the desk.",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 99,
+              "y": 63,
+              "z": 30
+            },
+            "max": {
+              "x": 119,
+              "y": 70,
+              "z": 56
+            }
+          },
+          "position_center": {
+            "x": 109.0,
+            "y": 66.5,
+            "z": 43.0
+          },
+          "rotation_deg_z": 90
+        }
+      ],
+      "mount": "floor",
+      "mount_note": "Floor-supported: rests on BR-DESK"
+    },
+    {
+      "slot_id": "BR-ART",
+      "room": "bedroom",
+      "label": "Art above the bed",
+      "options": [
+        "BR-ART-A",
+        "BR-ART-B"
+      ],
+      "default_option": "BR-ART-A",
+      "anchor": "wall",
+      "wall": "BR-W-NORTH",
+      "on_top_of": null,
+      "rule_applied": "EXCEPTION to the 57\" rule: centered at 63\" so the frame clears the 44\" headboard shelf by 8.75\". At 57\" it would sit only 2.75\" above the shelf.",
+      "notes": "Centered on the bed. PJATTERYD option is a set of three 22x22 canvases (about 69 in wide in a row), too wide for a row above this bed; if chosen, hang one canvas on this same center (22x22 clears the headboard with the frame bottom at 52 in) and put the other two on the desk wall.",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 0,
+              "y": 28.75,
+              "z": 52.75
+            },
+            "max": {
+              "x": 1.25,
+              "y": 45.25,
+              "z": 73.25
+            }
+          },
+          "position_center": {
+            "x": 0.62,
+            "y": 37.0,
+            "z": 63.0
+          },
+          "rotation_deg_z": -90
+        }
+      ],
+      "mount": "wall"
+    },
+    {
+      "slot_id": "BR-CURTAIN",
+      "room": "bedroom",
+      "label": "Curtains (1 pair)",
+      "options": [
+        "BR-CURTAIN-A"
+      ],
+      "default_option": "BR-CURTAIN-A",
+      "anchor": "wall",
+      "wall": "BR-W-WEST",
+      "on_top_of": null,
+      "rule_applied": "Panels hang to 1/2\" above the floor",
+      "notes": "Closed: two 57\" panels cover the 92\" rod with light gathers. The north panel stacks behind the bed's west edge (bed is 6\" off this wall). Hem about 6.5\".",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 17,
+              "y": 1,
+              "z": 0.5
+            },
+            "max": {
+              "x": 31,
+              "y": 2,
+              "z": 92
+            }
+          },
+          "position_center": {
+            "x": 24.0,
+            "y": 1.5,
+            "z": 46.25
+          },
+          "rotation_deg_z": 0,
+          "label": "north panel, open"
+        },
+        {
+          "bbox": {
+            "min": {
+              "x": 95,
+              "y": 1,
+              "z": 0.5
+            },
+            "max": {
+              "x": 109,
+              "y": 2,
+              "z": 92
+            }
+          },
+          "position_center": {
+            "x": 102.0,
+            "y": 1.5,
+            "z": 46.25
+          },
+          "rotation_deg_z": 0,
+          "label": "south panel, open"
+        }
+      ],
+      "mount": "wall"
+    },
+    {
+      "slot_id": "BR-ROD",
+      "room": "bedroom",
+      "label": "Curtain rod",
+      "options": [
+        "BR-ROD-A",
+        "BR-ROD-B"
+      ],
+      "default_option": "BR-ROD-A",
+      "anchor": "wall",
+      "wall": "BR-W-WEST",
+      "on_top_of": null,
+      "rule_applied": "Rod 3\" below the ceiling (z=93) and 10\" past each side of the window (window x=27 to 99)",
+      "notes": "Changed from the short HUGAD set: 92\" is needed and the short set stops at 82 3/4\". Option B is listed only as a fallback.",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 17,
+              "y": 0,
+              "z": 92.5
+            },
+            "max": {
+              "x": 109,
+              "y": 4,
+              "z": 93.5
+            }
+          },
+          "position_center": {
+            "x": 63.0,
+            "y": 2.0,
+            "z": 93.0
+          },
+          "rotation_deg_z": 0
+        }
+      ],
+      "mount": "wall"
+    },
+    {
+      "slot_id": "BR-HAMPER",
+      "room": "bedroom",
+      "label": "Hamper",
+      "options": [
+        "BR-HAMPER-A",
+        "BR-HAMPER-B"
+      ],
+      "default_option": "BR-HAMPER-A",
+      "anchor": "floor",
+      "wall": null,
+      "on_top_of": null,
+      "rule_applied": null,
+      "notes": "Inside the closet (closet floor y=136 to 160, ESTIMATED depth).",
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 104,
+              "y": 140,
+              "z": 0
+            },
+            "max": {
+              "x": 117,
+              "y": 158,
+              "z": 22
+            }
+          },
+          "position_center": {
+            "x": 110.5,
+            "y": 149.0,
+            "z": 11.0
+          },
+          "rotation_deg_z": 180
+        }
+      ],
+      "mount": "floor"
+    },
+    {
+      "slot_id": "BR-PLANT",
+      "room": "bedroom",
+      "label": "Tabletop olive",
+      "options": [
+        "BR-PLANT-A"
+      ],
+      "default_option": "BR-PLANT-A",
+      "anchor": "on top of",
+      "wall": null,
+      "on_top_of": "BR-DESK",
+      "rule_applied": null,
+      "notes": null,
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 103,
+              "y": 94,
+              "z": 30
+            },
+            "max": {
+              "x": 113,
+              "y": 104,
+              "z": 44
+            }
+          },
+          "position_center": {
+            "x": 108.0,
+            "y": 99.0,
+            "z": 37.0
+          },
+          "rotation_deg_z": 0
+        }
+      ],
+      "mount": "floor",
+      "mount_note": "Floor-supported: rests on BR-DESK"
+    },
+    {
+      "slot_id": "BR-DECOR",
+      "room": "bedroom",
+      "label": "Candle",
+      "options": [
+        "BR-DECOR-A"
+      ],
+      "default_option": "BR-DECOR-A",
+      "anchor": "on top of",
+      "wall": null,
+      "on_top_of": "BR-NIGHTSTAND",
+      "rule_applied": null,
+      "notes": null,
+      "placements": [
+        {
+          "bbox": {
+            "min": {
+              "x": 9,
+              "y": 81,
+              "z": 24
+            },
+            "max": {
+              "x": 12.03,
+              "y": 84.03,
+              "z": 27.15
+            }
+          },
+          "position_center": {
+            "x": 10.52,
+            "y": 82.52,
+            "z": 25.57
+          },
+          "rotation_deg_z": 0
+        }
+      ],
+      "mount": "floor",
+      "mount_note": "Floor-supported: rests on BR-NIGHTSTAND"
+    }
+  ],
+  "default_layout_note": "The default layout is the first option in every slot, placed at that slot's placements. Alternates swap into the same slot; their own dimensions apply, centered on the same position_center.",
+  "budget": {
+    "budget_cap": 1000.0,
+    "tax_rate": 0.0975,
+    "new_items_subtotal": 718.15,
+    "used_items_subtotal_untaxed": 230.0,
+    "sales_tax": 70.02,
+    "delivery": 0.0,
+    "delivery_note": "Assumes IKEA pickup (in stock at Carson), Target and Walmart orders over their free-shipping minimum, and picking up used pieces yourself",
+    "grand_total": 1018.17,
+    "remaining": -18.17,
+    "fits_budget": false,
+    "owner_approved_overage": 18.17,
+    "owner_approval": "On Oct 16 the owner chose to go over budget to add the WiFi cabinet rather than cut another item",
+    "lines": [
+      {
+        "product_id": "LR-RUG-A",
+        "name": "ÄRENDE rug, high pile, 7'10\" x 10', off-white",
+        "retailer": "IKEA",
+        "unit_price": 149.99,
+        "qty": 1,
+        "line_total": 149.99,
+        "taxed": true
+      },
+      {
+        "product_id": "LR-CURTAIN-A",
+        "name": "GINSTMOTT curtains, 1 pair, 57x98\", beige",
+        "retailer": "IKEA",
+        "unit_price": 34.99,
+        "qty": 1,
+        "line_total": 34.99,
+        "taxed": true
+      },
+      {
+        "product_id": "LR-ROD-A",
+        "name": "HUGAD curtain rod set, 82¾–151½\", black",
+        "retailer": "IKEA",
+        "unit_price": 25.0,
+        "qty": 1,
+        "line_total": 25.0,
+        "taxed": true
+      },
+      {
+        "product_id": "LR-FLOORLAMP-A",
+        "name": "LAUTERS floor lamp, ash/white",
+        "retailer": "IKEA",
+        "unit_price": 79.99,
+        "qty": 1,
+        "line_total": 79.99,
+        "taxed": true
+      },
+      {
+        "product_id": "LR-TABLELAMP-A",
+        "name": "Ceramic Lamp with Scallop Shade, Sour Cream/Oatmeal",
+        "retailer": "Target",
+        "unit_price": 24.99,
+        "qty": 1,
+        "line_total": 24.99,
+        "taxed": true
+      },
+      {
+        "product_id": "LR-SCONCE-A",
+        "name": "Rattan plug-in wall sconces, set of 2, 9.84 ft cords",
+        "retailer": "Walmart",
+        "unit_price": 35.99,
+        "qty": 1,
+        "line_total": 35.99,
+        "taxed": true
+      },
+      {
+        "product_id": "LR-COFFEE-A",
+        "name": "Round Wood Coffee Table, dark walnut, tapered legs",
+        "retailer": "OfferUp",
+        "unit_price": 45.0,
+        "qty": 1,
+        "line_total": 45.0,
+        "taxed": false
+      },
+      {
+        "product_id": "LR-PILLOW-NEUTRAL-A",
+        "name": "GURLI cushion cover, 20x20\", unbleached",
+        "retailer": "IKEA",
+        "unit_price": 4.99,
+        "qty": 2,
+        "line_total": 9.98,
+        "taxed": true
+      },
+      {
+        "product_id": "LR-PILLOW-ACCENT-A",
+        "name": "KRYDDBUSKE cushion cover, 20x20\", brown-red",
+        "retailer": "IKEA",
+        "unit_price": 9.99,
+        "qty": 2,
+        "line_total": 19.98,
+        "taxed": true
+      },
+      {
+        "product_id": "LR-PILLOW-INSERT-A",
+        "name": "INNER inner cushion, 20x20\"",
+        "retailer": "IKEA",
+        "unit_price": 9.0,
+        "qty": 4,
+        "line_total": 36.0,
+        "taxed": true
+      },
+      {
+        "product_id": "LR-THROW-A",
+        "name": "VALLKRASSING throw, 59x79\", off-white",
+        "retailer": "IKEA",
+        "unit_price": 19.99,
+        "qty": 1,
+        "line_total": 19.99,
+        "taxed": true
+      },
+      {
+        "product_id": "LR-ART-A",
+        "name": "Large canvas wall art, 48x32\", birch trees",
+        "retailer": "Facebook Marketplace",
+        "unit_price": 35.0,
+        "qty": 1,
+        "line_total": 35.0,
+        "taxed": false
+      },
+      {
+        "product_id": "LR-MIRROR-A",
+        "name": "Round black mirror, 24\"",
+        "retailer": "Facebook Marketplace",
+        "unit_price": 25.0,
+        "qty": 1,
+        "line_total": 25.0,
+        "taxed": false
+      },
+      {
+        "product_id": "LR-PLANT-A",
+        "name": "4 ft artificial olive tree",
+        "retailer": "Walmart",
+        "unit_price": 25.99,
+        "qty": 1,
+        "line_total": 25.99,
+        "taxed": true
+      },
+      {
+        "product_id": "LR-WIFI-A",
+        "name": "Rattan Side Table (cabinet with cane door and open top shelf)",
+        "retailer": "Facebook Marketplace",
+        "unit_price": 25.0,
+        "qty": 1,
+        "line_total": 25.0,
+        "taxed": false
+      },
+      {
+        "product_id": "LR-CABLE-A",
+        "name": "Peel-and-stick cord raceway kit, 54\"",
+        "retailer": "Walmart",
+        "unit_price": 14.96,
+        "qty": 1,
+        "line_total": 14.96,
+        "taxed": true
+      },
+      {
+        "product_id": "LR-DECOR-A",
+        "name": "Small Perforated Ceramic Jar Candle, Oak and Embers, cream, 6oz",
+        "retailer": "Target",
+        "unit_price": 7.64,
+        "qty": 1,
+        "line_total": 7.64,
+        "taxed": true
+      },
+      {
+        "product_id": "BR-DUVET-A",
+        "name": "ÄNGSLILJA duvet cover + 2 pillowcases, Full/Queen, natural",
+        "retailer": "IKEA",
+        "unit_price": 39.99,
+        "qty": 1,
+        "line_total": 39.99,
+        "taxed": true
+      },
+      {
+        "product_id": "BR-NIGHTSTAND-A",
+        "name": "Boho Wood and Rattan Nightstand",
+        "retailer": "Facebook Marketplace",
+        "unit_price": 30.0,
+        "qty": 1,
+        "line_total": 30.0,
+        "taxed": false
+      },
+      {
+        "product_id": "BR-BEDLAMP-A",
+        "name": "STORSEGEL table lamp, ash/white",
+        "retailer": "IKEA",
+        "unit_price": 14.99,
+        "qty": 1,
+        "line_total": 14.99,
+        "taxed": true
+      },
+      {
+        "product_id": "BR-RUG-A",
+        "name": "Jute Diamond Accent Rug, 2'x3', tan/ivory",
+        "retailer": "Target",
+        "unit_price": 20.0,
+        "qty": 1,
+        "line_total": 20.0,
+        "taxed": true
+      },
+      {
+        "product_id": "BR-DESK-A",
+        "name": "Mid-Century Modern Wood Desk with 3 Drawers",
+        "retailer": "Facebook Marketplace",
+        "unit_price": 50.0,
+        "qty": 1,
+        "line_total": 50.0,
+        "taxed": false
+      },
+      {
+        "product_id": "BR-CHAIR-A",
+        "name": "Brown Leather Swivel Chair",
+        "retailer": "Facebook Marketplace",
+        "unit_price": 20.0,
+        "qty": 1,
+        "line_total": 20.0,
+        "taxed": false
+      },
+      {
+        "product_id": "BR-DESKLAMP-A",
+        "name": "TERTIAL work lamp, dark gray",
+        "retailer": "IKEA",
+        "unit_price": 19.99,
+        "qty": 1,
+        "line_total": 19.99,
+        "taxed": true
+      },
+      {
+        "product_id": "BR-ART-A",
+        "name": "BLODFLÄDER picture, two birds, 15¾x19¾\", oak-effect frame",
+        "retailer": "IKEA",
+        "unit_price": 39.99,
+        "qty": 1,
+        "line_total": 39.99,
+        "taxed": true
+      },
+      {
+        "product_id": "BR-CURTAIN-A",
+        "name": "GINSTMOTT curtains, 1 pair, 57x98\", beige",
+        "retailer": "IKEA",
+        "unit_price": 34.99,
+        "qty": 1,
+        "line_total": 34.99,
+        "taxed": true
+      },
+      {
+        "product_id": "BR-ROD-A",
+        "name": "HUGAD curtain rod set, 82 3/4-151 1/2\", black",
+        "retailer": "IKEA",
+        "unit_price": 25.0,
+        "qty": 1,
+        "line_total": 25.0,
+        "taxed": true
+      },
+      {
+        "product_id": "BR-HAMPER-A",
+        "name": "Canvas Rectangle Laundry Hamper, beige, 80L",
+        "retailer": "Target",
+        "unit_price": 13.0,
+        "qty": 1,
+        "line_total": 13.0,
+        "taxed": true
+      },
+      {
+        "product_id": "BR-PLANT-A",
+        "name": "14\" artificial olive plant in two-tone ceramic vase",
+        "retailer": "Walmart",
+        "unit_price": 15.72,
+        "qty": 1,
+        "line_total": 15.72,
+        "taxed": true
+      },
+      {
+        "product_id": "BR-DECOR-A",
+        "name": "Ceramic Cypress and Santal Scented Jar Candle, 6oz",
+        "retailer": "Target",
+        "unit_price": 8.99,
+        "qty": 1,
+        "line_total": 8.99,
+        "taxed": true
+      }
+    ],
+    "change_vs_lookbook": "Bedroom rod changed from HUGAD 47-83\" ($18.50) to HUGAD 83-152\" ($25.00): +$6.50 before tax, +$7.13 with tax. Lookbook total was $985.21."
+  }
+}
