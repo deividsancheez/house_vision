@@ -83,6 +83,8 @@ class App {
     if (view) this.applyPreset(view, false);
     this.loop();
     document.body.classList.add('ready');
+    // the loading screen fades out (CSS); remove it afterwards even if a busy phone stalls the fade
+    setTimeout(() => document.getElementById('loading')?.remove(), 700);
   }
 
   // ------------------------------------------------------------------------------------------
