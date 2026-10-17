@@ -1,0 +1,22 @@
+<!doctype html><html><body style="margin:0;background:#ddd">
+<canvas id="c" width="1200" height="400"></canvas>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
+const file = new URLSearchParams(location.search).get('f');
+const r = new THREE.WebGLRenderer({ canvas: c, antialias: true, preserveDrawingBuffer: true });
+r.setScissorTest(true);
+const scene = new THREE.Scene(); scene.background = new THREE.Color('#ccc');
+scene.add(new THREE.HemisphereLight(0xffffff, 0x666666, 2.5)); const d = new THREE.DirectionalLight(0xffffff, 2); d.position.set(1,2,3); scene.add(d);
+scene.add(new THREE.AxesHelper(0.5));
+const dl = new DRACOLoader().setDecoderPath('/draco/');
+const g = await new GLTFLoader().setDRACOLoader(dl).loadAsync('/models-raw/' + file);
+scene.add(g.scene);
+const box = new THREE.Box3().setFromObject(g.scene); const ctr = box.getCenter(new THREE.Vector3()); const s = box.getSize(new THREE.Vector3()).length();
+const views = [[0,0,1],[1,0,0],[0,1,0.001]];
+views.forEach((v,i)=>{ const cam = new THREE.PerspectiveCamera(40, 1, 0.01, 100); cam.position.copy(ctr).addScaledVector(new THREE.Vector3(...v).normalize(), s*1.4); cam.lookAt(ctr);
+  r.setViewport(i*400,0,400,400); r.setScissor(i*400,0,400,400); r.render(scene, cam); });
+const info=[]; g.scene.traverse(o=>{ if(o.isMesh) { const b=new THREE.Box3().setFromObject(o); info.push(o.name+' '+[...b.min.toArray(),...b.max.toArray()].map(v=>v.toFixed(2)).join(',')+' mat:'+(o.material.name)+' map:'+!!o.material.map+' tr:'+o.material.transparent+' col:'+o.material.color.getHexString()); }});
+window.__info = info; document.title='done';
+</script></body></html>

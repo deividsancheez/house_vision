@@ -1,0 +1,10 @@
+node_modules/
+dist/
+test-results/
+# PRIVATE: the test report holds photos of the home side by side with the app. Never commit or deploy it.
+test-report/
+# photos/ and plans/ live outside this folder (in the handoff folder); never copy them in here.
+photos/
+plans/
+# PRIVATE: words from the home address that the privacy test searches for
+tests/e2e/private-words.txt

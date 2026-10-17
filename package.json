@@ -1,0 +1,34 @@
+{
+  "name": "room-viewer",
+  "version": "1.0.0",
+  "description": "Interactive 3D renovation viewer for the living room and bedroom",
+  "scripts": {
+    "fetch-models": "node scripts/fetch-models.mjs",
+    "assets": "node scripts/build-assets.mjs",
+    "dev": "npm run assets && vite",
+    "build": "npm run assets && vite build",
+    "preview": "vite preview --host",
+    "test:unit": "node --test tests/unit/*.test.mjs",
+    "test:unit:tap": "node --test --test-reporter=tap tests/unit/*.test.mjs > test-results/unit.tap",
+    "test:e2e": "playwright test --grep-invert @perf",
+    "test": "npm run test:unit && npm run test:e2e && npm run test:perf",
+    "report": "node tools/report.mjs",
+    "test:perf": "playwright test --grep @perf --workers=1"
+  },
+  "type": "module",
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "@gltf-transform/core": "^4.5.1",
+    "@gltf-transform/extensions": "^4.5.1",
+    "@gltf-transform/functions": "^4.5.1",
+    "@playwright/test": "^1.64.1",
+    "draco3dgltf": "^1.5.9",
+    "exifr": "^7.1.3",
+    "meshoptimizer": "^1.3.0",
+    "sharp": "^0.35.5",
+    "vite": "^6.4.4"
+  },
+  "private": true
+}

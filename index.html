@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+  <meta name="theme-color" content="#f4f1ec" />
+  <title>Reno 3D · Living room & bedroom</title>
+  <meta name="description" content="Interactive 3D preview of the living room and bedroom renovation." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M4 15 16 5l12 10v12H4z' fill='%23b0703f'/%3E%3Cpath d='M12 27v-8h8v8' fill='%23f4f1ec'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <canvas id="scene" aria-label="3D view of the room"></canvas>
+  <div id="ui"></div>
+  <div id="loading"><div class="spinner"></div><span>Loading your rooms…</span></div>
+  <div id="fatal" hidden></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

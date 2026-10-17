@@ -1,0 +1,226 @@
+{
+  "living-04-tv-wall-facing-north": {
+    "pos": {
+      "x": 105.8,
+      "y": 193.9,
+      "z": 79.7
+    },
+    "target": {
+      "x": 105.1,
+      "y": 94.5,
+      "z": 68.6
+    },
+    "vfov": 49.5,
+    "roll": -1.06,
+    "k1": -0.007,
+    "rmsPx": 17.2
+  },
+  "living-05-window-wall-facing-east": {
+    "pos": {
+      "x": 194.8,
+      "y": 77.6,
+      "z": 61.4
+    },
+    "target": {
+      "x": 94.9,
+      "y": 82.4,
+      "z": 58.7
+    },
+    "vfov": 48.7,
+    "roll": 0.2,
+    "k1": 0.02,
+    "rmsPx": 4.8
+  },
+  "living-01-dining-nook-facing-south": {
+    "pos": {
+      "x": 176.4,
+      "y": 108.8,
+      "z": 61.1
+    },
+    "target": {
+      "x": 173.3,
+      "y": 208.3,
+      "z": 51.5
+    },
+    "vfov": 49.3,
+    "roll": -1.53,
+    "k1": 0.051,
+    "rmsPx": 6.9
+  },
+  "living-02-pass-through-wall-facing-south": {
+    "pos": {
+      "x": 52.1,
+      "y": 34.9,
+      "z": 62.1
+    },
+    "target": {
+      "x": 57.5,
+      "y": 134.5,
+      "z": 54.7
+    },
+    "vfov": 49.5,
+    "roll": -0.44,
+    "k1": 0.006,
+    "rmsPx": 28.7
+  },
+  "living-03-long-view-facing-west": {
+    "pos": {
+      "x": 66.9,
+      "y": 78.8,
+      "z": 55
+    },
+    "target": {
+      "x": 164,
+      "y": 102.5,
+      "z": 56.5
+    },
+    "vfov": 88.7,
+    "roll": -0.13,
+    "k1": -0.225,
+    "rmsPx": 16.7
+  },
+  "living-06-overview-facing-east": {
+    "pos": {
+      "x": 195,
+      "y": 155.2,
+      "z": 52.3
+    },
+    "target": {
+      "x": 138.3,
+      "y": 74.4,
+      "z": 36.5
+    },
+    "vfov": 88,
+    "roll": -0.95,
+    "k1": -0.155,
+    "rmsPx": 13.3
+  },
+  "living-07-overview-facing-west": {
+    "pos": {
+      "x": -10,
+      "y": 142.7,
+      "z": 66.3
+    },
+    "target": {
+      "x": 56.8,
+      "y": 77.4,
+      "z": 30.8
+    },
+    "vfov": 84.1,
+    "roll": -0.48,
+    "k1": 0.002,
+    "rmsPx": 14.6
+  },
+  "living-08-overview-facing-southeast": {
+    "pos": {
+      "x": 218.6,
+      "y": 2.7,
+      "z": 66.4
+    },
+    "target": {
+      "x": 138.9,
+      "y": 52.4,
+      "z": 32.1
+    },
+    "vfov": 78.3,
+    "roll": -0.16,
+    "k1": 0.035,
+    "rmsPx": 15.8
+  },
+  "bedroom-01-closet-wall-facing-east": {
+    "pos": {
+      "x": 65.4,
+      "y": 28.7,
+      "z": 60.6
+    },
+    "target": {
+      "x": 67.7,
+      "y": 128.6,
+      "z": 56.2
+    },
+    "vfov": 90.3,
+    "roll": -0.05,
+    "k1": 0.01,
+    "rmsPx": 5.2
+  },
+  "bedroom-02-headboard-wall-facing-north": {
+    "pos": {
+      "x": 100.3,
+      "y": 55.3,
+      "z": 54.6
+    },
+    "target": {
+      "x": 0.5,
+      "y": 61.7,
+      "z": 55.2
+    },
+    "vfov": 88.8,
+    "roll": 0.89,
+    "k1": 0.046,
+    "rmsPx": 7.6
+  },
+  "bedroom-03-desk-wall-facing-south": {
+    "pos": {
+      "x": 48.8,
+      "y": 72.4,
+      "z": 54.7
+    },
+    "target": {
+      "x": 148.5,
+      "y": 67.9,
+      "z": 48.8
+    },
+    "vfov": 98.7,
+    "roll": -1.03,
+    "k1": -0.027,
+    "rmsPx": 10
+  },
+  "bedroom-04-window-wall-facing-west": {
+    "pos": {
+      "x": 49.6,
+      "y": 119.3,
+      "z": 61.4
+    },
+    "target": {
+      "x": 51.3,
+      "y": 19.5,
+      "z": 55.3
+    },
+    "vfov": 52.5,
+    "roll": 0.64,
+    "k1": -0.001,
+    "rmsPx": 14.2
+  },
+  "bedroom-05-overview-facing-northwest": {
+    "pos": {
+      "x": 116.3,
+      "y": 137.1,
+      "z": 61.9
+    },
+    "target": {
+      "x": 49.6,
+      "y": 74.7,
+      "z": 21.1
+    },
+    "vfov": 79.3,
+    "roll": -1.32,
+    "k1": 0.023,
+    "rmsPx": 8.3
+  },
+  "bedroom-06-overview-facing-northeast": {
+    "pos": {
+      "x": 99,
+      "y": 20.8,
+      "z": 74.3
+    },
+    "target": {
+      "x": 48.2,
+      "y": 88.4,
+      "z": 20.9
+    },
+    "vfov": 89.5,
+    "roll": -5.21,
+    "k1": -0.061,
+    "rmsPx": 4
+  }
+}
