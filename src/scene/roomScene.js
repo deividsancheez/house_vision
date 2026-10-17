@@ -50,11 +50,15 @@ export class RoomScene {
     this.curtainTarget = 0;
     this.closetDoorsVisible = true;
     this.mode = 'day';
+    this.hiddenKeys = new Set(); // pieces being carried in Walk mode
+    this.highlight = new THREE.Group(); // "Show me" for a warning
+    this.root.add(this.highlight);
   }
 
   attach(scene) {
     scene.add(this.root);
-    if (!this.lighting) this.lighting = new RoomLighting(scene, this.rb, this.app.quality);
+    // lamps of both rooms: a lamp carried into the other room still lights up at night
+    if (!this.lighting) this.lighting = new RoomLighting(scene, this.rb, this.app.quality, Object.values(this.cat.lighting || {}).flat());
     else scene.add(this.lighting.group);
   }
 
@@ -194,8 +198,57 @@ export class RoomScene {
       o.pivot.rotation.set(0, 0, 0);
       if (o.model && o.build?.kind !== 'curtain') o.model.position.set(0, 0, 0);
     }
-    o.group.visible = !it.hidden;
+    o.group.visible = !it.hidden && !this.hiddenKeys.has(it.key);
     if (o.blobs.length) this.blobsDirty = true;
+  }
+
+  /** Hide the pieces being carried (they're drawn as a preview instead); their lights go out. */
+  setHiddenKeys(keys) {
+    const same = keys.size === this.hiddenKeys.size && [...keys].every((k) => this.hiddenKeys.has(k));
+    if (same) return;
+    this.hiddenKeys = keys;
+    for (const o of this.objects.values()) this.place(o);
+    this.updateLights();
+  }
+
+  /** Mark a warning's zone on the floor (or the covered part of a wall, or the pieces) for a while. */
+  showHighlight(hl, ms = 6000) {
+    this.highlight.clear();
+    clearTimeout(this.highlightTimer);
+    if (!hl) { this.app.invalidate(); return; }
+    const color = '#ff3b30';
+    const add = (geo, pos, rot) => {
+      const fill = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.35, depthWrite: false, side: THREE.DoubleSide }));
+      fill.position.copy(pos);
+      if (rot) fill.rotation.copy(rot);
+      fill.renderOrder = 15;
+      fill.raycast = () => {};
+      const edge = new THREE.LineSegments(new THREE.EdgesGeometry(geo), new THREE.LineBasicMaterial({ color, depthTest: false }));
+      edge.position.copy(pos);
+      if (rot) edge.rotation.copy(rot);
+      edge.renderOrder = 16;
+      edge.raycast = () => {};
+      this.highlight.add(fill, edge);
+    };
+    if (hl.zone) {
+      const z = hl.zone;
+      add(new THREE.PlaneGeometry(Math.abs(z.x1 - z.x0), Math.abs(z.y1 - z.y0)), new THREE.Vector3((z.x0 + z.x1) / 2, (z.y0 + z.y1) / 2, 0.6));
+    }
+    if (hl.wallId) {
+      const wall = this.room.walls.get(hl.wallId);
+      const a = (hl.along[0] + hl.along[1]) / 2, len = hl.along[1] - hl.along[0];
+      const p = pointAlong(wall, a);
+      const geo = new THREE.PlaneGeometry(len, hl.zRange[1] - hl.zRange[0]);
+      const rot = new THREE.Euler(Math.PI / 2, 0, Math.atan2(wall.dir.y, wall.dir.x), 'ZXY');
+      add(geo, new THREE.Vector3(p.x + wall.normal.x * 0.6, p.y + wall.normal.y * 0.6, (hl.zRange[0] + hl.zRange[1]) / 2), rot);
+    }
+    for (const key of hl.keys || []) {
+      const it = this.items.find((i) => i.key === key);
+      if (it) this.highlight.add(this.outline(it, color));
+    }
+    this.highlightUntil = performance.now() + ms;
+    this.highlightTimer = setTimeout(() => { this.highlight.clear(); this.app.invalidate(); }, ms);
+    this.app.invalidate();
   }
 
   object(key) { return this.objects.get(key); }
@@ -205,7 +258,7 @@ export class RoomScene {
   lightAnchors() {
     const anchors = new Map();
     const slots = [...this.cat.slots.keys()].sort((a, b) => b.length - a.length);
-    for (const spec of this.room.lights) {
+    for (const spec of this.lighting?.specs || this.room.lights) {
       if (!spec.position) continue;
       const src = spec.source || '';
       const fan = (this.room.ceiling_fixtures || []).find((f) => src.startsWith(f.id));
@@ -217,7 +270,7 @@ export class RoomScene {
       const dirWord = (src.match(/\b(east|west|north|south)\b/i) || [])[1];
       if (dirWord) idx = Math.max(0, slot.placements.findIndex((pl) => new RegExp(`\\b${dirWord}\\b`, 'i').test(pl.label || '')));
       const it = this.items.find((i) => i.id === slotId && i.index === idx);
-      if (!it || !isLightSource(it.product)) { anchors.set(spec.id, { pos: null }); continue; }
+      if (!it || !isLightSource(it.product) || this.hiddenKeys.has(it.key)) { anchors.set(spec.id, { pos: null }); continue; }
       // offset of the light from the designer's default placement, carried into the item's frame
       const pl = slot.placements[idx];
       const def = { x: pl.position_center.x, y: pl.position_center.y, z: slot.mount === 'wall' ? pl.position_center.z : pl.bbox.min.z, rot: pl.rotation_deg_z ?? 0 };

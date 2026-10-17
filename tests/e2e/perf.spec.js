@@ -41,3 +41,35 @@ for (const room of ['living', 'bedroom']) {
     expect(errors).toEqual([]);
   });
 }
+
+// Walk mode: first person at eye height, turning and looking around continuously (both rooms, day
+// and night), same throttling and median of five 3-second runs.
+for (const room of ['living', 'bedroom']) {
+  test(`frame rate in Walk mode: ${room} @perf`, async ({ page }, info) => {
+    const phone = info.project.name === 'phone';
+    const { errors } = await openApp(page, `room=${room}&mode=walk`);
+    await setRoom(page, room);
+    await page.evaluate(() => { const w = window.__app.walk; w.toStart(); });
+    let cdp = null;
+    if (phone) {
+      cdp = await page.context().newCDPSession(page);
+      await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 });
+    }
+    await page.evaluate(() => window.__app.measureWalkFps(1500));
+    const samples = { day: [], night: [] };
+    const median = async (k) => { for (let i = 0; i < 5; i++) samples[k].push(Math.round((await page.evaluate(() => window.__app.measureWalkFps(3000))) * 10) / 10); return [...samples[k]].sort((x, y) => x - y)[2]; };
+    const fps = await median('day');
+    const pr = await page.evaluate(() => window.__app.renderer.getPixelRatio());
+    await page.evaluate(() => window.__app.setMode('night'));
+    await page.evaluate(() => window.__app.measureWalkFps(1500));
+    const fpsNight = await median('night');
+    if (cdp) await cdp.send('Emulation.setCPUThrottlingRate', { rate: 1 });
+    const out = path.join(root, 'test-results', 'perf');
+    fs.mkdirSync(out, { recursive: true });
+    fs.writeFileSync(path.join(out, `${info.project.name}-walk-${room}.json`), JSON.stringify({ room, mode: 'walk', project: info.project.name, cpuThrottle: phone ? 4 : 1, fps: Math.round(fps * 10) / 10, fpsNight: Math.round(fpsNight * 10) / 10, samples, pixelRatio: pr }, null, 2));
+    test.info().annotations.push({ type: 'fps', description: `walk ${room}: ${fps.toFixed(1)} fps day, ${fpsNight.toFixed(1)} night, pixel ratio ${pr}` });
+    expect(fps).toBeGreaterThanOrEqual(phone ? 30 : 55);
+    expect(fpsNight).toBeGreaterThanOrEqual(phone ? 30 : 55);
+    expect(errors).toEqual([]);
+  });
+}

@@ -37,7 +37,8 @@ export const LOOK = {
 };
 
 export class RoomLighting {
-  constructor(scene, rb, quality) {
+  /** lights: the room-spec lighting entries to make lamps for (default: this room's). */
+  constructor(scene, rb, quality, lights = null) {
     this.scene = scene;
     this.rb = rb;
     this.room = rb.room;
@@ -85,7 +86,8 @@ export class RoomLighting {
 
     // Lamps (room-spec lighting entries, positioned by the room scene each layout change)
     this.lamps = [];
-    for (const spec of this.room.lights || []) {
+    this.specs = lights || this.room.lights || [];
+    for (const spec of this.specs) {
       if (!spec.position) continue;
       const pl = new THREE.PointLight(lampColor(spec.color_temp_k ?? 2700), 0, 0, 2);
       pl.power = spec.lumens ?? 0;

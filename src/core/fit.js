@@ -18,9 +18,17 @@ export function zonesForRoom(cat, roomId) {
       const m = /sill (\d+(?:\.\d+)?) in/i.exec(c.detail || '');
       if (m) sill = Number(m[1]);
     }
-    out.push({ id: c.check, label: friendlyCheck(c.check), zone: c.zone, obb: rectToObb(c.zone), window, sill });
+    out.push({ id: c.check, check: c.check, label: friendlyCheck(c.check), kind: zoneKind(c.check, window), zone: c.zone, obb: rectToObb(c.zone), window, sill });
   }
   return out;
+}
+
+/** What a fit_checks zone protects: 'window', 'door' (a door swing) or 'walkway' (walkways and
+ *  clearances: hallway approach, kitchen/closet access, room behind the desk chair). */
+export function zoneKind(check, window = /sill/i.test(check)) {
+  if (window) return 'window';
+  if (/door swing/i.test(check)) return 'door';
+  return 'walkway';
 }
 
 export function friendlyCheck(text) {
@@ -49,16 +57,19 @@ export function computeWarnings(cat, roomId, items) {
     for (const z of zones) {
       if (z.window) {
         if (it.mount === 'wall' || it.isRug) continue;
-        const top = Math.max(...boxes.filter((b) => obbPenetration(b.o, z.obb) > 0.05).map((b) => b.z1), -Infinity);
-        if (top > (z.sill ?? 0) + 0.01) add({ type: 'zone', key: it.key, zoneId: z.id, zone: z.zone, message: `${short(it)} stands taller than the window sill (${z.sill}") in front of the window` });
+        const inZone = boxes.filter((b) => obbPenetration(b.o, z.obb) > 0.05);
+        const top = Math.max(...inZone.map((b) => b.z1), -Infinity);
+        if (top > (z.sill ?? 0) + 0.01) add({ type: 'zone', kind: 'window', key: it.key, zoneId: z.id, zone: z.zone, top, sill: z.sill, depth: Math.max(...inZone.map((b) => obbPenetration(b.o, z.obb))), amount: top - (z.sill ?? 0), message: `${short(it)} stands taller than the window sill (${z.sill}") in front of the window` });
         continue;
       }
       if (it.mount !== 'floor' || it.isRug || !it.collides) continue;
-      if (boxes.some((b) => obbPenetration(b.o, z.obb) > 0.05)) add({ type: 'zone', key: it.key, zoneId: z.id, zone: z.zone, message: `${short(it)} is in the ${z.label}` });
+      const depth = Math.max(...boxes.map((b) => obbPenetration(b.o, z.obb)));
+      if (depth > 0.05) add({ type: 'zone', kind: z.kind, key: it.key, zoneId: z.id, zone: z.zone, depth, amount: depth, message: `${short(it)} is in the ${z.label}` });
     }
     for (const other of currentOverlaps(items, it)) {
       if (other.key < it.key) continue; // report each pair once
-      add({ type: 'overlap', key: it.key, other: other.key, message: `${short(it)} overlaps ${short(other)}` });
+      const depth = overlapDepth(it, other);
+      add({ type: 'overlap', key: it.key, other: other.key, depth, amount: depth, message: `${short(it)} overlaps ${short(other)}` });
     }
     if (it.mount === 'wall' && !['curtain', 'rod'].includes(it.productKind)) {
       const wall = room.walls.get(it.wallId);
@@ -67,14 +78,26 @@ export function computeWarnings(cat, roomId, items) {
       const a0 = along - ed.w / 2, a1 = along + ed.w / 2, z0 = it.pose.z - ed.h / 2, z1 = it.pose.z + ed.h / 2;
       for (const o of wall.openings) {
         const oz0 = o.sill_z ?? 0, oz1 = o.head_z ?? o.height ?? room.ceiling;
-        if (Math.min(a1, o.along_to) - Math.max(a0, o.along_from) > 0.05 && Math.min(z1, oz1) - Math.max(z0, oz0) > 0.05) {
-          add({ type: 'opening', key: it.key, message: `${short(it)} covers the ${openingName(o)}` });
+        const da = Math.min(a1, o.along_to) - Math.max(a0, o.along_from), dz = Math.min(z1, oz1) - Math.max(z0, oz0);
+        if (da > 0.05 && dz > 0.05) {
+          // how far it must slide along the wall to clear the opening (the shorter way)
+          const slide = Math.min(a1 - o.along_from, o.along_to - a0);
+          add({ type: 'opening', key: it.key, openingId: o.id, openingType: o.type, wallId: wall.id, along: [Math.max(a0, o.along_from), Math.min(a1, o.along_to)], zRange: [Math.max(z0, oz0), Math.min(z1, oz1)], depth: slide, amount: slide, message: `${short(it)} covers the ${openingName(o)}` });
         }
       }
     }
-    if (it.unsupported) add({ type: 'support', key: it.key, message: `${short(it)} has nothing to sit on (its ${it.supportId} was removed)` });
+    if (it.unsupported) add({ type: 'support', key: it.key, supportId: it.supportId, amount: 0, message: `${short(it)} has nothing to sit on (its ${it.supportId} was removed)` });
   }
   return warnings;
+}
+
+/** Deepest overlap (inches) between the boxes of two items that also overlap in height. */
+function overlapDepth(a, b) {
+  let d = 0;
+  for (const p of itemBoxes(a)) for (const q of itemBoxes(b)) {
+    if (Math.min(p.z1, q.z1) - Math.max(p.z0, q.z0) > 0.1) d = Math.max(d, obbPenetration(p.o, q.o));
+  }
+  return d;
 }
 
 function openingName(o) {

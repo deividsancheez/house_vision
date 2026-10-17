@@ -6,7 +6,9 @@
 import { obb, obbPenetration, obbInsideRegion, rotate2, normDeg } from './geom.js';
 import { wallCoords, pointAlong, wallFacingYaw } from './catalog.js';
 
-export const LAYOUT_SCHEMA = 1;
+// 2 adds the inventory, Catalog additions ("extras"), dismissed warnings and per-piece room/stored
+// flags. Version 1 layouts and files still load (normalizeLayout fills in the rest).
+export const LAYOUT_SCHEMA = 2;
 
 // ---------------------------------------------------------------------------------------------
 // Product kinds (decide how a product is modeled and which size rules apply)
@@ -66,7 +68,7 @@ export const EXTRA_PIECE_PLACEMENTS = {
 // Layout
 
 export function defaultLayout(cat) {
-  const layout = { schema: LAYOUT_SCHEMA, slots: {}, existing: {} };
+  const layout = { schema: LAYOUT_SCHEMA, slots: {}, existing: {}, extras: [], inventory: [], dismissed: [] };
   for (const s of cat.slots.values()) layout.slots[s.slot_id] = { option: s.default_option, poses: defaultSlotPoses(cat, s, s.default_option) };
   for (const e of cat.existing.values()) {
     if (e.keep === false) continue;
@@ -109,10 +111,11 @@ export function defaultExistingPoses(e) {
   });
 }
 
-/** Fill in anything a stored/imported layout lacks and drop ids that no longer exist. */
+/** Fill in anything a stored/imported layout lacks and drop ids that no longer exist.
+ *  Takes version 1 layouts (no inventory, extras or dismissed warnings) as well as version 2. */
 export function normalizeLayout(cat, raw) {
   const def = defaultLayout(cat);
-  const out = { schema: LAYOUT_SCHEMA, slots: {}, existing: {} };
+  const out = { schema: LAYOUT_SCHEMA, slots: {}, existing: {}, extras: [], inventory: [], dismissed: [] };
   const dropped = [];
   for (const [id, d] of Object.entries(def.slots)) {
     const r = raw?.slots?.[id];
@@ -121,20 +124,103 @@ export function normalizeLayout(cat, raw) {
     let option = r.option === null ? null : slot.options.includes(r.option) ? r.option : slot.default_option;
     if (r.option && !slot.options.includes(r.option)) dropped.push(r.option);
     const want = defaultSlotPoses(cat, slot, option ?? slot.default_option);
-    const poses = want.map((p, i) => (validPose(r.poses?.[i]) ? { ...p, ...pick(r.poses[i]) } : p));
+    const poses = want.map((p, i) => (validPose(r.poses?.[i]) ? { ...p, ...pick(cat, r.poses[i], slot.room) } : p));
     out.slots[id] = { option, poses };
   }
   for (const id of Object.keys(raw?.slots || {})) if (!def.slots[id]) dropped.push(id);
   for (const [id, d] of Object.entries(def.existing)) {
     const r = raw?.existing?.[id];
     if (!r) { out.existing[id] = d; continue; }
-    out.existing[id] = { hidden: !!r.hidden, poses: d.poses.map((p, i) => (validPose(r.poses?.[i]) ? { ...p, ...pick(r.poses[i]) } : p)) };
+    const home = cat.existing.get(id).room;
+    out.existing[id] = { hidden: !!r.hidden, poses: d.poses.map((p, i) => (validPose(r.poses?.[i]) ? { ...p, ...pick(cat, r.poses[i], home) } : p)) };
+  }
+  // Catalog additions: a product that is an option of its slot, added on top of the slot's own pick
+  const uids = new Set();
+  for (const x of Array.isArray(raw?.extras) ? raw.extras : []) {
+    const product = cat.products.get(x?.product);
+    const slot = product && cat.slots.get(product.slot);
+    const uid = String(x?.uid || '');
+    if (!product || !slot || !/^X\d+$/.test(uid) || uids.has(uid)) { if (x?.product) dropped.push(String(x.product)); continue; }
+    uids.add(uid);
+    const want = defaultSlotPoses(cat, slot, product.id);
+    out.extras.push({ uid, product: product.id, poses: want.map((p, i) => (validPose(x.poses?.[i]) ? { ...p, ...pick(cat, x.poses[i], slot.room) } : { ...p, stored: true })) });
+  }
+  // inventory groups hold only pieces that exist and are stored; a stored piece without a group gets its own
+  const seen = new Set();
+  for (const g of Array.isArray(raw?.inventory) ? raw.inventory : []) {
+    const keys = (Array.isArray(g?.keys) ? g.keys : []).filter((k) => typeof k === 'string' && !seen.has(k) && poseRef(out, k)?.stored);
+    if (!keys.length) continue;
+    keys.forEach((k) => seen.add(k));
+    const uid = typeof g.uid === 'string' && /^G\d+$/.test(g.uid) && !out.inventory.some((o) => o.uid === g.uid) ? g.uid : nextUid(out.inventory, 'G');
+    out.inventory.push({ uid, keys, from: cat.rooms.has(g.from) ? g.from : homeRoom(cat, out, keys[0]) });
+  }
+  for (const k of allKeys(out)) if (poseRef(out, k)?.stored && !seen.has(k)) out.inventory.push({ uid: nextUid(out.inventory, 'G'), keys: [k], from: homeRoom(cat, out, k) });
+  for (const d of Array.isArray(raw?.dismissed) ? raw.dismissed : []) {
+    if (typeof d?.sig === 'string' && Number.isFinite(d.amount)) out.dismissed.push({ sig: d.sig, amount: d.amount, title: String(d.title || '') });
   }
   return { layout: out, dropped };
 }
 
 const validPose = (p) => p && ['x', 'y', 'z', 'rot'].every((k) => Number.isFinite(p[k]));
-const pick = (p) => ({ x: p.x, y: p.y, z: p.z, rot: p.rot, spin: Number.isFinite(p.spin) ? p.spin : 0 });
+function pick(cat, p, homeRoomId) {
+  const out = { x: p.x, y: p.y, z: p.z, rot: p.rot, spin: Number.isFinite(p.spin) ? p.spin : 0 };
+  const roomId = cat.rooms.has(p.room) ? p.room : homeRoomId;
+  if (roomId !== homeRoomId) out.room = roomId;
+  if (typeof p.wall === 'string' && cat.rooms.get(roomId)?.walls.has(p.wall)) out.wall = p.wall;
+  if (p.stored === true) out.stored = true;
+  return out;
+}
+
+/** Next free id like "G3" or "X2" in a list of {uid}. */
+export function nextUid(list, prefix) {
+  let n = 1;
+  for (const x of list) {
+    const m = /^[A-Z](\d+)$/.exec(x.uid || '');
+    if (m && x.uid[0] === prefix) n = Math.max(n, Number(m[1]) + 1);
+  }
+  return `${prefix}${n}`;
+}
+
+/** Split an item key ("LR-RUG#0", "EX-BR-BED#0", "X2#0") into its owner id and piece index. */
+export function parseKey(key) {
+  const i = key.lastIndexOf('#');
+  return { id: key.slice(0, i), index: Number(key.slice(i + 1)) };
+}
+
+/** The pose object inside the layout for an item key (placed or stored), or null. */
+export function poseRef(layout, key) {
+  const { id, index } = parseKey(key);
+  const s = layout.slots[id];
+  if (s) return s.option ? s.poses[index] || null : null;
+  const e = layout.existing[id];
+  if (e) return e.hidden ? null : e.poses[index] || null;
+  return (layout.extras || []).find((x) => x.uid === id)?.poses[index] || null;
+}
+
+/** Every piece key in the layout, placed or stored. */
+export function allKeys(layout) {
+  const keys = [];
+  for (const [id, s] of Object.entries(layout.slots)) if (s.option) s.poses.forEach((_, i) => keys.push(`${id}#${i}`));
+  for (const [id, e] of Object.entries(layout.existing)) if (!e.hidden) e.poses.forEach((_, i) => keys.push(`${id}#${i}`));
+  for (const x of layout.extras || []) x.poses.forEach((_, i) => keys.push(`${x.uid}#${i}`));
+  return keys;
+}
+
+/** The room a piece belongs to in the data (its slot's or existing piece's room). */
+export function homeRoom(cat, layout, key) {
+  const { id } = parseKey(key);
+  if (cat.slots.has(id)) return cat.slots.get(id).room;
+  if (cat.existing.has(id)) return cat.existing.get(id).room;
+  const x = (layout.extras || []).find((e) => e.uid === id);
+  return x ? cat.slots.get(cat.products.get(x.product).slot).room : null;
+}
+
+/** The room a piece stands in now, or null while it is stored. */
+export function roomOfKey(cat, layout, key) {
+  const p = poseRef(layout, key);
+  if (!p || p.stored) return null;
+  return p.room || homeRoom(cat, layout, key);
+}
 
 // ---------------------------------------------------------------------------------------------
 // Items
@@ -166,23 +252,25 @@ export function productDims(product, slot, index = 0) {
   return { ...product.dimensions_in };
 }
 
-/** Build the list of items placed in one room for the given layout. */
-export function buildItems(cat, layout, roomId) {
+/** Every piece in the layout as an item, wherever it is: each has .roomId (where it stands, or
+ *  would stand) and .stored (true while it is in the inventory). */
+export function allPieces(cat, layout) {
   const items = [];
-  for (const slot of cat.slotsByRoom[roomId] || []) {
-    const sel = layout.slots[slot.slot_id];
-    if (!sel?.option) continue;
-    const product = cat.products.get(sel.option);
+  const productPieces = (slot, product, poses, ownerId, extra) => {
     const kind = productKind(product);
     const mount = slotMount(slot);
-    sel.poses.forEach((pose, i) => {
+    const defaults = defaultSlotPoses(cat, slot, product.id);
+    poses.forEach((pose, i) => {
       const dims = productDims(product, slot, i);
       items.push({
-        key: `${slot.slot_id}#${i}`,
+        key: `${ownerId}#${i}`,
         kind: 'product',
-        id: slot.slot_id,
+        id: ownerId,
         index: i,
-        roomId,
+        extra,
+        roomId: pose.room || slot.room,
+        homeRoomId: slot.room,
+        stored: !!pose.stored,
         slot,
         product,
         productKind: kind,
@@ -195,12 +283,20 @@ export function buildItems(cat, layout, roomId) {
         collides: mount !== 'hidden' && mount !== 'top' && !NON_COLLIDING.has(kind),
         isRug: kind === 'rug',
         hidden: mount === 'hidden',
-        defaultZ: defaultSlotPoses(cat, slot, product.id)[i]?.z ?? 0,
+        defaultZ: defaults[i]?.z ?? 0,
         pose,
       });
     });
+  };
+  for (const slot of cat.slots.values()) {
+    const sel = layout.slots[slot.slot_id];
+    if (sel?.option) productPieces(slot, cat.products.get(sel.option), sel.poses, slot.slot_id, null);
   }
-  for (const e of cat.existingByRoom[roomId] || []) {
+  for (const x of layout.extras || []) {
+    const product = cat.products.get(x.product);
+    productPieces(cat.slots.get(product.slot), product, x.poses, x.uid, x.uid);
+  }
+  for (const e of cat.existing.values()) {
     const st = layout.existing[e.id];
     if (!st || st.hidden) continue;
     const mount = existingMount(e);
@@ -224,11 +320,14 @@ export function buildItems(cat, layout, roomId) {
         kind: 'existing',
         id: e.id,
         index: i,
-        roomId,
+        extra: null,
+        roomId: pose.room || e.room,
+        homeRoomId: e.room,
+        stored: !!pose.stored,
         piece: e,
         name: e.name,
         mount,
-        wallId: mount === 'wall' ? e.wall : null,
+        wallId: mount === 'wall' ? pose.wall || e.wall : null,
         supportId: mount === 'top' ? `${e.anchor}`.replace(/^on\s+/i, '').trim() : null,
         dims,
         localParts,
@@ -240,8 +339,19 @@ export function buildItems(cat, layout, roomId) {
       });
     });
   }
+  return items;
+}
+
+/** The items standing in one room for the given layout (stored pieces are left out). */
+export function buildItems(cat, layout, roomId) {
+  const items = allPieces(cat, layout).filter((it) => it.roomId === roomId && !it.stored);
   resolveSupports(items);
   return items;
+}
+
+/** One piece by key, built as an item whether it is placed or stored (null if it isn't in the plan). */
+export function pieceByKey(cat, layout, key) {
+  return allPieces(cat, layout).find((it) => it.key === key) || null;
 }
 
 export function supportOf(items, item) {
@@ -318,7 +428,7 @@ export function currentOverlaps(items, it) {
  * except pieces it already overlapped before the move, so an overlap left by a swap can be
  * dragged apart.
  */
-export function checkPose(room, items, it, pose, prevPose = it.pose) {
+export function checkPose(room, items, it, pose, prevPose = it.pose, { strict = false } = {}) {
   const baseZ = baseZFor(items, it, pose);
   const ed = effDims(it, pose);
   if (it.mount === 'floor') {
@@ -336,7 +446,8 @@ export function checkPose(room, items, it, pose, prevPose = it.pose) {
   if (it.collides) {
     const now = overlapPairs(items, it, pose, baseZ);
     if (now.length) {
-      const before = new Set(overlapPairs(items, it, prevPose, baseZFor(items, it, prevPose)).map((o) => o.key));
+      // strict (carrying): every overlap blocks, also with pieces it overlapped where it was before
+      const before = new Set(strict ? [] : overlapPairs(items, it, prevPose, baseZFor(items, it, prevPose)).map((o) => o.key));
       const blockers = now.filter((o) => !before.has(o.key));
       if (blockers.length) return { ok: false, reason: 'furniture', blockers };
     }
@@ -353,10 +464,11 @@ function pointInObb(x, y, o) {
 // Edits. Each returns { ok, ... } and mutates the layout (the caller re-renders and saves).
 
 function posesOf(layout, it) {
+  if (it.extra) return layout.extras.find((x) => x.uid === it.extra).poses;
   return it.kind === 'product' ? layout.slots[it.id].poses : layout.existing[it.id].poses;
 }
 
-function setPose(layout, items, it, pose) {
+export function setPose(layout, items, it, pose) {
   const old = it.pose;
   const poses = posesOf(layout, it);
   poses[it.index] = pose;
@@ -437,26 +549,45 @@ export function swapOption(cat, layout, slotId, productId) {
   const poses = want.map((p, i) => sel.poses[i] && i < slot.placements.length ? sel.poses[i] : p);
   layout.slots[slotId] = { option: productId, poses };
   if (productId === null) return { ok: true };
-  const room = cat.rooms.get(slot.room);
-  const items = buildItems(cat, layout, slot.room);
+  return { ok: true, adjusted: fitAfterSwap(cat, layout, slotId) };
+}
+
+/** Swap a Catalog addition (an "extra") to another option of the same slot. */
+export function swapExtra(cat, layout, uid, productId) {
+  const x = layout.extras.find((e) => e.uid === uid);
+  const slot = cat.slots.get(cat.products.get(x.product).slot);
+  if (!slot.options.includes(productId)) throw new Error(`${productId} is not an option of ${slot.slot_id}`);
+  const want = defaultSlotPoses(cat, slot, productId);
+  x.product = productId;
+  x.poses = want.map((p, i) => (x.poses[i] && i < slot.placements.length ? x.poses[i] : { ...p, stored: true }));
+  return { ok: true, adjusted: fitAfterSwap(cat, layout, uid) };
+}
+
+/** After a swap: pieces poking through a wall move back inside, and things resting on the slot
+ *  stay on its (possibly smaller) new top. Done in whichever room each piece stands. */
+function fitAfterSwap(cat, layout, ownerId) {
   const changed = [];
-  for (const it of items.filter((i) => i.id === slotId)) {
-    const fixed = fitInsideRoom(room, items, it);
-    if (fixed) { layout.slots[slotId].poses[it.index] = fixed; it.pose = fixed; changed.push(it.key); }
-  }
-  // Things resting on this slot stay on the (possibly smaller) new top.
-  resolveSupports(items);
-  for (const it of items.filter((i) => i.supportId === slotId)) {
-    const sup = supportOf(items, it);
-    const b = itemBoxes(sup)[0].o;
-    const rel = rotate2(it.pose.x - b.cx, it.pose.y - b.cy, -sup.pose.rot);
-    const cx = Math.max(-b.hw, Math.min(b.hw, rel.x)), cy = Math.max(-b.hd, Math.min(b.hd, rel.y));
-    if (cx !== rel.x || cy !== rel.y) {
-      const back = rotate2(cx, cy, sup.pose.rot);
-      layout.slots[it.id].poses[it.index] = { ...it.pose, x: b.cx + back.x, y: b.cy + back.y };
+  for (const roomId of cat.rooms.keys()) {
+    const room = cat.rooms.get(roomId);
+    const items = buildItems(cat, layout, roomId);
+    for (const it of items.filter((i) => i.id === ownerId)) {
+      const fixed = fitInsideRoom(room, items, it);
+      if (fixed) { posesOf(layout, it)[it.index] = fixed; it.pose = fixed; changed.push(it.key); }
+    }
+    resolveSupports(items);
+    for (const it of items.filter((i) => i.supportId === ownerId)) {
+      const sup = supportOf(items, it);
+      if (!sup) continue;
+      const b = itemBoxes(sup)[0].o;
+      const rel = rotate2(it.pose.x - b.cx, it.pose.y - b.cy, -sup.pose.rot);
+      const cx = Math.max(-b.hw, Math.min(b.hw, rel.x)), cy = Math.max(-b.hd, Math.min(b.hd, rel.y));
+      if (cx !== rel.x || cy !== rel.y) {
+        const back = rotate2(cx, cy, sup.pose.rot);
+        posesOf(layout, it)[it.index] = { ...it.pose, x: b.cx + back.x, y: b.cy + back.y };
+      }
     }
   }
-  return { ok: true, adjusted: changed };
+  return changed;
 }
 
 /** If an item pokes through a wall/ceiling, shift it the shortest distance back inside (ignores furniture). */

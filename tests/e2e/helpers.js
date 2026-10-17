@@ -21,7 +21,11 @@ export async function openApp(page, query = '') {
   page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`));
   page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
   page.on('request', (r) => { const u = new URL(r.url()); if (!['localhost', '127.0.0.1'].includes(u.hostname) && !u.protocol.startsWith('blob') && !u.protocol.startsWith('data')) external.push(r.url()); });
-  await page.goto(`/${query ? `?${query}` : ''}`);
+  // the existing tests run in Overview (Walk mode is the default for a person on a first visit)
+  const q = new URLSearchParams(query);
+  if (!q.has('mode')) q.set('mode', 'overview');
+  if (!q.has('tutorial')) q.set('tutorial', '0');
+  await page.goto(`/?${q}`);
   await page.waitForFunction(() => document.body.classList.contains('ready'), null, { timeout: 90_000 });
   await page.evaluate(() => window.__app.whenLoaded());
   return { errors, external };

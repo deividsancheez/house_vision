@@ -2,8 +2,17 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import './styles.css';
+import './walk.css';
 import { loadCatalog } from './core/catalog.js';
-import { defaultLayout, moveToward, rotateItem, swapOption, resetItemPose, setExistingHidden, buildItems, effDims, itemBoxes } from './core/items.js';
+import { defaultLayout, moveToward, rotateItem, swapOption, swapExtra, resetItemPose, setExistingHidden, buildItems, effDims, itemBoxes, parseKey, pieceByKey, defaultSlotPoses, defaultExistingPoses } from './core/items.js';
+import { History } from './core/history.js';
+import { roomWarnings, explainWarning, isDismissed, dismiss as dismissWarningIn, restore as restoreWarningIn } from './core/explain.js';
+import { roomGoals } from './core/goals.js';
+import { storePiece, placePieces, removeFromPlan, addFromCatalog, ungroup } from './core/inventory.js';
+import { shortName } from './core/carry.js';
+import { WalkMode } from './walk/walkMode.js';
+import { setupWalkInput } from './walk/input.js';
+import { Sounds } from './walk/audio.js';
 import { wallCoords } from './core/catalog.js';
 import { computeBudget } from './core/budget.js';
 import { computeWarnings } from './core/fit.js';
@@ -34,6 +43,8 @@ class App {
     this.needsRender = true;
     this.needsShadow = true;
     this.listeners = new Set();
+    this.viewMode = 'overview';
+    this.tutorial = false;
   }
 
   async start() {
@@ -62,6 +73,17 @@ class App {
     const saved = store.loadCurrent(this.cat);
     this.layout = saved?.layout || defaultLayout(this.cat);
     this.layoutName = saved?.name || "Designer's layout";
+    this.history = new History();
+    this.history.reset(this.layout);
+    this.settings = store.loadSettings();
+    // muted by default on phones until you turn it on; on a computer it starts on
+    this.sounds = new Sounds(this.settings.muted ?? coarse);
+    const def = defaultLayout(this.cat);
+    this.designerScores = Object.fromEntries([...this.cat.rooms.keys()].map((id) => [id, roomGoals(this.cat, def, id).score]));
+    this.best = store.loadBest();
+    for (const id of this.cat.rooms.keys()) if (!Number.isFinite(this.best[id])) this.best[id] = this.designerScores[id];
+    store.saveBest(this.best);
+    this.lastGoals = {};
 
     this.setupInteraction();
     this.controls = new OrbitControls(this.camera, this.canvas);
@@ -74,13 +96,23 @@ class App {
     this.controls.touches = { ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN };
     this.controls.addEventListener('change', () => this.invalidate());
 
+    this.walk = new WalkMode(this);
     this.ui = new UI(this);
+    setupWalkInput(this);
     new ResizeObserver(() => this.refreshProjection()).observe(this.ui.panel);
     window.addEventListener('resize', () => this.resize());
     this.resize();
     await this.setRoom(params.get('room') === 'bedroom' ? 'bedroom' : 'living');
     const view = params.get('view');
     if (view) this.applyPreset(view, false);
+    // Walk is the default on the first visit, after the tutorial; ?mode=overview|walk picks one
+    const asked = params.get('mode');
+    const mode = asked === 'walk' || asked === 'overview' ? asked : view ? 'overview' : this.settings.mode || 'walk';
+    this.primeGoals();
+    if (mode === 'walk') {
+      this.setViewMode('walk');
+      if (!this.settings.tutorialDone && params.get('tutorial') !== '0' && !asked) this.startTutorial();
+    }
     this.loop();
     document.body.classList.add('ready');
     // the loading screen fades out (CSS); remove it afterwards even if a busy phone stalls the fade
@@ -112,7 +144,7 @@ class App {
    *  the part that stays visible, at the same scale, so a selected piece is not hidden under them. */
   refreshProjection() {
     const w = this.canvas.clientWidth, h = this.canvas.clientHeight;
-    const phone = matchMedia('(max-width: 720px)').matches && !document.body.classList.contains('clean');
+    const phone = matchMedia('(max-width: 720px)').matches && !document.body.classList.contains('clean') && this.viewMode !== 'walk';
     const panel = this.ui?.panel;
     const bottom = phone && panel && !panel.hidden ? Math.min(panel.getBoundingClientRect().height, h * 0.6) : 0;
     const bar = phone ? this.ui?.root.querySelector('.topbar') : null;
@@ -128,6 +160,7 @@ class App {
 
   /** Presets keep the photo's view: on narrow (portrait) screens the field of view widens to fit it, up to a limit. */
   applyFov() {
+    if (this.viewMode === 'walk') { this.camera.fov = this.walkFov(); return; }
     const vfov = this.viewVfov || 50;
     const photoAspect = 4 / 3;
     let fov = vfov;
@@ -143,8 +176,9 @@ class App {
 
   get room() { return this.rooms.get(this.roomId); }
 
-  async setRoom(id) {
+  async setRoom(id, opts = {}) {
     if (this.roomId === id) return;
+    if (this.walk?.carry && !opts.keepWalk) this.walk.cancel(true);
     this.select(null);
     if (this.room) this.room.detach(this.scene);
     let rs = this.rooms.get(id);
@@ -155,13 +189,71 @@ class App {
     rs.setMode(this.mode);
     rs.setCurtainsClosed(this.curtainsClosed, false);
     rs.setClosetDoorsVisible(this.closetDoors);
+    if (this.walk) rs.setHiddenKeys(new Set(this.walk.carry ? this.walk.carry.keys : []));
     this.loading = rs.sync(this.layout);
     if (first) this.setView(overview(rs.room, this.camera.aspect), false);
+    this.walk?.dirtyWorld();
+    if (this.viewMode === 'walk' && !opts.keepWalk) this.walk.toStart();
     this.emit('room');
     this.refresh();
+    this.primeGoals();
     await this.loading;
     this.invalidate(true);
+    this.warmShaders();
     this.emit('loaded');
+  }
+
+  // ------------------------------------------------------------------------------------------
+  // Walk / Overview
+  setViewMode(mode) {
+    if (mode === this.viewMode) return;
+    if (mode === 'walk') {
+      this.overviewCam = { pos: this.camera.position.clone(), target: this.controls.target.clone() };
+      this.tween = null;
+      this.controls.enabled = false;
+      this.viewMode = 'walk';
+      this.select(null);
+      this.walk.enter();
+    } else {
+      this.walk.exit();
+      this.viewMode = 'overview';
+      this.controls.enabled = true;
+      if (this.overviewCam) {
+        this.camera.position.copy(this.overviewCam.pos);
+        this.controls.target.copy(this.overviewCam.target);
+        this.controls.update();
+      } else this.setView(overview(this.room.room, this.camera.aspect), false);
+    }
+    if (!this.tutorial) { this.settings.mode = mode; this.saveSettings(); }
+    this.refreshProjection();
+    this.refresh();
+    this.emit('viewmode');
+    this.invalidate(true);
+  }
+
+  saveSettings() { store.saveSettings(this.settings); }
+
+  setEyeHeight(v) {
+    this.settings.eyeHeight = v;
+    this.saveSettings();
+    this.walk.dirtyWorld();
+    this.walk.applyCamera();
+    this.invalidate();
+    this.emit('settings');
+  }
+
+  setMuted(m) {
+    this.sounds.setMuted(m);
+    this.settings.muted = m;
+    this.saveSettings();
+    this.emit('settings');
+  }
+
+  /** Field of view in Walk mode: about 85° across, kept between 60° and 95° up and down. */
+  walkFov() {
+    const a = this.camera.aspect || 1;
+    const v = (2 * Math.atan(Math.tan((85 * Math.PI) / 360) / a) * 180) / Math.PI;
+    return Math.max(60, Math.min(95, v));
   }
 
   // ------------------------------------------------------------------------------------------
@@ -211,6 +303,7 @@ class App {
     for (const rs of this.rooms.values()) { rs.setMode(mode); rs.setCurtainsClosed(this.curtainsClosed); }
     this.scene.background.set(mode === 'day' ? '#e9e6e1' : '#1b1d22');
     this.invalidate(true);
+    this.warmShaders();
     this.emit('mode');
   }
 
@@ -223,6 +316,7 @@ class App {
   setClosetDoors(v) {
     this.closetDoors = v;
     for (const rs of this.rooms.values()) rs.setClosetDoorsVisible(v);
+    this.walk?.dirtyWorld();
     this.emit('mode');
   }
 
@@ -232,6 +326,231 @@ class App {
   item(key) { return this.items.find((i) => i.key === key) || null; }
   get budget() { return computeBudget(this.cat, this.layout); }
   get warnings() { return computeWarnings(this.cat, this.roomId, this.items); }
+  /** The room's warnings, explained, split into active and dismissed. */
+  explained(roomId = this.roomId) {
+    const items = roomId === this.roomId ? this.items : buildItems(this.cat, this.layout, roomId);
+    return roomWarnings(this.cat, this.layout, roomId, items, computeWarnings(this.cat, roomId, items));
+  }
+
+  /** Warnings that aren't dismissed (raw, for the Overview banner and outlines). */
+  activeWarnings() {
+    return this.warnings.filter((w) => !isDismissed(this.layout, explainWarning(this.cat, this.roomId, w, this.items)));
+  }
+
+  dismissWarning(sig) {
+    const ex = this.explained().all.find((e) => e.sig === sig);
+    if (!ex) return;
+    dismissWarningIn(this.layout, ex);
+    this.persist();
+    this.refresh();
+    this.checkGoals();
+  }
+
+  restoreWarning(sig) {
+    restoreWarningIn(this.layout, sig);
+    this.persist();
+    this.refresh();
+  }
+
+  /** "Show me": mark the zone on the floor (Walk: and look at it; Overview: in the floor plan). */
+  showWarning(ex) {
+    this.ui.closeModal();
+    if (this.viewMode === 'walk') {
+      const z = ex.highlight.zone;
+      const it = this.item(ex.key);
+      const p = z ? { x: (z.x0 + z.x1) / 2, y: (z.y0 + z.y1) / 2, z: 0 } : it ? { x: it.pose.x, y: it.pose.y, z: (it.baseZ ?? 0) + effDims(it).h / 2 } : null;
+      if (p) this.walk.lookAtPoint(p);
+    } else {
+      this.applyPreset('top', false);
+      this.select(ex.key);
+    }
+    this.room.showHighlight(ex.highlight);
+    this.shownWarning = ex.sig;
+    this.emit('show-warning');
+  }
+
+  // ------------------------------------------------------------------------------------------
+  // Goals and score
+  goals(roomId = this.roomId) { return roomGoals(this.cat, this.layout, roomId); }
+  bestScore(roomId) { return this.best[roomId]; }
+  designerScore(roomId) { return this.designerScores[roomId]; }
+
+  /** Remember which goals are done without celebrating (after loading or switching rooms). */
+  primeGoals() {
+    if (!this.roomId) return;
+    const g = this.goals();
+    this.lastGoals[this.roomId] = new Set(g.goals.filter((x) => x.done).map((x) => x.id));
+    this.updateBest(g.score);
+  }
+
+  /** After a change: a goal that just got done plays a sparkle and a sound, with a toast. */
+  checkGoals() {
+    if (!this.roomId || this.tutorial) return;
+    const g = this.goals();
+    const before = this.lastGoals[this.roomId] || new Set();
+    const now = new Set(g.goals.filter((x) => x.done).map((x) => x.id));
+    const fresh = g.goals.filter((x) => x.done && !before.has(x.id));
+    this.lastGoals[this.roomId] = now;
+    if (fresh.length) {
+      this.ui.toast(`Goal complete: ${fresh.map((x) => x.label).join(', ')} · score ${g.score}`, 'goal');
+      this.ui.sparkle();
+      this.sounds.play('goal');
+      this.emit('goal');
+    }
+    this.updateBest(g.score);
+  }
+
+  updateBest(score) {
+    if (this.tutorial) return;
+    if (score > (this.best[this.roomId] ?? -1)) { this.best[this.roomId] = score; store.saveBest(this.best); }
+  }
+
+  // ------------------------------------------------------------------------------------------
+  // Undo / redo
+  persist() { if (!this.tutorial) store.saveCurrent(this.layoutName, this.layout); }
+
+  /** Show a layout (undo/redo) without recording it as a new step. */
+  applyLayout(layout) {
+    this.layout = layout;
+    this.select(null);
+    for (const rs of this.rooms.values()) rs.sync(this.layout);
+    this.walk?.dirtyWorld();
+    this.persist();
+    this.refresh();
+    this.checkGoals();
+  }
+
+  undo(silent = false) {
+    if (this.walk?.carry && !silent) { this.walk.cancel(); return true; }
+    const r = this.history.undo(this.layout);
+    if (!r) return false;
+    this.applyLayout(r.layout);
+    if (!silent) this.ui.toast(`Undone: ${r.label}`, 'info');
+    return true;
+  }
+
+  redo() {
+    if (this.walk?.carry) return false;
+    const r = this.history.redo(this.layout);
+    if (!r) return false;
+    this.applyLayout(r.layout);
+    this.ui.toast(`Redone: ${r.label}`, 'info');
+    return true;
+  }
+
+  // ------------------------------------------------------------------------------------------
+  // Inventory actions (Walk mode and the inventory panel)
+  storeKey(key, roomId = this.roomId) {
+    const it = pieceByKey(this.cat, this.layout, key);
+    const r = storePiece(this.cat, this.layout, roomId, key);
+    if (!r.ok) return false;
+    if (this.selected && r.keys.includes(this.selected)) this.select(null);
+    this.commit({ label: `Store ${shortName(it)}` });
+    this.sounds.play('store');
+    const more = r.keys.length - 1;
+    this.ui.toast(`Stored ${shortName(it)}${more ? ` with ${more} thing${more > 1 ? 's' : ''} on it` : ''}. Still in the budget. ${coarse ? 'Tap the bag' : 'Press I'} to see it.`, 'info');
+    return true;
+  }
+
+  placePieces(roomId, placements, label) {
+    placePieces(this.cat, this.layout, roomId, placements);
+    this.commit({ label });
+  }
+
+  /** Inventory "Place": carry it in front of you (switches to Walk mode). */
+  placeFromInventory(uid, opts = {}) {
+    if (this.viewMode !== 'walk') this.setViewMode('walk');
+    this.ui.inventory.hide();
+    return this.walk.carryFromInventory(uid, opts);
+  }
+
+  /** A stored piece that can't be carried (pillow inserts) goes straight back where its slot puts it. */
+  placeNow(it, deps = []) {
+    const def = it.kind === 'product' ? defaultSlotPoses(this.cat, it.slot, it.product.id)[it.index] : defaultExistingPoses(it.piece)[it.index];
+    placePieces(this.cat, this.layout, it.homeRoomId, [{ key: it.key, pose: { ...def } }, ...deps.map((d) => ({ key: d.key, pose: { ...d.pose } }))]);
+    this.commit({ label: `Place ${shortName(it)}` });
+  }
+
+  addFromCatalog(productId) {
+    const p = this.cat.products.get(productId);
+    const r = addFromCatalog(this.cat, this.layout, productId);
+    this.commit({ label: `Add ${shortName({ kind: 'product', product: p })}` });
+    const g = this.layout.inventory.find((x) => x.keys.includes(r.keys[0]));
+    if (r.keys.length > 1) this.ui.toast(`${p.name}: ${r.keys.length} pieces. The others wait in the inventory.`, 'info');
+    return this.placeFromInventory(g.uid, { catalog: true });
+  }
+
+  /** Swap a piece's product (its slot, or a Catalog addition) from the inventory or the card. */
+  swapPiece(key, productId) {
+    const { id } = parseKey(key);
+    const extra = this.layout.extras.find((x) => x.uid === id);
+    const r = extra ? swapExtra(this.cat, this.layout, id, productId) : swapOptionKeepSel(this, id, productId);
+    this.commit({ label: `Swap to ${shortName({ kind: 'product', product: this.cat.products.get(productId) })}` });
+    if (r?.adjusted?.length) this.ui.toast('Moved it slightly so it fits inside the walls.', 'info');
+    return r;
+  }
+
+  removeFromPlan(key) {
+    const it = pieceByKey(this.cat, this.layout, key);
+    const r = removeFromPlan(this.cat, this.layout, key);
+    if (!r.ok) { this.ui.toast(r.reason, 'warn'); return false; }
+    if (this.selected && r.keys.includes(this.selected)) this.select(null);
+    this.commit({ label: `Remove ${shortName(it)}` });
+    this.ui.toast(`Removed ${shortName(it)} from the plan. It's back in the Catalog.`, 'info');
+    return true;
+  }
+
+  ungroupStored(uid) {
+    if (ungroup(this.layout, uid)) this.commit({ label: 'Ungroup' });
+  }
+
+  // ------------------------------------------------------------------------------------------
+  // Tutorial: runs on a copy of the layout
+  startTutorial() {
+    if (this.tutorial) return;
+    this.ui.closeTop();
+    this.ui.tutorial.start();
+  }
+
+  beginTutorial() {
+    if (this.walk.carry) this.walk.cancel(true);
+    this.saved = { layout: this.layout, name: this.layoutName, history: this.history };
+    // a copy of your layout; the designer's if yours has no coffee table or pillows in the living room
+    const items = buildItems(this.cat, this.layout, 'living');
+    const usable = items.some((i) => i.key === 'LR-COFFEE#0') && items.some((i) => /^LR-PILLOW-(NEUTRAL|ACCENT)#/.test(i.key));
+    this.tutorial = true;
+    this.layout = structuredClone(usable ? this.layout : defaultLayout(this.cat));
+    this.history = new History();
+    this.history.reset(this.layout);
+    for (const rs of this.rooms.values()) rs.sync(this.layout);
+    this.setViewMode('walk');
+    if (this.roomId !== 'living') this.setRoom('living');
+    else this.walk.toStart();
+    this.walk.dirtyWorld();
+    this.refresh();
+  }
+
+  endTutorial(completed) {
+    if (this.walk.carry) this.walk.cancel(true);
+    this.ui.inventory.hide();
+    this.layout = this.saved.layout;
+    this.layoutName = this.saved.name;
+    this.history = this.saved.history;
+    this.saved = null;
+    this.tutorial = false;
+    this.settings.tutorialDone = true;
+    this.settings.mode = 'walk';
+    this.saveSettings();
+    for (const rs of this.rooms.values()) rs.sync(this.layout);
+    this.walk.dirtyWorld();
+    this.walk.toStart();
+    this.select(null);
+    this.refresh();
+    this.primeGoals();
+    this.ui.toast(completed ? 'Tutorial done. Your real layout is back, unchanged.' : 'Tutorial skipped. Replay it any time from Settings.', 'info');
+    this.emit('tutorial');
+  }
+
   allWarnings() {
     const out = [];
     for (const id of this.cat.rooms.keys()) out.push(...computeWarnings(this.cat, id, buildItems(this.cat, this.layout, id)).map((w) => ({ ...w, room: id })));
@@ -241,21 +560,42 @@ class App {
   /** Re-sync all built rooms with the layout and persist it. */
   commit(opts = {}) {
     for (const rs of this.rooms.values()) if (rs !== this.room || !opts.skipCurrent) rs.sync(this.layout);
-    store.saveCurrent(this.layoutName, this.layout);
+    this.persist();
+    this.history.record(this.layout, opts.label || 'Change');
+    this.walk?.dirtyWorld();
     this.refresh();
+    this.checkGoals();
   }
 
   refresh() {
-    const w = this.warnings;
+    // Walk mode marks zones only on "Show me"; Overview outlines the zones of the active warnings
+    const w = this.viewMode === 'walk' ? [] : this.activeWarnings();
     this.room?.setSelection(this.selected, w);
     this.emit('layout');
+    this.warmShaders();
+  }
+
+  /**
+   * Compile the shaders of everything in the room up front (off the main thread where the browser
+   * can). Otherwise each material compiles the first time it comes into view, and turning around
+   * in Walk mode stalls for a few hundred ms per new material on a phone.
+   */
+  warmShaders() {
+    clearTimeout(this.warmTimer);
+    this.warmTimer = setTimeout(async () => {
+      try {
+        await this.whenLoaded();
+        await this.renderer.compileAsync(this.scene, this.camera);
+        if (this.walk) await this.renderer.compileAsync(this.walk.hands.scene, this.camera);
+      } catch { /* a model that failed to load is reported elsewhere */ }
+    }, 50);
   }
 
   select(key) {
     this.selected = key;
     // an item stored in the closet is shown by sliding the closet doors out of the way while it's selected
     if (this.room) this.room.setClosetDoorsVisible(this.closetDoors && !(key && this.isInCloset(key)));
-    this.room?.setSelection(key, this.warnings);
+    this.room?.setSelection(key, this.viewMode === 'walk' ? [] : this.activeWarnings());
     this.emit('select');
   }
 
@@ -281,22 +621,23 @@ class App {
   removeSelected() {
     const it = this.item(this.selected);
     if (!it) return;
+    if (it.extra) { this.removeFromPlan(it.key); return; }
     if (it.kind === 'product') swapOption(this.cat, this.layout, it.id, null);
     else setExistingHidden(this.layout, it.id, true);
     this.select(null);
-    this.commit();
+    this.commit({ label: `Remove ${shortName(it)}` });
   }
 
   restore(slotOrExistingId, productId) {
     if (this.cat.slots.has(slotOrExistingId)) swapOption(this.cat, this.layout, slotOrExistingId, productId ?? this.cat.slots.get(slotOrExistingId).default_option);
     else setExistingHidden(this.layout, slotOrExistingId, false);
-    this.commit();
+    this.commit({ label: 'Add back' });
   }
 
   swap(slotId, productId) {
     const keepSel = this.selected?.split('#');
     const r = swapOption(this.cat, this.layout, slotId, productId);
-    this.commit();
+    this.commit({ label: `Swap to ${shortName({ kind: 'product', product: this.cat.products.get(productId) })}` });
     if (keepSel && keepSel[0] === slotId) this.select(`${slotId}#${keepSel[1]}`);
     if (r.adjusted?.length) this.ui.toast('Moved it slightly so it fits inside the walls.', 'info');
     return r;
@@ -309,21 +650,25 @@ class App {
     this.afterEdit();
   }
 
-  afterEdit() {
+  afterEdit(label = 'Move') {
     for (const o of this.room.objects.values()) this.room.place(o);
     this.room.updateLights();
     this.room.applyCurtains();
-    store.saveCurrent(this.layoutName, this.layout);
+    this.persist();
+    this.history.record(this.layout, label);
+    this.walk?.dirtyWorld();
     // other built rooms are unaffected by moves in this room
     this.refresh();
+    this.checkGoals();
     this.invalidate(true);
   }
 
   loadLayout(layout, name) {
+    if (this.walk?.carry) this.walk.cancel(true);
     this.layout = structuredClone(layout);
     this.layoutName = name;
     this.select(null);
-    this.commit();
+    this.commit({ label: `Load ${name}` });
   }
 
   resetToDesigner() {
@@ -410,6 +755,7 @@ class App {
     this.pickAt = (clientX, clientY) => pick({ clientX, clientY });
 
     el.addEventListener('pointerdown', (e) => {
+      if (this.viewMode === 'walk') return;
       pointers.set(e.pointerId, e);
       if (pointers.size > 1) { if (drag) endDrag(); down = null; return; }
       down = { x: e.clientX, y: e.clientY, t: performance.now() };
@@ -428,6 +774,7 @@ class App {
       }
     });
     el.addEventListener('pointermove', (e) => {
+      if (this.viewMode === 'walk') return;
       if (pointers.has(e.pointerId)) pointers.set(e.pointerId, e);
       if (!drag || e.pointerId !== drag.id) {
         if (!drag && e.pointerType === 'mouse' && !e.buttons) this.hoverAt(pick(e));
@@ -461,6 +808,7 @@ class App {
     };
     const up = (e) => {
       pointers.delete(e.pointerId);
+      if (this.viewMode === 'walk') return;
       if (drag && e.pointerId === drag.id) { e.stopImmediatePropagation(); endDrag(); down = null; return; }
       if (down && Math.hypot(e.clientX - down.x, e.clientY - down.y) < 7 && performance.now() - down.t < 500) {
         const key = pick(e);
@@ -472,7 +820,8 @@ class App {
     el.addEventListener('pointercancel', (e) => { pointers.delete(e.pointerId); if (drag) endDrag(); down = null; });
     window.addEventListener('keydown', (e) => {
       if (e.target.closest?.('input, textarea, select')) return;
-      if (e.key === 'Escape') this.select(null);
+      if (this.viewMode === 'walk') return; // Walk mode has its own keys (walk/input.js)
+      if (e.key === 'Escape') { if (!this.ui.closeTop()) this.select(null); return; }
       if (!this.selected) return;
       if (e.key === 'r' || e.key === 'R') this.rotateSelected(e.shiftKey ? -15 : 15);
       if (e.key === 'Delete' || e.key === 'Backspace') this.removeSelected();
@@ -590,8 +939,13 @@ class App {
       requestAnimationFrame(tick);
       const dt = Math.min(0.1, (now - last) / 1000);
       last = now;
-      if (this.tween) { this.tween(now); this.needsRender = true; }
-      if (this.controls.update()) this.needsRender = true;
+      if (this.viewMode === 'walk') {
+        if (this.walk.update(dt, now)) this.needsRender = true;
+        this.ui.tutorial.tick();
+      } else {
+        if (this.tween) { this.tween(now); this.needsRender = true; }
+        if (this.controls.update()) this.needsRender = true;
+      }
       if (this.room?.stepAnimations(dt)) { this.needsRender = true; this.needsShadow = true; }
       if (this.forceRender) this.needsRender = true;
       if (!this.needsRender) return;
@@ -603,6 +957,14 @@ class App {
       if (this.needsShadow) { this.renderer.shadowMap.needsUpdate = true; this.needsShadow = false; }
       const t0 = performance.now();
       this.renderer.render(this.scene, this.camera);
+      if (this.viewMode === 'walk' && this.walk.hands.visible) {
+        // the hands go on top, in their own pass, so they never dip into a wall
+        this.walk.hands.setLook(this.mode === 'night', this.renderer.toneMappingExposure);
+        this.renderer.autoClear = false;
+        this.renderer.clearDepth();
+        this.renderer.render(this.walk.hands.scene, this.camera);
+        this.renderer.autoClear = true;
+      }
       frames.push({ now, cost: performance.now() - t0 });
       while (frames.length && now - frames[0].now > 1500) frames.shift();
       this.adapt(frames, now);
@@ -645,6 +1007,19 @@ class App {
     if (box.isEmpty()) return null;
     const s = box.getSize(new THREE.Vector3());
     return { w: s.x, d: s.y, h: s.z, z0: box.min.z };
+  }
+
+  /** Walk mode: render continuously for `ms` while turning and walking; returns frames per second. */
+  async measureWalkFps(ms = 3000) {
+    this.forceRender = true;
+    const start = performance.now();
+    const f0 = this.frameCount || 0;
+    let k = 0;
+    const turn = setInterval(() => { this.walk.look(5, Math.sin(k++ / 20) * 1.5); }, 16);
+    await new Promise((r) => setTimeout(r, ms));
+    clearInterval(turn);
+    this.forceRender = false;
+    return ((this.frameCount || 0) - f0) / ((performance.now() - start) / 1000);
   }
 
   /** Render continuously for `ms` while the camera orbits; returns frames per second. */
@@ -705,3 +1080,8 @@ app.start().catch((err) => {
   el.hidden = false;
   el.textContent = `The viewer could not start: ${err.message}`;
 });
+
+/** Swap a slot's product, keeping the selection on it (the item card stays open). */
+function swapOptionKeepSel(app, slotId, productId) {
+  return swapOption(app.cat, app.layout, slotId, productId);
+}

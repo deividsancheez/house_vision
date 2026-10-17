@@ -50,7 +50,7 @@ export function renameSaved(id, name) {
 }
 
 export function exportFile(layouts) {
-  return { app: FILE_APP_ID, version: 1, exported: new Date().toISOString(), layouts: layouts.map(({ name, created, updated, layout }) => ({ name, created, updated, layout })) };
+  return { app: FILE_APP_ID, version: 2, exported: new Date().toISOString(), layouts: layouts.map(({ name, created, updated, layout }) => ({ name, created, updated, layout })) };
 }
 
 /** Parse an exported file; returns {layouts, warnings}. Unknown product/slot ids are dropped, not guessed. */
@@ -81,22 +81,58 @@ export function importLayouts(parsed) {
   return names;
 }
 
-/** Differences between two layouts, slot by slot, for the compare view. */
+/** Differences between two layouts, slot by slot, for the compare view (stored pieces and
+ *  Catalog additions included). */
 export function diffLayouts(cat, a, b) {
   const rows = [];
+  const storedN = (poses) => poses.filter((p) => p.stored).length;
+  const placedOnly = (poses) => JSON.stringify(poses.map(({ stored, ...p }) => p));
   for (const s of cat.slots.values()) {
     const A = a.slots[s.slot_id], B = b.slots[s.slot_id];
-    const moved = JSON.stringify(A.poses) !== JSON.stringify(B.poses);
-    if (A.option !== B.option || moved) rows.push({ slotId: s.slot_id, label: s.label, room: s.room, a: A.option, b: B.option, sameOption: A.option === B.option, moved });
+    const moved = placedOnly(A.poses) !== placedOnly(B.poses);
+    const sa = A.option ? storedN(A.poses) : 0, sb = B.option ? storedN(B.poses) : 0;
+    if (A.option !== B.option || moved || sa !== sb) rows.push({ slotId: s.slot_id, label: s.label, room: s.room, a: A.option, b: B.option, sameOption: A.option === B.option, moved, storedA: sa, storedB: sb });
   }
   for (const [id, A] of Object.entries(a.existing)) {
     const B = b.existing[id];
     if (!B) continue;
-    const moved = JSON.stringify(A.poses) !== JSON.stringify(B.poses);
-    if (A.hidden !== B.hidden || moved) rows.push({ existingId: id, label: cat.existing.get(id).name, room: cat.existing.get(id).room, a: A.hidden ? null : 'kept', b: B.hidden ? null : 'kept', sameOption: A.hidden === B.hidden, moved });
+    const moved = placedOnly(A.poses) !== placedOnly(B.poses);
+    const sa = storedN(A.poses), sb = storedN(B.poses);
+    if (A.hidden !== B.hidden || moved || sa !== sb) rows.push({ existingId: id, label: cat.existing.get(id).name, room: cat.existing.get(id).room, a: A.hidden ? null : 'kept', b: B.hidden ? null : 'kept', sameOption: A.hidden === B.hidden, moved, storedA: sa, storedB: sb });
+  }
+  // Catalog additions, matched by product
+  const xa = (a.extras || []).map((x) => x.product), xb = (b.extras || []).map((x) => x.product);
+  for (const pid of [...new Set([...xa, ...xb])]) {
+    const na = xa.filter((x) => x === pid).length, nb = xb.filter((x) => x === pid).length;
+    if (na === nb) continue;
+    const p = cat.products.get(pid);
+    rows.push({ extraProduct: pid, label: `${cat.slots.get(p.slot).label} (added from the Catalog)`, room: cat.slots.get(p.slot).room, a: na ? pid : null, b: nb ? pid : null, sameOption: false, moved: false, storedA: 0, storedB: 0 });
   }
   return rows;
 }
+
+// ---------------------------------------------------------------------------------------------
+// Walk-mode settings and best scores (this browser only)
+
+const KEY_SETTINGS = 'roomviewer.settings.v1';
+const KEY_BEST = 'roomviewer.best.v1';
+
+export const DEFAULT_SETTINGS = { eyeHeight: 68, sway: true, hints: true, muted: null, tutorialDone: false, mode: null };
+
+export function loadSettings() {
+  const s = readJson(KEY_SETTINGS, {});
+  const out = { ...DEFAULT_SETTINGS, ...(s && typeof s === 'object' ? s : {}) };
+  if (!Number.isFinite(out.eyeHeight)) out.eyeHeight = DEFAULT_SETTINGS.eyeHeight;
+  return out;
+}
+export function saveSettings(s) { return writeJson(KEY_SETTINGS, s); }
+
+/** Best room scores reached: {living: n, bedroom: n}. */
+export function loadBest() {
+  const b = readJson(KEY_BEST, {});
+  return b && typeof b === 'object' ? b : {};
+}
+export function saveBest(b) { return writeJson(KEY_BEST, b); }
 
 /** A stored layout brought up to date with the current products.json (missing slots get defaults). */
 export function normalizeFor(cat, layout) {

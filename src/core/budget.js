@@ -25,6 +25,16 @@ export function computeBudget(cat, layout) {
     if (p.taxed) taxedCents += cents; else untaxedCents += cents;
     lines.push({ slotId: slot.slot_id, room: slot.room, productId: p.id, name: p.name, retailer: p.retailer, qty: p.qty ?? 1, unitCents: toCents(p.price), cents, taxed: !!p.taxed, condition: p.condition });
   }
+  // Products added from the Catalog on top of the slots' own picks count the same way.
+  // (Stored pieces stay in the budget: they are bought, only not placed.)
+  for (const x of layout.extras || []) {
+    const p = cat.products.get(x.product);
+    if (!p) continue;
+    const slot = cat.slots.get(p.slot);
+    const cents = lineCents(p);
+    if (p.taxed) taxedCents += cents; else untaxedCents += cents;
+    lines.push({ slotId: p.slot, extra: x.uid, room: slot?.room, productId: p.id, name: p.name, retailer: p.retailer, qty: p.qty ?? 1, unitCents: toCents(p.price), cents, taxed: !!p.taxed, condition: p.condition });
+  }
   const taxCents = Math.floor((taxedCents * rateBp + 5000) / 10000);
   const deliveryCents = toCents(cat.budgetMeta?.delivery ?? 0);
   const totalCents = taxedCents + untaxedCents + taxCents + deliveryCents;

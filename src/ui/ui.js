@@ -4,6 +4,11 @@ import { fmtMoney, lineCents, toCents } from '../core/budget.js';
 import * as store from '../core/layouts.js';
 import { PRESETS, presetLabel } from '../scene/views.js';
 import { photoUrl } from '../scene/products.js';
+import { WalkHud } from './walkHud.js';
+import { InventoryPanel } from './inventory.js';
+import { WarnStack, warningsPanel } from './warnings.js';
+import { GoalsPanel } from './goals.js';
+import { Tutorial } from './tutorial.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const h = (tag, attrs = {}, ...kids) => {
@@ -34,6 +39,12 @@ const I = {
   reset: '<svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/></svg>',
   door: '<svg viewBox="0 0 24 24"><path d="M5 21V3h10l4 2v16M5 21h14M12 12h.01"/></svg>',
   up: '<svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg>',
+  bag: '<svg viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2"/></svg>',
+  sound: '<svg viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5v14l-4.5-4.5H4zM15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>',
+  mute: '<svg viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5v14l-4.5-4.5H4zM16 9.5l5 5M21 9.5l-5 5"/></svg>',
+  gear: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg>',
+  walk: '<svg viewBox="0 0 24 24"><circle cx="13" cy="4.5" r="1.8"/><path d="M10 21l2-6 3 3v4M8.5 12.5l1.5-4.5 4 1.5 2.5 3M10 8l-3 2"/></svg>',
+  orbit: '<svg viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5zM3 9v6l9 5 9-5V9M12 14v6"/></svg>',
 };
 const icon = (name) => h('span', { class: 'ico', html: I[name] });
 
@@ -59,10 +70,18 @@ export class UI {
     this.closetBtn = h('button', { class: 'tool', 'aria-label': 'Closet doors', onclick: () => app.setClosetDoors(!app.closetDoors) }, icon('door'), h('span', { class: 'lbl' }, 'Closet'));
     this.budgetChip = h('button', { class: 'budget-chip', onclick: () => this.openBudget(), 'aria-label': 'Budget details' });
     this.layoutLabel = h('div', { class: 'layout-name' });
+    this.modeSwitch = h('div', { class: 'modes', role: 'group', 'aria-label': 'Walk or overview' },
+      h('button', { 'data-mode': 'walk', 'aria-label': 'Walk', title: 'Walk through the rooms in first person', onclick: () => app.setViewMode('walk') }, icon('walk'), h('span', { class: 'lbl' }, 'Walk')),
+      h('button', { 'data-mode': 'overview', 'aria-label': 'Overview', title: 'Orbit view, floor plan and photo views', onclick: () => app.setViewMode('overview') }, icon('orbit'), h('span', { class: 'lbl' }, 'Overview')));
+    this.invBtn = h('button', { class: 'tool icon-only', 'aria-label': 'Inventory', onclick: () => this.toggleInventory() }, icon('bag'), h('span', { class: 'lbl' }, 'Inventory'), h('span', { class: 'count', 'data-testid': 'inv-count' }));
+    this.warnBtn = h('button', { class: 'tool icon-only warn-tool', 'aria-label': 'Fit warnings', onclick: () => this.openWarnings() }, icon('warn'), h('span', { class: 'lbl' }, 'Warnings'), h('span', { class: 'count', 'data-testid': 'warn-count' }));
+    this.soundBtn = h('button', { class: 'tool icon-only', 'aria-label': 'Sound on or off', onclick: () => app.setMuted(!app.sounds.muted) });
+    this.settingsBtn = h('button', { class: 'tool icon-only', 'aria-label': 'Settings', onclick: () => this.toggleMenu('settings') }, icon('gear'), h('span', { class: 'lbl' }, 'Settings'));
     const bar = h('header', { class: 'topbar' },
       h('div', { class: 'brand' }, h('b', {}, 'Reno 3D'), this.layoutLabel),
+      this.modeSwitch,
       this.tabs,
-      h('div', { class: 'tools' }, this.modeBtn, this.curtainBtn, this.closetBtn, this.viewBtn, this.itemsBtn, this.layoutsBtn),
+      h('div', { class: 'tools' }, this.modeBtn, this.curtainBtn, this.closetBtn, this.viewBtn, this.itemsBtn, this.invBtn, this.warnBtn, this.layoutsBtn, this.soundBtn, this.settingsBtn),
       this.budgetChip);
     this.menu = h('div', { class: 'menu', hidden: true });
     this.banner = h('div', { class: 'banner', hidden: true, role: 'alert' });
@@ -70,13 +89,56 @@ export class UI {
     this.toasts = h('div', { class: 'toasts', 'aria-live': 'polite' });
     this.modal = h('div', { class: 'modal-back', hidden: true, onclick: (e) => { if (e.target === this.modal) this.closeModal(); } });
     this.hint = h('div', { class: 'hint' }, 'Tap an item to see it, swap it or buy it. Drag a selected item to move it.');
-    this.root.append(bar, this.menu, this.banner, this.panel, this.toasts, this.modal, this.hint);
+    this.walkHud = new WalkHud(app);
+    this.inventory = new InventoryPanel(app);
+    this.warnStack = new WarnStack(app);
+    this.goalsPanel = new GoalsPanel(app);
+    this.tutorial = new Tutorial(app);
+    this.sparkles = h('div', { class: 'sparkles', 'aria-hidden': 'true' });
+    // panels below the top bar follow its height (it wraps on narrow screens)
+    new ResizeObserver(() => document.documentElement.style.setProperty('--bar-bottom', `${Math.round(bar.getBoundingClientRect().bottom)}px`)).observe(bar);
+    this.root.append(this.walkHud.root, bar, this.warnStack.root, this.goalsPanel.root, this.menu, this.banner, this.panel, this.inventory.root, this.tutorial.root, this.toasts, this.modal, this.hint, this.sparkles);
     setTimeout(() => this.hint.classList.add('fade'), 7000);
+  }
+
+  /** Is a panel open that takes the keyboard (inventory, a dialog)? */
+  modalOpen() { return this.inventory.isOpen || !this.modal.hidden; }
+
+  /** Esc: close the top-most panel; returns true if something closed. */
+  closeTop() {
+    if (!this.modal.hidden) { this.closeModal(); return true; }
+    if (this.inventory.hide()) return true;
+    if (!this.menu.hidden) { this.menu.hidden = true; return true; }
+    if (!this.panel.hidden) { this.app.select(null); return true; }
+    return false;
+  }
+
+  toggleInventory() {
+    if (this.inventory.isOpen) { this.inventory.hide(); return; }
+    if (document.pointerLockElement) document.exitPointerLock?.();
+    this.menu.hidden = true;
+    this.inventory.show();
+  }
+
+  openWarnings() {
+    if (document.pointerLockElement) document.exitPointerLock?.();
+    this.openModal('warnings', 'Fit warnings', warningsPanel(this.app));
+  }
+
+  sparkle() {
+    const s = this.sparkles;
+    s.replaceChildren(...Array.from({ length: 18 }, (_, i) => h('i', { style: `--a:${(i * 360) / 18}deg; --d:${60 + (i % 3) * 30}px; --t:${0.6 + (i % 4) * 0.1}s` })));
+    s.classList.remove('go');
+    void s.offsetWidth;
+    s.classList.add('go');
   }
 
   update(what) {
     const app = this.app;
+    const walk = app.viewMode === 'walk';
     for (const b of this.tabs.children) b.setAttribute('aria-selected', String(b.dataset.room === app.roomId));
+    for (const b of this.modeSwitch.children) b.setAttribute('aria-pressed', String(b.dataset.mode === app.viewMode));
+    document.body.classList.toggle('mode-walk', walk);
     this.modeBtn.replaceChildren(icon(app.mode === 'day' ? 'sun' : 'moon'), h('span', { class: 'lbl' }, app.mode === 'day' ? 'Day' : 'Night'));
     this.modeBtn.classList.toggle('on', app.mode === 'night');
     this.curtainBtn.classList.toggle('on', app.curtainsClosed);
@@ -84,16 +146,31 @@ export class UI {
     this.closetBtn.hidden = app.roomId !== 'bedroom';
     this.closetBtn.classList.toggle('on', !app.closetDoors);
     this.closetBtn.querySelector('.lbl').textContent = app.closetDoors ? 'Closet closed' : 'Closet open';
-    for (const b of [this.modeBtn, this.curtainBtn, this.closetBtn, this.viewBtn, this.itemsBtn, this.layoutsBtn]) b.title = b.querySelector('.lbl')?.textContent || '';
-    this.layoutLabel.textContent = app.layoutName;
+    this.viewBtn.hidden = walk;
+    this.itemsBtn.hidden = walk;
+    const muted = app.sounds.muted;
+    this.soundBtn.replaceChildren(icon(muted ? 'mute' : 'sound'), h('span', { class: 'lbl' }, muted ? 'Sound off' : 'Sound on'));
+    this.soundBtn.classList.toggle('on', !muted);
+    const nInv = app.layout.inventory.reduce((a, g) => a + g.keys.length, 0);
+    this.invBtn.querySelector('.count').textContent = nInv ? String(nInv) : '';
+    const nWarn = app.explained().active.length;
+    this.warnBtn.querySelector('.count').textContent = nWarn ? String(nWarn) : '';
+    this.warnBtn.classList.toggle('has', nWarn > 0);
+    for (const b of [this.modeBtn, this.curtainBtn, this.closetBtn, this.viewBtn, this.itemsBtn, this.layoutsBtn, this.invBtn, this.warnBtn, this.soundBtn, this.settingsBtn]) b.title = b.querySelector('.lbl')?.textContent || '';
+    this.layoutLabel.textContent = app.tutorial ? 'Tutorial (practice copy)' : app.layoutName;
     const b = app.budget;
     this.budgetChip.className = `budget-chip ${b.over ? 'over' : 'ok'}`;
     this.budgetChip.replaceChildren(h('span', { class: 'k' }, 'Total'), h('strong', { 'data-testid': 'budget-total' }, fmtMoney(b.totalCents)), h('span', { class: 'cap' }, ` of ${fmtMoney(b.capCents)}`));
     this.renderBanner();
+    this.hint.hidden = walk;
     if (['select', 'layout', 'room', 'all', 'loaded', 'mode'].includes(what)) this.renderPanel();
     if (what === 'drag') this.renderPanelWarnings();
-    if (!this.menu.hidden && ['layout', 'room', 'loaded'].includes(what)) this.renderMenu(this.menuKind);
+    if (!this.menu.hidden && ['layout', 'room', 'loaded', 'viewmode', 'settings'].includes(what)) this.renderMenu(this.menuKind);
     if (this.modalKind === 'budget' && ['layout', 'all'].includes(what)) this.openBudget();
+    if (this.modalKind === 'warnings' && ['layout', 'room', 'all'].includes(what)) this.openWarnings();
+    if (['layout', 'room', 'all', 'loaded'].includes(what)) this.inventory.render();
+    if (what !== 'drag') { this.warnStack.render(); this.goalsPanel.render(); }
+    this.walkHud.show(walk);
   }
 
   toast(msg, kind = 'info') {
@@ -105,7 +182,8 @@ export class UI {
 
   // ------------------------------------------------------------------------------------------
   renderBanner() {
-    const w = this.app.warnings;
+    if (this.app.viewMode === 'walk') { this.banner.hidden = true; return; }
+    const w = this.app.activeWarnings();
     const sel = this.app.selected;
     const mine = sel ? w.filter((x) => x.key === sel || x.other === sel) : [];
     const list = mine.length ? mine : w;
@@ -121,7 +199,7 @@ export class UI {
     const box = $('.item-warnings', this.panel);
     if (!box) return;
     const sel = this.app.selected;
-    const w = this.app.warnings.filter((x) => x.key === sel || x.other === sel);
+    const w = this.app.activeWarnings().filter((x) => x.key === sel || x.other === sel);
     box.replaceChildren(...w.map((x) => h('div', { class: 'warn-line' }, icon('warn'), x.message)));
   }
 
@@ -157,7 +235,7 @@ export class UI {
       h('div', { class: 'buy-row' },
         h('a', { class: 'btn primary', href: p.buy_url, target: '_blank', rel: 'noopener', 'data-testid': 'buy' }, `Buy${p.retailer ? ` at ${p.retailer}` : ''}`),
         used && p.backup_search_url ? h('a', { class: 'btn ghost', href: p.backup_search_url, target: '_blank', rel: 'noopener', 'data-testid': 'backup' }, 'Backup search') : null),
-      this.swapBlock(slot, p.id),
+      this.swapBlock(slot, p.id, it),
       it.hidden
         ? h('div', { class: 'move' }, h('p', { class: 'note' }, 'These inserts go inside the pillow covers, so they are not drawn. They still count in the budget.'),
           h('div', { class: 'acts' }, h('button', { class: 'btn danger', 'data-testid': 'remove', onclick: () => app.removeSelected() }, icon('trash'), 'Remove')))
@@ -181,7 +259,7 @@ export class UI {
     return card;
   }
 
-  swapBlock(slot, currentId) {
+  swapBlock(slot, currentId, it = null) {
     const letters = 'ABCDEFGH';
     return h('div', { class: 'swap' },
       h('div', { class: 'swap-head' }, h('span', {}, slot.label), h('small', {}, `${slot.options.length} option${slot.options.length > 1 ? 's' : ''}`)),
@@ -192,7 +270,7 @@ export class UI {
           class: `opt ${pid === currentId ? 'current' : ''}`,
           'data-option': pid,
           'aria-pressed': String(pid === currentId),
-          onclick: () => { if (pid !== currentId) this.app.swap(slot.slot_id, pid); },
+          onclick: () => { if (pid !== currentId) { if (it?.extra) this.app.swapPiece(it.key, pid); else this.app.swap(slot.slot_id, pid); } },
         },
         h('img', { src: photoUrl(p), alt: '', loading: 'lazy' }),
         h('span', { class: 'opt-text' },
@@ -253,6 +331,18 @@ export class UI {
         ...PRESETS.filter((p) => p.room === app.roomId).map((p) => h('button', { class: `row ${app.currentPreset === p.id ? 'current' : ''}`, 'data-view': p.id, onclick: () => { app.applyPreset(p.id); if (matchMedia('(max-width: 720px)').matches) this.menu.hidden = true; } }, h('b', {}, p.label), h('small', {}, `facing ${p.facing}`))),
       ];
       this.menu.replaceChildren(h('div', { class: 'menu-head' }, h('b', {}, 'Camera views'), closeBtn), h('div', { class: 'menu-body' }, ...rows));
+    } else if (kind === 'settings') {
+      const st = app.settings;
+      const eye = h('input', { type: 'number', min: '40', max: '84', step: '1', value: String(st.eyeHeight), 'aria-label': 'Eye height in inches', 'data-testid': 'eye-height',
+        onchange: (e) => { const v = Math.round(Number(e.target.value)); if (v >= 40 && v <= 84) app.setEyeHeight(v); else e.target.value = String(app.settings.eyeHeight); } });
+      const check = (label, on, fn, testid) => h('label', { class: 'set-row' }, h('input', { type: 'checkbox', checked: on ? true : null, 'data-testid': testid, onchange: (e) => fn(e.target.checked) }), h('span', {}, label));
+      this.menu.replaceChildren(h('div', { class: 'menu-head' }, h('b', {}, 'Settings'), closeBtn), h('div', { class: 'menu-body settings' },
+        h('div', { class: 'sep' }, 'Walk mode'),
+        h('label', { class: 'set-row' }, h('span', {}, 'Eye height'), eye, h('small', {}, 'inches (68 for 6\'0")')),
+        check('Hands sway a little when idle', st.sway, (v) => { st.sway = v; app.saveSettings(); }, 'sway'),
+        matchMedia('(pointer: coarse)').matches ? null : check('Show the key hints', st.hints, (v) => this.walkHud.setHints(v), 'hints'),
+        check('Sound', !app.sounds.muted, (v) => app.setMuted(!v), 'sound'),
+        h('button', { class: 'row', 'data-testid': 'replay-tutorial', onclick: () => { this.menu.hidden = true; app.startTutorial(); } }, h('b', {}, 'Replay the tutorial'), h('small', {}, 'About 30 seconds, on a practice copy'))));
     } else if (kind === 'items') {
       const slots = this.cat.slotsByRoom[app.roomId] || [];
       const rows = slots.map((s) => {
