@@ -345,6 +345,22 @@ export class UI {
         h('button', { class: 'row', 'data-testid': 'replay-tutorial', onclick: () => { this.menu.hidden = true; app.startTutorial(); } }, h('b', {}, 'Replay the tutorial'), h('small', {}, 'About 30 seconds, on a practice copy'))));
     } else if (kind === 'items') {
       const slots = this.cat.slotsByRoom[app.roomId] || [];
+      const other = app.roomId === 'living' ? 'bedroom' : 'living room';
+      // pieces taken to the inventory or carried to the other room are listed with a note
+      const where = (poses, home) => {
+        const stored = poses.filter((q) => q.stored).length;
+        const away = poses.filter((q) => !q.stored && (q.room || home) !== app.roomId).length;
+        const first = poses.findIndex((q) => !q.stored && (q.room || home) === app.roomId);
+        const parts = [stored ? (stored === poses.length ? 'stored' : `${stored} stored`) : null, away ? `${away === poses.length ? '' : `${away} `}in the ${other}` : null].filter(Boolean);
+        return { first, stored, note: parts.length ? ` (${parts.join(', ')})` : '' };
+      };
+      const open = (id, w) => {
+        if (w.first < 0) { this.menu.hidden = true; if (w.stored) this.inventory.show('stored'); return; }
+        const key = `${id}#${w.first}`;
+        app.select(key);
+        if (!app.item(key)?.hidden) app.focus(key);
+        if (matchMedia('(max-width: 720px)').matches) this.menu.hidden = true;
+      };
       const rows = slots.map((s) => {
         const sel = app.layout.slots[s.slot_id];
         const p = sel.option ? this.cat.products.get(sel.option) : null;
@@ -353,15 +369,17 @@ export class UI {
             h('span', { class: 'row-text' }, h('b', {}, s.label), h('small', {}, 'Removed')),
             h('button', { class: 'btn small', 'data-restore': s.slot_id, onclick: () => app.restore(s.slot_id) }, 'Add back'));
         }
-        return h('button', { class: `row ${app.selected?.startsWith(`${s.slot_id}#`) ? 'current' : ''}`, 'data-slot': s.slot_id, onclick: () => { app.select(`${s.slot_id}#0`); if (!app.item(`${s.slot_id}#0`)?.hidden) app.focus(`${s.slot_id}#0`); if (matchMedia('(max-width: 720px)').matches) this.menu.hidden = true; } },
+        const w = where(sel.poses, s.room);
+        return h('button', { class: `row ${app.selected?.startsWith(`${s.slot_id}#`) ? 'current' : ''}`, 'data-slot': s.slot_id, onclick: () => open(s.slot_id, w) },
           h('img', { class: 'thumb', src: photoUrl(p), alt: '', loading: 'lazy' }),
-          h('span', { class: 'row-text' }, h('b', {}, s.label), h('small', {}, p.name)),
+          h('span', { class: 'row-text' }, h('b', {}, s.label), h('small', {}, p.name, w.note)),
           h('span', { class: 'row-price' }, fmtMoney(lineCents(p))));
       });
       const ex = (this.cat.existingByRoom[app.roomId] || []).filter((e) => app.layout.existing[e.id]).map((e) => {
         const st = app.layout.existing[e.id];
         if (st.hidden) return h('div', { class: 'row removed' }, h('span', { class: 'row-text' }, h('b', {}, e.name), h('small', {}, 'Hidden')), h('button', { class: 'btn small', onclick: () => app.restore(e.id) }, 'Show'));
-        return h('button', { class: 'row', 'data-existing': e.id, onclick: () => { app.select(`${e.id}#0`); app.focus(`${e.id}#0`); if (matchMedia('(max-width: 720px)').matches) this.menu.hidden = true; } }, h('span', { class: 'row-text' }, h('b', {}, e.name), h('small', {}, 'Already yours')));
+        const w = where(st.poses, e.room);
+        return h('button', { class: 'row', 'data-existing': e.id, onclick: () => open(e.id, w) }, h('span', { class: 'row-text' }, h('b', {}, e.name), h('small', {}, 'Already yours', w.note)));
       });
       this.menu.replaceChildren(h('div', { class: 'menu-head' }, h('b', {}, 'Items in this room'), closeBtn), h('div', { class: 'menu-body' }, h('div', { class: 'sep' }, 'New & used pieces'), ...rows, h('div', { class: 'sep' }, 'Already yours'), ...ex));
     }
@@ -459,15 +477,20 @@ export class UI {
       const A = pickLayout(a.value), B = pickLayout(b.value);
       const diff = store.diffLayouts(this.cat, A.layout, B.layout);
       const tA = total(A.layout), tB = total(B.layout);
-      const nm = (r, v) => (r.existingId ? (v ? 'Kept' : 'Hidden') : v ? this.cat.products.get(v).name : 'Removed');
+      const nm = (r, v) => (r.existingId ? (v ? 'Kept' : 'Hidden') : v ? this.cat.products.get(v).name : r.extraProduct ? 'Not added' : 'Removed');
+      const tag = (r, side) => {
+        const n = side === 'a' ? r.storedA : r.storedB;
+        const t = [r.sameOption && r.moved ? 'moved' : null, n ? `${n} stored` : null].filter(Boolean).join(' · ');
+        return t ? h('small', {}, ` · ${t}`) : null;
+      };
       cmpOut.replaceChildren(
         h('table', { class: 'cmp' },
           h('tr', {}, h('th', {}, ''), h('th', {}, A.name), h('th', {}, B.name)),
           h('tr', { class: 'sum' }, h('td', {}, 'Total'), h('td', { class: 'num' }, fmtMoney(tA)), h('td', { class: 'num' }, fmtMoney(tB))),
           h('tr', {}, h('td', {}, 'Difference'), h('td', {}, ''), h('td', { class: 'num' }, `${tB - tA >= 0 ? '+' : ''}${fmtMoney(tB - tA)}`)),
           ...diff.map((r) => h('tr', {}, h('td', {}, r.label, h('small', {}, ` (${r.room === 'living' ? 'living room' : 'bedroom'})`)),
-            h('td', {}, nm(r, r.a), r.sameOption && r.moved ? h('small', {}, ' · moved') : null),
-            h('td', {}, nm(r, r.b), r.sameOption && r.moved ? h('small', {}, ' · moved') : null)))),
+            h('td', {}, nm(r, r.a), tag(r, 'a')),
+            h('td', {}, nm(r, r.b), tag(r, 'b'))))),
         diff.length ? null : h('p', { class: 'note' }, 'These two layouts are the same.'),
         h('div', { class: 'row-btns' },
           h('button', { class: 'btn', onclick: () => { app.loadLayout(A.layout, A.name); this.toast(`Showing ${A.name}`, 'info'); } }, `View ${A.name}`),

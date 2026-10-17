@@ -228,9 +228,10 @@ test('inventory: store keeps the budget, remove lowers it, Catalog adds the pric
   assert.ok(filterCards(cards, { q: 'ikea' }).every((x) => /ikea/i.test(x.brand)));
   assert.ok(filterCards(cards, { condition: 'used' }).every((x) => x.condition === 'used'));
   assert.ok(filterCards(cards, { room: 'bedroom' }).every((x) => x.homeRoom === 'bedroom'));
-  const byPrice = filterCards(cards, { sort: 'price' }).map((x) => x.priceCents);
+  // the Catalog sorts and filters on the price it shows: +$X with tax
+  const byPrice = filterCards(cards, { sort: 'price' }).map((x) => x.addCents);
   assert.deepEqual(byPrice, [...byPrice].sort((a, b) => a - b));
-  assert.ok(filterCards(cards, { min: 50, max: 100 }).every((x) => x.priceCents >= 5000 && x.priceCents <= 10000));
+  assert.ok(filterCards(cards, { min: 50, max: 100 }).every((x) => x.addCents >= 5000 && x.addCents <= 10000));
 });
 
 test('ungroup splits a stored group', () => {
@@ -259,13 +260,13 @@ test('warnings explain themselves with the real numbers', () => {
   // the same lamp is also in the 36" walkway behind the sectional
   const walk = ex.find((e) => e.kind === 'walkway');
   assert.match(walk.why, /36 in wide/);
-  // window: the lamp (59" tall) in front of LR-WIN-1 (sill 30)
+  // window: the lamp (59" tall) in front of the window LR-WIN-1 (sill 30)
   set('LR-FLOORLAMP#0', { x: 22, y: 20 });
   items = buildItems(c, l, 'living');
   ex = computeWarnings(c, 'living', items).map((x) => explainWarning(c, 'living', x, items));
   const win = ex.find((e) => e.kind === 'window');
   assert.equal(win.title, 'Blocks the window');
-  assert.match(win.what, /59 in high, 29 in above the 30 in sill, inside the 24 in strip in front of LR-WIN-1/);
+  assert.match(win.what, /59 in high, 29 in above the 30 in sill, inside the 24 in strip in front of the window/);
   assert.equal(win.why, 'Anything taller than the 30 in window sill blocks light and the view.');
   // overlap (WiFi cabinet B is bigger and overlaps the plant)
   const l2 = defaultLayout(c);
@@ -282,7 +283,7 @@ test('warnings explain themselves with the real numbers', () => {
   ex = computeWarnings(c, 'living', items).map((x) => explainWarning(c, 'living', x, items));
   const op = ex.find((e) => e.kind === 'opening');
   assert.equal(op.title, 'Covers the window');
-  assert.match(op.what, /covers 48 in of the window LR-WIN-1/);
+  assert.match(op.what, /covers 48 in of the window along the wall/);
   // support: the coffee table stored away leaves the candle with nothing under it? No: it goes along.
   // Removing the table from the plan leaves the candle unsupported.
   const l4 = defaultLayout(c);

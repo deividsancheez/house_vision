@@ -110,6 +110,18 @@ const choices = [
   'A small amount of day "bounce" light is added to ceilings (they face only the floor, which a studio light setup leaves too dark).',
   'Floor planks: a generated oak-look texture in the spec\'s sampled color, planks running east–west.',
 ];
+// Walk mode
+choices.push(
+  'Walk mode: "pieces under 30 in" means every side under 30 in (W, D and H); those are held in the hands, bigger ones float about 30 in ahead as a ghost.',
+  'Walk mode body: a 9 in radius cylinder from the floor to 4 in above the eyes (72 in at the 68 in default). Pieces taller than 2 in whose bottom is below that height block it; rugs, curtains and pieces resting on other furniture never do.',
+  'Goal points (out of 100): walkways 25, door swings 20, windows 15, on budget 15, lamps in place 10, everything placed 5, every slot filled 5, all warnings fixed 5. Walkways, door swings, windows and lamps earn their share. The designer\'s layout scores 85 in each room (it is $18.17 over budget).',
+  'Catalog "Add & place": a product whose slot is empty fills that slot; otherwise it is added as an extra piece next to the slot\'s pick (both are in the budget).',
+  'The tutorial runs on a copy of your layout; if your layout has no coffee table or pillows in the living room, it uses a copy of the designer\'s layout instead.',
+  'On narrow phones (460 px wide or less) the budget chip shows the total only; the "of $1,000.00" cap is in the budget details.',
+  'Sounds are made in the browser (Web Audio), no sound files. Sound starts muted on phones.',
+);
+const walkShot = (f, cap) => shotFig(`${f}-desktop.png`, `${cap} (desktop)`) + shotFig(`${f}-phone.png`, `${cap} (phone)`);
+
 const issues = [
   'LR-SCONCE-B (Target, $75) is priced per sconce (qty 1) but the slot shows two sconces. The budget uses the file\'s qty, so choosing B adds $75 + tax, not $150 + tax. The product description says "you\'d want two".',
   'LR-CURTAIN-B (Quince linen, $82) is one panel (qty 1); the window needs 2 ($164). Same budget effect as above.',
@@ -157,6 +169,19 @@ ${shots.filter((f) => f.startsWith('warning-')).map((f) => shotFig(f, `Fit warni
 ${shots.filter((f) => f.startsWith('phone-preset-')).map((f) => shotFig(f, `Phone, photo view ${f.replace(/^phone-preset-|\.png$/g, '')}`)).join('')}
 </div>
 
+<h2>Walk mode</h2>
+<p>First person at 68 in eye height. Every screenshot comes from the Walk-mode tests (tests/e2e/walk.spec.js), on the desktop with keys and mouse and on the phone with the joystick and buttons.</p>
+<div class="grid">
+${walkShot('walk-living-day', 'Living room, day, at the start spot')}${walkShot('walk-living-night', 'Living room, night')}
+${walkShot('walk-bedroom-day', 'Bedroom, day, just inside the door')}${walkShot('walk-bedroom-night', 'Bedroom, night')}
+${walkShot('walk-carry-green', 'Carrying the floor lamp: green, fits')}${walkShot('walk-carry-yellow', 'Yellow: fits, with the warning\'s title')}
+${walkShot('walk-carry-red', 'Red: refused, with the reason')}${walkShot('walk-inventory', 'Inventory: a stored pillow')}
+${walkShot('walk-warning-card', 'Warning cards and "Show me"')}${walkShot('walk-warnings', 'All warnings, with why and how to fix')}
+${walkShot('overview-show-me', '"Show me" in Overview: the floor plan')}${walkShot('walk-goals', 'Goals and score')}
+${walkShot('walk-tutorial', 'Tutorial, first step')}${walkShot('walk-kitchen-edge', 'The kitchen edge: "Kitchen not modeled"')}
+${shotFig('walk-phone-landscape.png', 'Phone in landscape (892×412)')}
+</div>
+
 <h2>Every product</h2>
 <p>Each option was swapped in from the item card, measured in 3D against its listed size (inches, W×D×H; must match within 1" or 6%), selected by clicking it in the 3D view, moved with the arrow pad, rotated, put back with "Reset spot", removed (and the budget checked), then added back from the Items list. Buy/Backup buttons were clicked and the new tab's address compared with the file; separately, every link was opened in a real browser.</p>
 <div class="scroll"><table><tr><th></th><th>Product</th><th>3D</th><th>Listed</th><th>Drawn</th><th>Swap</th><th>Select</th><th>Move</th><th>Rotate</th><th>Remove</th><th>Buy button</th><th>Real page</th></tr>
@@ -167,8 +192,8 @@ ${productRows}</table></div>
 <table><tr><th>Layout</th><th>New items</th><th>Tax</th><th>Used items</th><th>Total</th><th>Test</th></tr>${budgetRows}</table>
 
 <h2>Speed</h2>
-<p>Frames per second while the camera orbits (worst case; the app draws only when something changes). "Phone" is 412×892 at 2× pixels with the CPU slowed 4× by Chrome DevTools, which on this laptop is slower than a current mid-range phone CPU. The phone's GPU cannot be simulated this way; the app lowers its resolution by itself if it can't hold 30 fps.</p>
-<table><tr><th>Device</th><th>Room</th><th>CPU</th><th>Day fps</th><th>Night fps</th></tr>${perf.map((p) => `<tr><td>${p.project}</td><td>${p.room}</td><td>${p.cpuThrottle === 1 ? 'normal' : `${p.cpuThrottle}× slower`}</td><td class="num ${p.fps >= 30 ? 'ok' : 'bad'}">${p.fps}<br><small>${(p.samples?.day || []).join(' · ')}</small></td><td class="num ${p.fpsNight >= 30 ? 'ok' : 'bad'}">${p.fpsNight}<br><small>${(p.samples?.night || []).join(' · ')}</small></td></tr>`).join('')}</table>
+<p>Frames per second while the camera keeps moving (worst case; the app draws only when something changes): orbiting in Overview, turning and looking around at eye level in Walk mode. "Phone" is 412×892 at 2× pixels with the CPU slowed 4× by Chrome DevTools, which on this laptop is slower than a current mid-range phone CPU. The phone's GPU cannot be simulated this way; the app lowers its resolution by itself if it can't hold 30 fps.</p>
+<table><tr><th>Device</th><th>Mode</th><th>Room</th><th>CPU</th><th>Day fps</th><th>Night fps</th></tr>${perf.map((p) => `<tr><td>${p.project}</td><td>${p.mode === 'walk' ? 'Walk' : 'Overview'}</td><td>${p.room}</td><td>${p.cpuThrottle === 1 ? 'normal' : `${p.cpuThrottle}× slower`}</td><td class="num ${p.fps >= 30 ? 'ok' : 'bad'}">${p.fps}<br><small>${(p.samples?.day || []).join(' · ')}</small></td><td class="num ${p.fpsNight >= 30 ? 'ok' : 'bad'}">${p.fpsNight}<br><small>${(p.samples?.night || []).join(' · ')}</small></td></tr>`).join('')}</table>
 <p><small>Each number is the median of five 3-second runs (all five shown under it).</small></p>
 <p>Download: models ${(dirSize(R('dist/models')) / 1024).toFixed(0)} KB (8 IKEA models, Draco + WebP), product photos ${(dirSize(R('dist/product-images')) / 1024).toFixed(0)} KB, app code ${(dirSize(R('dist/assets')) / 1024).toFixed(0)} KB. Only the current room's models load.</p>
 

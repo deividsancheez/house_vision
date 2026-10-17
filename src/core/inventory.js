@@ -172,10 +172,12 @@ export function catalogEntries(cat, layout) {
 /**
  * Filter and sort cards. f: {q, room ('all'|room id), category ('all'|text), condition ('all'|'new'|'used'),
  * min, max (dollars, on the card's price), sort ('name'|'price'|'size')}.
- * Stored cards are filtered on their base piece and room of origin.
+ * Stored cards are filtered on their base piece and room of origin. Price filters and the price sort
+ * use the price the card shows: the Catalog's "+$X" (with tax), a stored piece's price.
  */
 export function filterCards(cards, f = {}) {
   const info = (c) => c.base || c;
+  const shown = (c) => c.addCents ?? info(c).priceCents ?? 0;
   const q = String(f.q || '').trim().toLowerCase();
   let out = cards.filter((c) => {
     const i = info(c);
@@ -184,14 +186,14 @@ export function filterCards(cards, f = {}) {
     if (f.room && f.room !== 'all' && room !== f.room) return false;
     if (f.category && f.category !== 'all' && i.category !== f.category) return false;
     if (f.condition && f.condition !== 'all' && i.condition !== f.condition) return false;
-    if (Number.isFinite(f.min) && i.priceCents < f.min * 100) return false;
-    if (Number.isFinite(f.max) && i.priceCents > f.max * 100) return false;
+    if (Number.isFinite(f.min) && shown(c) < f.min * 100) return false;
+    if (Number.isFinite(f.max) && shown(c) > f.max * 100) return false;
     return true;
   });
   const vol = (i) => i.size.reduce((a, s) => a * s.v, 1);
   const by = {
     name: (a, b) => info(a).name.localeCompare(info(b).name),
-    price: (a, b) => info(a).priceCents - info(b).priceCents || info(a).name.localeCompare(info(b).name),
+    price: (a, b) => shown(a) - shown(b) || info(a).name.localeCompare(info(b).name),
     size: (a, b) => vol(info(a)) - vol(info(b)) || info(a).name.localeCompare(info(b).name),
   }[f.sort || ''];
   if (by) out = [...out].sort(by);

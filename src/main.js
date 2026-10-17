@@ -402,7 +402,7 @@ class App {
 
   updateBest(score) {
     if (this.tutorial) return;
-    if (score > (this.best[this.roomId] ?? -1)) { this.best[this.roomId] = score; store.saveBest(this.best); }
+    if (score > (this.best[this.roomId] ?? -1)) { this.best[this.roomId] = score; store.saveBest(this.best); this.emit('best'); }
   }
 
   // ------------------------------------------------------------------------------------------

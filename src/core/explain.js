@@ -96,11 +96,10 @@ export function explainWarning(cat, roomId, w, items) {
       why: WHY.door(), fix: `Move it about ${inches(w.depth)} in out of the marked area, or store it (F).`, highlight: { zone: w.zone } };
   }
   if (w.type === 'zone' && w.kind === 'window') {
-    const win = room.openings.find((o) => o.type === 'window');
     const strip = checkWidth(w.zoneId);
     const top = w.top;
     return { ...base, kind: 'window', title: 'Blocks the window',
-      what: `${cap(the(it))} reaches ${num(top)} in high, ${inches(top - w.sill)} in above the ${w.sill} in sill, inside the ${strip ? `${strip} in ` : ''}strip in front of ${win?.id || 'the window'}.`,
+      what: `${cap(the(it))} reaches ${num(top)} in high, ${inches(top - w.sill)} in above the ${w.sill} in sill, inside the ${strip ? `${strip} in ` : ''}strip in front of the window.`,
       why: WHY.window(w.sill), fix: `Move it out of the marked strip, or pick something under ${w.sill} in tall there.`, highlight: { zone: w.zone } };
   }
   if (w.type === 'zone') {
@@ -127,7 +126,7 @@ export function explainWarning(cat, roomId, w, items) {
     const what = o?.type === 'window' ? 'window' : o?.type === 'door' ? 'door' : 'opening';
     const covered = w.along[1] - w.along[0];
     return { ...base, kind: 'opening', title: `Covers the ${what}`,
-      what: `${cap(the(it))} (${sizeOf(it)}) covers ${inches(covered)} in of the ${what} ${w.openingId} along the wall.`,
+      what: `${cap(the(it))} (${sizeOf(it)}) covers ${inches(covered)} in of the ${what} along the wall.`,
       why: (WHY[`opening-${what}`] || WHY.opening)(), fix: `Slide it about ${inches(w.depth)} in along the wall, or hang it on another wall.`,
       highlight: { wallId: w.wallId, along: w.along, zRange: w.zRange, keys: [w.key] } };
   }
