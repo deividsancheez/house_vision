@@ -1,6 +1,9 @@
 // Indexes room-spec.json + products.json into lookup tables the rest of the app uses.
 // Nothing here invents measurements: every number comes from the two JSON files.
+// The lookbook catalog (data/lookbook/products.json) is read too when the site has one; its picks
+// are added to the products by core/lookbook.js.
 import { pointInPolygon } from './geom.js';
+import { indexLookbook } from './lookbook.js';
 
 export async function loadCatalog(base = 'data/') {
   const [spec, products] = await Promise.all(
@@ -10,10 +13,11 @@ export async function loadCatalog(base = 'data/') {
       return res.json();
     }),
   );
-  return buildCatalog(spec, products);
+  const lookbook = await fetch(`${base}lookbook/products.json`, { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  return buildCatalog(spec, products, lookbook);
 }
 
-export function buildCatalog(spec, productsDoc) {
+export function buildCatalog(spec, productsDoc, lookbookDoc = null) {
   const problems = [];
   const rooms = new Map();
   for (const r of spec.rooms) rooms.set(r.id, { ...indexRoom(r, problems), lights: spec.lighting?.[r.id] || [] });
@@ -52,6 +56,8 @@ export function buildCatalog(spec, productsDoc) {
     lighting: spec.lighting,
     budgetMeta: productsDoc.budget,
     taxRate: productsDoc.tax_rate ?? productsDoc.budget?.tax_rate,
+    lookbook: indexLookbook(lookbookDoc),
+    lookbookRefs: [],
     problems,
   };
 }

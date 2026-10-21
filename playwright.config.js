@@ -24,7 +24,9 @@ export default defineConfig({
   projects: [
     { name: 'desktop', use: { browserName: 'chromium', viewport: { width: 1440, height: 900 } } },
     // a mid-range Android phone: 412 x 892 CSS px, touch only
-    { name: 'phone', use: { browserName: 'chromium', viewport: { width: 412, height: 892 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true } },
+    { name: 'phone', testIgnore: /lookbook.spec/, use: { browserName: 'chromium', viewport: { width: 412, height: 892 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true } },
+    // the lookbook is also checked on a 390 px phone (iPhone 12-15 width)
+    { name: 'phone-390', testMatch: /lookbook.spec/, use: { browserName: 'chromium', viewport: { width: 390, height: 844 }, deviceScaleFactor: 3, isMobile: true, hasTouch: true } },
   ],
   webServer: {
     command: 'npm run build && npx vite preview --port 4173 --strictPort',

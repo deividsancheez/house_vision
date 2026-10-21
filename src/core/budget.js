@@ -35,8 +35,22 @@ export function computeBudget(cat, layout) {
     if (p.taxed) taxedCents += cents; else untaxedCents += cents;
     lines.push({ slotId: p.slot, extra: x.uid, room: slot?.room, productId: p.id, name: p.name, retailer: p.retailer, qty: p.qty ?? 1, unitCents: toCents(p.price), cents, taxed: !!p.taxed, condition: p.condition });
   }
+  // Lookbook pieces placed freely count the same way (only while they are in the layout).
+  for (const x of layout.lookbook || []) {
+    const p = cat.products.get(x.product);
+    if (!p) continue;
+    const cents = lineCents(p);
+    if (p.taxed) taxedCents += cents; else untaxedCents += cents;
+    lines.push({ slotId: null, lookbook: x.uid, room: x.room, productId: p.id, name: p.name, retailer: p.retailer, qty: p.qty ?? 1, unitCents: toCents(p.price), cents, taxed: !!p.taxed, condition: p.condition });
+  }
+  // A delivery fee listed on a lookbook product (the World Market rug's oversized shipping) is added once per line.
+  let lookbookDelivery = 0;
+  for (const l of lines) {
+    const fee = cat.products.get(l.productId)?.lookbook?.deliveryFee;
+    if (fee) { l.deliveryCents = toCents(fee); lookbookDelivery += l.deliveryCents; }
+  }
   const taxCents = Math.floor((taxedCents * rateBp + 5000) / 10000);
-  const deliveryCents = toCents(cat.budgetMeta?.delivery ?? 0);
+  const deliveryCents = toCents(cat.budgetMeta?.delivery ?? 0) + lookbookDelivery;
   const totalCents = taxedCents + untaxedCents + taxCents + deliveryCents;
   const capCents = toCents(cat.budgetMeta?.budget_cap ?? 0);
   return {

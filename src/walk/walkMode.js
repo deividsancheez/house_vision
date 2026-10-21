@@ -3,7 +3,7 @@
 // src/core (walk.js, carry.js, inventory.js); this file is the three.js and input side.
 import * as THREE from 'three';
 import { makeRoomRoot, roomToWorld } from '../units.js';
-import { buildItems, pieceByKey, itemBoxes, effDims, poseRef } from '../core/items.js';
+import { buildItems, pieceByKey, itemBoxes, effDims, poseRef, baseZFor } from '../core/items.js';
 import { DEG, normDeg } from '../core/geom.js';
 import { WALK, outlineSegments, bodyObstacles, stepBody, startPose, arrivalPose, doorwayHit, nearDoorway, roomSurfaces, aimAt, fwdOf, onRug, openEdgeContact, bodyClear } from '../core/walk.js';
 import { previewPlacement, isSmall, shortName } from '../core/carry.js';
@@ -364,8 +364,9 @@ export class WalkMode {
       const probe = { ...it, pose, roomId: this.roomId, wallId: poses[i].wallId ?? it.wallId };
       let baseZ;
       if (it.mount === 'wall') baseZ = pose.z - effDims(probe, pose).h / 2;
-      else if (i === 0) baseZ = it.mount === 'top' ? supportTop(items, probe) : 0;
-      else baseZ = c.it.kind === 'product' ? c.it.dims.h : it.defaultZ; // on a product: its top; on a piece you own: the designer's height
+      else if (i === 0) baseZ = it.mount === 'top' ? supportTop(items, probe) : it.mount === 'surface' ? baseZFor(items, probe, pose) : 0;
+      // on a product: its top; on a piece you own: the designer's height (a lookbook piece: where it was set)
+      else baseZ = c.it.kind === 'product' ? c.it.dims.h : it.mount === 'surface' ? pose.z : it.defaultZ;
       placeGroup(g, probe, pose, baseZ);
       g.userData.model?.traverse((o) => { if (o.isMesh && o.visible) o.material = mat; });
     });

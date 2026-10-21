@@ -28,6 +28,14 @@ const PHOTO_CROPS = {
 };
 
 /** Night glow shells for GLB lamps (fractions of the lamp's size, read off the model renders). */
+/** The photo crop of a product (lookbook products use the crop of their 3D plan id). A lookbook rug
+ *  or pillow without one shows the middle of its photo, where store photos show the surface. */
+function cropOf(p, surface = false) {
+  const c = PHOTO_CROPS[p.modelId || p.id];
+  if (c) return c;
+  return surface && p.lookbook ? [0.3, 0.3, 0.7, 0.7] : null;
+}
+
 const GLB_SHADES = {
   'LR-FLOORLAMP-A': { z0: 0.775, z1: 1.0, r: 0.45 },
   'LR-FLOORLAMP-B': { z0: 0.786, z1: 0.906, r: 0.5 },
@@ -37,8 +45,10 @@ export async function buildProduct(product, item, ctx = {}) {
   const kind = productKind(product);
   const dims = item.dims;
   const out = { object: null, glow: [], flame: null, curtain: null, kind };
-  if (await hasModel(product.id)) {
-    const tpl = await loadTemplate(product.id);
+  // lookbook products use the model of their 3D plan id, or their own stored IKEA model (modelId)
+  const mid = product.modelId || product.id;
+  if (await hasModel(mid)) {
+    const tpl = await loadTemplate(mid);
     if (tpl) {
       if (kind === 'curtain') return glbCurtain(tpl, product, item, out);
       let filter = null;
@@ -47,8 +57,8 @@ export async function buildProduct(product, item, ctx = {}) {
         const n = product.pieces, i = item.index % n, span = 1.728 / n;
         filter = (c) => c.x >= -0.864 + i * span - 0.01 && c.x < -0.864 + (i + 1) * span;
       }
-      out.object = fitTemplate(tpl, product.id, dims, filter);
-      const sh = GLB_SHADES[product.id];
+      out.object = fitTemplate(tpl, mid, dims, filter, !!product.lookbook);
+      const sh = GLB_SHADES[mid];
       if (sh) out.glow.push(addGlowShell(out.object, dims, sh));
       return finish(out);
     }
@@ -92,7 +102,7 @@ function shadeMat(color, tex) {
 // ---------------------------------------------------------------------------------------------
 const BUILDERS = {
   rug(p, { w, d, h }, out) {
-    const crop = PHOTO_CROPS[p.id];
+    const crop = cropOf(p, true);
     const top = crop ? new THREE.MeshStandardMaterial({ map: photoTexture(photoUrl(p), crop, { repeat: true }), roughness: 1 }) : mat(p.main_color_hex, { roughness: 1 });
     // pile/weave tile size in inches: jute diamonds are small; shag rugs read as an even surface
     const tile = /jute/i.test(p.name) ? 10 : 30;
@@ -137,7 +147,7 @@ const BUILDERS = {
   },
 
   pillow(p, { w, d, h }, out) {
-    const crop = PHOTO_CROPS[p.id];
+    const crop = cropOf(p, true);
     const m = crop ? new THREE.MeshStandardMaterial({ map: photoTexture(photoUrl(p), crop, { repeat: true }), roughness: 1 }) : mat(p.main_color_hex);
     if (m.map) m.map.repeat.set(2, 2);
     const c = cushion(w, d, h, m, 0.55); // standing against the sectional's back
@@ -238,7 +248,7 @@ const BUILDERS = {
     const back = cyl(r - 0.5, r - 0.5, 0.4, frame, 0, 0, 0, 48);
     back.rotation.set(Math.PI / 2, 0, 0); back.position.set(0, -d / 2 + 0.2, r);
     const g = group(back, disc, ring);
-    if (/santa monica/i.test(p.brand || '') || p.id.endsWith('-A')) {
+    if (/santa monica/i.test(p.brand || '') || (p.modelId || p.id).endsWith('-A')) {
       // listing photo: hangs from a braided rope loop
       const rope = mat('#b59a6e', { roughness: 1 });
       g.add(strut([-r * 0.55, -d / 2 + 0.3, r * 1.6], [0, -d / 2 + 0.3, h * 0.98], 0.35, rope, 6), strut([r * 0.55, -d / 2 + 0.3, r * 1.6], [0, -d / 2 + 0.3, h * 0.98], 0.35, rope, 6));
@@ -247,7 +257,7 @@ const BUILDERS = {
   },
 
   art(p, { w, d, h }, out) {
-    const crop = PHOTO_CROPS[p.id] || [0.1, 0.1, 0.9, 0.9];
+    const crop = cropOf(p) || [0.1, 0.1, 0.9, 0.9];
     const face = new THREE.MeshStandardMaterial({ map: photoTexture(photoUrl(p), crop, { size: 1024 }), roughness: 0.85 });
     const g = group();
     if (/framed/i.test(p.name)) {
@@ -289,7 +299,7 @@ const BUILDERS = {
 
   candle(p, { w, d, h }, out) {
     const g = group();
-    const crop = PHOTO_CROPS[p.id];
+    const crop = cropOf(p);
     if (crop) {
       // Hearth & Hand jar with the label from Target's photo (off-white jar, red interior)
       const body = new THREE.MeshStandardMaterial({ map: photoTexture(photoUrl(p), crop), roughness: 0.5 });

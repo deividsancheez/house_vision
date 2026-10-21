@@ -85,6 +85,9 @@ function sloppySimplify(maxTris) {
   };
 }
 
+await compressModels(srcModels, outModels, manifest);
+
+async function compressModels(srcModels, outModels, manifest) {
 for (const file of [...new Set(Object.values(manifest))]) {
   const src = path.join(srcModels, file);
   const dest = path.join(outModels, file);
@@ -105,6 +108,44 @@ for (const file of [...new Set(Object.values(manifest))]) {
   console.log(`model: ${file} ${kb(fs.statSync(src).size)} -> ${kb(fs.statSync(dest).size)}, triangles ${tris} -> ${after}`);
 }
 fs.writeFileSync(path.join(outModels, 'manifest.json'), JSON.stringify(manifest, null, 2));
+}
+
+// 3b) the lookbook catalog ---------------------------------------------------------------------
+//   ../../Lookbook Handoff/{products,inspiration}.json, design-notes.md, MANUAL-ACTION-NEEDED.md
+//                                        -> public/data/lookbook/         (copied as-is)
+//   ../../Lookbook Handoff/images/*.jpg  -> public/data/lookbook/images/  (800 px) and images/sm/ (400 px)
+//   assets-src/lookbook-models/*.glb     -> public/data/lookbook/models/  (compressed like the 3D models)
+// The 3D plan's own products.json above is not touched; this is a separate catalog.
+const lookbookDir = path.resolve(handoff, '..', 'Lookbook Handoff');
+if (fs.existsSync(path.join(lookbookDir, 'products.json'))) {
+  const lbOut = path.join(pub, 'data', 'lookbook');
+  fs.mkdirSync(path.join(lbOut, 'images', 'sm'), { recursive: true });
+  const lb = JSON.parse(fs.readFileSync(path.join(lookbookDir, 'products.json'), 'utf8'));
+  JSON.parse(fs.readFileSync(path.join(lookbookDir, 'inspiration.json'), 'utf8')); // fail loudly if broken
+  for (const f of ['products.json', 'inspiration.json', 'design-notes.md', 'MANUAL-ACTION-NEEDED.md']) fs.copyFileSync(path.join(lookbookDir, f), path.join(lbOut, f));
+  const files = new Set(lb.products.flatMap((p) => [p.image_file, ...(p.color_variants || []).map((v) => v.image_file)]));
+  const lbMissing = [];
+  let lbBytes = 0;
+  for (const rel of files) {
+    const src = path.join(lookbookDir, rel);
+    if (!fs.existsSync(src)) { lbMissing.push(rel); continue; }
+    const big = path.join(lbOut, rel), small = path.join(lbOut, rel.replace(/^images\//, 'images/sm/'));
+    if (newer(src, big)) await sharp(src).rotate().resize(800, 800, { fit: 'inside', withoutEnlargement: true }).jpeg({ quality: 80, mozjpeg: true }).toFile(big);
+    if (newer(src, small)) await sharp(src).rotate().resize(400, 400, { fit: 'inside', withoutEnlargement: true }).jpeg({ quality: 76, mozjpeg: true }).toFile(small);
+    lbBytes += fs.statSync(big).size + fs.statSync(small).size;
+  }
+  if (lbMissing.length) throw new Error(`Missing lookbook photos:\n  ${lbMissing.join('\n  ')}`);
+  console.log(`lookbook: ${files.size} photos (two sizes), ${kb(lbBytes)} total`);
+  const lbSrcModels = path.join(root, 'assets-src', 'lookbook-models');
+  const lbManifestPath = path.join(lbSrcModels, 'manifest.json');
+  const lbManifest = fs.existsSync(lbManifestPath) ? JSON.parse(fs.readFileSync(lbManifestPath, 'utf8')) : {};
+  const ids3d = new Set(products.products.map((p) => p.id));
+  const lbLacking = lb.products.filter((p) => p.model_3d_url && !ids3d.has(p.id) && !lbManifest[p.id]).map((p) => p.id);
+  if (lbLacking.length) console.warn(`lookbook: no stored 3D model for ${lbLacking.join(', ')} (run npm run fetch-models; until then they use the built model)`);
+  const lbOutModels = path.join(lbOut, 'models');
+  fs.mkdirSync(lbOutModels, { recursive: true });
+  await compressModels(lbSrcModels, lbOutModels, lbManifest);
+}
 
 // 4) Draco decoder (served locally so the app never depends on another site) --------------------
 const dracoSrc = path.join(root, 'node_modules', 'three', 'examples', 'jsm', 'libs', 'draco', 'gltf');

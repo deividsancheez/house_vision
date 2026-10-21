@@ -4,8 +4,10 @@
 //   pose.stored = true             the piece is in the inventory
 //   layout.inventory = [{uid, keys, from}]   groups, newest first; a piece and what rested on it
 //   layout.extras = [{uid, product, poses}] products added from the Catalog on top of a slot's pick
-import { buildItems, allPieces, poseRef, parseKey, nextUid, homeRoom, defaultSlotPoses, swapOption } from './items.js';
+//   layout.lookbook = [{uid, product, room, poses}] lookbook pieces placed freely (see lookbook.js)
+import { buildItems, allPieces, poseRef, parseKey, nextUid, homeRoom, defaultSlotPoses, swapOption, ownerOf } from './items.js';
 import { computeBudget, lineCents, toCents } from './budget.js';
+import { freeSlot } from './lookbook.js';
 
 /** Everything resting on `it`, and what rests on those (lamp + candle on a nightstand). */
 export function dependentsDeep(items, it) {
@@ -25,7 +27,7 @@ function removeFromGroups(layout, keys) {
 
 function setPoseByKey(layout, key, pose) {
   const { id, index } = parseKey(key);
-  const owner = layout.slots[id] || layout.existing[id] || layout.extras.find((x) => x.uid === id);
+  const owner = layout.slots[id] || layout.existing[id] || ownerOf(layout, id);
   owner.poses[index] = pose;
 }
 
@@ -73,9 +75,14 @@ export function removeFromPlan(cat, layout, key) {
   if (layout.existing[id]) return { ok: false, reason: 'Pieces you already own can be stored but not removed from the plan.' };
   let keys;
   const x = layout.extras.find((e) => e.uid === id);
+  const lb = (layout.lookbook || []).find((e) => e.uid === id);
   if (x) {
     keys = x.poses.map((_, i) => `${id}#${i}`);
     layout.extras = layout.extras.filter((e) => e !== x);
+  } else if (lb) {
+    // a lookbook piece goes back to "From lookbook" (out of the budget, still in My Picks)
+    keys = lb.poses.map((_, i) => `${id}#${i}`);
+    layout.lookbook = layout.lookbook.filter((e) => e !== lb);
   } else if (layout.slots[id]?.option) {
     keys = layout.slots[id].poses.map((_, i) => `${id}#${i}`);
     swapOption(cat, layout, id, null);
@@ -107,13 +114,39 @@ export function addFromCatalog(cat, layout, productId) {
   return { ok: true, keys, owner };
 }
 
+/**
+ * "Place freely" a lookbook product: it joins the layout stored, in `room`, and the caller starts
+ * carrying it (like a Catalog add). Returns {ok, keys, owner}, or {ok: false} without a size.
+ */
+export function addLookbookFree(cat, layout, ref, room) {
+  const p = cat.products.get(ref);
+  if (!p?.lookbook || p.lookbook.sizeNeeded) return { ok: false, reason: 'size needed' };
+  layout.lookbook ||= [];
+  const all = [...layout.extras, ...layout.lookbook];
+  let n = 1;
+  for (const x of all) { const m = /^K(\d+)$/.exec(x.uid); if (m) n = Math.max(n, Number(m[1]) + 1); }
+  const owner = `K${n}`;
+  const poses = defaultSlotPoses(cat, freeSlot(cat, p, room), ref);
+  layout.lookbook.push({ uid: owner, product: ref, room, poses });
+  const keys = [`${owner}#0`];
+  layout.inventory.unshift({ uid: nextUid(layout.inventory, 'G'), keys, from: room });
+  return { ok: true, keys, owner };
+}
+
+/** Additional cost of placing a lookbook product (tax and listed delivery included). */
+export function lookbookAddCents(cat, layout, p) {
+  const now = computeBudget(cat, layout).totalCents;
+  const trial = { ...layout, lookbook: [...(layout.lookbook || []), { uid: 'K0', product: p.id, room: p.room || 'living', poses: [] }] };
+  return computeBudget(cat, trial).totalCents - now;
+}
+
 /** Products not in the plan right now, with what adding each would add to the total (tax included). */
 export function catalogProducts(cat, layout) {
   const inPlan = new Set([...Object.values(layout.slots).map((s) => s.option).filter(Boolean), ...layout.extras.map((x) => x.product)]);
   const now = computeBudget(cat, layout).totalCents;
   const out = [];
   for (const p of cat.products.values()) {
-    if (inPlan.has(p.id)) continue;
+    if (inPlan.has(p.id) || p.lookbook) continue; // lookbook picks have their own tab
     const trial = { ...layout, extras: [...layout.extras, { uid: 'X0', product: p.id, poses: [] }] };
     out.push({ product: p, slot: cat.slots.get(p.slot), addCents: computeBudget(cat, trial).totalCents - now });
   }

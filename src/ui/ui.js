@@ -9,6 +9,7 @@ import { InventoryPanel } from './inventory.js';
 import { WarnStack, warningsPanel } from './warnings.js';
 import { GoalsPanel } from './goals.js';
 import { Tutorial } from './tutorial.js';
+import { lookbookLink } from '../core/lookbook.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const h = (tag, attrs = {}, ...kids) => {
@@ -39,6 +40,7 @@ const I = {
   reset: '<svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/></svg>',
   door: '<svg viewBox="0 0 24 24"><path d="M5 21V3h10l4 2v16M5 21h14M12 12h.01"/></svg>',
   up: '<svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg>',
+  book: '<svg viewBox="0 0 24 24"><path d="M4 5.5C6.5 4 9.5 4 12 6c2.5-2 5.5-2 8-.5V19c-2.5-1.5-5.5-1.5-8 .5-2.5-2-5.5-2-8-.5zM12 6v13.5"/></svg>',
   bag: '<svg viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2"/></svg>',
   sound: '<svg viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5v14l-4.5-4.5H4zM15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>',
   mute: '<svg viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5v14l-4.5-4.5H4zM16 9.5l5 5M21 9.5l-5 5"/></svg>',
@@ -77,11 +79,12 @@ export class UI {
     this.warnBtn = h('button', { class: 'tool icon-only warn-tool', 'aria-label': 'Fit warnings', onclick: () => this.openWarnings() }, icon('warn'), h('span', { class: 'lbl' }, 'Warnings'), h('span', { class: 'count', 'data-testid': 'warn-count' }));
     this.soundBtn = h('button', { class: 'tool icon-only', 'aria-label': 'Sound on or off', onclick: () => app.setMuted(!app.sounds.muted) });
     this.settingsBtn = h('button', { class: 'tool icon-only', 'aria-label': 'Settings', onclick: () => this.toggleMenu('settings') }, icon('gear'), h('span', { class: 'lbl' }, 'Settings'));
+    this.lookbookBtn = this.cat.lookbook ? h('a', { class: 'tool', href: `${import.meta.env.BASE_URL}lookbook/#/cover`, 'aria-label': 'Lookbook', title: 'Lookbook', 'data-testid': 'lookbook-link' }, icon('book'), h('span', { class: 'lbl' }, 'Lookbook')) : null;
     const bar = h('header', { class: 'topbar' },
       h('div', { class: 'brand' }, h('b', {}, 'Reno 3D'), this.layoutLabel),
       this.modeSwitch,
       this.tabs,
-      h('div', { class: 'tools' }, this.modeBtn, this.curtainBtn, this.closetBtn, this.viewBtn, this.itemsBtn, this.invBtn, this.warnBtn, this.layoutsBtn, this.soundBtn, this.settingsBtn),
+      h('div', { class: 'tools' }, this.modeBtn, this.curtainBtn, this.closetBtn, this.viewBtn, this.itemsBtn, this.invBtn, this.warnBtn, this.layoutsBtn, this.lookbookBtn, this.soundBtn, this.settingsBtn),
       this.budgetChip);
     this.menu = h('div', { class: 'menu', hidden: true });
     this.banner = h('div', { class: 'banner', hidden: true, role: 'alert' });
@@ -232,10 +235,11 @@ export class UI {
         h('span', { class: `badge ${used ? 'used' : 'new'}` }, used ? 'Used' : 'New'),
         p.taxed ? null : h('span', { class: 'badge plain' }, 'No tax')),
       h('div', { class: 'status' }, p.status_today),
+      this.lookbookBlock(it),
       h('div', { class: 'buy-row' },
         h('a', { class: 'btn primary', href: p.buy_url, target: '_blank', rel: 'noopener', 'data-testid': 'buy' }, `Buy${p.retailer ? ` at ${p.retailer}` : ''}`),
         used && p.backup_search_url ? h('a', { class: 'btn ghost', href: p.backup_search_url, target: '_blank', rel: 'noopener', 'data-testid': 'backup' }, 'Backup search') : null),
-      this.swapBlock(slot, p.id, it),
+      slot.free ? null : this.swapBlock(slot, p.id, it),
       it.hidden
         ? h('div', { class: 'move' }, h('p', { class: 'note' }, 'These inserts go inside the pillow covers, so they are not drawn. They still count in the budget.'),
           h('div', { class: 'acts' }, h('button', { class: 'btn danger', 'data-testid': 'remove', onclick: () => app.removeSelected() }, icon('trash'), 'Remove')))
@@ -244,6 +248,7 @@ export class UI {
       h('details', { class: 'more-info' }, h('summary', {}, 'Details'),
         h('dl', {},
           h('dt', {}, 'Size'), h('dd', {}, `${d.w}" W × ${d.d}" D × ${d.h}" H`, est),
+          p.lookbook ? [h('dt', {}, 'Category'), h('dd', {}, p.lookbook.categoryLabel)] : null,
           h('dt', {}, 'Color'), h('dd', {}, h('span', { class: 'swatch', style: `background:${p.main_color_hex}` }), ` ${p.main_color_hex}`),
           h('dt', {}, 'Material'), h('dd', {}, p.material || '—'),
           p.unit_note ? [h('dt', {}, 'Unit'), h('dd', {}, p.unit_note)] : null,
@@ -254,16 +259,34 @@ export class UI {
           p.color_note ? [h('dt', {}, 'Note'), h('dd', {}, p.color_note)] : null,
           p.price_note ? [h('dt', {}, 'Price'), h('dd', {}, p.price_note)] : null,
           h('dt', {}, '3D model'), h('dd', {}, p.model_3d_url ? 'IKEA 3D model (stored with the app)' : 'Built from the product size, color and photo'),
+          p.lookbook?.usedLabel ? [h('dt', {}, 'Condition'), h('dd', {}, p.lookbook.usedLabel)] : null,
           h('dt', {}, 'ID'), h('dd', {}, p.id))));
     queueMicrotask(() => this.renderPanelWarnings());
     return card;
   }
 
+  /** For a lookbook product (and the plan's own products the lookbook also lists): a link back. */
+  lookbookBlock(it) {
+    const p = it.product;
+    const link = lookbookLink(this.cat, p, it.homeRoomId);
+    if (!link && !p.lookbook) return null;
+    const lb = p.lookbook;
+    return h('div', { class: 'lb-block', 'data-testid': 'lb-block' },
+      lb ? h('span', { class: 'badge pick' }, lb.tried ? 'Trying from the lookbook' : 'From your lookbook') : null,
+      lb && it.slot.free ? h('span', { class: 'note small' }, 'Placed freely') : null,
+      lb?.stockNote ? h('span', { class: 'note small' }, lb.stockNote) : null,
+      link ? h('a', { class: 'btn small ghost', href: `${import.meta.env.BASE_URL}${link}`, 'data-testid': 'view-lookbook' }, icon('book'), 'View in lookbook') : null);
+  }
+
   swapBlock(slot, currentId, it = null) {
     const letters = 'ABCDEFGH';
+    const lbNow = this.cat.products.get(currentId)?.lookbook ? this.cat.products.get(currentId) : null;
     return h('div', { class: 'swap' },
-      h('div', { class: 'swap-head' }, h('span', {}, slot.label), h('small', {}, `${slot.options.length} option${slot.options.length > 1 ? 's' : ''}`)),
-      h('div', { class: 'options' }, ...slot.options.map((pid, i) => {
+      h('div', { class: 'swap-head' }, h('span', {}, slot.label), h('small', {}, `${slot.options.length} option${slot.options.length > 1 ? 's' : ''}${lbNow ? ' + yours' : ''}`)),
+      h('div', { class: 'options' }, lbNow ? h('button', { class: 'opt current', 'data-option': currentId, 'aria-pressed': 'true' },
+        h('img', { src: photoUrl(lbNow), alt: '', loading: 'lazy' }),
+        h('span', { class: 'opt-text' }, h('b', {}, 'From your lookbook'), h('span', { class: 'opt-name' }, lbNow.name), h('span', { class: 'opt-price' }, fmtMoney(lineCents(lbNow)), lbNow.condition === 'used' ? ' · used' : ''))) : null,
+      ...slot.options.map((pid, i) => {
         const p = this.cat.products.get(pid);
         const isDef = pid === slot.default_option;
         return h('button', {
@@ -285,13 +308,13 @@ export class UI {
     const wall = it.mount === 'wall';
     const pad = (dx, dy, label, rot) => h('button', { class: 'pad', 'aria-label': label, onclick: () => app.nudgeSelected(dx, dy, 3) }, h('span', { class: 'ico', style: `transform:rotate(${rot}deg)`, html: I.up }));
     return h('div', { class: 'move' },
-      h('div', { class: 'move-help' }, wall ? 'Drag it along its wall, or use the arrows (3" steps).' : it.mount === 'top' ? `Drag it around on top of the ${it.supportId === 'EX-LR-SECTIONAL' ? 'sectional' : 'piece it rests on'}.` : 'Drag it on the floor, or use the arrows (3" steps). It stops at walls and furniture.'),
+      h('div', { class: 'move-help' }, wall ? 'Drag it along its wall, or use the arrows (3" steps).' : it.mount === 'surface' ? 'Drag it, or use the arrows (3" steps). In Walk mode, pick it up to set it on a table, a dresser or the floor.' : it.mount === 'top' ? `Drag it around on top of the ${it.supportId === 'EX-LR-SECTIONAL' ? 'sectional' : 'piece it rests on'}.` : 'Drag it on the floor, or use the arrows (3" steps). It stops at walls and furniture.'),
       h('div', { class: 'move-row' },
         h('div', { class: 'pads' }, pad(0, -1, 'Move away', 0), pad(-1, 0, 'Move left', -90), pad(1, 0, 'Move right', 90), pad(0, 1, 'Move closer', 180)),
         h('div', { class: 'acts' },
           h('button', { class: 'btn', 'data-testid': 'rotate-left', onclick: () => app.rotateSelected(wall ? -90 : 15) }, icon('rotL'), wall ? 'Turn' : '15°'),
           h('button', { class: 'btn', 'data-testid': 'rotate-right', onclick: () => app.rotateSelected(wall ? 90 : -15) }, icon('rotR'), wall ? 'Turn' : '15°'),
-          h('button', { class: 'btn', onclick: () => app.resetSelectedPosition() }, icon('reset'), 'Reset spot'),
+          it.slot?.free ? null : h('button', { class: 'btn', onclick: () => app.resetSelectedPosition() }, icon('reset'), 'Reset spot'),
           h('button', { class: 'btn danger', 'data-testid': 'remove', onclick: () => app.removeSelected() }, icon('trash'), 'Remove'))));
   }
 
@@ -381,7 +404,16 @@ export class UI {
         const w = where(st.poses, e.room);
         return h('button', { class: 'row', 'data-existing': e.id, onclick: () => open(e.id, w) }, h('span', { class: 'row-text' }, h('b', {}, e.name), h('small', {}, 'Already yours', w.note)));
       });
-      this.menu.replaceChildren(h('div', { class: 'menu-head' }, h('b', {}, 'Items in this room'), closeBtn), h('div', { class: 'menu-body' }, h('div', { class: 'sep' }, 'New & used pieces'), ...rows, h('div', { class: 'sep' }, 'Already yours'), ...ex));
+      const lbRows = (app.layout.lookbook || []).filter((x) => (x.room || 'living') === app.roomId || x.poses.some((q) => q.room === app.roomId)).map((x) => {
+        const p = this.cat.products.get(x.product);
+        const w = where(x.poses, x.room);
+        return h('button', { class: `row ${app.selected?.startsWith(`${x.uid}#`) ? 'current' : ''}`, 'data-lookbook': x.uid, onclick: () => open(x.uid, w) },
+          h('img', { class: 'thumb', src: photoUrl(p), alt: '', loading: 'lazy' }),
+          h('span', { class: 'row-text' }, h('b', {}, p.lookbook.categoryLabel), h('small', {}, p.name, w.note)),
+          h('span', { class: 'row-price' }, fmtMoney(lineCents(p))));
+      });
+      this.menu.replaceChildren(h('div', { class: 'menu-head' }, h('b', {}, 'Items in this room'), closeBtn), h('div', { class: 'menu-body' }, h('div', { class: 'sep' }, 'New & used pieces'), ...rows,
+        lbRows.length ? [h('div', { class: 'sep' }, 'From your lookbook'), ...lbRows] : null, h('div', { class: 'sep' }, 'Already yours'), ...ex));
     }
   }
 
@@ -400,7 +432,7 @@ export class UI {
     const meta = this.cat.budgetMeta || {};
     const pct = Math.min(100, (b.totalCents / b.capCents) * 100);
     const rows = (room) => b.lines.filter((l) => l.room === room).map((l) => h('tr', {},
-      h('td', {}, l.name, l.qty > 1 ? h('small', {}, ` × ${l.qty}`) : null),
+      h('td', {}, l.name, l.qty > 1 ? h('small', {}, ` × ${l.qty}`) : null, this.cat.products.get(l.productId)?.lookbook ? h('small', { class: 'lb-tag' }, ' · from lookbook') : null, l.deliveryCents ? h('small', {}, ` · +${fmtMoney(l.deliveryCents)} delivery`) : null),
       h('td', {}, h('span', { class: `badge ${l.taxed ? 'new' : 'used'}` }, l.taxed ? 'New' : 'Used')),
       h('td', { class: 'num' }, fmtMoney(l.cents))));
     const removed = [...this.cat.slots.values()].filter((s) => this.app.layout.slots[s.slot_id].option === null);
@@ -477,7 +509,7 @@ export class UI {
       const A = pickLayout(a.value), B = pickLayout(b.value);
       const diff = store.diffLayouts(this.cat, A.layout, B.layout);
       const tA = total(A.layout), tB = total(B.layout);
-      const nm = (r, v) => (r.existingId ? (v ? 'Kept' : 'Hidden') : v ? this.cat.products.get(v).name : r.extraProduct ? 'Not added' : 'Removed');
+      const nm = (r, v) => (r.existingId ? (v ? 'Kept' : 'Hidden') : v ? this.cat.products.get(v)?.name || v : r.extraProduct ? 'Not added' : 'Removed');
       const tag = (r, side) => {
         const n = side === 'a' ? r.storedA : r.storedB;
         const t = [r.sameOption && r.moved ? 'moved' : null, n ? `${n} stored` : null].filter(Boolean).join(' · ');

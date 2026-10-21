@@ -3,7 +3,9 @@
 An interactive 3D model of the living room and the bedroom, built at true scale from `room-spec.json`,
 with every product from `products.json` placed by the designer's layout. Walk through the rooms in
 first person, pick pieces up and put them somewhere else, store them, swap options, see the budget
-update live, switch day/night, and save layouts. Runs in any modern browser, on phones too. Built with [three.js](https://threejs.org) and [Vite](https://vite.dev), no framework.
+update live, switch day/night, and save layouts. Runs in any modern browser, on phones too.
+The same site has a shoppable **lookbook** at `/lookbook/` (see [The lookbook](#the-lookbook)): pick
+products there and place them in the 3D rooms. Built with [three.js](https://threejs.org) and [Vite](https://vite.dev), no framework.
 
 > **Privacy.** The deployed app is public. It never includes `../photos/` or `../plans/` (they show the
 > home and its address). The build script refuses to run if a file from those folders ends up in
@@ -27,7 +29,8 @@ The input files stay where they are, in the folder above (`../room-spec.json`, `
 
 - copies the two JSON files into `public/data/`;
 - resizes the product photos into `public/product-images/` (same file names);
-- compresses the IKEA 3D models from `assets-src/models/` into `public/models/` (Draco, WebP textures).
+- compresses the IKEA 3D models from `assets-src/models/` into `public/models/` (Draco, WebP textures);
+- copies the lookbook catalog from `../../Lookbook Handoff/` into `public/data/lookbook/` (see below).
 
 ### Using it
 
@@ -109,6 +112,45 @@ changes your layout.
 - **Fit warnings:** pieces in a door swing, walkway, window or on top of each other show a warning,
   but the move is still allowed.
 
+## The lookbook
+
+`/lookbook/` (for example <http://localhost:5173/lookbook/>, live at
+<https://deividsancheez.github.io/house_vision/lookbook/>) is an editorial, shoppable lookbook: cover,
+inspiration, a chapter per room (mood board with hotspots, then one page per category with all its
+options side by side), the three packages and the buying order. **My Picks** (the bag, top right)
+holds one product per category, with quantities for pillows and inserts, and adds up subtotal, 9.75%
+tax on new items, delivery and the total against the $1,000 goal (amber over $1,000, red over $1,200).
+
+**Its data** is `../../Lookbook Handoff/products.json` (the single source of truth), with
+`inspiration.json`, `design-notes.md`, `MANUAL-ACTION-NEEDED.md` and `images/` next to it. It is a
+separate catalog: `../products.json` of the 3D plan is never changed. `npm run dev` / `npm run build`
+copy those files to `public/data/lookbook/` and resize the images (800 px, and 400 px in `images/sm/`).
+
+**Updating it:** edit `Lookbook Handoff/products.json` (prices, stock, links, a new product), put any
+new photo in `Lookbook Handoff/images/`, then `npm run build` (or restart `npm run dev`). Check it
+with `npm run test:unit` (validates the file and re-checks the package totals) and
+`node tools/check-lookbook-links.mjs` (opens every Buy link; blocked stores are listed as "needs
+manual check"). A new product needs `id` (new ids start with `LB-`; ids of the 3D plan stay as
+they are), `category` (and its id in that category's `product_ids`), `price`, `taxed`/`condition`,
+`product_url`, `image_file`, `main_color_hex`, `dimensions` (`w_in`, `d_in`, `h_in`; `null` when the
+store doesn't say) and `placement_3d` with `slot_3d`.
+
+**How lookbook products show in 3D.** The two pages share this browser's storage, so My Picks (and
+anything sent with "See in 3D") appear in the 3D app's inventory under **From lookbook**, at their
+true size (from `dimensions`), in `main_color_hex` with the photo as texture, or with IKEA's own
+model when `model_3d_url` is set (`npm run fetch-models` downloads it once into
+`assets-src/lookbook-models/`; the site never loads anything from IKEA). For an id that is also in
+the 3D plan, the 3D file decides the model and the lookbook decides price, stock, links and photo.
+- `placement_3d: "slot"`: **Swap into slot** puts it in that 3D slot (`slot_3d`, `A|B` = either),
+  with the slot's placement rules; **Place freely** also works.
+- `placement_3d: "free placement"`: **Place freely** carries it into the room in Walk mode, with the
+  usual green / yellow / red preview: on the floor, on a wall, or on top of any table or dresser.
+- A size that is `null` shows **Size needed** and can't be placed until the size is filled in.
+- Placed lookbook pieces count in the 3D budget (with their delivery fee). Storing or removing one
+  sends it back to From lookbook; un-picking it in the lookbook takes it out of the rooms (the
+  lookbook asks first). The item card has **View in lookbook**. Saved layouts, export/import and
+  Reset keep working; Reset never clears the picks.
+
 ## Project layout
 
 ```
@@ -139,6 +181,10 @@ src/
     views.js          camera presets matched to the photos
   walk/               Walk mode, three.js side: walkMode.js (camera, carrying, ghosts), hands.js,
                       input.js (keys, mouse, touch), audio.js (Web Audio sounds)
+  core/lookbook.js    lookbook picks as 3D products: refs, slots, free placement, "From lookbook" cards
+  shared/lbstore.js   what the lookbook and the 3D app share in localStorage (My Picks)
+  lookbook/           the lookbook page: core.js (cart math, packages, filters; unit-tested),
+                      main.js (pages, cards, My Picks), lookbook.css
   ui/ui.js            the top bar, item card, menus, budget and layouts dialogs
   ui/                 also walkHud.js (dot, labels, joystick, buttons), inventory.js, warnings.js,
                       goals.js, tutorial.js
@@ -222,7 +268,8 @@ from `src/core/fit.js`; a new kind of check goes there first, then gets a branch
 
 ```bash
 npm run test:unit    # fast: budget math, placement, collisions, warnings, layouts (node --test)
-npm run test:e2e     # Playwright, desktop 1440x900 and phone 412x892 (touch), on the built app
+npm run test:e2e     # Playwright, desktop 1440x900 and phone 412x892 (touch), on the built app;
+                     # the lookbook also on a 390x844 phone
 npm run test:perf    # frame rate in Overview and Walk mode, run alone (desktop, and phone with the CPU slowed 4x)
 npm test             # all three
 ```
@@ -237,6 +284,13 @@ Development helpers:
 - `node tools/compare.mjs <dir> [day|night]` puts each photo next to its matching app view. Run it
   while `npm run dev` serves on port 5199 (`npx vite --port 5199`).
 - `node tools/check-links.mjs` opens every Buy link in a real browser.
+- `node tools/check-lookbook-links.mjs` does the same for the lookbook (every product and color
+  variant link, and the backup searches of used items) into `test-results/lookbook-links.json`.
+
+`tests/unit/lookbook.test.mjs` validates the lookbook's products.json and checks the package totals
+($908.30, $988.16, $1,186.77), custom mixes and the 3D integration; `tests/e2e/lookbook.spec.js`
+screenshots every lookbook page and checks swatches, Buy links, filters, hotspots, navigation and My
+Picks; `tests/e2e/lookbook-3d.spec.js` takes picks into the 3D rooms (swap, place, budget, un-pick).
 
 ## Redeploy
 
@@ -250,6 +304,9 @@ npx playwright test tests/e2e/privacy.spec.js --project=desktop   # no photos/pl
 npx gh-pages -d dist --nojekyll                                    # pushes dist/ to the gh-pages branch
 node tools/smoke-live.mjs https://deividsancheez.github.io/house_vision/ .   # after about a minute
 ```
+
+The lookbook is part of the same build (`dist/lookbook/` and `dist/data/lookbook/`), so it is
+published with the 3D app by the same commands, at `…/house_vision/lookbook/`.
 
 The privacy test looks for words from the home address listed in `tests/e2e/private-words.txt`.
 That file is git-ignored on purpose; keep it only on this computer.

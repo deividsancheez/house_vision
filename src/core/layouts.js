@@ -108,6 +108,15 @@ export function diffLayouts(cat, a, b) {
     const p = cat.products.get(pid);
     rows.push({ extraProduct: pid, label: `${cat.slots.get(p.slot).label} (added from the Catalog)`, room: cat.slots.get(p.slot).room, a: na ? pid : null, b: nb ? pid : null, sameOption: false, moved: false, storedA: 0, storedB: 0 });
   }
+  // Lookbook pieces placed freely, matched by product
+  const la = a.lookbook || [], lb = b.lookbook || [];
+  for (const pid of [...new Set([...la, ...lb].map((x) => x.product))]) {
+    const ea = la.find((x) => x.product === pid), eb = lb.find((x) => x.product === pid);
+    const moved = !!(ea && eb) && JSON.stringify(ea.poses) !== JSON.stringify(eb.poses);
+    if (ea && eb && !moved) continue;
+    const p = cat.products.get(pid);
+    rows.push({ extraProduct: pid, label: `${p?.lookbook?.categoryLabel || 'Lookbook piece'} (from the lookbook)`, room: (ea || eb).room, a: ea ? pid : null, b: eb ? pid : null, sameOption: !!(ea && eb), moved, storedA: 0, storedB: 0 });
+  }
   return rows;
 }
 

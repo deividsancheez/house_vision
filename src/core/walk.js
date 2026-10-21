@@ -78,7 +78,7 @@ const samePt = (p, q) => Math.abs(p.x - q.x) < 0.01 && Math.abs(p.y - q.y) < 0.0
 
 /** Does this item block the body? */
 export function blocksBody(it, headZ) {
-  if (it.hidden || it.isRug || it.mount === 'top' || it.mount === 'hidden') return false;
+  if (it.hidden || it.isRug || it.mount === 'top' || it.mount === 'hidden' || it.mount === 'surface') return false;
   if (it.productKind && SOFT_KINDS.has(it.productKind)) return false;
   const boxes = itemBoxes(it);
   const top = Math.max(...boxes.map((b) => b.z1));

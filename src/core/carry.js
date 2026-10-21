@@ -3,12 +3,13 @@
 //  - floor pieces land on the floor in front of you
 //  - wall pieces go flat against the wall you face, at their current height
 //  - "on top of" pieces land on the piece they rest on (the slot's on_top_of), where you aim
+//  - "surface" pieces (lookbook pieces placed freely) land on whatever you look down at, or the floor
 // Green: fits. Yellow: fits but makes a fit warning. Red: can't go there (a wall, another piece,
 // your own feet, no wall to hang it on, or nothing to rest on), and the drop is refused.
 import { checkPose, effDims, baseZFor, itemBoxes, resolveSupports, supportOf, wallFacingYaw } from './items.js';
 import { pointAlong, wallCoords } from './catalog.js';
 import { computeWarnings } from './fit.js';
-import { normDeg, rotate2 } from './geom.js';
+import { normDeg, rotate2, pointInPolygon } from './geom.js';
 import { WALK, fwdOf, rayWalls, circleHitsBox } from './walk.js';
 import { nameOf } from './explain.js';
 
@@ -80,6 +81,12 @@ export function previewPlacement(ctx) {
     }
     if (!p || !itemBoxes(sup).some((b) => inBox(p, b.o))) return bad(`Aim at the ${nameOf(sup)} to set it down there.`, { ...it.pose });
     pose = { ...it.pose, x: p.x, y: p.y, rot: normDeg(yaw + relRot) };
+  } else if (it.mount === 'surface') {
+    // a lookbook piece placed freely: on top of whatever you look down at, or on the floor
+    const s = surfaceUnderAim(room, items, ctx.surfaces, eye, dir);
+    if (!s) return bad('Look down at a table, the bed, a shelf or the floor to set it there.', { ...it.pose });
+    pose = { ...it.pose, x: s.x, y: s.y, z: s.z, rot: normDeg(yaw + relRot) };
+    if (s.on) pose.on = s.on; else delete pose.on;
   } else {
     // floor: big pieces float with their near edge GHOST_GAP ahead; small ones land where you aim
     const rot = normDeg(yaw + relRot);
@@ -117,6 +124,33 @@ export function previewPlacement(ctx) {
   const mine = new Set([it.key, ...depItems.map((d) => d.key)]);
   const warnings = computeWarnings(cat, roomId, trial).filter((w) => mine.has(w.key) || mine.has(w.other));
   return { pose, wallId, status: warnings.length ? 'warn' : 'ok', reason: null, warnings, deps };
+}
+
+/**
+ * The nearest top face (or the floor) under the line of sight, within reach and in front of any
+ * wall: {x, y, z, on} where `on` is the piece it would rest on (null: the floor). Rugs count as floor.
+ */
+export function surfaceUnderAim(room, items, surfaces, eye, dir) {
+  if (dir.z >= -1e-6) return null;
+  const wall = rayWalls(surfaces, eye, dir);
+  const limit = Math.min(WALK.reach * 1.5, wall ? wall.t : Infinity);
+  let best = null;
+  for (const it of items) {
+    if (it.hidden || it.isRug || it.mount === 'wall' || it.index !== 0) continue;
+    for (const b of itemBoxes(it)) {
+      if (eye.z <= b.z1 + 0.1) continue;
+      const t = (b.z1 - eye.z) / dir.z;
+      if (t <= 0 || t > limit || (best && t >= best.t)) continue;
+      const p = { x: eye.x + dir.x * t, y: eye.y + dir.y * t };
+      if (inBox(p, b.o)) best = { t, x: p.x, y: p.y, z: b.z1, on: it.id };
+    }
+  }
+  const tf = -eye.z / dir.z;
+  if (tf > 0 && tf <= limit && (!best || tf < best.t)) {
+    const p = { x: eye.x + dir.x * tf, y: eye.y + dir.y * tf };
+    if (room.regions.some((poly) => pointInPolygon(p.x, p.y, poly))) best = { t: tf, x: p.x, y: p.y, z: 0, on: null };
+  }
+  return best;
 }
 
 function inBox(p, o) {

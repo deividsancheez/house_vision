@@ -4,11 +4,13 @@ import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment
 import './styles.css';
 import './walk.css';
 import { loadCatalog } from './core/catalog.js';
-import { defaultLayout, moveToward, rotateItem, swapOption, swapExtra, resetItemPose, setExistingHidden, buildItems, effDims, itemBoxes, parseKey, pieceByKey, defaultSlotPoses, defaultExistingPoses } from './core/items.js';
+import { defaultLayout, moveToward, rotateItem, swapOption, swapExtra, resetItemPose, setExistingHidden, buildItems, effDims, itemBoxes, parseKey, pieceByKey, defaultSlotPoses, defaultExistingPoses, normalizeLayout } from './core/items.js';
+import { syncLookbookProducts, canSwapInto, findRef } from './core/lookbook.js';
+import { readPicks, writePicks, parseRef, PICKS_KEY } from './shared/lbstore.js';
 import { History } from './core/history.js';
 import { roomWarnings, explainWarning, isDismissed, dismiss as dismissWarningIn, restore as restoreWarningIn } from './core/explain.js';
 import { roomGoals } from './core/goals.js';
-import { storePiece, placePieces, removeFromPlan, addFromCatalog, ungroup } from './core/inventory.js';
+import { storePiece, placePieces, removeFromPlan, addFromCatalog, ungroup, addLookbookFree } from './core/inventory.js';
 import { shortName } from './core/carry.js';
 import { WalkMode } from './walk/walkMode.js';
 import { setupWalkInput } from './walk/input.js';
@@ -69,12 +71,16 @@ class App {
 
     this.cat = await loadCatalog(`${import.meta.env.BASE_URL}data/`);
     if (this.cat.problems.length) this.reportError(`products.json / room-spec.json problems:\n${this.cat.problems.join('\n')}`);
+    // the lookbook's My Picks become products before the saved layout is read, so placed picks load
+    // and pieces that were un-picked in the lookbook drop out of the rooms
+    syncLookbookProducts(this.cat, readPicks());
 
     const saved = store.loadCurrent(this.cat);
     this.layout = saved?.layout || defaultLayout(this.cat);
     this.layoutName = saved?.name || "Designer's layout";
     this.history = new History();
     this.history.reset(this.layout);
+    if (saved) store.saveCurrent(this.layoutName, this.layout); // the lookbook reads what's placed from here
     this.settings = store.loadSettings();
     // muted by default on phones until you turn it on; on a computer it starts on
     this.sounds = new Sounds(this.settings.muted ?? coarse);
@@ -111,8 +117,13 @@ class App {
     this.primeGoals();
     if (mode === 'walk') {
       this.setViewMode('walk');
-      if (!this.settings.tutorialDone && params.get('tutorial') !== '0' && !asked) this.startTutorial();
+      if (!this.settings.tutorialDone && params.get('tutorial') !== '0' && !asked && !params.has('inv')) this.startTutorial();
     }
+    // from the lookbook: ?inv=lookbook opens "From lookbook", ?lb=<product> points at that card
+    if (params.get('inv') === 'lookbook') this.ui.inventory.show('lookbook', findRef(this.cat, params.get('lb')));
+    window.addEventListener('storage', (e) => { if (e.key === PICKS_KEY) this.refreshLookbook(); });
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) this.refreshLookbook(); });
+    window.addEventListener('pageshow', (e) => { if (e.persisted) this.refreshLookbook(); });
     this.loop();
     document.body.classList.add('ready');
     // the loading screen fades out (CSS); remove it afterwards even if a busy phone stalls the fade
@@ -411,7 +422,8 @@ class App {
 
   /** Show a layout (undo/redo) without recording it as a new step. */
   applyLayout(layout) {
-    this.layout = layout;
+    // a step from before a lookbook pick was removed must not bring that piece back
+    this.layout = normalizeLayout(this.cat, layout).layout;
     this.select(null);
     for (const rs of this.rooms.values()) rs.sync(this.layout);
     this.walk?.dirtyWorld();
@@ -445,8 +457,15 @@ class App {
     const r = storePiece(this.cat, this.layout, roomId, key);
     if (!r.ok) return false;
     if (this.selected && r.keys.includes(this.selected)) this.select(null);
+    // lookbook pieces taken out of the room go back to "From lookbook" (out of the budget)
+    const lbKeys = r.keys.filter((k) => pieceByKey(this.cat, this.layout, k)?.product?.lookbook);
+    for (const k of lbKeys) removeFromPlan(this.cat, this.layout, k);
     this.commit({ label: `Store ${shortName(it)}` });
     this.sounds.play('store');
+    if (it.product?.lookbook) {
+      this.ui.toast(`${shortName(it)} is back in From lookbook (out of the budget). ${coarse ? 'Tap the bag' : 'Press I'} to place it again.`, 'info');
+      return true;
+    }
     const more = r.keys.length - 1;
     this.ui.toast(`Stored ${shortName(it)}${more ? ` with ${more} thing${more > 1 ? 's' : ''} on it` : ''}. Still in the budget. ${coarse ? 'Tap the bag' : 'Press I'} to see it.`, 'info');
     return true;
@@ -502,6 +521,69 @@ class App {
 
   ungroupStored(uid) {
     if (ungroup(this.layout, uid)) this.commit({ label: 'Ungroup' });
+  }
+
+  // ------------------------------------------------------------------------------------------
+  // From the lookbook (core/lookbook.js): picks made there appear under "From lookbook"
+
+  /** Re-read My Picks (changed in the lookbook, maybe in another tab) and drop un-picked pieces. */
+  refreshLookbook() {
+    if (!this.cat?.lookbook) return;
+    const before = (this.cat.lookbookRefs || []).join('|') + JSON.stringify([...this.cat.products.values()].filter((p) => p.lookbook).map((p) => p.qty));
+    syncLookbookProducts(this.cat, readPicks());
+    const after = this.cat.lookbookRefs.join('|') + JSON.stringify([...this.cat.products.values()].filter((p) => p.lookbook).map((p) => p.qty));
+    if (before === after) return;
+    if (this.walk?.carry && !this.cat.products.has(this.walk.carry.it.product?.id ?? '')) this.walk.cancel(true);
+    const next = normalizeLayout(this.cat, this.layout).layout;
+    if (this.tutorial) { this.emit('layout'); return; }
+    if (JSON.stringify(next) !== JSON.stringify(this.layout)) {
+      this.layout = next;
+      if (this.selected && !this.item(this.selected)) this.select(null);
+      this.commit({ label: 'Lookbook picks changed' });
+      this.ui.toast('Your lookbook picks changed: pieces you un-picked left the rooms.', 'info');
+    } else {
+      for (const rs of this.rooms.values()) rs.sync(this.layout); // a quantity or price changed
+      this.persist();
+      this.refresh();
+    }
+  }
+
+  /** "Swap into slot": the lookbook product takes the slot's place, with the slot's placement rules. */
+  async lookbookSwapIn(ref, slotId) {
+    if (!canSwapInto(this.cat, ref, slotId)) return null;
+    const slot = this.cat.slots.get(slotId);
+    if (this.walk?.carry) this.walk.cancel(true);
+    const before = this.layout.slots[slotId].option;
+    const r = swapOption(this.cat, this.layout, slotId, ref);
+    const p = this.cat.products.get(ref);
+    this.commit({ label: `Swap in ${shortName({ kind: 'product', product: p })}` });
+    if (slot.room !== this.roomId) await this.setRoom(slot.room);
+    this.ui.inventory.hide();
+    const was = before ? this.cat.products.get(before) : null;
+    this.ui.toast(`${shortName({ kind: 'product', product: p })} is in the ${slot.label.toLowerCase()} spot${was ? `, replacing ${shortName({ kind: 'product', product: was })}` : ''}.`, 'info');
+    if (this.viewMode === 'walk') this.walk.faceItem(`${slotId}#0`);
+    else { this.select(`${slotId}#0`); this.focus(`${slotId}#0`); }
+    return r;
+  }
+
+  /** "Place freely": carry the lookbook product into the room and set it down anywhere it fits. */
+  lookbookPlace(ref) {
+    const r = addLookbookFree(this.cat, this.layout, ref, this.roomId);
+    if (!r.ok) { this.ui.toast('This piece needs its size (W × D × H) in products.json before it can be placed.', 'warn'); return false; }
+    this.commit({ label: `Add ${shortName({ kind: 'product', product: this.cat.products.get(ref) })}` });
+    const g = this.layout.inventory.find((x) => x.keys.includes(r.keys[0]));
+    return this.placeFromInventory(g.uid, { catalog: true });
+  }
+
+  /** Take a "See in 3D" product off the From lookbook list (it isn't a pick). */
+  dismissTried(ref) {
+    const r = parseRef(ref);
+    if (!r?.tried) return;
+    const st = readPicks();
+    st.try3d = st.try3d.filter((t) => !(t.id === r.id && (t.color || null) === (r.color || null)));
+    writePicks(st);
+    this.refreshLookbook();
+    this.emit('layout');
   }
 
   // ------------------------------------------------------------------------------------------
@@ -621,7 +703,7 @@ class App {
   removeSelected() {
     const it = this.item(this.selected);
     if (!it) return;
-    if (it.extra) { this.removeFromPlan(it.key); return; }
+    if (it.extra || it.lbEntry) { this.removeFromPlan(it.key); return; }
     if (it.kind === 'product') swapOption(this.cat, this.layout, it.id, null);
     else setExistingHidden(this.layout, it.id, true);
     this.select(null);
@@ -665,7 +747,7 @@ class App {
 
   loadLayout(layout, name) {
     if (this.walk?.carry) this.walk.cancel(true);
-    this.layout = structuredClone(layout);
+    this.layout = normalizeLayout(this.cat, structuredClone(layout)).layout;
     this.layoutName = name;
     this.select(null);
     this.commit({ label: `Load ${name}` });

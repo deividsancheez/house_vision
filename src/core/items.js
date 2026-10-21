@@ -2,18 +2,24 @@
 //  - floor items stay inside the room outline (plus the closet recess) and can't pass through furniture
 //  - wall items slide on their own wall and stay between floor, ceiling and the wall ends
 //  - "on top of" items stay on the piece they rest on and move with it
+//  - "surface" items (lookbook pieces placed freely: trays, lamps, pillows...) rest on whatever
+//    piece they were set on, or on the floor, and move with that piece
 // All coordinates are room coordinates in inches (see units.js).
 import { obb, obbPenetration, obbInsideRegion, rotate2, normDeg } from './geom.js';
 import { wallCoords, pointAlong, wallFacingYaw } from './catalog.js';
+import { isLookbookId, isSlotOption, freeSlot, freeStartPose } from './lookbook.js';
 
 // 2 adds the inventory, Catalog additions ("extras"), dismissed warnings and per-piece room/stored
-// flags. Version 1 layouts and files still load (normalizeLayout fills in the rest).
+// flags. Version 1 layouts and files still load (normalizeLayout fills in the rest). The optional
+// "lookbook" list (pieces from the lookbook placed freely) came later without a version change:
+// layouts without it load as before, and it is simply empty there.
 export const LAYOUT_SCHEMA = 2;
 
 // ---------------------------------------------------------------------------------------------
 // Product kinds (decide how a product is modeled and which size rules apply)
 
 export function productKind(p) {
+  if (p.kind) return p.kind; // lookbook products carry theirs (see core/lookbook.js)
   const n = `${p.name}`.toLowerCase();
   const c = `${p.category}`.toLowerCase();
   if (c.startsWith('desk chair')) return 'chair';
@@ -49,7 +55,8 @@ const PLACED_STATE_KINDS = new Set(['curtain', 'throw', 'duvet']);
 const NON_COLLIDING = new Set(['rug', 'curtain', 'rod', 'raceway', 'throw', 'duvet', 'pillow', 'insert']);
 
 export function isLightSource(p) {
-  return !!p.bulb_spec || /candle/i.test(p.name);
+  // a lookbook lamp in a lamp slot lights up like the slot's lamp (room-spec lighting)
+  return !!p.bulb_spec || /candle/i.test(p.name) || !!p.lookbook?.light;
 }
 
 // Extra pieces for multi-piece products whose slot only gives one placement.
@@ -68,7 +75,7 @@ export const EXTRA_PIECE_PLACEMENTS = {
 // Layout
 
 export function defaultLayout(cat) {
-  const layout = { schema: LAYOUT_SCHEMA, slots: {}, existing: {}, extras: [], inventory: [], dismissed: [] };
+  const layout = { schema: LAYOUT_SCHEMA, slots: {}, existing: {}, extras: [], lookbook: [], inventory: [], dismissed: [] };
   for (const s of cat.slots.values()) layout.slots[s.slot_id] = { option: s.default_option, poses: defaultSlotPoses(cat, s, s.default_option) };
   for (const e of cat.existing.values()) {
     if (e.keep === false) continue;
@@ -78,6 +85,8 @@ export function defaultLayout(cat) {
 }
 
 export function defaultSlotPoses(cat, slot, productId) {
+  const product = cat.products.get(productId);
+  if (slot.free) return [freeStartPose(slot, product)];
   const poses = slot.placements.map((pl) => ({
     x: pl.position_center.x,
     y: pl.position_center.y,
@@ -85,7 +94,7 @@ export function defaultSlotPoses(cat, slot, productId) {
     rot: pl.rotation_deg_z ?? 0,
     spin: 0,
   }));
-  for (const extra of EXTRA_PIECE_PLACEMENTS[productId] || []) poses.push({ ...extra, spin: 0 });
+  for (const extra of EXTRA_PIECE_PLACEMENTS[product?.modelId || productId] || []) poses.push({ ...extra, spin: 0 });
   return poses;
 }
 
@@ -115,14 +124,16 @@ export function defaultExistingPoses(e) {
  *  Takes version 1 layouts (no inventory, extras or dismissed warnings) as well as version 2. */
 export function normalizeLayout(cat, raw) {
   const def = defaultLayout(cat);
-  const out = { schema: LAYOUT_SCHEMA, slots: {}, existing: {}, extras: [], inventory: [], dismissed: [] };
+  const out = { schema: LAYOUT_SCHEMA, slots: {}, existing: {}, extras: [], lookbook: [], inventory: [], dismissed: [] };
   const dropped = [];
   for (const [id, d] of Object.entries(def.slots)) {
     const r = raw?.slots?.[id];
     const slot = cat.slots.get(id);
     if (!r) { out.slots[id] = d; continue; }
-    let option = r.option === null ? null : slot.options.includes(r.option) ? r.option : slot.default_option;
-    if (r.option && !slot.options.includes(r.option)) dropped.push(r.option);
+    // a lookbook product that is no longer picked leaves the slot empty (it was taken out of the plan)
+    const known = r.option && isSlotOption(cat, slot, r.option);
+    let option = r.option === null ? null : known ? r.option : isLookbookId(r.option) ? null : slot.default_option;
+    if (r.option && !known) dropped.push(r.option);
     const want = defaultSlotPoses(cat, slot, option ?? slot.default_option);
     const poses = want.map((p, i) => (validPose(r.poses?.[i]) ? { ...p, ...pick(cat, r.poses[i], slot.room) } : p));
     out.slots[id] = { option, poses };
@@ -144,6 +155,18 @@ export function normalizeLayout(cat, raw) {
     uids.add(uid);
     const want = defaultSlotPoses(cat, slot, product.id);
     out.extras.push({ uid, product: product.id, poses: want.map((p, i) => (validPose(x.poses?.[i]) ? { ...p, ...pick(cat, x.poses[i], slot.room) } : { ...p, stored: true })) });
+  }
+  // Lookbook pieces placed freely: only products still picked, with a known size and a valid pose
+  for (const x of Array.isArray(raw?.lookbook) ? raw.lookbook : []) {
+    const product = cat.products.get(x?.product);
+    const uid = String(x?.uid || '');
+    const room = cat.rooms.has(x?.room) ? x.room : null;
+    const pose = x?.poses?.[0];
+    if (!product?.lookbook || product.lookbook.sizeNeeded || !room || !/^K\d+$/.test(uid) || uids.has(uid) || !validPose(pose)) { if (x?.product) dropped.push(String(x.product)); continue; }
+    uids.add(uid);
+    const q = pick(cat, pose, room);
+    if (typeof pose.on === 'string') q.on = pose.on;
+    out.lookbook.push({ uid, product: product.id, room, poses: [q] });
   }
   // inventory groups hold only pieces that exist and are stored; a stored piece without a group gets its own
   const seen = new Set();
@@ -194,7 +217,12 @@ export function poseRef(layout, key) {
   if (s) return s.option ? s.poses[index] || null : null;
   const e = layout.existing[id];
   if (e) return e.hidden ? null : e.poses[index] || null;
-  return (layout.extras || []).find((x) => x.uid === id)?.poses[index] || null;
+  return ownerOf(layout, id)?.poses[index] || null;
+}
+
+/** A Catalog addition ("X1") or a freely placed lookbook piece ("K1") by its uid. */
+export function ownerOf(layout, uid) {
+  return (layout.extras || []).find((x) => x.uid === uid) || (layout.lookbook || []).find((x) => x.uid === uid) || null;
 }
 
 /** Every piece key in the layout, placed or stored. */
@@ -203,6 +231,7 @@ export function allKeys(layout) {
   for (const [id, s] of Object.entries(layout.slots)) if (s.option) s.poses.forEach((_, i) => keys.push(`${id}#${i}`));
   for (const [id, e] of Object.entries(layout.existing)) if (!e.hidden) e.poses.forEach((_, i) => keys.push(`${id}#${i}`));
   for (const x of layout.extras || []) x.poses.forEach((_, i) => keys.push(`${x.uid}#${i}`));
+  for (const x of layout.lookbook || []) x.poses.forEach((_, i) => keys.push(`${x.uid}#${i}`));
   return keys;
 }
 
@@ -212,7 +241,8 @@ export function homeRoom(cat, layout, key) {
   if (cat.slots.has(id)) return cat.slots.get(id).room;
   if (cat.existing.has(id)) return cat.existing.get(id).room;
   const x = (layout.extras || []).find((e) => e.uid === id);
-  return x ? cat.slots.get(cat.products.get(x.product).slot).room : null;
+  if (x) return cat.slots.get(cat.products.get(x.product).slot).room;
+  return (layout.lookbook || []).find((e) => e.uid === id)?.room || null;
 }
 
 /** The room a piece stands in now, or null while it is stored. */
@@ -226,6 +256,7 @@ export function roomOfKey(cat, layout, key) {
 // Items
 
 function slotMount(slot) {
+  if (slot.free) return slot.mount; // a lookbook piece placed freely: 'floor', 'wall' or 'surface'
   if (slot.anchor === 'on top of') return /not visible/i.test(slot.notes || '') ? 'hidden' : 'top';
   if (slot.mount === 'wall') return 'wall';
   return 'floor';
@@ -248,7 +279,7 @@ function unrotatedDims(bbox, rotDeg) {
 export function productDims(product, slot, index = 0) {
   const kind = productKind(product);
   const pl = slot.placements[Math.min(index, slot.placements.length - 1)];
-  if (PLACED_STATE_KINDS.has(kind)) return unrotatedDims(pl.bbox, pl.rotation_deg_z ?? 0);
+  if (PLACED_STATE_KINDS.has(kind) && pl) return unrotatedDims(pl.bbox, pl.rotation_deg_z ?? 0);
   return { ...product.dimensions_in };
 }
 
@@ -256,7 +287,7 @@ export function productDims(product, slot, index = 0) {
  *  would stand) and .stored (true while it is in the inventory). */
 export function allPieces(cat, layout) {
   const items = [];
-  const productPieces = (slot, product, poses, ownerId, extra) => {
+  const productPieces = (slot, product, poses, ownerId, extra, lbEntry = null) => {
     const kind = productKind(product);
     const mount = slotMount(slot);
     const defaults = defaultSlotPoses(cat, slot, product.id);
@@ -268,6 +299,7 @@ export function allPieces(cat, layout) {
         id: ownerId,
         index: i,
         extra,
+        lbEntry,
         roomId: pose.room || slot.room,
         homeRoomId: slot.room,
         stored: !!pose.stored,
@@ -277,10 +309,10 @@ export function allPieces(cat, layout) {
         name: product.name,
         mount,
         wallId: mount === 'wall' ? pose.wall || slot.wall : null,
-        supportId: mount === 'top' || mount === 'hidden' ? slot.on_top_of : null,
+        supportId: mount === 'top' || mount === 'hidden' ? slot.on_top_of : mount === 'surface' ? pose.on || null : null,
         dims,
         localParts: null,
-        collides: mount !== 'hidden' && mount !== 'top' && !NON_COLLIDING.has(kind),
+        collides: mount !== 'hidden' && mount !== 'top' && mount !== 'surface' && !NON_COLLIDING.has(kind),
         isRug: kind === 'rug',
         hidden: mount === 'hidden',
         defaultZ: defaults[i]?.z ?? 0,
@@ -295,6 +327,10 @@ export function allPieces(cat, layout) {
   for (const x of layout.extras || []) {
     const product = cat.products.get(x.product);
     productPieces(cat.slots.get(product.slot), product, x.poses, x.uid, x.uid);
+  }
+  for (const x of layout.lookbook || []) {
+    const product = cat.products.get(x.product);
+    if (product) productPieces(freeSlot(cat, product, x.room), product, x.poses, x.uid, null, x.uid);
   }
   for (const e of cat.existing.values()) {
     const st = layout.existing[e.id];
@@ -375,6 +411,15 @@ export function baseZFor(items, it, pose) {
     if (sup.kind === 'product') return (sup.baseZ ?? 0) + sup.dims.h;
     return it.defaultZ;
   }
+  if (it.mount === 'surface') {
+    // on a product: its top (it follows a swap to a taller or lower option); on a piece you own:
+    // the height of the part it was set on (the sectional's seat, not its back)
+    if (!pose.on) return 0;
+    const sup = items.find((o) => o.id === pose.on && o.index === 0 && o.key !== it.key);
+    if (!sup) return 0;
+    if (sup.kind === 'product' && !sup.localParts) return (sup.baseZ ?? 0) + effDims(sup).h;
+    return pose.z ?? 0;
+  }
   return pose.z ?? 0;
 }
 
@@ -439,6 +484,10 @@ export function checkPose(room, items, it, pose, prevPose = it.pose, { strict = 
     const { along } = wallCoords(wall, pose.x, pose.y);
     if (along - ed.w / 2 < -0.01 || along + ed.w / 2 > wall.len + 0.01) return { ok: false, reason: 'wall-end' };
     if (pose.z - ed.h / 2 < -0.01 || pose.z + ed.h / 2 > room.ceiling + 0.01) return { ok: false, reason: 'ceiling' };
+  } else if (it.mount === 'surface') {
+    const sup = pose.on ? items.find((o) => o.id === pose.on && o.index === 0 && o.key !== it.key) : null;
+    if (sup) { if (!itemBoxes(sup).some((b) => pointInObb(pose.x, pose.y, b.o))) return { ok: false, reason: 'support' }; }
+    else for (const b of itemBoxes(it, pose, baseZ)) if (!obbInsideRegion(b.o, room.regions)) return { ok: false, reason: 'wall' };
   } else if (it.mount === 'top') {
     const sup = supportOf(items, it);
     if (sup && !itemBoxes(sup).some((b) => pointInObb(pose.x, pose.y, b.o))) return { ok: false, reason: 'support' };
@@ -465,6 +514,7 @@ function pointInObb(x, y, o) {
 
 function posesOf(layout, it) {
   if (it.extra) return layout.extras.find((x) => x.uid === it.extra).poses;
+  if (it.lbEntry) return layout.lookbook.find((x) => x.uid === it.lbEntry).poses;
   return it.kind === 'product' ? layout.slots[it.id].poses : layout.existing[it.id].poses;
 }
 
@@ -536,6 +586,7 @@ export function rotateItem(room, layout, items, it, stepDeg) {
 }
 
 export function resetItemPose(cat, layout, items, it) {
+  if (it.slot?.free) return; // placed freely: it has no designer's spot to go back to
   const def = it.kind === 'product' ? defaultSlotPoses(cat, it.slot, it.product.id)[it.index] : defaultExistingPoses(it.piece)[it.index];
   setPose(layout, items, it, { ...def });
 }
@@ -543,7 +594,7 @@ export function resetItemPose(cat, layout, items, it) {
 /** Replace the slot's product in place. Alternates keep the slot's center; walls are hard limits. */
 export function swapOption(cat, layout, slotId, productId) {
   const slot = cat.slots.get(slotId);
-  if (productId !== null && !slot.options.includes(productId)) throw new Error(`${productId} is not an option of ${slotId}`);
+  if (productId !== null && !isSlotOption(cat, slot, productId)) throw new Error(`${productId} is not an option of ${slotId}`);
   const sel = layout.slots[slotId];
   const want = defaultSlotPoses(cat, slot, productId ?? slot.default_option);
   const poses = want.map((p, i) => sel.poses[i] && i < slot.placements.length ? sel.poses[i] : p);
