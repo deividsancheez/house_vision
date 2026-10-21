@@ -22,6 +22,19 @@ Send back the answer (a screenshot or the numbers is perfect). I'll update produ
 
 Walmart was checked with the browser location at 90034 (Palms, next to 90066): all 41 Walmart links are in stock and ship there. Amazon was checked with no delivery ZIP (both items In Stock nationally). If you want exact 90066 results, either check yourself, or tell me it's OK to type 90066 into Walmart's and Amazon's location boxes in the built-in browser.
 
+### Optional: sizes for the new Facebook art (Oct 21)
+
+Only if you like one of these: message the seller for the width and height in inches.
+
+- [ ] LB-ART-TEXTURE-01 textured arches ($30, Glendale): title says "30:40:1,5" with no units. https://www.facebook.com/marketplace/item/1843081687113500/
+- [ ] LB-ART-EARTHY-02 terracotta abstract canvas ($20). https://www.facebook.com/marketplace/item/2450645578793502/
+- [ ] LB-ART-EARTHY-03 watercolor landscape ($10). https://www.facebook.com/marketplace/item/1658631009164919/
+- [ ] LB-ART-EARTHY-07 vintage botanical ($50). https://www.facebook.com/marketplace/item/1343071141280422/
+- [ ] LB-ART-DESERT-04 Jessie Waddell desert painting ($60). https://www.facebook.com/marketplace/item/1111997464706606/
+- [ ] LB-ART-WOVEN-01 macrame ($15). https://www.facebook.com/marketplace/item/1610394987429388/
+- [ ] LB-ART-WOVEN-05 woven square panels ($20). https://www.facebook.com/marketplace/item/1861368138164062/
+- [ ] LB-ART-WOVEN-06 rattan wall flowers, set of 3 ($5). https://www.facebook.com/marketplace/item/2032839584102951/
+
 ## Done Oct 21, 2026
 
 Sizes found (now in products.json, so these can be placed in 3D):

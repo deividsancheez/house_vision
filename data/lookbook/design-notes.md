@@ -78,6 +78,17 @@ Every item from your list was opened on its exact product page today. Changes:
 - Sizes are in inches (`w_in`, `d_in`, `h_in`). Values marked in `estimated` were not printed on the product page (for example rug and curtain thickness). If a size is `null`, the 3D app must ask for it instead of guessing; those items are on the MANUAL ACTION NEEDED list.
 - `main_color_hex` is sampled from the product photo (approximate). `model_3d_url` is IKEA's own 3D model when IKEA offers one.
 
+## Facebook Marketplace art finds (Oct 21)
+
+27 used art pieces from Facebook Marketplace around Los Angeles, chosen for the palette (oat, sand, camel, terracotta, olive, warm wood; no cool gray, chrome or busy color). They sit in four new categories that work in either room and swap into the LR-ART or BR-ART slot in 3D:
+
+- **Used art: textured neutrals** (7): plaster-look arches, a rice paper diptych, an original beige painting, a large cream canvas and more.
+- **Used art: earthy prints and sets** (7): rust and sand abstracts, sun and arch prints, a boho desert set, a vintage botanical.
+- **Used art: desert and landscape** (7): Joshua Tree, a redwood forest print, two signed vintage desert paintings and small originals.
+- **Used art: woven and rattan** (6): rattan discs, macrame, a woven panel and a wicker and shell disc.
+
+Prices run $5 to $130, all untaxed private sales. Like every used piece they can sell any day; each card has a backup search link. Sets list the size of one piece; the price covers the whole set. Eight listings give no size, so they show "size needed" in 3D until the seller answers.
+
 ## UNSURE
 
 - UNSURE: Walmart stock was checked with the browser location set to 90034 (Palms, next to 90066; Walmart store 5604), not 90066 itself. Re-checked Oct 21: all 41 Walmart links in stock.
