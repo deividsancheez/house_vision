@@ -47,7 +47,7 @@
       "slots_3d": [
         "LR-COFFEE"
       ],
-      "rule": "",
+      "rule": "Keep it 14-18 in from the sectional's seat fronts; round, about 30-36 in across",
       "product_ids": [
         "LR-COFFEE-A",
         "LR-COFFEE-B",
@@ -82,7 +82,7 @@
       "slots_3d": [
         "LR-SCONCE"
       ],
-      "rule": "",
+      "rule": "One on each side of the TV, about 60-66 in high; cords run down the wall",
       "product_ids": [
         "LR-SCONCE-A",
         "LR-SCONCE-B",
@@ -152,7 +152,7 @@
       "slots_3d": [
         "BR-DUVET"
       ],
-      "rule": "",
+      "rule": "Full/Queen to fit the queen bed (60 x 80 in)",
       "product_ids": [
         "BR-DUVET-A",
         "BR-DUVET-B",
@@ -203,7 +203,7 @@
       "slots_3d": [
         "BR-CHAIR"
       ],
-      "rule": "",
+      "rule": "Leave 30 in clear behind the chair",
       "product_ids": [
         "BR-CHAIR-A",
         "BR-CHAIR-B",
@@ -236,7 +236,7 @@
       "slots_3d": [
         "BR-HAMPER"
       ],
-      "rule": "",
+      "rule": "Natural or soft textures only (rattan, willow, bamboo, canvas); keep the 30 in in front of the closet clear",
       "product_ids": [
         "BR-HAMPER-A",
         "BR-HAMPER-B",
@@ -305,7 +305,7 @@
       "label": "Second bedside lamp (matching pair)",
       "room": "bedroom",
       "slots_3d": [],
-      "rule": "",
+      "rule": "Match the first bedside lamp; 2700K bulbs",
       "product_ids": [
         "LB-BEDLAMP2-01",
         "LB-BEDLAMP2-02",
@@ -354,7 +354,7 @@
       "label": "Lumbar pillows",
       "room": "both",
       "slots_3d": [],
-      "rule": "",
+      "rule": "One lumbar in front of the 20 in squares; oat, camel or rust",
       "product_ids": [
         "LB-LUMBAR-01",
         "LB-LUMBAR-02",
@@ -372,7 +372,7 @@
       "slots_3d": [
         "LR-THROW"
       ],
-      "rule": "",
+      "rule": "Drape over the sectional's arm or the foot of the bed; warm neutrals or rust, no cool gray",
       "product_ids": [
         "LR-THROW-A",
         "LB-THROW-01",
@@ -390,7 +390,7 @@
       "slots_3d": [
         "LR-MIRROR"
       ],
-      "rule": "",
+      "rule": "Round, centered at 57 in on the dining nook's west wall, where it catches the east light",
       "product_ids": [
         "LR-MIRROR-A",
         "LR-MIRROR-B",
@@ -428,7 +428,7 @@
         "LR-PLANT",
         "BR-PLANT"
       ],
-      "rule": "",
+      "rule": "Nothing taller than the sill within 24 in of a window; the olive tree goes beside the WiFi cabinet",
       "product_ids": [
         "LR-PLANT-A",
         "BR-PLANT-A",
@@ -446,7 +446,7 @@
       "slots_3d": [
         "LR-CABLE"
       ],
-      "rule": "",
+      "rule": "About 54 in of baseboard run from the TV console to the WiFi cabinet; paintable white",
       "product_ids": [
         "LR-CABLE-A",
         "LB-CABLE-01",
@@ -460,7 +460,7 @@
       "label": "Decorative trays",
       "room": "both",
       "slots_3d": [],
-      "rule": "",
+      "rule": "On the coffee table or a dresser; wood, brass or stone, never plastic",
       "product_ids": [
         "LB-TRAY-01",
         "LB-TRAY-02",
@@ -476,7 +476,7 @@
       "slots_3d": [
         "LR-DECOR"
       ],
-      "rule": "",
+      "rule": "Groups of one to three in warm neutral ceramic or glass",
       "product_ids": [
         "LR-DECOR-B",
         "LB-VASE-01",
@@ -495,7 +495,7 @@
         "LR-DECOR",
         "BR-DECOR"
       ],
-      "rule": "",
+      "rule": "Low, warm-toned pieces grouped on a tray",
       "product_ids": [
         "LR-DECOR-A",
         "BR-DECOR-A",
@@ -509,7 +509,7 @@
       "label": "Baskets and storage",
       "room": "both",
       "slots_3d": [],
-      "rule": "",
+      "rule": "Natural fibers (rattan, seagrass, water hyacinth) for throws and pillows",
       "product_ids": [
         "LB-BASKET-01",
         "LB-BASKET-02",
@@ -524,7 +524,7 @@
       "label": "Side tables",
       "room": "living",
       "slots_3d": [],
-      "rule": "",
+      "rule": "Keep the walkways clear: 36 in behind the sectional and 58 in to the hallway",
       "product_ids": [
         "LB-SIDETABLE-01",
         "LB-SIDETABLE-02",
@@ -556,7 +556,7 @@
       "label": "Travertine and stone accents",
       "room": "both",
       "slots_3d": [],
-      "rule": "",
+      "rule": "Small doses: one or two travertine or marble pieces per room",
       "product_ids": [
         "LB-STONE-01",
         "LB-STONE-02",
@@ -1331,7 +1331,7 @@
         "source": "Same as the 3D plan: IKEA: 7'10\" x 10', pile 1 1/4\""
       },
       "material": "MaterialUse surface:100 % polypropyleneBacking:100 % Synthetic rubberCareAiring and vacuuming will help to eliminate the smell that the rug can have when it is new.Do not wash.Do not bleach.Do not tumble dry.Do not iron.",
-      "short_description": "ÄRENDE Rug, high pile - off-white 7 ' 10 \"x10 '. The soft, shaggy surface adds warmth and coziness to your living room or bedroom. The high pile dampens sound and provides a soft surface to walk on. Durable, stain resistant and easy to care for since the rug is made of synthetic ",
+      "short_description": "Soft, shaggy high-pile rug in off-white that dampens sound and feels warm underfoot. Synthetic fibers make it durable, stain resistant and easy to care for.",
       "why_this": "Soft high pile in off-white at the lowest 8x10-class price; already the 3D plan's rug.",
       "tags": [
         "Top pick",
@@ -1394,7 +1394,7 @@
         "source": "Same as the 3D plan: IKEA: 7'10\" x 10', thickness 3/4\""
       },
       "material": "MaterialUse surface:100 % polypropyleneBacking:100 % Synthetic rubberCareDo not wash.Do not bleach.Do not tumble dry.Do not iron.Do not dry clean.Vacuum and rotate the rug regularly.Remove dried spots immediately by scra",
-      "short_description": "STOENSE Rug, low pile - off-white 7 ' 10 \"x10 '. The dense, thick pile dampens sound and provides a soft surface to walk on. Durable, stain resistant and easy to care for since the rug is made of synthetic fibers. The light sheen creates variations in the surface. The rug is mach",
+      "short_description": "Dense low-pile rug in off-white with a light sheen that varies across the surface. Synthetic fibers keep it durable, stain resistant and easy to care for.",
       "why_this": "Flat low pile that vacuums easily and stays put under the recliners; your list's top pick.",
       "tags": [
         "From my list",
@@ -1445,7 +1445,7 @@
         "source": "IKEA measurements: Area80.08 sq feetLength10 ' 0 \"Surface density3.01 oz/sq ftWidth8 ' 0 \""
       },
       "material": "MaterialUse surface:100 % polyester (100% recycled)Middle part:100 % Synthetic rubberBack fabric:100% polyester (min. 90% recycled)CareMachine wash warm, normal cycle.Do not bleach.Tumble dry, low, normal cycle.Iron low.",
-      "short_description": "LOKALTÅG Rug, low pile - beige/gray 8 ' 0 \"x10 ' 0 \". The pattern looks faded and worn, which gives the rug a vintage look. Easy to store since it can be folded together. The anti-slip backing keeps the rug in place on the floor. This product has been tested for domestic use.",
+      "short_description": "Low-pile rug in beige and gray with a faded, worn-in pattern for a vintage look. It folds for storage and has an anti-slip backing.",
       "why_this": "True 8'x10' in a warm beige-gray that grounds the chocolate sectional without going cold.",
       "tags": [
         "From my list",
@@ -1496,7 +1496,7 @@
         "source": "IKEA measurements: Length10 'Width7 ' 10 \"Area78.79 sq feetPile length2 ¼ \"Thickness1 ¼ \"Surface density11.47 oz/sq ftPile coverage8.75 oz/sq ft"
       },
       "material": "MaterialUse surface:100 % polypropyleneBacking:100 % Synthetic rubberCareAiring and vacuuming will help to eliminate the smell that the rug can have when it is new.Do not wash.Do not bleach.Do not tumble dry.Do not iron.",
-      "short_description": "VOLLERSLEV Rug, high pile - beige 7 ' 10 \"x10 '. Extra thick and comfy under your feet. Different yarn thicknesses create a varied texture. The high pile dampens sound and provides a soft surface to walk on. Use STOPP FILT anti-slip rug underlay under the entire rug for increased",
+      "short_description": "Extra thick high-pile rug in beige, with mixed yarn thicknesses for a varied texture. Soft to walk on and quiets the room.",
       "why_this": "Thick high pile in warm beige for a plush, upgrade-level feel.",
       "tags": [
         "From my list",
@@ -1529,10 +1529,10 @@
       "price": 320.64,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/16686652055",
       "backup_search_url": null,
       "image_file": "images/LB-LR-RUG-03.jpg",
@@ -1547,7 +1547,7 @@
         "source": "Size: 8' x 10'; Rug size: 8' x 10'"
       },
       "material": "Material: Polyester; Backing material: Non-Skid",
-      "short_description": "Con círculos de forma orgánica con delicados anillos flotando por todas partes, esta alfombra ofrece un toque contemporáneo con su patrón orgánico. El diseño único introduce un elemento moderno y elegante que complementa varios estilos de interiores con su estética fluida. Experi",
+      "short_description": "Machine-washable ivory rug with an organic pattern of soft circles and floating rings. Polyester with a non-skid backing.",
       "why_this": "Machine-washable 8'x10' with a soft organic ring pattern; easy to keep clean in a rental.",
       "tags": [
         "From my list",
@@ -1598,7 +1598,7 @@
         "source": "Dimensions (Overall): 7 Feet (L), 5 Feet (W)"
       },
       "material": "Backing Material: Other Fibers; Rug Material: 100% Wool",
-      "short_description": "Construction Technique: Handmade; Pile type: Loop; Rug pile height: Low Pile (Less Than 0.5\")",
+      "short_description": "Hand-tufted 100% wool rug in cream with a low loop pile, designed with Studio McGee. Note it is 7'x10', a foot narrower than the 8'x10' rule.",
       "why_this": "Hand-tufted wool in cream from Threshold x Studio McGee; 7'x10' is 1 ft shorter than the rule, so front legs only on the long side.",
       "tags": [
         "New find",
@@ -1633,8 +1633,8 @@
       "on_sale": false,
       "price_checked_date": "2026-10-19",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "InStock, ships Oct 23-30",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "World Market Oct 21: ships In Stock (arrives Oct 27 - Nov 3), $45 oversized shipping; out of stock for pickup at LA Farmers Market",
       "product_url": "https://www.worldmarket.com/p/natural-basket-weave-jute-area-rug-10777.html?dwvar_10777_size=8FTX10FT",
       "backup_search_url": null,
       "image_file": "images/LB-LR-RUG-05.jpg",
@@ -1680,10 +1680,10 @@
       "price": 45.0,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Listed on OfferUp (state LISTED), checked Oct 19",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "OfferUp listing still live on Oct 21 at $45",
       "product_url": "https://offerup.com/item/detail/3cdb1082-b10d-32f3-ade6-6f51542df50d",
       "backup_search_url": "https://offerup.com/search?q=round%20wood%20coffee%20table&price_max=120",
       "image_file": "images/LR-COFFEE-A.jpg",
@@ -1731,10 +1731,10 @@
       "price": 100.0,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Live on Marketplace, US$100, posted about a week ago",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Facebook listing still live on Oct 21 at $100",
       "product_url": "https://www.facebook.com/marketplace/item/1105863208664347/",
       "backup_search_url": "https://www.facebook.com/marketplace/la/search?query=round%20wood%20coffee%20table&maxPrice=120",
       "image_file": "images/LR-COFFEE-B.jpg",
@@ -1806,7 +1806,7 @@
         "source": "IKEA measurements: Height17 3/4 \"Diameter29 1/2 \"Max. load22 lb"
       },
       "material": "MaterialGlass panel:Tempered glassUnderframe:Steel, Epoxy/polyester powder coatingPanel:Particleboard, Melamine foil, Plastic edgingCareWipe clean with a damp cloth.Wipe dry with a clean cloth.Check regularly that all as",
-      "short_description": "VITTSJÖ Coffee table - black-brown/glass 29 1/2 \". The minimalist design combining metal and glass creates a sophisticated and modern expression. The tabletop in tempered glass is stain resistant and easy to clean. A finely profiled edge around the glass tabletop secures it in pl",
+      "short_description": "Round coffee table with a black-brown steel frame and a tempered glass top that is stain resistant and easy to clean.",
       "why_this": "Round black-brown frame with glass top keeps the walkway feeling open.",
       "tags": [
         "From my list",
@@ -1866,7 +1866,7 @@
         "source": "IKEA measurements: Height under furniture2 3/4 \"Height15 3/4 \"Length35 3/8 \"Max. load33 lbMax load/shelf11 lbWidth21 5/8 \""
       },
       "material": "MaterialTop panel:Fiberboard, Paper foil, Paper foil, Plastic edging, Plastic edgingSide panel/ Partition:Particleboard, Paper foil, Paper foilBottom panel:Particleboard, Paper foil, Paper foil, Plastic edging, Plastic e",
-      "short_description": "HOLMERUD Coffee table - oak effect 35 3/8x21 5/8 \". The clean and stylish architectural shape adds character to the room and makes the coffee table an eye-catcher. The design of this coffee table gives you easily accessible open storage spaces for you to organize and display your",
+      "short_description": "Rectangular coffee table in oak effect with easy-to-reach open storage for organizing and displaying. A clean, architectural shape.",
       "why_this": "Oak-effect oval with a shelf for books and remotes at a budget price.",
       "tags": [
         "From my list",
@@ -1915,7 +1915,7 @@
         "source": "IKEA measurements: Diameter35 3/8 \"Height15 \"Max. load44 lb"
       },
       "material": "MaterialTable top:Particleboard, Oak veneer, Tinted lacquer, Paper foil, Oak veneerLeg:Solid oak, Tinted lacquerCareWipe clean with a damp cloth.Wipe dry with a clean cloth.Check regularly that all assembly fastenings ar",
-      "short_description": "STOCKHOLM 2025 Coffee table - oak veneer dark-brown. Modern Scandinavian design with honest, natural materials and a sleek, elegant shape. This coffee table has space enough for snacks when hosting guests or for spreading out magazines and books when relaxing alone on the sofa.",
+      "short_description": "Round coffee table in dark-brown oak veneer with solid oak legs. Modern Scandinavian design in honest, natural materials.",
       "why_this": "STOCKHOLM 2025 in dark-brown oak veneer; the oak/glass version is $70 more.",
       "tags": [
         "From my list",
@@ -1948,10 +1948,10 @@
       "price": 158.0,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/5687389879",
       "backup_search_url": null,
       "image_file": "images/LB-LR-COFFEE-04.jpg",
@@ -1964,7 +1964,7 @@
         "source": "Walmart: Dimensions 36.00 x 36.00 x 17.00 in"
       },
       "material": "Material: MDF, Rubber Wood and Veneer; Base material: Wood; Table top material: Wood",
-      "short_description": "Esta mesa de centro Better Homes &amp; Gardens Ezra aporta un aspecto limpio y moderno a tu espacio interior. La cubierta redonda se combina con una base en forma de X para una silueta distintiva, mientras que el acabado Light Honey añade un toque cálido con apariencia de madera.",
+      "short_description": "Round coffee table with an X-shaped base in a warm Light Honey wood-look finish. Clean and modern, made of MDF, rubber wood and veneer.",
       "why_this": "Solid-looking 36 in round in light honey; replaces the discontinued BH&G Burlwood table.",
       "tags": [
         "New find",
@@ -2070,7 +2070,7 @@
         "source": "Same as the 3D plan: IKEA: base diameter 24\", shade width 15\", height 47-59\" (59\" used)"
       },
       "material": "MaterialTube/ Leg:Solid ash, Clear acrylic lacquerShade:100% polyester (min. 90% recycled), PolystyreneCareDust the lamp with a dust cloth.Warning:This product can expose you to chemicals including lead, which is known t",
-      "short_description": "LAUTERS Floor lamp - ash/white. You can create a soft, cozy atmosphere in your home with a textile shade that spreads a diffused and decorative light. The height is adjustable to suit your lighting needs. Light bulb sold separately. IKEA recommends LED bulb E26 globe opal white.",
+      "short_description": "Floor lamp with a solid ash stand and a textile shade that spreads soft, diffused light. Adjustable height; bulb sold separately.",
       "why_this": "Ash stem and linen-look shade; warm, simple and highly rated (4.7/5, 1,480 reviews).",
       "tags": [
         "Top pick",
@@ -2123,7 +2123,7 @@
         "source": "Same as the 3D plan: IKEA: shade diameter 20\", total height 63\". Footprint = shade diameter"
       },
       "material": "MaterialLampholder cup/ Cover:Polycarbonate plastic (min. 50% recycled)Base:LimestoneBase joint/ Tube/ Knob:Steel, Nickel platedWire:Steel, Powder coatingShade:70 %polyester, 30 % linenPlate:Polypropylene plastic (min. 5",
-      "short_description": "STOCKHOLM 2025 Floor lamp - white textile/brass plated 63 \". Fabric shade gives a diffused and decorative light. The lamp base is made of a natural stone called travertine, which gives it a unique expression with natural variations. The lamp stands stable thanks to the heavy ston",
+      "short_description": "Floor lamp with a heavy natural stone base, brass-plated details and a white fabric shade for diffused light. Each stone base varies naturally.",
       "why_this": "Travertine-look base, textile shade and brass: the splurge lamp.",
       "tags": [
         "From my list",
@@ -2172,7 +2172,7 @@
         "source": "IKEA measurements: Max.7 WHeight54 \"Shade diameter7 \"Cord length6 ' 6 \""
       },
       "material": "MaterialBase/ Frame:ABS plastic, PaintTube:Steel, GalvanizedShade:100 % polyester, PolystyreneClip:PolyamideWeight:Polypropylene, SandCareRemove dust with a lint remover.Warning:This product can expose you to chemicals i",
-      "short_description": "VIDJA Floor lamp - white 54 \". Fabric shade gives a diffused and decorative light. Light bulbs sold separately. IKEA recommends LED bulb E12 globe opal white (6 pcs). Use an opal light bulb if you have an ordinary lamp shade or lamp and want an even, diffused distribution of ligh",
+      "short_description": "Slim white floor lamp with a fabric shade that gives diffused, decorative light. Bulbs sold separately.",
       "why_this": "Rice-paper column glow for $69.99; very soft light at 2700K.",
       "tags": [
         "From my list",
@@ -2223,7 +2223,7 @@
         "source": "IKEA measurements: Height59 \"Base diameter12 \"Shade diameter15 \"Cord length11 ' 6 \"Max.13 W"
       },
       "material": "MaterialUpper tube/ Lower tube/ Base:Solid ash, Acrylic stainShade:100% polyester (min. 90% recycled)Diffuser:Polystyrene plastic (min. 20% recycled)Shade ring/ Shade holder:PolypropyleneSupport bracket/ Frame:Steel, Epo",
-      "short_description": "KINNAHULT Floor lamp - ash/white 59 \". Each floor lamp has a unique expression since it is made of solid wood – a vibrant material with natural variations. Light bulb sold separately. IKEA recommends LED bulb E26 globe opal white.",
+      "short_description": "Floor lamp with a solid ash stand and a white shade. Every lamp looks a little different because the wood varies naturally; bulb sold separately.",
       "why_this": "Ash and white with a classic shade, a touch taller at 59 in.",
       "tags": [
         "From my list",
@@ -2256,10 +2256,10 @@
       "price": 40.0,
       "regular_price": 50.0,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Live on Marketplace, US$40 (was US$50), West Hollywood, posted 3 weeks ago",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Facebook listing still live on Oct 21 at $40",
       "product_url": "https://www.facebook.com/marketplace/item/2114131135867695/",
       "backup_search_url": "https://www.facebook.com/marketplace/losangeles/search/?query=rattan%20floor%20lamp&maxPrice=70",
       "image_file": "images/LB-LR-FLOORLAMP-03.jpg",
@@ -2272,7 +2272,7 @@
           "w",
           "d"
         ],
-        "source": "Listing says 64 in tall; width and depth not listed (UNSURE)"
+        "source": "Facebook listing title: 64 in tall; width and depth not listed (ask the seller). Checked in the browser Oct 21, 2026"
       },
       "material": "Rattan shade, black metal stand",
       "short_description": "Rattan and black metal floor lamp, comes with bulb. Used - like new, West Hollywood.",
@@ -2305,10 +2305,10 @@
       "price": 57.94,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/575307303",
       "backup_search_url": null,
       "image_file": "images/LB-LR-FLOORLAMP-04.jpg",
@@ -2321,7 +2321,7 @@
         "source": "Walmart: Dimensions 17.50 x 17.50 x 54.00 in"
       },
       "material": "Housing material: Metal; Shade material: Fabric",
-      "short_description": "Esta lámpara de pie Mainstays combina luz y una superficie conveniente en un diseño que ahorra espacio. La lámpara de 54 in tiene un aspecto inspirado en mediados de siglo con un cuerpo de metal negro mate, una pantalla blanca y una mesa con acabado de madera falsa que añade func",
+      "short_description": "54 in mid-century style floor lamp in matte black metal with a white shade and a built-in faux wood side table.",
       "why_this": "Mid-century tripod-style floor lamp under $60 with a white fabric shade.",
       "tags": [
         "New find"
@@ -2353,10 +2353,10 @@
       "price": 35.99,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/5544519875",
       "backup_search_url": null,
       "image_file": "images/LR-SCONCE-A.jpg",
@@ -2372,7 +2372,7 @@
         "source": "Same as the 3D plan: Walmart listing: shade 8.26\" dia x 6.69\" H; wood holder 8.26\" x 0.94\" x 9.84\". Overall 8.3 W x 9.0 D x 13 H is ESTIMATED from those parts. Price is for a set of 2"
       },
       "material": "Shade material: Wood; Housing material: Wood",
-      "short_description": " Detalles del producto:   CARACTERíSTICAS:    [Juego de 2 apliques de pared enchufables] Los apliques de pared Frideko enchufables están diseñados con estilos elegantes farmhouse y boho y son perfectos para la decoración interior del hogar moderno, vintage y farmhouse. El juego d",
+      "short_description": "Set of 2 plug-in wall sconces with woven rattan shades on wood holders, in a farmhouse and boho style. Long 9.84 ft cords, so no wiring is needed.",
       "why_this": "Pair of plug-in rattan sconces with 9.84 ft cords for $35.99; no electrician needed.",
       "tags": [
         "Top pick",
@@ -2425,7 +2425,7 @@
         "source": "Same as the 3D plan: Target: 16.75\" H x 11.5\" W x 14.25\" D. Price is per sconce"
       },
       "material": "Lighting Shade Material: Rattan; Lighting Body Material: Metal",
-      "short_description": "Includes: 1 Wall Lamp Fixture With Shade, Light Bulbs Not Included; Weight: 2.09 Pounds; Bulb Base Size: Standard Edison Medium Screw Base E26; Number of Light Bulb Sockets: 1; Cable/Cord Length: 5 Feet; Maximum Light Bulb Wattage: 60 Watts; Product ",
+      "short_description": "Plug-in wall sconce with a rattan shade on a brass metal arm, sold singly. Uses a standard E26 bulb (not included) and has a 5 ft cord.",
       "why_this": "Threshold rattan and brass sconce; a more finished look (priced each).",
       "tags": [
         "New find",
@@ -2452,13 +2452,13 @@
       "name": "KEESFU Boho Plug-in Wall Sconces with Rattan Shades, Set of 2",
       "brand": "KEESFU",
       "store": "Walmart",
-      "price": 59.59,
-      "regular_price": null,
-      "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price": 42.87,
+      "regular_price": 49.86,
+      "on_sale": true,
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/19124352349",
       "backup_search_url": null,
       "image_file": "images/LB-LR-SCONCE-01.jpg",
@@ -2471,17 +2471,18 @@
         "source": "Walmart: Assembled product dimensions (l x w x h) 11.80 x 9.00 x 9.80 in"
       },
       "material": "Shade material: Rattan; Housing material: Wood",
-      "short_description": "Este juego de dos KEESFU Boho Plug-in Wall Sconces aporta encanto farmhouse a cualquier habitación. Cada luz unidad con una pantalla de ratán tejida a mano que proyecta patrones de luz decorativos. El soporte de madera maciza añade carácter rústico con su veta natural de la mader",
+      "short_description": "Set of 2 plug-in sconces with hand-woven rattan shades on solid wood arms. The weave casts decorative light patterns on the wall.",
       "why_this": "KEESFU rattan shades on wood arms, set of 2.",
       "tags": [
-        "From my list"
+        "From my list",
+        "Deal"
       ],
       "packages": [],
       "qty_suggested": 1,
       "condition": "new",
       "taxed": true,
       "notes": [
-        "Price rose from $39 to $59.59 since Oct 13"
+        "Now $42.87 on sale (reg. $49.86); it was $59.59 on Oct 19 and $39 on Oct 13"
       ],
       "used_label": null,
       "main_color_hex": "#B27E55",
@@ -2505,10 +2506,10 @@
       "price": 66.59,
       "regular_price": 73.99,
       "on_sale": true,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/17300657436",
       "backup_search_url": null,
       "image_file": "images/LB-LR-SCONCE-02.jpg",
@@ -2521,7 +2522,7 @@
         "source": "Walmart: Assembled product dimensions (l x w x h) 8.70 x 5.90 x 13.40 in"
       },
       "material": "Shade material: Glass; Housing material: Metal",
-      "short_description": "Eleva la decoración de tu hogar con el Homechoose Wall Sconces Set of Two, que presenta unas persianas de globo de vidrio blanco lechoso que ofrecen un efecto de iluminación suave y difusa. Estas versátiles luces de pared enchufables de inspiración vintage son totalmente regulabl",
+      "short_description": "Set of 2 vintage-inspired plug-in sconces with milk glass globes on brass arms for soft, diffused light.",
       "why_this": "Brass and milk-glass plug-in pair for a vintage note.",
       "tags": [
         "From my list",
@@ -2579,7 +2580,7 @@
         "source": "IKEA measurements: Max.7 WWidth6 \"Depth13 \"Height5 \"Diameter6 \"Cord length138 \""
       },
       "material": "MaterialShade:Steel, Powder coating, PaintShade holder/ Mounting bracket:Steel, PaintBracket:Zinc, PaintAdapter:Polycarbonate plasticCareWipe clean with a dry cloth.Warning:This product can expose you to chemicals includ",
-      "short_description": "RANARP Wall/clamp spotlight - black. The lamp can be mounted in two ways: as a clamp spotlight or as a wall lamp. The lamp is lightweight and easy to move and it simply clamps firmly in place. Light bulb sold separately. IKEA recommends LED bulb E12 globe opal white. Clamping ran",
+      "short_description": "Small black spotlight that mounts on the wall or clamps to a shelf. Lightweight and easy to move; bulb sold separately.",
       "why_this": "RANARP wall/clamp spot in black; plug-in and adjustable.",
       "tags": [
         "From my list"
@@ -2613,25 +2614,23 @@
       "on_sale": false,
       "price_checked_date": "2026-10-19",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Amazon: In Stock (national listing; delivery ZIP not set in browser, UNSURE for 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Amazon Oct 21: In Stock, $56.99, free delivery Mon Oct 26 (national listing; delivery ZIP not set)",
       "product_url": "https://www.amazon.com/dp/B0BZ6ZQY3N",
       "backup_search_url": null,
       "image_file": "images/LB-LR-SCONCE-04.jpg",
       "color_variants": [],
       "dimensions": {
-        "w_in": null,
-        "d_in": null,
-        "h_in": null,
+        "w_in": 8.27,
+        "d_in": 10.24,
+        "h_in": 9.84,
         "estimated": [
-          "w",
-          "d",
           "h"
         ],
-        "source": "Amazon page lists no product dimensions"
+        "source": "Amazon: Item Dimensions 10.24 in L x 8.27 in W x 6.69 in H (shade); wood holder 8.26 x 0.94 x 9.84 in, so overall height taken from the 9.84 in holder (ESTIMATED). Checked in the browser Oct 21, 2026"
       },
       "material": "Material Bamboo",
-      "short_description": "Brand FRIDEKO HOME; Color Brown(2PC); Material Bamboo; Style Modern; Light fixture form Wall",
+      "short_description": "Set of 2 plug-in wall sconces with hand-woven bamboo lantern shades on wood holders, in brown. Plug-in with a long cord, so no wiring is needed.",
       "why_this": "Hand-woven bamboo plug-in pair with switch, 4.6/5 from 1,514 reviews.",
       "tags": [
         "New find"
@@ -2663,10 +2662,10 @@
       "price": 35.19,
       "regular_price": 43.59,
       "on_sale": true,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/19824751061",
       "backup_search_url": null,
       "image_file": "images/LB-LR-SCONCE-05.jpg",
@@ -2679,7 +2678,7 @@
         "source": "Walmart: Assembled product dimensions (l x w x h) 7.80 x 9.40 x 8.20 in"
       },
       "material": "Shade material: Rattan; Housing material: Wood",
-      "short_description": "Este aplique de pared KEESFU aporta un estilo boho de granja a tu hogar. Tiene un soporte de madera oscura y una pantalla de ratán natural. La lámpara utiliza un diseño enchufable, por lo que no se necesita cableado para la instalación. Puedes cambiar fácilmente la altura de colg",
+      "short_description": "Single plug-in wall sconce with a natural rattan shade on a dark wood arm. Plug-in, so no hardwiring needed.",
       "why_this": "Single dark-wood arm with rattan shade, on sale.",
       "tags": [
         "New find",
@@ -2712,10 +2711,10 @@
       "price": 25.0,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Live on Marketplace, US$25, Long Beach",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Facebook listing still live on Oct 21 at $25",
       "product_url": "https://www.facebook.com/marketplace/item/1695399738207375/",
       "backup_search_url": "https://www.facebook.com/marketplace/la/search?query=rattan%20cabinet&maxPrice=50",
       "image_file": "images/LR-WIFI-A.jpg",
@@ -2779,7 +2778,7 @@
         "source": "IKEA measurements: Depth11 3/4 \"Height under furniture8 5/8 \"Height19 5/8 \"Width11 3/4 \""
       },
       "material": "MaterialTop panel:Solid pine, Adhesive, Tinted clear acrylic lacquer, Clear acrylic lacquerSide panel/ Shelf/ Back panel/ Closing flap:Solid pine, Adhesive, Tinted clear acrylic lacquerCareWipe clean with a damp cloth.Wi",
-      "short_description": "IKEA PS 2026 Nightstand - pine with flip-down door 11 3/4x11 3/4x19 5/8 \". Playful birdhouse design with round opening and fold-down front for convenient access to books or charging devices. Solid pine is a natural material that ages beautifully and acquires its own unique charac",
+      "short_description": "Small solid pine nightstand with a round birdhouse opening and a flip-down front. The pine ages beautifully over time.",
       "why_this": "Solid pine with a flip-down door, 11.75 in wide; wood lets WiFi through.",
       "tags": [
         "New find"
@@ -2836,7 +2835,7 @@
         "source": "IKEA measurements: Width13 3/4 \"Depth13 3/4 \"Height13 3/4 \"Max load/shelf15 lb"
       },
       "material": "MaterialBack panel:Fiberboard, Paper foilPanel:Particleboard, Honeycomb structure paper filling (100% recycled), Fiberboard, Paper foil, Plastic edgingDoor panel:Particleboard, Paper foil, Plastic edging, Plastic edgingC",
-      "short_description": "EKET Cabinet with door - brown walnut effect 13 3/4x13 3/4x13 3/4 \". A simple unit can be enough storage for a limited space or the foundation for a larger storage solution if your needs change. You can choose to place the cabinet on the floor or mount it on the wall to free up f",
+      "short_description": "Compact cube cabinet with a door in brown walnut effect. Stands on the floor or mounts on the wall.",
       "why_this": "EKET cube with a door in walnut effect, 13.75 in; add legs or set on the floor.",
       "tags": [
         "New find"
@@ -2868,10 +2867,10 @@
       "price": 57.99,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/20892152299",
       "backup_search_url": null,
       "image_file": "images/LB-LR-WIFI-03.jpg",
@@ -2884,7 +2883,7 @@
         "source": "Walmart: Dimensions 16.00 x 12.00 x 23.00 in"
       },
       "material": "Material: Bamboo Engineered Wood",
-      "short_description": "Keep bedtime essentials handy with this  bedside nightstand . Its compact walnut design holds a lamp, phone and book beside the bed, adding tidy storage and style to your bedroom.       Note: Assembly may be required; please read the included manual before use and reach out to us",
+      "short_description": "Compact walnut-tone bamboo nightstand with a rattan flip-up door and an open shelf. Assembly may be required.",
       "why_this": "Bamboo and rattan with a flip-up door, 16 x 12 x 23 in; 0.5 in wider than the corner.",
       "tags": [
         "New find"
@@ -2918,10 +2917,10 @@
       "price": 120.0,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/2159509599",
       "backup_search_url": null,
       "image_file": "images/LB-LR-WIFI-04.jpg",
@@ -2944,17 +2943,14 @@
         }
       ],
       "dimensions": {
-        "w_in": null,
-        "d_in": null,
+        "w_in": 18.8,
+        "d_in": 16.9,
         "h_in": 22.0,
-        "estimated": [
-          "w",
-          "d"
-        ],
-        "source": "Height: 22 in"
+        "estimated": [],
+        "source": "Walmart product photo (dimension diagram): 18.8 in W x 16.9 in D x 22 in H. Checked in the browser Oct 21, 2026"
       },
       "material": "Top material: Engineered Wood; Base material: Metal; Material: Light Oak Paper Laminate Particleboard, Matte Black PC Metal",
-      "short_description": "La mesa auxiliar Mina tiene un cubículo abierto con una puerta de almacenamiento de bastón cerrada que ofrece suficiente espacio para guardar decoración pequeña, junto con revistas o libros. Los detalles de ratán en la puerta principal le dan a esta mesa auxiliar un diseño boho-c",
+      "short_description": "Small cabinet with an open cubby and an adjustable shelf behind a cane-and-rattan door, in matte black with light oak. Holds up to 90 lb on top.",
       "why_this": "Nathan James Mina with a door; oak finish is $69.99.",
       "tags": [
         "New find"
@@ -2964,7 +2960,7 @@
       "condition": "new",
       "taxed": true,
       "notes": [
-        "Width not listed on page: UNSURE"
+        "18.8 in wide x 16.9 in deep: wider than the 15.5 in TV-wall corner"
       ],
       "used_label": null,
       "main_color_hex": "#090808",
@@ -3015,7 +3011,7 @@
         "source": "Dimensions (Overall): 7 Feet (L), 5 Feet (W)"
       },
       "material": "Rug Material: 44% Wool, 43% Cotton, 13% Polyester; Backing Material: No Backing",
-      "short_description": "Construction Technique: Handmade; Pile type: Flat Pile; Rug pile height: Flat Pile",
+      "short_description": "Handwoven flat rug in a cream and tan plaid of wool and cotton, designed with Studio McGee.",
       "why_this": "Cream/tan hand-woven plaid wool-cotton 5'x7' from Threshold x Studio McGee.",
       "tags": [
         "Top pick",
@@ -3069,7 +3065,7 @@
         "source": "IKEA measurements: Length9 ' 10 \"Width7 ' 10 \"Area77.50 sq feetThickness¼ \""
       },
       "material": "Material100 % juteCareAiring and vacuuming will help to eliminate the smell that the rug can have when it is new.Do not wash.Do not bleach.Do not tumble dry.Do not iron.Do not dry clean.Remove dried spots immediately by ",
-      "short_description": "TIOKRONA Rug, flatwoven - natural 7 ' 10 \"x9 ' 10 \". The jute has natural color variations that make each rug distinct and unique. Ideal in your living room or under your dining table since the flat-woven surface makes it easy to pull out the chairs and vacuum.",
+      "short_description": "Flatwoven natural jute rug; the jute's color variations make each rug unique. Easy to vacuum. Note it is larger than the 5'x8' rule.",
       "why_this": "Natural jute from your list; at 7'10\"x9'10\" it is bigger than the 5'x8' rule and would sit fully under the bed.",
       "tags": [
         "From my list",
@@ -3122,7 +3118,7 @@
         "source": "IKEA measurements: Length7 ' 7 \"Width5 ' 3 \"Thickness½ \"Area39.61 sq feetSurface density10 oz/sq ft"
       },
       "material": "Material100 % juteCareAiring and vacuuming will help to eliminate the smell that the rug can have when it is new.Do not wash.Do not bleach.Do not tumble dry.Do not iron.Do not dry clean.Vacuum and rotate the rug regularl",
-      "short_description": "LOHALS Rug, flatwoven - natural 5 ' 3 \"x7 ' 7 \". The jute has natural color variations that make each rug distinct and unique. The natural material and neutral tones make this rug easy to mix and match with any style. A perfect companion for all types of flooring, even those with",
+      "short_description": "Flatwoven natural jute rug with natural color variations that mixes easily with any style. Works on all floor types.",
       "why_this": "LOHALS flatwoven jute, 5'3\"x7'7\", 4.5/5 from 2,593 reviews.",
       "tags": [
         "New find",
@@ -3173,7 +3169,7 @@
         "source": "IKEA measurements: Length7 ' 7 \"Width5 ' 3 \"Area39.61 sq feetPile length1 ¼ \"Surface density5.24 oz/sq ft"
       },
       "material": "MaterialUse surface:100 % polypropyleneBacking:100 % Synthetic rubberCareAiring and vacuuming will help to eliminate the smell that the rug can have when it is new.Do not wash.Do not bleach.Do not tumble dry.Do not iron.",
-      "short_description": "ÄRENDE Rug, high pile - off-white 5 ' 3 \"x7 ' 7 \". The soft, shaggy surface adds warmth and coziness to your living room or bedroom. The high pile dampens sound and provides a soft surface to walk on. Durable, stain resistant and easy to care for since the rug is made of syntheti",
+      "short_description": "Soft, shaggy high-pile rug in off-white that dampens sound and feels warm underfoot. Durable, stain resistant and easy to care for.",
       "why_this": "ÄRENDE in 5'3\"x7'7\" to match the living room rug.",
       "tags": [
         "New find",
@@ -3227,7 +3223,7 @@
         "source": "IKEA measurements: Length7 ' 3 \"Width5 ' 1 \"Area36.70 sq feetSurface density6.72 oz/sq ftThickness¼ \""
       },
       "material": "Material100 % juteCareAiring and vacuuming will help to eliminate the smell that the rug can have when it is new.Do not wash.Do not bleach.Do not tumble dry.Do not iron.Do not dry clean.Vacuum and rotate the rug regularl",
-      "short_description": "STRÖG Rug, flatwoven - natural 5 ' 1 \"x7 ' 3 \". The jute yarn is a natural fiber that can vary in thickness, which adds life and texture to the product. A perfect companion for all types of flooring, even those with underfloor heating. The rug is machine-woven.",
+      "short_description": "Flatwoven natural jute rug; the yarn varies in thickness for a lively texture. Works on all floor types.",
       "why_this": "STRÖG flatwoven natural, 5'1\"x7'3\", under $100.",
       "tags": [
         "New find",
@@ -3278,7 +3274,7 @@
         "source": "Dimensions (Overall): 84 Inches (L), 60 Inches (W)"
       },
       "material": "Backing Material: 100% Cotton; Rug Material: 100% Jute",
-      "short_description": "Construction Technique: Handmade; Pile type: Flat Pile; Rug pile height: Flat Pile",
+      "short_description": "Handmade braided rug in light brown and ivory jute with a cotton backing, by Threshold.",
       "why_this": "Braided light brown and ivory 5'x7' from Threshold for $100.",
       "tags": [
         "New find",
@@ -3327,7 +3323,7 @@
         "source": "Amazon page lists no product dimensions"
       },
       "material": "Material Natural Fibers",
-      "short_description": "Brand Savi Home; Size 5' x 8' (Rectangular); Material Natural Fibers; Weave Type Machine Made; Pile Height Medium Pile",
+      "short_description": "Reversible 5'x8' rug in natural jute and cotton fibers, with a farmhouse look.",
       "why_this": "True 5'x8' hand-woven jute-cotton, reversible; 4.5/5 from 384 reviews.",
       "tags": [
         "New find",
@@ -3395,7 +3391,7 @@
         "source": "Same as the 3D plan: IKEA: duvet cover 86\" x 86\"; 2 pillowcases 20\" x 30\""
       },
       "material": "Material100 % cottonCareShrinkage maximum 4%.Machine wash warm (max 140°F/60°C) normal cycle.Do not bleach.Tumble dry, medium, normal cycle.Iron high.Do not dry clean.",
-      "short_description": "ÄNGSLILJA Duvet cover and pillowcase(s) - natural Full/Queen (Double/Queen). The pure cotton fabric is pre-washed using a method that enhances the color and makes the fabric very soft. Cotton is a soft, natural material that breathes, absorbs moisture and feels comfortable agains",
+      "short_description": "Full/Queen duvet cover and pillowcases in natural 100% cotton, pre-washed for extra softness. Breathable and comfortable against the skin.",
       "why_this": "Natural cotton duvet + 2 cases for $39.99; the best value.",
       "tags": [
         "Top pick",
@@ -3473,7 +3469,7 @@
         "source": "Same as the 3D plan: Target: duvet cover 96\" L x 92\" W; 2 shams 28\" x 20\""
       },
       "material": "Textile Material: 30% Linen, 70% Rayon; Backing Material: 100% Cotton",
-      "short_description": "Fabric Weight Type: Year Round Fabric Construction",
+      "short_description": "Full/Queen duvet cover and sham set in a heavyweight linen blend, natural color, with a cotton backing. Year-round weight.",
       "why_this": "Casaluna heavyweight linen blend in Natural, now $100.",
       "tags": [
         "New find",
@@ -3522,18 +3518,16 @@
         }
       ],
       "dimensions": {
-        "w_in": null,
-        "d_in": null,
-        "h_in": null,
+        "w_in": 88.0,
+        "d_in": 92.0,
+        "h_in": 0.5,
         "estimated": [
-          "w",
-          "d",
           "h"
         ],
-        "source": "Quince size Full/Queen"
+        "source": "Quince size chart, Full/Queen: duvet cover 88 in W x 92 in L; thickness ESTIMATED. Checked in the browser Oct 21, 2026"
       },
       "material": "Organic cotton",
-      "short_description": "This waffle duvet cover set combines breathable cotton with a cozy textured weave on the front and a smooth cotton backing for added comfort. Lightweight but lofty, it’s perfect for year-round layering while bringing soft texture and an effortlessly ",
+      "short_description": "Full/Queen duvet cover set in organic cotton with a textured waffle weave on the front and a smooth cotton back. Light but lofty, for year-round layering.",
       "why_this": "Organic waffle texture from your list.",
       "tags": [
         "From my list",
@@ -3602,18 +3596,16 @@
         }
       ],
       "dimensions": {
-        "w_in": null,
-        "d_in": null,
-        "h_in": null,
+        "w_in": 88.0,
+        "d_in": 92.0,
+        "h_in": 0.5,
         "estimated": [
-          "w",
-          "d",
           "h"
         ],
-        "source": "Quince size Full/Queen"
+        "source": "Quince size chart, Full/Queen: duvet cover 88 in W x 92 in L; thickness ESTIMATED. Checked in the browser Oct 21, 2026"
       },
       "material": "100% European linen",
-      "short_description": "Naturally temperature-regulating and allergen-resistant, Quince's pre-washed linen is durable, eco-friendly, softens over time, and delivers a relaxed, lived-in look from day one. How it Feels Airy, casual & slightly textured How it Looks Relaxed and",
+      "short_description": "Full/Queen duvet cover set in pre-washed 100% European linen with a double flange edge, in Sand. Airy, relaxed and softer over time.",
       "why_this": "100% European linen in Sand, the hotel-level upgrade.",
       "tags": [
         "From my list",
@@ -3648,27 +3640,25 @@
       "price": 42.0,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/1524589579",
       "backup_search_url": null,
       "image_file": "images/LB-BR-DUVET-03.jpg",
       "color_variants": [],
       "dimensions": {
-        "w_in": null,
-        "d_in": null,
-        "h_in": null,
+        "w_in": 92.0,
+        "d_in": 90.0,
+        "h_in": 0.5,
         "estimated": [
-          "w",
-          "d",
           "h"
         ],
-        "source": "Bed size: Full/Queen"
+        "source": "Walmart: duvet cover 92 in x 90 in; shams 20 x 26 in; thickness ESTIMATED. Checked in the browser Oct 21, 2026"
       },
       "material": "",
-      "short_description": "Este juego de funda de edredón de 3 piezas Better Homes &amp; Gardens aporta un aspecto suave y relajado a tu cama con una mezcla lavada de 51% lino y 49% algodón. La tela es transpirable y absorbente de humedad, y el acabado prelavado le da una sensación suave directamente del p",
+      "short_description": "3-piece Full/Queen duvet cover set in a washed linen-cotton blend (51% linen, 49% cotton), in Terracotta. Breathable and soft from the first use.",
       "why_this": "Linen-cotton in Terracotta Dream for $42; brings the rust accent to the bed.",
       "tags": [
         "New find"
@@ -3700,27 +3690,25 @@
       "price": 70.0,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/18940153176",
       "backup_search_url": null,
       "image_file": "images/LB-BR-DUVET-04.jpg",
       "color_variants": [],
       "dimensions": {
-        "w_in": null,
-        "d_in": null,
-        "h_in": null,
+        "w_in": 90.0,
+        "d_in": 100.0,
+        "h_in": 0.5,
         "estimated": [
-          "w",
-          "d",
           "h"
         ],
-        "source": "Bed size: Full/Queen"
+        "source": "Walmart: Full/Queen duvet cover 90 in x 100 in; shams 20 x 26 in; thickness ESTIMATED. Checked in the browser Oct 21, 2026"
       },
       "material": "Fabric material name: Cotton/Linen",
-      "short_description": " Renueva tu dormitorio con el Allswell Linen Blend Duvet Cover Set, diseñado para aportar un aspecto relajado y elevado a cualquier espacio. Confeccionado con una suave mezcla de algodón y lino, este juego de funda de edredón presenta una sensación de textura natural que añade ca",
+      "short_description": "Full/Queen duvet cover set in a soft cotton and linen blend, in Savannah Taupe Brown, with a relaxed, natural texture.",
       "why_this": "Allswell cotton-linen in Savannah Taupe Brown.",
       "tags": [
         "New find",
@@ -3753,10 +3741,10 @@
       "price": 30.0,
       "regular_price": 40.0,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Live on Marketplace, US$30 (was US$40), Sherman Oaks",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Facebook listing still live on Oct 21 at $30",
       "product_url": "https://www.facebook.com/marketplace/item/1716325222760564/",
       "backup_search_url": "https://www.facebook.com/marketplace/la/search?query=wood%20nightstand&maxPrice=70",
       "image_file": "images/BR-NIGHTSTAND-A.jpg",
@@ -3824,7 +3812,7 @@
         "source": "Same as the 3D plan: IKEA: 18 7/8\" W x 15 3/8\" D x 24 3/8\" H"
       },
       "material": "MaterialTop panel/ Side panel/ Shelf/ Rail/ Drawer front/ Drawer sides/ Drawer back/ Leg:Solid pineBack:FiberboardDrawer bottom:Acrylic paint, FiberboardCareWipe clean with a damp cloth.Wipe dry with a clean cloth.Stains",
-      "short_description": "TARVA Nightstand - pine 18 7/8x15 3/8x24 3/8 \". The solid pine has natural variations in grain, color and texture, giving every piece a unique look. Made of solid wood, which is a durable and warm natural material.",
+      "short_description": "Solid pine nightstand with a drawer; the pine's natural grain and color make every piece unique.",
       "why_this": "Solid pine you can oil or stain darker; 18 7/8 in wide.",
       "tags": [
         "From my list",
@@ -3873,7 +3861,7 @@
         "source": "IKEA measurements: Width15 3/4 \"Depth15 3/4 \"Height26 3/8 \""
       },
       "material": "MaterialTop panel/ Shelf/ Leg/ Rail/ Drawer front/ Drawer side:Bamboo, Clear lacquerDrawer bottom:Fiberboard, High-pressure melamine laminate, Acrylic paintCareWipe clean using a damp cloth and a mild cleaner.Wipe dry wi",
-      "short_description": "NORDKISA Nightstand - bamboo 15 3/4x15 3/4 \". The drawer can be accessed from both sides. Cables are easy to manage by running them through the handle on either side of the drawer. NORDKISA series in bamboo coordinates beautifully with both our NORDLI and ELVARLI storage series.",
+      "short_description": "Bamboo nightstand with a drawer that opens from both sides; cables run through the handle.",
       "why_this": "Bamboo, 15.75 in square: clears the door swing easily.",
       "tags": [
         "From my list",
@@ -3939,7 +3927,7 @@
         "source": "IKEA measurements: Height23 1/4 \"Width15 3/4 \"Depth15 3/4 \"Drawer depth (inside)11 3/4 \"Height under furniture4 3/8 \"Drawer width (inside)11 \""
       },
       "material": "MaterialTop panel:Solid oak, Particleboard, Oak veneer, Oak veneer, Beech veneer, Clear acrylic lacquer, Paper foilBack panel:Particleboard, Oak veneer, Clear acrylic lacquer, Oak veneer, Paper foilSide panel/ Drawer fro",
-      "short_description": "TONSTAD Nightstand - oak veneer 15 3/4x15 3/4x23 1/4 \". This bedside table has a drawer with an integrated handle that closes softly and quietly. Round legs in solid wood give the bedside table an elegant look. The brushed veneer gives the furniture a unique look and a personal c",
+      "short_description": "Oak veneer nightstand on round solid wood legs, with a soft-closing drawer and an integrated handle.",
       "why_this": "Oak veneer, 15.75 in wide with a drawer.",
       "tags": [
         "From my list",
@@ -3972,10 +3960,10 @@
       "price": 118.0,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/5039619998",
       "backup_search_url": null,
       "image_file": "images/LB-BR-NIGHTSTAND-03.jpg",
@@ -3988,7 +3976,7 @@
         "source": "Walmart page text: 22.25 in L x 16 in W x 24.5 in H"
       },
       "material": "Material: Engineered Wood, Hardware",
-      "short_description": "Esta mesa de noche acanalada Better Homes &amp; Gardens Lillian reúne el almacenamiento junto a la cama y la carga de dispositivos en una sola pieza compacta. Dos cajones te dan espacio para libros, electrónicos y otros esenciales cotidianos, ayudando a mantener tu dormitorio ord",
+      "short_description": "Fluted 2-drawer nightstand in natural pine finish with built-in USB charging. Note it is 22.25 in wide, over the 16-19 in limit.",
       "why_this": "Fluted Lillian in natural pine, 2 drawers.",
       "tags": [
         "From my list",
@@ -4039,7 +4027,7 @@
         "source": "Dimensions (Overall): 24.25 Inches (H) x 23.62 Inches (W) x 15.5 Inches (D)"
       },
       "material": "Material: MDF Composite (Medium-Density Fiberboard), Wood (Frame); Surface Material: Wood Veneer",
-      "short_description": "Weight: 41.8 Pounds; Tabletop color: Brown",
+      "short_description": "Aged oak 2-drawer nightstand with cane fronts, in wood veneer, by Hearth & Hand. Note it is 23.6 in wide, over the 16-19 in limit.",
       "why_this": "Hearth & Hand wood and cane, aged oak; replaces SONGESAND (out of stock at 90066).",
       "tags": [
         "New find",
@@ -4072,10 +4060,10 @@
       "price": 50.0,
       "regular_price": 150.0,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Live on Marketplace, US$50 (was US$150), El Segundo",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Facebook listing still live on Oct 21 at $50",
       "product_url": "https://www.facebook.com/marketplace/item/1064722389899091/",
       "backup_search_url": "https://www.facebook.com/marketplace/la/search?query=mid%20century%20desk&maxPrice=200",
       "image_file": "images/BR-DESK-A.jpg",
@@ -4127,10 +4115,10 @@
       "price": 100.0,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Listed on OfferUp (state LISTED), checked Oct 19",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "OfferUp listing still live on Oct 21 at $100",
       "product_url": "https://offerup.com/item/detail/3ff2c1ea-ab1b-3d3b-a7ec-4c7396ab3013",
       "backup_search_url": "https://offerup.com/search?q=mid%20century%20desk&price_max=150",
       "image_file": "images/BR-DESK-B.jpg",
@@ -4210,7 +4198,7 @@
         "source": "IKEA measurements: Max. load110 lbMax load/shelf18 lbWidth43 3/4 \"Depth15 3/8 \"Height30 3/8 \"Height under furniture28 3/8 \""
       },
       "material": "MaterialTop panel/ Side panel/ Partition/ Leg/ Bottom panel:Particle- and fiberboard with honeycomb paper filling (100% recycled paper), Particleboard, Fiberboard, Acrylic paint, Plastic edgingShelf:Particle- and fiberbo",
-      "short_description": "KALLAX Desk - white 43 3/4x15 3/8 \". Takes up little space since the depth of the desk is 15⅜\". You can mount the shelving unit on the right or left side. Simple to assemble and ready to use in a flash. Hide or display your things by combining open and closed storage.",
+      "short_description": "Shallow white desk (15 3/8 in deep) with a shelving unit that mounts on the right or left, for open and closed storage.",
       "why_this": "KALLAX desk, 43.75 in, inside the 40-48 in rule.",
       "tags": [
         "From my list",
@@ -4276,7 +4264,7 @@
         "source": "IKEA measurements: Max. load110 lbMaximum load/drawer2 lbWidth47 1/4 \"Depth18 1/2 \"Height29 1/2 \"Height under furniture25 1/4 \"Drawer width (inside)25 5/8 \"Drawer depth (inside)11 3/4 \""
       },
       "material": "MaterialTop panel:Particleboard, Oak veneer, Clear acrylic lacquer, Oak veneer, Clear acrylic lacquer, Paper edging, Oak veneer, Clear acrylic lacquerSide rail:Solid wood, Adhesive, Oak veneer, Clear acrylic lacquer, Cle",
-      "short_description": "TONSTAD Desk - oak veneer 47 1/4x18 1/2 \". The veneer surface is durable, stain resistant and easy to keep clean. The drawer helps keep things organized and within easy reach. The drawer closes silently and softly, thanks to the integrated soft-closing function.",
+      "short_description": "Oak veneer desk with a soft-closing drawer. The veneer top is durable, stain resistant and easy to clean.",
       "why_this": "TONSTAD oak veneer at 47.25 in; the 29.5 in TONSTAD on your list is too small for the rule.",
       "tags": [
         "From my list",
@@ -4325,7 +4313,7 @@
         "source": "IKEA measurements: Max. load110 lbMax load/shelf44 lbWidth53 1/8 \"Depth27 1/2 \"Height29 7/8 \"Total height33 1/2 \"Height under furniture26 3/4 \"Max. width62 5/8 \"Min. width53 1/8 \""
       },
       "material": "MaterialTable top:Particleboard, Oak veneer, Tinted clear acrylic lacquer, Tinted clear acrylic lacquer, Plastic edgingTop frame:Particleboard, Melamine foil, Acrylic paint, Plastic edgingSide frame/ Rail/ Storage:Steel,",
-      "short_description": "MULLSJÖ Desk - oak veneer 53 1/8x27 1/2 \". Beautiful and timeless combination of oak desk top and black metal frame. Built-in cable management for collecting cables and cords; out of sight but close at hand. The oak desk top is easy to wipe clean free from spills.",
+      "short_description": "Oak veneer desk on a black metal frame with built-in cable management. Note it is 53 in wide, over the 40-48 in rule.",
       "why_this": "MULLSJÖ oak veneer from your list; 53 in is wider than the 48 in rule.",
       "tags": [
         "From my list",
@@ -4360,10 +4348,10 @@
       "price": 114.0,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/15161717051",
       "backup_search_url": null,
       "image_file": "images/LB-BR-DESK-04.jpg",
@@ -4393,7 +4381,7 @@
         "source": "Adjustable height: N; Maximum height: 24.1 in; Size: 48”Wx23-1/2”Dx31”H"
       },
       "material": "Material: Wood; Top material: Composite Wood; Base material: wood",
-      "short_description": "Este escritorio de escritura Better Homes &amp; Gardens Juliet agrega espacio de trabajo y almacenamiento en un diseño limpio y moderno. Dos cajones ayudan a mantener suministros, papeles y esenciales cotidianos guardados, para que tu escritorio se mantenga abierto para una lapto",
+      "short_description": "48 in curved writing desk with two drawers, in a clean, modern design.",
       "why_this": "BH&G Juliet curved desk, 48 in, black.",
       "tags": [
         "New find",
@@ -4426,10 +4414,10 @@
       "price": 20.0,
       "regular_price": 80.0,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Live on Marketplace, US$20 (was US$80), Mid-Wilshire pickup",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Facebook listing still live on Oct 21 at $20",
       "product_url": "https://www.facebook.com/marketplace/item/1381725777389820/",
       "backup_search_url": "https://www.facebook.com/marketplace/la/search?query=leather%20office%20chair&maxPrice=70",
       "image_file": "images/BR-CHAIR-A.jpg",
@@ -4506,7 +4494,7 @@
         "source": "Same as the 3D plan: IKEA: 28\" W x 28\" D, max height 44 7/8\", seat 17 3/4-22 7/8\""
       },
       "material": "MaterialBackrest frame/ Fixing plate/ Leg/ Backrest frame/ Fixing plate/ Leg:Steel, Epoxy/polyester powder coatingMesh/ Mesh:100 %polyesterSeat frame/ Seat frame:Layer-glued wood veneerComfort filling/ Comfort filling:Po",
-      "short_description": "FLINTAN Office chair - beige. 10-year Warranty. Read about the terms in the warranty brochure. Suitable for business use. This ergonomic office chair has lots of functions that allow you to easily adapt the chair to your body. Lumbar support – Promotes good posture and reduces st",
+      "short_description": "Ergonomic beige office chair with lumbar support and several adjustments; suitable for business use, with a 10-year warranty.",
       "why_this": "FLINTAN in beige, ergonomic and light.",
       "tags": [
         "From my list",
@@ -4564,7 +4552,7 @@
         "source": "IKEA measurements: Tested for243 lbWidth26 3/8 \"Depth26 3/8 \"Height35 3/8 \"Seat width15 3/4 \"Seat depth16 7/8 \"Min. seat height17 3/4 \"Max. seat height22 \""
       },
       "material": "MaterialSeat shellSeat:PolypropyleneNut:Steel, GalvanizedChair frame, swivelLamella seat lock/ Gas cylinder/ Star base center/ Leg:Steel, Epoxy/polyester powder coatingAdjustment lever:Thermoplastic elastomerCover/ Wheel",
-      "short_description": "LOBERGET / MALSKÄR Swivel chair - white. Comfortable to sit on thanks to the bowl-shaped seat and rounded shape of the backrest. This swivel chair has functions that allow you to easily adapt the chair to your body. Easy to keep clean by just wiping with a damp cloth.",
+      "short_description": "White swivel chair with a bowl-shaped seat and rounded back; adjustable and easy to wipe clean.",
       "why_this": "LOBERGET/MALSKÄR, the $59.99 budget swivel.",
       "tags": [
         "From my list"
@@ -4612,7 +4600,7 @@
         "source": "IKEA measurements: Tested for243 lbWidth24 3/4 \"Depth24 3/4 \"Max. height34 5/8 \"Seat width20 1/8 \"Seat depth17 3/4 \"Max. seat height22 7/8 \"Min. seat height18 1/8 \""
       },
       "material": "MaterialFoam:Polyurethane foam 2.2 lb/cu.ft., Polyurethane foam 2.2 lb/cu.ft.Seat frame:100 %polyester, Layer-glued wood veneerBackrest frame:Steel, Polyethylene, Epoxy/polyester powder coatingMechanism/ Gas cylinder/ Le",
-      "short_description": "KRYLBO Swivel chair - Tonerud dark beige. With its swivel function and adjustable seat, you can easily find a position that suits you and feels comfy. Generous padding in the seat and backrest makes this chair a great choice if you want to sit comfortably at the desk. Assembles i",
+      "short_description": "Swivel desk chair in dark beige with generous padding and an adjustable seat height.",
       "why_this": "KRYLBO swivel in dark beige; looks like a dining chair.",
       "tags": [
         "From my list",
@@ -4661,7 +4649,7 @@
         "source": "IKEA measurements: Tested for243 lbWidth26 3/8 \"Depth26 3/8 \"Max. height35 7/8 \"Seat width19 1/4 \"Seat depth18 1/8 \"Max. seat height21 1/4 \"Min. seat height18 1/8 \""
       },
       "material": "MaterialBase fabric:100% polyester (min. 90% recycled)Base:Polypropylene, PolypropyleneAdjustment lever/ Seat frame/ Armrest frame/ Mounting plate/ Hub/ Leg frame:Steel, Epoxy/polyester powder coatingComfort filling:Poly",
-      "short_description": "MULLSJÖ Swivel chair - Gräsnäs dark gray. Generous padding in the seat and backrest makes this chair a great choice if you want to sit comfortably at the desk. The shape of the armrests provides good support and helps you find a good sitting position. Plastic feet protect the flo",
+      "short_description": "Padded swivel desk chair in dark gray with shaped armrests for good support.",
       "why_this": "MULLSJÖ swivel to pair with the MULLSJÖ desk.",
       "tags": [
         "New find",
@@ -4694,10 +4682,10 @@
       "price": 158.0,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/20043910428",
       "backup_search_url": null,
       "image_file": "images/LB-BR-CHAIR-04.jpg",
@@ -4710,7 +4698,7 @@
         "source": "Walmart page text: 25.98 in W x 28.35 in D x 40.16 in H"
       },
       "material": "Frame material: faux; Material: wood, fabric, foam; Fill material: wood,foam",
-      "short_description": "Create an inviting place to work with the Better Homes &amp; Gardens Ambrose Faux Leather Desk Chair. Featuring soft, textured upholstery, a supportive high-back design, fixed armrests, and thick foam padding, this office chair brings warmth and comfort to your home office, study",
+      "short_description": "High-back desk chair in cocoa faux leather with fixed armrests and thick foam padding.",
       "why_this": "BH&G Ambrose faux-leather desk chair in Cocoa: the chocolate tone of the sofa, new.",
       "tags": [
         "New find",
@@ -4762,7 +4750,7 @@
         "source": "Same as the 3D plan: IKEA publishes only shade diameter 7\". Arm reach 20\" and working height 26\" are ESTIMATED"
       },
       "material": "MaterialArm:Steel, Epoxy/polyester powder coatingReflector shade:Steel, Epoxy/polyester powder coating, PaintTable clamp/ Bushing/ Grip/ Nut/ Nut:ABS plastic, ABS plasticCareWipe clean using a damp cloth and a mild clean",
-      "short_description": "TERTIAL Work lamp - dark gray. You can easily direct the light where you want it because the lamp arm and head are adjustable. This lamp can be used as a desk lamp or mounted on the wall. Light bulb sold separately. IKEA recommends LED bulb E26 globe opal white. Clamping range up",
+      "short_description": "Dark gray work lamp with an adjustable arm and head; use it on the desk or mount it on the wall. Bulb sold separately.",
       "why_this": "TERTIAL, the $19.99 classic architect lamp.",
       "tags": [
         "From my list"
@@ -4813,7 +4801,7 @@
         "source": "Same as the 3D plan: Target: 18\" H x 7.5\" W x 18\" D"
       },
       "material": "Lighting Shade Material: Metal; Lighting Body Material: Metal",
-      "short_description": "Includes: 1 Desk Task Lamp, Light Bulbs Not Included; Weight: 5.39 Pounds; Bulb Base Size: Standard Edison Medium Screw Base E26; Number of Light Bulb Sockets: 1; Cable/Cord Length: 5 Feet; Required, Not Included: Light Bulb(s); Maximum Light Bulb Wa",
+      "short_description": "Black metal schoolhouse desk lamp. Uses a standard E26 bulb (not included); 5 ft cord.",
       "why_this": "Crosby schoolhouse lamp in black from Threshold.",
       "tags": [
         "New find",
@@ -4859,7 +4847,7 @@
         "source": "IKEA measurements: Base diameter7 \"Cord length6 ' 7 \"Height16 \"Max.5.3 WShade diameter6 \""
       },
       "material": "MaterialWeight:EVA plasticCover/ Tube/ Shade:Steel, Powder coatingCareWipe clean with a dry cloth.Warning:This product can expose you to chemicals including lead, which is known to the State of California to cause cancer",
-      "short_description": "SKURUP Work lamp - black. Provides a directed light that is great for reading. You can easily direct the light where you want it because the lamp head is adjustable. Light bulb sold separately. IKEA recommends LED bulb E17 R14. May be completed with other lamps in the same series",
+      "short_description": "Black work lamp with an adjustable head for directed reading light. Bulb sold separately.",
       "why_this": "SKURUP black work lamp, 4.8/5; your list's pick.",
       "tags": [
         "Top pick",
@@ -4910,7 +4898,7 @@
         "source": "IKEA measurements: Height19 \"Base diameter7 \"Shade diameter6 \"Cord length87 \"Max.16 WLength13 \""
       },
       "material": "MaterialShade/ Tube/ Base:Steel, Powder coatingBracket:Solid ash, Clear lacquerScrew:Steel, GalvanizedCareClean with a duster.Warning:This product can expose you to chemicals including lead, which is known to the State o",
-      "short_description": "SJÖMAKT Desk lamp - beige/ash. Provides a directed light that is great for reading. You can easily direct the light where you want it because the lamp head is adjustable. Light bulb sold separately. IKEA recommends LED bulb E26 globe opal white. May be completed with other lamps ",
+      "short_description": "Beige desk lamp with a solid ash detail and an adjustable head for directed light. Bulb sold separately.",
       "why_this": "SJÖMAKT beige and ash for a softer look.",
       "tags": [
         "From my list"
@@ -4942,10 +4930,10 @@
       "price": 29.97,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/5558619077",
       "backup_search_url": null,
       "image_file": "images/LB-BR-DESKLAMP-03.jpg",
@@ -4958,10 +4946,10 @@
           "w",
           "d"
         ],
-        "source": "Height: 18 in; Cord length: 6 ft; Size: 6.25\" Diameter x 4.375\" Height"
+        "source": "Walmart: Height 18 in; shade 6.25 in diameter x 4.375 in; base width and overall depth not listed. Checked in the browser Oct 21, 2026"
       },
       "material": "Housing material: Metal; Shade material: Metal",
-      "short_description": "Esta lámpara de escritorio Better Homes &amp; Gardens aporta luz y comodidad de carga a tu escritorio o mesa auxiliar. Un puerto USB en la base ayuda a mantener un dispositivo al alcance mientras que la cabeza ajustable te permite apuntar la luz donde la necesitas. El acabado neg",
+      "short_description": "18 in desk lamp in black and gold with an adjustable metal shade and a USB port in the base. Uses an E26 bulb (not included).",
       "why_this": "BH&G black and gold desk lamp.",
       "tags": [
         "New find"
@@ -5009,7 +4997,7 @@
         "source": "Same as the 3D plan: Target: 22\" H x 13\" W x 18\" D, 80 L"
       },
       "material": "Material: 100% Recycled PET (Polyethylene Terephthalate)",
-      "short_description": "Weight: 1.22 Pounds; Capacity (Volume): 80 Liter",
+      "short_description": "Rectangular canvas laundry hamper made of recycled PET; holds 80 liters.",
       "why_this": "Brightroom canvas hamper, 80 L, $13.",
       "tags": [
         "New find",
@@ -5059,7 +5047,7 @@
         "source": "Same as the 3D plan: Target: 22\" H x 15\" W x 14\" D"
       },
       "material": "Material: Polyester, Cotton",
-      "short_description": "Weight: 3.64 Pounds; Capacity (Volume): 4620 cubic-in",
+      "short_description": "Coiled rope laundry hamper in polyester and cotton.",
       "why_this": "Coiled rope hamper for texture.",
       "tags": [
         "New find",
@@ -5105,7 +5093,7 @@
         "source": "IKEA measurements: Depth17 ¼ \"Height22 ½ \"Max. load282 ozVolume11 gallonWidth8 \""
       },
       "material": "MaterialBag:100% polyester (min. 90% recycled)Frame:Steel, Powder coatingCareHand wash warm water.Do not bleach.Do not tumble dry.Do not iron.Do not dry clean.",
-      "short_description": "PURRPINGLA Laundry bag with stand - beige 11 gallon. A perfect solution for small and narrow bathrooms or wardrobes since the laundry basket’s width is only 21 cm. You can easily sort white and colored laundry in the 2 separate compartments. Stands firmly in place thanks to its m",
+      "short_description": "Slim beige laundry bag on a steel stand with 2 compartments for sorting whites and colors.",
       "why_this": "PURRPINGLA bag on a stand, beige, $29.99.",
       "tags": [
         "From my list"
@@ -5153,7 +5141,7 @@
         "source": "IKEA measurements: Depth14 ¼ \"Height24 \"Max. load33 lbVolume26 gallonWidth23 ½ \""
       },
       "material": "MaterialFrame:Steel, Steel, Powder coatingWeaving:Willow, Stain, Clear acrylic lacquerBottom frame/ Bracket:Steel, Powder coatingFabric:100 % polyester (100% recycled)Feet:PolypropyleneCareMachine wash warm, normal cycle",
-      "short_description": "NATTGIBBA Laundry basket - willow/handmade 26 gallon. Skilled craftspeople have woven the basket by hand, so each basket is one of a kind. Easy to bring home since it’s lightweight and flat-packed. The material brings a piece of nature into your home and spreads a calm, warm feel",
+      "short_description": "Handwoven willow laundry basket (26 gallon); each one is one of a kind. Lightweight and flat-packed.",
       "why_this": "Handmade willow with lid; the organic-modern pick.",
       "tags": [
         "Top pick",
@@ -5202,7 +5190,7 @@
         "source": "IKEA measurements: Height25 ¼ \"Volume13 gallonDiameter15 ¾ \""
       },
       "material": "MaterialMain parts:Bamboo, Clear acrylic lacquerFabric:100 % polyester (100% recycled)Feet:PolyethyleneCareBasketBamboo is happiest in dry, cool environments with an even temperature.You can have the basket in the bathro",
-      "short_description": "SALUDING Laundry basket - handmade bamboo 13 gallon. The lid's woven pattern is a tribute to traditional craftsmanship and makes it easy for you to drop laundry through the top. Skilled craftspeople have woven the basket by hand, so each basket is one of a kind. Holds up to 13 lb",
+      "short_description": "Handwoven bamboo laundry basket (13 gallon) with a woven lid you can drop laundry through.",
       "why_this": "Handmade bamboo basket.",
       "tags": [
         "From my list"
@@ -5234,10 +5222,10 @@
       "price": 27.48,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/5198978016",
       "backup_search_url": null,
       "image_file": "images/LB-BR-HAMPER-04.jpg",
@@ -5250,7 +5238,7 @@
         "source": "Walmart page text: 24.42 in L x 16.54 in W x 13.39 in H"
       },
       "material": "Material: Poly Rattan",
-      "short_description": "Esta canasta de ropa Better Homes &amp; Gardens aporta un aspecto tejido a la recogida y el transporte de la ropa de uso diario. Está hecho con ratán de poliéster de resina tejida a mano sobre un marco de acero para soporte estructurado, e incluye un forro removible para un manej",
+      "short_description": "Beige laundry basket in hand-woven resin rattan over a steel frame, with a removable liner.",
       "why_this": "BH&G resin rattan with liner, beige.",
       "tags": [
         "New find"
@@ -5309,7 +5297,7 @@
         "source": "Same as the 3D plan: IKEA: each panel 57\" W x 98\" L; 1 pair = 2 panels. Fabric depth ESTIMATED 0.5\" (flat panel)"
       },
       "material": "Material100% polyester (min. 90% recycled)CareShrinkage maximum 4%.Machine wash warm, normal cycle.Do not bleach.Do not tumble dry.Iron medium temperature, max 300°F/150°C.Do not dry clean.",
-      "short_description": "GINSTMOTT Curtains, 1 pair - beige/with heading tape 57x98 \". The fabric dims daylight entering the room and reduces glare. It gives a comfortable sense of privacy as people cannot see in. At night, silhouettes can be perceived from outside when the room is lit. Curtains, 1 pair ",
+      "short_description": "Pair of beige curtains with heading tape that dim daylight, cut glare and give privacy. Each panel is 57x98 in.",
       "why_this": "GINSTMOTT beige pair, 57x98 in, $34.99; length matches the 96-98 in rule.",
       "tags": [
         "Top pick",
@@ -5381,7 +5369,7 @@
         "source": "Same as the 3D plan: Quince: 48\" x 96\" single panel (you need 2). Depth ESTIMATED"
       },
       "material": "100% European linen",
-      "short_description": "You loved luxe linen for your bed, now you can add texture to your windows. Made from high-quality 100% European linen, this curtain not only adds a luxurious feel to any room but also allows natural light to filter through, creating a warm and invit",
+      "short_description": "100% European linen curtain panel in Flax that filters natural light for a warm room. Sold per panel; you need two.",
       "why_this": "100% European linen in Flax, 48x96 per panel (price is per panel).",
       "tags": [
         "From my list"
@@ -5433,7 +5421,7 @@
         "source": "IKEA measurements: Length98 \"Width57 \"Area39.07 sq feetWeight2 lb 3 oz"
       },
       "material": "Material100% polyester (min. 90% recycled)CareShrinkage maximum 4%.Machine wash warm, normal cycle.Do not bleach.Tumble dry, low, normal cycle.Iron medium temperature, max 300°F/150°C.Do not dry clean.",
-      "short_description": "HÄLLEBRÄCKA Sheer curtains, 1 pair - light beige/with heading tape 57x98 \". The sheer curtains let the daylight through but provide privacy so they are perfect to use in a layered window solution. The heading tape makes it easy for you to create pleats using RIKTIG curtain hooks.",
+      "short_description": "Pair of light beige sheer curtains that let daylight through while giving privacy; good for layering. Heading tape for pleats.",
       "why_this": "HÄLLEBRÄCKA sheer light beige pair, 98 in.",
       "tags": [
         "From my list"
@@ -5483,7 +5471,7 @@
         "source": "IKEA measurements: Width57 \"Length98 \"Weight4 lb 3 ozArea39.07 sq feet"
       },
       "material": "Material100 % cottonCareShrinkage maximum 4%.Machine wash warm, normal cycle.Do not bleach.Do not tumble dry.Iron high.Do not dry clean.",
-      "short_description": "RITVA Curtains with tie-backs, 1 pair - white/with heading tape 57x98 \". The fabric dims daylight entering the room and reduces glare. It gives a comfortable sense of privacy as people cannot see in. At night, silhouettes can be perceived from outside when the room is lit. Curtai",
+      "short_description": "Pair of white cotton curtains with tie-backs that dim daylight and give privacy. Heading tape for pleats.",
       "why_this": "RITVA white pair with tie-backs, 98 in.",
       "tags": [
         "From my list"
@@ -5542,7 +5530,7 @@
         "source": "IKEA measurements: Width/curtain57 \"Length98 \"Area39.07 sq feetWeight2 lb 13 oz"
       },
       "material": "Material100 % linenCareShrinkage maximum 4%.Machine wash, warm, durable-press cycle.Do not bleach.Do not tumble dry.Iron high.Do not dry clean.",
-      "short_description": "DYTÅG Curtains, 1 pair - beige/with heading tape 57x98 \". The fabric dims daylight entering the room and reduces glare. It gives a comfortable sense of privacy as people cannot see in. At night, silhouettes can be perceived from outside when the room is lit. Curtains, 1 pair incl",
+      "short_description": "Pair of beige linen curtains with heading tape that dim daylight, cut glare and give privacy.",
       "why_this": "DYTÅG beige heavy linen-look pair, 98 in.",
       "tags": [
         "From my list"
@@ -5592,7 +5580,7 @@
         "source": "Dimensions (Overall): 84 Inches (L), 54 Inches (W)"
       },
       "material": "Textile Material: 56% Recycled Polyester, 42% Cotton, 2% Linen; Sustainability Claims: Post-Consumer Recycled Material",
-      "short_description": "Accommodates Pole Size: 84 Inches; Single Panel Weight: 2.78 Pounds",
+      "short_description": "Light-filtering cream curtain panel in a textured weave of recycled polyester, cotton and linen.",
       "why_this": "Threshold textured weave panel, 54x95 in, cream.",
       "tags": [
         "New find",
@@ -5640,7 +5628,7 @@
         "source": "Product Dimensions 96\"L x 52\"W"
       },
       "material": "Material Linen Blend",
-      "short_description": "Brand Nanspring; Color Natural; Material Linen Blend; Product Dimensions 96\"L x 52\"W; Opacity Semi-sheer",
+      "short_description": "Pair of semi-sheer natural linen-blend curtain panels, 52x96 in each.",
       "why_this": "Nanspring linen-blend pair, 52x96 in, natural; 4.7/5 from 7,310 reviews.",
       "tags": [
         "New find"
@@ -5699,7 +5687,7 @@
         "source": "Same as the 3D plan: IKEA: each panel 57\" W x 98\" L; 1 pair = 2 panels"
       },
       "material": "Material100% polyester (min. 90% recycled)CareShrinkage maximum 4%.Machine wash warm, normal cycle.Do not bleach.Do not tumble dry.Iron medium temperature, max 300°F/150°C.Do not dry clean.",
-      "short_description": "GINSTMOTT Curtains, 1 pair - beige/with heading tape 57x98 \". The fabric dims daylight entering the room and reduces glare. It gives a comfortable sense of privacy as people cannot see in. At night, silhouettes can be perceived from outside when the room is lit. Curtains, 1 pair ",
+      "short_description": "Pair of beige curtains with heading tape that dim daylight, cut glare and give privacy. Each panel is 57x98 in.",
       "why_this": "Same GINSTMOTT as the living room so both rooms read as one home.",
       "tags": [
         "Top pick",
@@ -5763,7 +5751,7 @@
         "source": "IKEA measurements: Width/curtain57 \"Length98 \"Area39.07 sq feet"
       },
       "material": "MaterialCurtain:100% polyester (min. 90% recycled)Heading tape:100 % polyester (100% recycled)CareShrinkage maximum 4%.Machine wash warm, normal cycle.Do not bleach.Do not tumble dry.Iron medium temperature, max 300°F/15",
-      "short_description": "ANNAKAJSA Room darkening curtains, 1 pair - white/with heading tape 57x98 \". The room darkening fabric lets in a small amount of light and there is no glare on TV/screens. It gives a strong sense of privacy as shapes and light are barely perceived from the outside. Curtains, 1 pa",
+      "short_description": "Pair of white room-darkening curtains that let in only a little light and give strong privacy. Heading tape for pleats.",
       "why_this": "ANNAKAJSA room-darkening pair for sleep, 98 in.",
       "tags": [
         "New find"
@@ -5813,7 +5801,7 @@
         "source": "Product Dimensions 96\"L x 52\"W"
       },
       "material": "Material Polyester",
-      "short_description": "Brand MIULEE; Color Beige; Material Polyester; Product Dimensions 96\"L x 52\"W; Opacity Blackout",
+      "short_description": "Pair of blackout curtains in natural beige with a linen look, 52x96 in each.",
       "why_this": "MIULEE 100% blackout linen-look, 52x96 in beige; 4.6/5 from 10,511 reviews.",
       "tags": [
         "New find"
@@ -5888,7 +5876,7 @@
         "source": "Dimensions (Overall): 84 Inches (L), 54 Inches (W)"
       },
       "material": "Textile Material: 100% Linen",
-      "short_description": "Accommodates Pole Size: 3 Inches; Single Panel Weight: 1.49 Pounds; Care & Cleaning: Wash With Like Colors, Iron as Needed, Machine Wash, Machine Dry",
+      "short_description": "Light-filtering cream curtain panel in 100% linen, machine washable. Note it is 84 in long, shorter than the 96-98 in rule.",
       "why_this": "Threshold light-filtering linen panel, cream.",
       "tags": [
         "New find",
@@ -5945,7 +5933,7 @@
         "source": "IKEA measurements: Width/curtain57 \"Length98 \"Area39.07 sq feetWeight2 lb 13 oz"
       },
       "material": "Material100 % linenCareShrinkage maximum 4%.Machine wash, warm, durable-press cycle.Do not bleach.Do not tumble dry.Iron high.Do not dry clean.",
-      "short_description": "DYTÅG Curtains, 1 pair - beige/with heading tape 57x98 \". The fabric dims daylight entering the room and reduces glare. It gives a comfortable sense of privacy as people cannot see in. At night, silhouettes can be perceived from outside when the room is lit. Curtains, 1 pair incl",
+      "short_description": "Pair of beige linen curtains with heading tape that dim daylight, cut glare and give privacy.",
       "why_this": "DYTÅG heavier linen look if you want privacy without blackout.",
       "tags": [
         "New find"
@@ -5996,7 +5984,7 @@
         "source": "Same as the 3D plan: IKEA: adjustable 82 3/4\"-151 1/2\" (set to 114\" here), max load 22 lb. Bracket projection 4\" and rod/finial profile 1\" are ESTIMATED (not published)"
       },
       "material": "MaterialCurtain rodRod:Steel, Epoxy/polyester powder coatingPlug/ Sleeve:PolypropyleneWall/ceiling bracketWallbracket/ Hook:Steel, Steel, Epoxy/polyester powder coatingCover:PolypropyleneScrew:Steel, Galvanized, PaintFin",
-      "short_description": "HUGAD Curtain rod combination - with wall/ceiling brackets/with finials black 82 ¾-151 ½ \". Adjustable curtain rod length. Curtain rod holder position can be adjusted, allowing curtains to be hung either close to the window or farther out. May be completed with SYRLIG curtain rin",
+      "short_description": "Black adjustable curtain rod (82 3/4 to 151 1/2 in) with wall or ceiling brackets and finials. The bracket can hold curtains close to or farther from the window.",
       "why_this": "HUGAD 82¾-151½ in reaches the ~114 in living room run; black.",
       "tags": [
         "Top pick",
@@ -6052,7 +6040,7 @@
         "source": "Same as the 3D plan: IKEA: adjustable 82 3/4\"-151 1/2\" (set to 92\" here). Bracket projection and profile ESTIMATED"
       },
       "material": "MaterialCurtain rodRod:Steel, Epoxy/polyester powder coatingPlug/ Sleeve:PolypropyleneWall/ceiling bracketWallbracket/ Hook:Steel, Steel, Epoxy/polyester powder coatingCover:PolypropyleneScrew:Steel, Galvanized, PaintFin",
-      "short_description": "HUGAD Curtain rod combination - with wall/ceiling brackets/with finials black 82 ¾-151 ½ \". Adjustable curtain rod length. Curtain rod holder position can be adjusted, allowing curtains to be hung either close to the window or farther out. May be completed with SYRLIG curtain rin",
+      "short_description": "Black adjustable curtain rod (82 3/4 to 151 1/2 in) with wall or ceiling brackets and finials.",
       "why_this": "Same HUGAD long set for the bedroom: it covers the ~92 in run with 8-12 in past the window.",
       "tags": [
         "New find"
@@ -6107,7 +6095,7 @@
         "source": "Same as the 3D plan: IKEA: adjustable 47 1/4\"-82 3/4\". TOO SHORT for the estimated 72\" window plus 8-12\" each side (needs 88-96\"). Kept only as a fallback"
       },
       "material": "MaterialCurtain rodRod:Steel, Epoxy/polyester powder coatingPlug/ Sleeve:PolypropyleneWall/ceiling bracketWallbracket/ Hook:Steel, Steel, Epoxy/polyester powder coatingCover:PolypropyleneScrew:Steel, Galvanized, PaintFin",
-      "short_description": "HUGAD Curtain rod combination - with wall/ceiling brackets/with finials black 47 ¼-82 ¾ \". Adjustable curtain rod length. Curtain rod holder position can be adjusted, allowing curtains to be hung either close to the window or farther out. May be completed with SYRLIG curtain ring",
+      "short_description": "Black adjustable curtain rod (47 1/4 to 82 3/4 in) with wall or ceiling brackets and finials. Too short for the bedroom window plus overhang; kept as a fallback.",
       "why_this": "HUGAD 47¼-82¾ in; too short for the ~92 in bedroom run, fine for narrower windows.",
       "tags": [
         "From my list"
@@ -6158,7 +6146,7 @@
         "source": "IKEA measurements: Min. length47 1/4 \"Max. length82 5/8 \"Max. load11 lb"
       },
       "material": "MaterialWall/ceiling bracketWallbracket/ Hook:Steel, Steel, Epoxy/polyester powder coatingCover:PolypropyleneScrew:Steel, Galvanized, PaintCurtain rodRod:Steel, Epoxy/polyester powder coatingPlug/ Sleeve:PolypropyleneFin",
-      "short_description": "RÄCKA Curtain rod combination - black 47 1/4-82 5/8 \". Curtain rod holder position can be adjusted, allowing curtains to be hung either close to the window or farther out. Can be mounted on the wall or ceiling. The length is adjustable. All parts are sold as separate articles in ",
+      "short_description": "Black adjustable curtain rod set (47 1/4 to 82 5/8 in) that mounts on the wall or ceiling. Too short for the bedroom window plus overhang.",
       "why_this": "RÄCKA set, 47¼-82⅝ in, $15.",
       "tags": [
         "New find"
@@ -6190,10 +6178,10 @@
       "price": 34.96,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/18562352196",
       "backup_search_url": null,
       "image_file": "images/LB-ROD-02.jpg",
@@ -6209,7 +6197,7 @@
         "source": "Minimum length: 32 in; Maximum length: 120 in; Tube diameter: 1 in"
       },
       "material": "Material: Steel Rod",
-      "short_description": "Esta barra de cortina individual Better Homes &amp; Gardens aporta un aspecto limpio y acabado a tu ventana. Se ajusta de 32 in a 120 in, para que puedas ajustar una variedad de tamaños de ventana con una sola barra. La varilla de acero y los soportes de acero proporcionan una co",
+      "short_description": "1 in matte black steel curtain rod with ball finials that adjusts from 32 to 120 in.",
       "why_this": "BH&G 1 in matte black ball rod.",
       "tags": [
         "New find"
@@ -6260,7 +6248,7 @@
         "source": "Product Dimensions 150\"L x 1\"W"
       },
       "material": "Material Metal",
-      "short_description": "Brand Byondeth; Color Black; Product Dimensions 150\"L x 1\"W; Material Metal; Mounting Type Wall Mounted; Item Weight 4 pounds",
+      "short_description": "1 in black metal curtain rod that adjusts from 16 to 144 in, with aluminum finials.",
       "why_this": "Byondeth 16-144 in black rod, 4.5/5 from 14,467 reviews; covers both rooms.",
       "tags": [
         "New find",
@@ -6312,7 +6300,7 @@
         "source": "Product Dimensions 144\"L x 1\"W"
       },
       "material": "Material Iron",
-      "short_description": "Brand YaFex; Color Black; Product Dimensions 144\"L x 1\"W; Material Iron; Mounting Type Wall Mounted; Item Weight 3.3 pounds",
+      "short_description": "Heavy-duty 1 in black iron curtain rod that adjusts from 32 to 144 in.",
       "why_this": "YaFex 32-144 in black heavy-duty rod.",
       "tags": [
         "New find",
@@ -6361,7 +6349,7 @@
         "source": "Same as the 3D plan: Target: 14\" H x 8.5\" W x 8.5\" D; shade 8.75\" bottom diameter"
       },
       "material": "Lighting Shade Material: Polyester, Polystyrene; Lighting Body Material: Ceramic",
-      "short_description": "Includes: 1 Table Lamp With Shade, Light Bulbs Not Included; Weight: 2.2 Pounds; Bulb Base Size: Standard Edison Medium Screw Base E26; Number of Light Bulb Sockets: 1; Cable/Cord Length: 5 Feet; Maximum Light Bulb Wattage: 40 Watts",
+      "short_description": "Ceramic table lamp in sour cream and oatmeal with a scalloped shade, by Hearth & Hand. Uses an E26 bulb (not included).",
       "why_this": "Hearth & Hand ceramic lamp with scallop shade, $24.99.",
       "tags": [
         "Top pick",
@@ -6410,7 +6398,7 @@
         "source": "Same as the 3D plan: IKEA: diameter 7\", height 12\""
       },
       "material": "MaterialShade:100% polyester (min. 70% recycled)Diffuser:PolystyreneLeg:Solid ashHolder:Polycarbonate plastic (min. 50% recycled)CareDust the lamp with a dust cloth.Warning:This product can expose you to chemicals includ",
-      "short_description": "STORSEGEL Table lamp - ash/white. You can create a soft, cozy atmosphere in your home with a textile shade that spreads a diffused and decorative light. Light bulb sold separately. IKEA recommends LED bulb E12 globe opal white.",
+      "short_description": "Small table lamp with a solid ash base and a textile shade for soft, diffused light. Bulb sold separately.",
       "why_this": "STORSEGEL ash tripod; IKEA Family price $14.99 (regular $19.99).",
       "tags": [
         "From my list",
@@ -6465,7 +6453,7 @@
         "source": "IKEA measurements: Base diameter7 \"Cord length7 ' 7 \"Height20 \"Max.16 WShade width12 \"Base height9 \""
       },
       "material": "MaterialBase:Stoneware, Colored glazeTube:Steel, Brass platedShade:85 % polyester (100% recycled), 15 % linenCareRemove dust with a lint remover.Warning:This product can expose you to chemicals including lead, which is k",
-      "short_description": "BLIDVÄDER Table lamp - off-white ceramic/beige 20 \". The lampshade’s visible textile fibers create a vibrant expression – and when you turn the lamp on, a warm light spreads that makes your room feel cozy and inviting. Light bulb sold separately. IKEA recommends LED bulb E26 glob",
+      "short_description": "Off-white stoneware table lamp with a textured beige shade that gives a warm, cozy light. Bulb sold separately.",
       "why_this": "BLIDVÄDER ceramic; IKEA Family price $79.99 until Nov 11 (regular $99.99).",
       "tags": [
         "From my list",
@@ -6501,10 +6489,10 @@
       "price": 34.92,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/5965911780",
       "backup_search_url": null,
       "image_file": "images/LB-TABLELAMP-02.jpg",
@@ -6517,7 +6505,7 @@
         "source": "Walmart page text: 12 in L x 12 in W x 18 in H"
       },
       "material": "Shade material: Linen; Housing material: Ceramic",
-      "short_description": "Esta lámpara de mesa de estilo urna de cerámica aporta una forma clásica y un contraste limpio a tu espacio. La base negra mate se combina con un tono imperio de lino blanco para un aspecto que funciona bien en una mesa auxiliar, consola o mesa decorativa de sala de estar. Su alt",
+      "short_description": "18 in ceramic urn table lamp in matte black with a white linen shade.",
       "why_this": "BH&G black ceramic urn, 18 in.",
       "tags": [
         "From my list"
@@ -6565,7 +6553,7 @@
         "source": "Assembled Dimensions: 24.5 Inches (H) x 13 Inches (W) x 13 Inches (D); Base Dimensions: 12.75 Inches (H) x 6.38 Inches (W) x 6.38 Inches (D); Shade Dimensions: 11 Inches (H), 12 Inches (W-top), 13 Inc"
       },
       "material": "Lighting Shade Material: Linen, Cotton; Lighting Body Material: Ceramic",
-      "short_description": "Includes: 1 Table Lamp With Shade, Harp and Finial, Light Bulbs Not Included; Weight: 4.64 Pounds; Bulb Base Size: Standard Edison Medium Screw Base E26; Number of Light Bulb Sockets: 1; Cable/Cord Length: 5 Feet; Maximum Light Bulb Wattage: 100 Watt",
+      "short_description": "Ribbed cream ceramic table lamp with a linen and cotton shade, by Threshold. Uses an E26 bulb (not included).",
       "why_this": "Threshold ribbed ceramic in cream, 24.75 in.",
       "tags": [
         "New find",
@@ -6612,7 +6600,7 @@
         "source": "IKEA measurements: Cord length6 ' 7 \"Diameter15 \"Total height26 \"Max. power/bulb8.6 W"
       },
       "material": "MaterialLampholder cup:Polycarbonate plastic (min. 50% recycled)Base:LimestoneShade:70 %polyester, 30 % linenTube/ Cap/ Knob:Steel, Nickel platedCover:Polycarbonate plasticConnector:PolyamidePlate:Polypropylene plastic (",
-      "short_description": "STOCKHOLM 2025 Table lamp - white textile/brass plated 26 \". Fabric shade gives a diffused and decorative light. The lamp base is made of a natural stone called travertine, which gives it a unique expression with natural variations. The lamp stands stable thanks to the heavy ston",
+      "short_description": "Table lamp with a heavy natural stone base, brass-plated details and a white fabric shade for diffused light.",
       "why_this": "STOCKHOLM 2025 brass and textile; IKEA Family price $79.99 until Nov 11.",
       "tags": [
         "New find",
@@ -6664,7 +6652,7 @@
         "source": "IKEA measurements: Cord length7 ' 3 \"Diameter5 \"Height10 \"Max.9 W"
       },
       "material": "MaterialTop frame/ Base:Steel, Powder coatingShade:PaperCareWipe clean using a damp cloth and a mild cleaner.Wipe dry with a clean cloth.Warning:This product can expose you to chemicals including lead, which is known to ",
-      "short_description": "SAXHYTTAN Table lamp - beige/black 10 \". Small and easy to place anywhere you want to bring some coziness and into your home. Light bulb sold separately. IKEA recommends LED bulb E12 chandelier clear. Special waste handling may be required. Please contact your local authorities f",
+      "short_description": "Small beige and black table lamp with a paper shade, easy to place anywhere. Bulb sold separately.",
       "why_this": "SAXHYTTAN beige and black, small and cheap; IKEA Family price $19.99.",
       "tags": [
         "New find",
@@ -6715,7 +6703,7 @@
         "source": "IKEA measurements: Diameter7 \"Height12 \"Max.9 W"
       },
       "material": "MaterialShade:100% polyester (min. 70% recycled)Diffuser:PolystyreneLeg:Solid ashHolder:Polycarbonate plastic (min. 50% recycled)CareDust the lamp with a dust cloth.Warning:This product can expose you to chemicals includ",
-      "short_description": "STORSEGEL Table lamp - ash/white. You can create a soft, cozy atmosphere in your home with a textile shade that spreads a diffused and decorative light. Light bulb sold separately. IKEA recommends LED bulb E12 globe opal white.",
+      "short_description": "Small table lamp with a solid ash base and a textile shade for soft, diffused light; matches the first bedside lamp. Bulb sold separately.",
       "why_this": "A second STORSEGEL so the bed has a matching pair.",
       "tags": [
         "New find",
@@ -6752,10 +6740,10 @@
       "price": 69.84,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/14930459205",
       "backup_search_url": null,
       "image_file": "images/LB-BEDLAMP2-02.jpg",
@@ -6768,7 +6756,7 @@
         "source": "Walmart page text: 12 in L x 12 in W x 18 in H (each lamp)"
       },
       "material": "Shade material: Linen; Housing material: Ceramic",
-      "short_description": "Esta lámpara de mesa de estilo urna de cerámica aporta una forma clásica y un contraste limpio a tu espacio. La base negra mate se combina con un tono imperio de lino blanco para un aspecto que funciona bien en una mesa auxiliar, consola o mesa decorativa de sala de estar. Su alt",
+      "short_description": "Two 18 in ceramic urn table lamps in matte black with white linen shades.",
       "why_this": "BH&G urn lamp sold as a 2-pack.",
       "tags": [
         "New find"
@@ -6816,7 +6804,7 @@
         "source": "Product Dimensions 11\"D x 11\"W x 20.75\"H"
       },
       "material": "",
-      "short_description": "Finish Type Polished; Base Material Ceramic; Bulb Base E26; Product Dimensions 11\"D x 11\"W x 20.75\"H; Item Weight 7.4 pounds",
+      "short_description": "Set of 2 white ceramic table lamps, 20.75 in tall, with a polished finish. E26 bulbs.",
       "why_this": "PoKat small ceramic lamps, set of 2, 20.75 in.",
       "tags": [
         "Top pick",
@@ -6866,7 +6854,7 @@
         "source": "Product Dimensions 12.5\"D x 12.5\"W x 23\"H"
       },
       "material": "",
-      "short_description": "Finish Type Brushed; Base Material Ceramic; Bulb Base E26; Product Dimensions 12.5\"D x 12.5\"W x 23\"H; Item Weight 8.3 pounds",
+      "short_description": "Set of 2 white ceramic table lamps, 23 in tall, with a brushed finish. E26 bulbs.",
       "why_this": "PoKat ceramic lamps, set of 2, 23 in; 4.6/5 from 2,534 reviews.",
       "tags": [
         "New find"
@@ -6914,7 +6902,7 @@
         "source": "Assembled Dimensions: 24.5 Inches (H) x 13 Inches (W) x 13 Inches (D); Base Dimensions: 12.75 Inches (H) x 6.38 Inches (W) x 6.38 Inches (D); Shade Dimensions: 11 Inches (H), 12 Inches (W-top), 13 Inc"
       },
       "material": "Lighting Shade Material: Linen, Cotton; Lighting Body Material: Ceramic",
-      "short_description": "Includes: 1 Table Lamp With Shade, Harp and Finial, Light Bulbs Not Included; Weight: 4.64 Pounds; Bulb Base Size: Standard Edison Medium Screw Base E26; Number of Light Bulb Sockets: 1; Cable/Cord Length: 5 Feet; Maximum Light Bulb Wattage: 100 Watt",
+      "short_description": "Ribbed cream ceramic table lamp with a linen and cotton shade, by Threshold. Uses an E26 bulb (not included).",
       "why_this": "Second Threshold ribbed ceramic lamp to pair with the first.",
       "tags": [
         "New find",
@@ -6979,7 +6967,7 @@
         "source": "Same as the 3D plan: IKEA: 20\" x 20\". Filled depth 5\" ESTIMATED"
       },
       "material": "Material100 % cottonCareShrinkage maximum 4%.Machine wash warm, normal cycle.Do not bleach.Do not tumble dry.Iron medium temperature, max 300°F/150°C.Do not dry clean.",
-      "short_description": "GURLI Cushion cover - unbleached 20x20 \". Made of 100% cotton - a soft, durable and easy-care natural material that you can machine wash. The solid-colored GURLI cushion covers go with most decor and are easy to match with many other products in our textile range. Fits inner cush",
+      "short_description": "20x20 in cushion cover in unbleached 100% cotton, soft and machine washable. Goes with most decor.",
       "why_this": "GURLI unbleached, $4.99: the cream base layer.",
       "tags": [
         "From my list"
@@ -7042,7 +7030,7 @@
         "source": "Same as the 3D plan: IKEA: 20\" x 20\". Filled depth 5\" ESTIMATED"
       },
       "material": "Material100 % polyester (100% recycled)CareMachine wash warm, normal cycle.Turn the cover inside out and zip up before washing.Do not bleach.Do not tumble dry.Iron low.Iron on reverse side.Do not dry clean.",
-      "short_description": "KRYDDBUSKE Cushion cover - brown-red 20x20 \". The recycled polyester fabric is ultra-soft against your skin. The zipper makes the cushion cover easy to remove and machine wash.",
+      "short_description": "20x20 in cushion cover in brown-red recycled polyester, ultra soft, with a zipper for easy washing.",
       "why_this": "KRYDDBUSKE brown-red, the rust accent.",
       "tags": [
         "Top pick",
@@ -7097,7 +7085,7 @@
         "source": "Same as the 3D plan: Amazon: 20\" x 20\", pack of 2. Depth ESTIMATED"
       },
       "material": "Material Cotton, Linen",
-      "short_description": "Pattern Plain; Material Cotton, Linen; Color Rust; Product Dimensions 20\"L x 20\"W; Style English",
+      "short_description": "20x20 in pillow covers in rust cotton and linen, plain weave.",
       "why_this": "MIULEE linen in rust.",
       "tags": [
         "New find",
@@ -7148,7 +7136,7 @@
         "source": "IKEA measurements: Length20 \"Width20 \""
       },
       "material": "Material100% polyester (min. 90% recycled)CareShrinkage maximum 4%.Machine wash warm, normal cycle.Do not bleach.Tumble dry, low, normal cycle.Do not iron.Do not dry clean.",
-      "short_description": "SVARTPOPPEL Cushion cover - off-white 20x20 \". A perfect match with GURLI cushion covers and DAGGKÅPOR throws. Made of 90% recycled polyester. The polyester fabric is easy-care and retains its softness and colors ‒ wash after wash. The zipper makes the cover easy to remove and ma",
+      "short_description": "20x20 in cushion cover in off-white recycled polyester that keeps its softness and color wash after wash. Zippered.",
       "why_this": "SVARTPOPPEL off-white, textured.",
       "tags": [
         "From my list"
@@ -7215,7 +7203,7 @@
         "source": "IKEA measurements: Length20 \"Width20 \""
       },
       "material": "Material100 % linenCareMachine wash, warm, durable-press cycle.Do not bleach.Do not tumble dry.Iron high.Do not dry clean.",
-      "short_description": "DYTÅG Cushion cover - red-brown 20x20 \". The washed linen quality is soft against the skin and gives a soothing, laid-back look. The hidden zipper makes the cover easy to remove. Fits inner cushions 19⅝x19⅝\". Inner cushion is sold separately.",
+      "short_description": "20x20 in cushion cover in red-brown washed linen, soft and laid-back, with a hidden zipper.",
       "why_this": "DYTÅG red-brown linen look.",
       "tags": [
         "From my list"
@@ -7265,7 +7253,7 @@
         "source": "Product Dimensions 20\"L x 20\"W"
       },
       "material": "Material Chenille",
-      "short_description": "Pattern Plain; Material Chenille; Color Rust; Product Dimensions 20\"L x 20\"W; Style Modern",
+      "short_description": "Set of 2 rust chenille pillow covers, 20x20 in, soft and plain.",
       "why_this": "ZWJD chenille in rust, set of 2; 4.7/5 from 4,518 reviews.",
       "tags": [
         "New find"
@@ -7315,7 +7303,7 @@
         "source": "Piece 1 Dimensions: 20 Inches (L) x 20 Inches (W)"
       },
       "material": "Fill Material: 100% Polyester Fiber; Textile Material: 100% Cotton",
-      "short_description": "",
+      "short_description": "Cream cotton throw pillow with a moire texture, insert included, designed with Studio McGee.",
       "why_this": "Threshold x Studio McGee moiré pillow in cream (insert included).",
       "tags": [
         "New find",
@@ -7364,7 +7352,7 @@
         "source": "Same as the 3D plan: IKEA: 20\" x 20\". Depth ESTIMATED"
       },
       "material": "MaterialFabric:100 % polyester (100% recycled)Filling:100 % polyester - hollow fiber (100% recycled)CareMachine wash warm, normal cycle.Do not bleach.Tumble dry, low, normal cycle.Do not iron.Do not dry clean.",
-      "short_description": "INNER Inner cushion - white/indoor/outdoor 20x20 \". Suitable for both indoor and outdoor use. Made from 100% recycled polyester, with a filling weight of 395 g. Easy to keep clean – machine washable and quick-drying. Suitable for indoor and outdoor use. Filling weight: 395 g (13.",
+      "short_description": "20x20 in inner cushion in recycled polyester for indoor or outdoor use; machine washable and quick drying.",
       "why_this": "INNER 20x20 polyester insert, $9.",
       "tags": [
         "New find"
@@ -7417,7 +7405,7 @@
         "source": "IKEA measurements: Length20 \"Width20 \"Filling weight26 ozTotal weight29 oz"
       },
       "material": "MaterialFabric:100 % cottonFilling material:Duck feathersCareTumble dry after washing until the filling is completely dry.Machine wash warm (max 140°F/60°C) normal cycle.Use 1/3 of the normal amount of detergent when was",
-      "short_description": "FJÄDRAR Inner cushion - off-white 20x20 \". The natural duck feather filling is breathable, durable and will last for many years with proper care. Easy-care and retains its softness over time – just toss it in the wash and tumble dry to restore its fluffy shape. Available in diffe",
+      "short_description": "20x20 in inner cushion with breathable duck feather filling in a cotton cover. Wash and tumble dry to restore its fluffy shape.",
       "why_this": "FJÄDRAR feather insert from your list: the karate-chop look.",
       "tags": [
         "Top pick",
@@ -7470,7 +7458,7 @@
         "source": "Amazon page lists no product dimensions"
       },
       "material": "Fill Material Goose feather and down",
-      "short_description": "Fill Material Goose feather and down; Pillow Type Throw Pillow Insert; Color White; Size 20x20; Brand basic home",
+      "short_description": "20x20 in goose feather and down pillow insert with a 233-thread-count cotton cover and an inner liner to stop poking.",
       "why_this": "basic home goose feather insert; 4.5/5 from 12,312 reviews.",
       "tags": [
         "New find"
@@ -7520,7 +7508,7 @@
         "source": "Amazon page lists no product dimensions"
       },
       "material": "Fill Material 95% Grey Feathers, 5% Grey Down",
-      "short_description": "Fill Material 95% Grey Feathers, 5% Grey Down; Pillow Type Throw Pillow Insert; Color White; Size 20x20 Inch; Brand puredown",
+      "short_description": "20x20 in pillow insert filled with 95% feathers and 5% down, for good support.",
       "why_this": "puredown feather insert, on sale.",
       "tags": [
         "New find",
@@ -7571,7 +7559,7 @@
         "source": "Amazon page lists no product dimensions"
       },
       "material": "Fill Material 95%feather 5% Down",
-      "short_description": "Fill Material 95%feather 5% Down; Pillow Type Throw Pillow Insert; Color White; Size 20x20 Inch (Pack of 2); Brand MIULEE",
+      "short_description": "Set of 2 20x20 in pillow inserts filled with 95% feathers and 5% down, fluffy enough for a chop.",
       "why_this": "MIULEE feather-down inserts, set of 2.",
       "tags": [
         "New find"
@@ -7638,7 +7626,7 @@
         "source": "Quince size 12x20"
       },
       "material": "100% European linen",
-      "short_description": "Refresh your home with our soft, luxurious linen pillow covers. The subtle flange detailing adds a refined, tailored look, adding a textural layer to your room. Made from durable, natural heavyweight linen, these pillow covers are ideal for enhancing",
+      "short_description": "Set of 2 12x20 in lumbar covers in heavyweight natural European linen with a tailored flange edge.",
       "why_this": "Quince linen flange covers, 12x20 set of 2, from your list.",
       "tags": [
         "From my list"
@@ -7688,7 +7676,7 @@
         "source": "IKEA measurements: Length16 \"Width23 \""
       },
       "material": "Material100% polyester (min. 90% recycled)CareShrinkage maximum 4%.Machine wash warm, normal cycle.Do not bleach.Tumble dry, low, normal cycle.Do not iron.Do not dry clean.",
-      "short_description": "SVARTPOPPEL Cushion cover - off-white 16x23 \". A perfect match with GURLI cushion covers and DAGGKÅPOR throws. The zipper makes the cover easy to remove and machine wash. Made of 90% recycled polyester. The polyester fabric is easy-care and retains its softness and colors ‒ wash ",
+      "short_description": "16x23 in cushion cover in off-white recycled polyester, easy care, with a zipper.",
       "why_this": "SVARTPOPPEL 16x23 off-white.",
       "tags": [
         "New find"
@@ -7797,7 +7785,7 @@
         "source": "IKEA measurements: Length16 \"Width23 \""
       },
       "material": "Material100 % polyester (100% recycled)CareShrinkage maximum 4%.Machine wash warm, normal cycle.Do not bleach.Tumble dry, low, normal cycle.Iron low.Do not dry clean.",
-      "short_description": "LAGERPOPPEL Cushion cover - light brown 16x23 \". Made of 100% recycled polyester. The polyester fabric is easy-care and retains its softness and colors ‒ wash after wash. The zipper makes the cover easy to remove and machine wash. Fits inner cushions 15¾x22⅞\". Inner cushion is so",
+      "short_description": "16x23 in cushion cover in light brown recycled polyester, easy care, with a zipper.",
       "why_this": "LAGERPOPPEL light brown, $4.99.",
       "tags": [
         "Top pick",
@@ -7850,7 +7838,7 @@
         "source": "Product Dimensions 20\"L x 12\"W"
       },
       "material": "Material 70% Ramie 30% Cotton",
-      "short_description": "Pattern Plain; Material 70% Ramie 30% Cotton; Color Natural Beige; Product Dimensions 20\"L x 12\"W; Style Modern",
+      "short_description": "12x20 in lumbar pillow covers in natural beige ramie and cotton.",
       "why_this": "Foindtower linen 12x20, set of 2; 4.5/5 from 4,498 reviews.",
       "tags": [
         "New find"
@@ -7882,10 +7870,10 @@
       "price": 14.97,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/15696650535",
       "backup_search_url": null,
       "image_file": "images/LB-LUMBAR-06.jpg",
@@ -7900,7 +7888,7 @@
         "source": "Size: 14\" x 24\""
       },
       "material": "Fill material: Polyester; Fabric material name: Cotton; Fabric material percentage: 98",
-      "short_description": "Este cojín decorativo Better Homes &amp; Gardens aporta una textura suave y un aspecto calmado y neutro a tu espacio. El diseño de cuadros tejidos gruesos beige añade profundidad sin dominar tu decoración, lo que facilita superponerlo en una cama o sofá. Su construcción a base de",
+      "short_description": "14x24 in lumbar pillow in a chunky beige woven plaid, mostly cotton, that adds texture without taking over.",
       "why_this": "BH&G beige woven check, 14x24.",
       "tags": [
         "New find"
@@ -7950,7 +7938,7 @@
         "source": "Piece 1 Dimensions: 20 Inches (L) x 14 Inches (W)"
       },
       "material": "Fill Material: 100% Polyester; Textile Material: 85% Cotton, 15% Linen",
-      "short_description": "Weight: 1.3 Pounds",
+      "short_description": "Neutral floral lumbar pillow in cotton and linen, by Threshold.",
       "why_this": "Threshold neutral floral lumbar.",
       "tags": [
         "New find",
@@ -8128,7 +8116,7 @@
         "source": "IKEA measurements: Length67 \"Width51 \""
       },
       "material": "Material60 % cotton, 40 % woolCareHand wash warm water.Do not bleach.Do not iron.Do not dry clean.Line dry.Stretch into shape when wet.",
-      "short_description": "LAPPTÅG Throw - dark gray-green 51x67 \". Handwoven throw with two sides – one side has more wool for extra warmth and the other side has more cotton for cooler comfort. Lovely natural look and tactile feel, goes well with JÄTTEGRAN cushion cover.",
+      "short_description": "Handwoven 51x67 in throw in dark gray-green with a wool-rich side for warmth and a cotton-rich side for cooler nights.",
       "why_this": "LAPPTÅG dark gray-green; reads olive.",
       "tags": [
         "From my list"
@@ -8195,7 +8183,7 @@
         "source": "Quince size 50x70"
       },
       "material": "Organic cotton",
-      "short_description": "Wrap yourself in everyday luxury with our Waffle Throw, thoughtfully crafted from 100% organic cotton for a feel that’s as good for you as it is for the planet. Designed with a plush, lofty texture and waffle weave, this blanket offers breathable com",
+      "short_description": "50x70 in waffle-weave throw in undyed 100% organic cotton, lofty and breathable.",
       "why_this": "Organic waffle throw from your list.",
       "tags": [
         "From my list"
@@ -8254,7 +8242,7 @@
         "source": "Dimensions (Overall): 60 Inches (L), 50 Inches (W)"
       },
       "material": "Textile Material: 100% Recycled Polyester",
-      "short_description": "Fabric Weight Type: Midweight Fabric",
+      "short_description": "Midweight cream knit throw in recycled polyester, designed with Studio McGee.",
       "why_this": "Threshold x Studio McGee knit throw in cream, on sale.",
       "tags": [
         "New find",
@@ -8285,10 +8273,10 @@
       "price": 24.96,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/2602015509",
       "backup_search_url": null,
       "image_file": "images/LB-THROW-05.jpg",
@@ -8320,7 +8308,7 @@
         "source": "Size: 50\" x 72\""
       },
       "material": "",
-      "short_description": "Envuélvete en la manta de punto acogedora Better Homes &amp; Gardens para una capa fácil de calidez y comodidad. Esta manta de 50 x 72 in tiene el tamaño para relajarse en el sofá, añadir al pie de la cama o mantenerse cerca en noches frescas. Está hecho de 50% poliéster y 50% po",
+      "short_description": "50x72 in cozy knit throw in Papyrus Beige, big enough for the sofa or the foot of the bed.",
       "why_this": "BH&G cozy knit throw in papyrus beige.",
       "tags": [
         "New find"
@@ -8354,25 +8342,23 @@
       "on_sale": true,
       "price_checked_date": "2026-10-19",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Amazon: In Stock (national listing; delivery ZIP not set in browser, UNSURE for 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Amazon Oct 21: In Stock, $45.99 (national listing; delivery ZIP not set)",
       "product_url": "https://www.amazon.com/dp/B0DJTJYJF9",
       "backup_search_url": null,
       "image_file": "images/LB-THROW-06.jpg",
       "color_variants": [],
       "dimensions": {
-        "w_in": null,
-        "d_in": null,
-        "h_in": null,
+        "w_in": 50.0,
+        "d_in": 0.5,
+        "h_in": 60.0,
         "estimated": [
-          "w",
-          "d",
-          "h"
+          "d"
         ],
-        "source": "Amazon page lists no product dimensions"
+        "source": "Amazon: Item Dimensions 60 in L x 50 in W; thickness ESTIMATED. Checked in the browser Oct 21, 2026"
       },
       "material": "Material Chenille",
-      "short_description": "Material Chenille; Color Brown; Brand L'AGRATY; Special Feature Breathable, Classic, Decorative, Soft; Style Modern",
+      "short_description": "Chunky hand-knit chenille throw in brown, 50x60 in, soft and breathable.",
       "why_this": "Chunky chenille knit in brown; 4.4/5 from 3,703 reviews.",
       "tags": [
         "New find",
@@ -8405,10 +8391,10 @@
       "price": 25.0,
       "regular_price": 70.0,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Live on Marketplace, US$25 (was US$70), Santa Monica",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Facebook listing still live on Oct 21 at $25",
       "product_url": "https://www.facebook.com/marketplace/item/1533188118839409/",
       "backup_search_url": "https://www.facebook.com/marketplace/la/search?query=round%20mirror&maxPrice=80",
       "image_file": "images/LR-MIRROR-A.jpg",
@@ -8473,7 +8459,7 @@
         "source": "Same as the 3D plan: Target: 34\" x 34\" x 1.27\""
       },
       "material": "Material: Metal (Frame)",
-      "short_description": "Weight: 15.55 Pounds; Mirror Width: 33.7 Inches; Mirror Height: 33.7 Inches",
+      "short_description": "34 in round wall mirror with a black metal frame, designed with Studio McGee.",
       "why_this": "Threshold x Studio McGee 34 in round, black.",
       "tags": [
         "New find",
@@ -8522,7 +8508,7 @@
         "source": "IKEA measurements: Diameter31 1/2 \""
       },
       "material": "MaterialFrame:Aluminium (min. 70% recycled), AnodizedMirror glass:Glass, Plastic foilCareFrameWipe clean using a damp cloth and a mild cleaner.Wipe clean with a dry cloth.Mirror glassWipe clean with a damp cloth. Use onl",
-      "short_description": "LINDBYN Mirror - black 31 1/2 \". Fits anywhere in the home and is also tested and approved for bathrooms. A mirror on the wall helps add depth to a room and makes it more dynamic. Provided with safety film - reduces damage if glass is broken.",
+      "short_description": "31 1/2 in round mirror with a slim black aluminum frame; approved for bathrooms and backed with safety film.",
       "why_this": "LINDBYN 31.5 in round, black.",
       "tags": [
         "From my list",
@@ -8582,7 +8568,7 @@
         "source": "IKEA measurements: Depth3/4 \"Diameter31 1/2 \""
       },
       "material": "MaterialMirror glass:Glass, Plastic foilFrame:Aluminum, Aluminum, Plastic foil",
-      "short_description": "EDSGARN Mirror - oak effect 31 1/2 \". Fits anywhere in the home and is also tested and approved for bathrooms. A mirror on the wall helps add depth to a room and makes it more dynamic. Provided with safety film - reduces damage if glass is broken.",
+      "short_description": "31 1/2 in round mirror with an oak-effect frame; approved for bathrooms and backed with safety film.",
       "why_this": "EDSGARN 31.5 in, oak effect.",
       "tags": [
         "From my list",
@@ -8628,7 +8614,7 @@
         "source": "IKEA measurements: Depth3 7/8 \"Diameter31 1/2 \""
       },
       "material": "MaterialMirror glass:Glass, Plastic foilFrame:Layer-glued wood veneer, Walnut veneer, Tinted lacquerCareWoodWipe dry with a clean cloth.Wipe clean with a water dampened cloth.GlassWipe clean with a damp cloth. Use only w",
-      "short_description": "STOCKHOLM Mirror - walnut veneer 31 1/2 \". The frame around the bottom of the mirror forms a shelf where you can put your make up, mobile phone or wallet. Provided with safety film - reduces damage if glass is broken. Do not use the frame as a shelf for candles.",
+      "short_description": "31 1/2 in round mirror in walnut veneer whose frame forms a small shelf at the bottom. Backed with safety film.",
       "why_this": "STOCKHOLM walnut veneer, 31.5 in: the upgrade.",
       "tags": [
         "From my list",
@@ -8679,7 +8665,7 @@
         "source": "Product Dimensions 24\"L x 24\"W"
       },
       "material": "",
-      "short_description": "Brand WallBeyond; Room Type Bathroom, Bedroom, Entryway, Hallway, Living Room; Shape Round; Product Dimensions 24\"L x 24\"W; Frame Material Wood",
+      "short_description": "24 in round wall mirror with a natural wood frame.",
       "why_this": "WallBeyond 24 in round wood; 4.7/5 from 892 reviews.",
       "tags": [
         "New find",
@@ -8721,14 +8707,14 @@
       "image_file": "images/LB-MIRROR-05.jpg",
       "color_variants": [],
       "dimensions": {
-        "w_in": 16.0,
+        "w_in": 30.0,
         "d_in": 1.5,
-        "h_in": 16.0,
+        "h_in": 30.0,
         "estimated": [],
-        "source": "Dimensions (Overall): 16 Inches (H) x 16 Inches (W) x 1.5 Inches (D)"
+        "source": "Target page data: size 30 in maps to this item (A-76543602): Dimensions (Overall) 30 x 30 x 1.5 in, 12.5 lb, glass 28.75 in. Checked in the browser Oct 21, 2026"
       },
-      "material": "Material: MDF (Medium-Density Fiberboard), Veneer (Frame)",
-      "short_description": "Weight: 3.3 Pounds; Mirror Width: 15.25 Inches; Mirror Height: 15.25 Inches",
+      "material": "MDF frame with wood veneer",
+      "short_description": "30 in round wall mirror with a natural wood-veneer frame, by Hearth & Hand. Mounting hardware included.",
       "why_this": "Hearth & Hand round wood frame, natural.",
       "tags": [
         "New find",
@@ -8739,7 +8725,7 @@
       "condition": "new",
       "taxed": true,
       "notes": [
-        "UNSURE: title says 30 in but the spec list says 16 x 16 in"
+        "Size confirmed Oct 21: 30 in. The 16 in specs on the page belong to the smaller size"
       ],
       "used_label": null,
       "main_color_hex": "#CACACA",
@@ -8760,10 +8746,10 @@
       "price": 35.0,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Live on Marketplace, US$35, Oxnard",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Facebook listing still live on Oct 21 at $35",
       "product_url": "https://www.facebook.com/marketplace/item/1107899645122803/",
       "backup_search_url": "https://www.facebook.com/marketplace/la/search?query=large%20wall%20art&maxPrice=100",
       "image_file": "images/LR-ART-A.jpg",
@@ -8831,7 +8817,7 @@
         "source": "Same as the 3D plan: Target: 16\" H x 47\" W. Depth ESTIMATED"
       },
       "material": "Material: Polystyrene",
-      "short_description": "Color Tone: Medium",
+      "short_description": "Large 47x16 in framed landscape print in medium tones, designed with Studio McGee.",
       "why_this": "Threshold x Studio McGee 47x16 in landscape for over the sofa.",
       "tags": [
         "New find",
@@ -8877,7 +8863,7 @@
         "source": "Same as the 3D plan: IKEA: frame 16 1/2\" x 20 1/2\" x 1 1/4\""
       },
       "material": "MaterialPoster:80 % polyester (100% recycled), 20 % linenFrame:Fiberboard, Paper foilCareClean with a duster.",
-      "short_description": "BLODFLÄDER Picture - two birds 15 ¾x19 ¾ \". Motif created by Maja Gunnarsdottir. The picture has an extra depth that makes it stand out from the wall in an attractive way. The picture has extra depth and life because it's printed on high quality canvas.",
+      "short_description": "Framed canvas picture of two birds by Maja Gunnarsdottir; the deep canvas stands out from the wall.",
       "why_this": "BLODFLÄDER two birds in an oak-effect frame for above the bed.",
       "tags": [
         "New find"
@@ -8930,7 +8916,7 @@
         "source": "Same as the 3D plan: IKEA: set of 3 canvases, each 22\" x 22\" (package quantity 3). Canvas depth ESTIMATED. Hung in a row with 1.5\" gaps it is about 69\" wide, wider than the 58\" headboard"
       },
       "material": "MaterialPoster:100 % polyesterInside frame:FiberboardCareClean with a duster.",
-      "short_description": "PJÄTTERYD Picture - Swedish sand dunes 22x22 \". Motif created by Irika Sandström. The picture has extra depth and life because it's printed on high quality canvas. The picture stands out from the wall in an attractive way because it continues around the edges of the canvas.",
+      "short_description": "Set of 3 canvas pictures of Swedish sand dunes by Irika Sandstrom, 22x22 in each; the print wraps around the edges.",
       "why_this": "PJÄTTERYD Swedish sand dunes, 22x22 in.",
       "tags": [
         "New find"
@@ -8980,7 +8966,7 @@
         "source": "IKEA measurements: Frame height36 ½ \"Frame width24 ¾ \"Mat opening, height27 ¼ \"Mat opening, width19 ¼ \"Picture with mat, height27 ½ \"Picture with mat, width19 ¾ \"Picture without mat, height36 \"Pictur"
       },
       "material": "MaterialMat:PaperFrame/ Inside frame:Fiberboard, Paper foilFront protection:PolystyreneCareClean with a duster.",
-      "short_description": "RÖDALM Frame - oak effect 24x36 \". You can choose to frame your picture in different ways – close to the front or behind the inner frame to add depth. And with or without the included mount. With ALFTA adhesive hook you can easily hang this frame without nails or screws. Mount in",
+      "short_description": "Oak-effect 24x36 in frame with an included mat; frame your picture close to the front or set back for depth.",
       "why_this": "RÖDALM 24x36 oak-effect frame for your own print.",
       "tags": [
         "From my list"
@@ -9027,10 +9013,10 @@
         "estimated": [
           "h"
         ],
-        "source": "IKEA measurements: Length45 1/4 \"Depth4 3/4 \"Max. load16.53 lb"
+        "source": "IKEA measurements: Length 45 1/4 in, Depth 4 3/4 in; height not listed. Checked in the browser Oct 21, 2026"
       },
       "material": "MaterialFiberboard, Paper foilCareWipe clean with a dry cloth.",
-      "short_description": "MOSSLANDA Picture ledge - oak effect 45 1/4 \". The picture ledge has a special groove to keep smaller frames at the perfect angle. The picture ledge makes it easy to vary your favorite motifs as often as you like. Can be fixed with suitable screws/fittings from our TRIXIG series.",
+      "short_description": "Oak-effect picture ledge with a groove that holds frames at an angle, so you can swap art easily.",
       "why_this": "MOSSLANDA 45 in oak-effect ledge to layer frames.",
       "tags": [
         "From my list"
@@ -9080,7 +9066,7 @@
         "source": "IKEA measurements: Width70 ½ \"Height44 \""
       },
       "material": "MaterialPoster:100 % polyesterInside frame:FiberboardCareClean with a duster.",
-      "short_description": "PJÄTTERYD Picture, set of 9 - Mist in the forest 70 ½x44 \". Motif created by Ian Winstanley. The included collage template and coordinated motifs make it easy to create your own personal wall collage. You can personalize your home with artwork that expresses your style.",
+      "short_description": "Set of 9 coordinated pictures, Mist in the forest, by Ian Winstanley, with a template for hanging the collage.",
       "why_this": "PJÄTTERYD set of 9 forest prints.",
       "tags": [
         "From my list"
@@ -9112,10 +9098,10 @@
       "price": 25.99,
       "regular_price": 39.89,
       "on_sale": true,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/2871299567",
       "backup_search_url": null,
       "image_file": "images/LR-PLANT-A.jpg",
@@ -9131,7 +9117,7 @@
         "source": "Same as the 3D plan: Walmart: 4 ft (48\") tall. Canopy width 20\" is ESTIMATED (not published)"
       },
       "material": "Body material: Plastic and Wood; Material: Plastic and Concrete",
-      "short_description": "Haz clic aquí para más plantas.   Si eres fanático de la naturaleza y quieres traer un ambiente tropical a tu hogar, pero te falta el tiempo y la experiencia para cuidar un árbol real, entonces no querrás perderte este hermoso olivo artificial.   DR.Planzen es una empresa que se ",
+      "short_description": "4 ft artificial olive tree in a pot, for an easy-care touch of green.",
       "why_this": "DR.Planzen 4 ft olive tree, $25.99.",
       "tags": [
         "Top pick",
@@ -9169,10 +9155,10 @@
       "price": 14.97,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/5066677723",
       "backup_search_url": null,
       "image_file": "images/BR-PLANT-A.jpg",
@@ -9188,7 +9174,7 @@
         "source": "Same as the 3D plan: Walmart: 14\" tall. Width 10\" ESTIMATED"
       },
       "material": "Material: Ceramic; Body material: Polyester",
-      "short_description": "Esta planta de olivo artificial para interiores de 14 in aporta un toque decorativo terminado a espacios pequeños sin ningún arreglo. Colocado en un florero de cerámica de dos tonos, está listo para colocarse sobre una mesa de centro, estante, mesa auxiliar, escritorio, alféizar ",
+      "short_description": "14 in artificial olive plant in a two-tone ceramic vase, ready for a shelf, desk or table.",
       "why_this": "BH&G 14 in olive in a ceramic pot for the desk.",
       "tags": [
         "New find"
@@ -9236,7 +9222,7 @@
         "source": "IKEA measurements: Diameter of plant pot4 ¾ \"Height of plant12 ½ \""
       },
       "material": "MaterialPlant:100 % PEVA, Polyethylene plastic (min. 70% recycled)Inner plant pot:Polypropylene plastic (min. 70% recycled)CareWipe clean with a damp cloth.",
-      "short_description": "FEJKA Artificial potted plant - indoor/outdoor monstera 4 ¾ \". Lifelike artificial plant that remains looking fresh year after year. Perfect if you can't have a live plant, but still want to enjoy the beauty of nature. Suitable for indoor and outdoor use.",
+      "short_description": "Small artificial monstera in a 4 3/4 in pot that stays fresh year after year; indoor or outdoor.",
       "why_this": "FEJKA monstera, small.",
       "tags": [
         "From my list"
@@ -9284,7 +9270,7 @@
         "source": "IKEA measurements: Diameter of plant pot7 ½ \"Height of plant35 ½ \""
       },
       "material": "MaterialPlant:100 % PEVA, Polyethylene plastic (min. 20% recycled), Steel, PaintInner plant pot:Polypropylene plastic (min. 70% recycled), Polypropylene plastic (min. 70% recycled), Polyethylene, Non-potable waterCareWip",
-      "short_description": "FEJKA Artificial potted plant - indoor/outdoor monstera 7 ½ \". Lifelike artificial plant that remains looking fresh year after year. Perfect if you can't have a live plant, but still want to enjoy the beauty of nature. Suitable for indoor and outdoor use.",
+      "short_description": "Artificial monstera in a 7 1/2 in pot that stays fresh year after year; indoor or outdoor.",
       "why_this": "FEJKA monstera, large.",
       "tags": [
         "From my list"
@@ -9331,10 +9317,10 @@
         "estimated": [
           "h"
         ],
-        "source": "IKEA measurements: Diameter of plant pot7 ½ \""
+        "source": "IKEA measurements: plant pot diameter 7 1/2 in; plant height not listed. Checked in the browser Oct 21, 2026"
       },
       "material": "MaterialLeaf:EVA plastic, Polyethylene plastic (min. 50% recycled)Stem:Steel, Polyethylene plastic (min. 50% recycled), PaintInner plant pot:Polypropylene plastic (min. 70% recycled), Non-potable water, PolyethyleneCareW",
-      "short_description": "FEJKA Artificial potted plant - indoor/outdoor Winterbourn 7 ½ \". Lifelike artificial plant that remains looking fresh year after year. Perfect if you can't have a live plant, but still want to enjoy the beauty of nature. Suitable for indoor and outdoor use.",
+      "short_description": "Artificial Winterbourn plant in a 7 1/2 in pot that stays fresh year after year; indoor or outdoor.",
       "why_this": "FEJKA Winterbourn.",
       "tags": [
         "From my list"
@@ -9382,7 +9368,7 @@
         "source": "IKEA measurements: Diameter of plant pot7 ½ \"Height of plant59 \""
       },
       "material": "MaterialLeaf:100 % polyester (100% recycled), Polyethylene plastic (min. 50% recycled)Stem:Polyethylene plastic (min. 50% recycled), Steel, PaintInner plant pot:Polypropylene plastic (min. 70% recycled), Polyethylene, No",
-      "short_description": "FEJKA Artificial potted plant - indoor/outdoor eucalyptus 7 ½ \". Lifelike artificial plant that remains looking fresh year after year. Perfect if you can't have a live plant, but still want to enjoy the beauty of nature. Suitable for indoor and outdoor use.",
+      "short_description": "Tall artificial eucalyptus in a 7 1/2 in pot that stays fresh year after year; indoor or outdoor.",
       "why_this": "FEJKA eucalyptus, your list's top pick.",
       "tags": [
         "From my list"
@@ -9430,7 +9416,7 @@
         "source": "Product Dimensions 60\"D x 9.45\"W x 9.45\"H"
       },
       "material": "Material Plastic",
-      "short_description": "Brand VIVATREES; Product Dimensions 60\"D x 9.45\"W x 9.45\"H; Color 5ft With Planter; Material Plastic; Item Weight 4.67 kg; Item Package Quantity 1",
+      "short_description": "5 ft artificial olive tree with a natural wood trunk, faux fruit and a tall white planter.",
       "why_this": "VIVATREES 5 ft olive in a planter; 4.5/5 from 2,827 reviews.",
       "tags": [
         "New find"
@@ -9462,10 +9448,10 @@
       "price": 14.96,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/342180027",
       "backup_search_url": null,
       "image_file": "images/LR-CABLE-A.jpg",
@@ -9478,7 +9464,7 @@
         "source": "Same as the 3D plan: Walmart: raceway 1\" x 1/2\", 54\" total length (cut to fit)"
       },
       "material": "",
-      "short_description": "El Wire Trak Wire Management Kit es la solución perfecta de “hazlo tú mismo” (DIY) para ocultar y asegurar cables y alambres en tu hogar u oficina. No se requieren herramientas para la instalación, solo despega y pega en su lugar. Nuestro kit de gestión de cables es perfecto para",
+      "short_description": "Peel-and-stick cord raceway kit, 54 in, that hides cables with no tools needed.",
       "why_this": "Wire Trak 54 in peel-and-stick raceway.",
       "tags": [
         "Top pick",
@@ -9515,27 +9501,23 @@
       "price": 10.5,
       "regular_price": 19.0,
       "on_sale": true,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/517115930",
       "backup_search_url": null,
       "image_file": "images/LB-CABLE-01.jpg",
       "color_variants": [],
       "dimensions": {
-        "w_in": null,
-        "d_in": null,
-        "h_in": null,
-        "estimated": [
-          "w",
-          "d",
-          "h"
-        ],
-        "source": "Cable length: 150 in"
+        "w_in": 150.0,
+        "d_in": 1.13,
+        "h_in": 0.69,
+        "estimated": [],
+        "source": "Walmart: each cover (L) 25 in x (W) 1.13 in x (H) 0.69 in; 6 covers = 150 in coverage. Checked in the browser Oct 21, 2026"
       },
       "material": "Material: Plastic",
-      "short_description": "El Kit Organizador de Cable Raceway para Montaje en Pared de Simple Cord es una opción inteligente y efectiva para mantener los cables eléctricos ordenados y ocultos de forma segura. Todas las piezas de cubierta de cable se pueden pintar para integrarse discretamente en tu pared ",
+      "short_description": "Paintable white cord hider kit: six 25 in covers plus connectors for 150 in of coverage. Mounts with adhesive tape or screws.",
       "why_this": "SimpleCord set of 6 from your list (on sale); the original listing is out of stock.",
       "tags": [
         "From my list",
@@ -9586,7 +9568,7 @@
         "source": "Product Dimensions 157\"L x 0.95\"W"
       },
       "material": "Material Plastic",
-      "short_description": "Brand Delamu; Color White; Material Plastic; Style wall cord hider; Product Dimensions 157\"L x 0.95\"W",
+      "short_description": "157 in of white cord covers for hiding wires on the wall.",
       "why_this": "Delamu 157 in paintable cord hider; 4.5/5 from 42,264 reviews.",
       "tags": [
         "New find",
@@ -9637,7 +9619,7 @@
         "source": "Product Dimensions 15.7\"L x 0.59\"W"
       },
       "material": "Material Polyvinyl Chloride",
-      "short_description": "Brand D-Line; Color White; Material Polyvinyl Chloride; Product Dimensions 15.7\"L x 0.59\"W; Installation Type Self-Adhesive",
+      "short_description": "Paintable white self-adhesive cord cover kit: ten 15.7 in lengths plus 19 accessories.",
       "why_this": "D-Line 157 in paintable kit.",
       "tags": [
         "New find"
@@ -9687,7 +9669,7 @@
         "source": "Product Dimensions 315\"L x 1\"W"
       },
       "material": "Material Polyvinyl Chloride",
-      "short_description": "Brand A+ ELECTRIC; Color White; Material Polyvinyl Chloride; Style 315\" Full Kit for 3-4 Cables; Product Dimensions 315\"L x 1\"W",
+      "short_description": "Paintable white self-adhesive cable raceway kit, 315 in in 20 snap-on channels, for 3 to 4 cables.",
       "why_this": "A+ Electric 315 in kit, on sale.",
       "tags": [
         "New find",
@@ -9736,7 +9718,7 @@
         "source": "IKEA measurements: Diameter17 \"Height2 \""
       },
       "material": "MaterialFrame:Beech veneer, Walnut veneer, OilBottom:Beech plywood, Walnut veneer, OilCareWipe clean with a damp cloth.Wipe dry with a clean cloth.To extend the lifespan of the product, treat it with vegetable oil from t",
-      "short_description": "OMBONAD Tray - walnut 17 \". This series has everything you need for your dining table – from plates, bowls and glasses to serving plates, napkins and a tablecloth. The tray is both practical for serving and decorative on its own.",
+      "short_description": "17 in round walnut veneer tray, practical for serving and decorative on its own.",
       "why_this": "OMBONAD walnut tray, 17 in.",
       "tags": [
         "Top pick",
@@ -9787,7 +9769,7 @@
         "source": "IKEA measurements: Diameter15 \""
       },
       "material": "MaterialStainless steel, MetallizedCareWipe clean with a damp cloth.",
-      "short_description": "GLATTIS Tray - brass color 15 \". The protective edge keeps your items from sliding off and makes the tray easier to carry. The material in this product may be recyclable. Please check the recycling rules in your community and if recycling facilities exist in your area.",
+      "short_description": "15 in round brass-color tray with a protective edge that keeps things from sliding off.",
       "why_this": "GLATTIS brass tray: the soft-brass accent.",
       "tags": [
         "New find"
@@ -9819,27 +9801,23 @@
       "price": 19.86,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/17501510929",
       "backup_search_url": null,
       "image_file": "images/LB-TRAY-03.jpg",
       "color_variants": [],
       "dimensions": {
-        "w_in": null,
-        "d_in": null,
-        "h_in": null,
-        "estimated": [
-          "w",
-          "d",
-          "h"
-        ],
-        "source": ""
+        "w_in": 16.4,
+        "d_in": 16.4,
+        "h_in": 2.25,
+        "estimated": [],
+        "source": "Walmart: round, 16.4 in wide and 2.25 in high. Checked in the browser Oct 21, 2026"
       },
       "material": "Material: Wood",
-      "short_description": "Esta bandeja decorativa de madera acanalada añade un estilo cálido y natural a tu espacio. El acabado en nogal y la forma redonda crean un acento pulido que funciona bien con la decoración moderna. úsalo para superponer textura en una mesa, encimera o estante, o para crear una ex",
+      "short_description": "Round ribbed wood tray in walnut finish, 16.4 in across, for layering texture on a table or shelf.",
       "why_this": "BH&G fluted wood tray in walnut, $19.86.",
       "tags": [
         "New find"
@@ -9871,10 +9849,10 @@
       "price": 28.86,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/1315880229",
       "backup_search_url": null,
       "image_file": "images/LB-TRAY-04.jpg",
@@ -9937,7 +9915,7 @@
         "source": "Dimensions (Overall): 20 Inches (L), 1.75 Inches (W) x 20 Inches (D)"
       },
       "material": "Material: Mango Wood",
-      "short_description": "",
+      "short_description": "Dark brown mango wood tray with a braided edge, designed with Studio McGee.",
       "why_this": "Threshold x Studio McGee braided-edge wood tray, dark brown.",
       "tags": [
         "New find",
@@ -9985,7 +9963,7 @@
         "source": "Same as the 3D plan: Target: 8.86\" H x 5.39\" W. Depth taken equal to width (hexagon) ESTIMATED"
       },
       "material": "Material: Ceramic",
-      "short_description": "Weight: 2.75 Pounds",
+      "short_description": "Short hexagon ceramic vase, designed with Studio McGee.",
       "why_this": "Threshold x Studio McGee short hexagon ceramic vase.",
       "tags": [
         "New find",
@@ -10031,7 +10009,7 @@
         "source": "IKEA measurements: Diameter9 ½ \"Height7 ¾ \""
       },
       "material": "MaterialGlassCareWipe dry with a clean cloth.Handwash only.",
-      "short_description": "STOCKHOLM 2025 Vase - brown 7 ¾ \". A beautiful vase, but also a mouth-blown work of art created by a skilled glassblower that is guaranteed to be an eye-catcher with its irregular organic shape and brown color. This vase is extra scratch-resistant as the glass is colored through.",
+      "short_description": "Mouth-blown brown glass vase with an irregular organic shape; the glass is colored through, so it resists scratches.",
       "why_this": "STOCKHOLM 2025 brown vase.",
       "tags": [
         "Top pick",
@@ -10080,7 +10058,7 @@
         "source": "IKEA measurements: Diameter5 ¾ \"Height8 ¾ \""
       },
       "material": "MaterialStoneware, Colored glazeCareRecommended to hand wash only.",
-      "short_description": "PÄRLHÄGG Vase - beige 8 ¾ \". Bold and rounded expressive shapes combined with minimalist lines give this vase a contemporary sculptural look. The narrow cylindrical opening gathers the flowers and holds them together beautifully.",
+      "short_description": "Beige stoneware vase with a rounded sculptural shape and a narrow opening that holds stems together.",
       "why_this": "PÄRLHÄGG beige, $14.99.",
       "tags": [
         "New find"
@@ -10128,7 +10106,7 @@
         "source": "IKEA measurements: Diameter7 \"Height9 ¾ \""
       },
       "material": "MaterialStoneware, Colored glazeCareHandwash only.",
-      "short_description": "BLODBJÖRK Vase - beige 9 ¾ \". The round shape creates a generous volume, while the narrow opening gathers the flowers beautifully, whether you choose a few or many. Use at home in the living room or in public spaces like offices where you want to create a contemporary yet refined",
+      "short_description": "Round beige stoneware vase with a narrow opening that gathers a few stems or many.",
       "why_this": "BLODBJÖRK beige, 9.75 in.",
       "tags": [
         "New find"
@@ -10176,7 +10154,7 @@
         "source": "IKEA measurements: Diameter6 ¼ \"Height8 ¼ \""
       },
       "material": "MaterialStoneware, Colored glazeCareRecommended to hand wash only.",
-      "short_description": "KOPPARBJÖRK Vase - light brown 8 ¼ \". Generous and steady vase suitable for single flowers as well as bouquets and twigs. Use the vase with flowers or alone, as a beautiful object in its own right.",
+      "short_description": "Light brown stoneware vase, steady enough for single flowers, bouquets or twigs, or on its own.",
       "why_this": "KOPPARBJÖRK light brown.",
       "tags": [
         "New find"
@@ -10208,10 +10186,10 @@
       "price": 19.86,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/19525453560",
       "backup_search_url": null,
       "image_file": "images/LB-VASE-05.jpg",
@@ -10224,7 +10202,7 @@
         "source": "Walmart: Assembled product dimensions (l x w x h) 8.25 x 8.25 x 9.25 in"
       },
       "material": "Material: Ceramic",
-      "short_description": "Presentamos el Better Homes and Gardens 9.25\"H Ceramic Chic Neutral Vase. Este jarrón es una forma fácil y sorprendente de añadir un toque de sensación elegante y encanto a cualquier habitación de tu hogar. Este hermoso florero aporta la alegría de lo elegante a interiores. El fl",
+      "short_description": "9.25 in neutral ceramic vase from Better Homes & Gardens.",
       "why_this": "BH&G neutral ceramic, 9.25 in.",
       "tags": [
         "New find"
@@ -10283,7 +10261,7 @@
         "source": "Dimensions (Overall): 6.75 Inches (H) x 7.75 Inches (W)"
       },
       "material": "Material: Terracotta",
-      "short_description": "Weight: 4.62 Pounds",
+      "short_description": "Short carved terracotta vase, designed with Studio McGee.",
       "why_this": "Threshold x Studio McGee short carved ceramic vase.",
       "tags": [
         "New find",
@@ -10362,7 +10340,7 @@
         "source": "Same as the 3D plan: Target: 2.36\" H x 4.13\" W x 4.13\" D"
       },
       "material": "Container Material: Ceramic; Material: Paraffin Wax, Soy Wax",
-      "short_description": "Weight: 6 Ounces",
+      "short_description": "Small perforated ceramic jar candle in cream, Oak and Embers scent, 6 oz, by Hearth & Hand.",
       "why_this": "Hearth & Hand perforated ceramic candle, Oak and Embers.",
       "tags": [
         "New find",
@@ -10411,7 +10389,7 @@
         "source": "Same as the 3D plan: Target: 3.15\" H x 3.03\" W x 3.03\" D"
       },
       "material": "Container Material: Ceramic; Material: Soy Wax Blend",
-      "short_description": "Weight: 32 Ounces",
+      "short_description": "Ceramic jar candle, Cypress and Santal scent, 6 oz soy wax blend, by Hearth & Hand.",
       "why_this": "Hearth & Hand Cypress and Santal ceramic candle.",
       "tags": [
         "Top pick",
@@ -10462,7 +10440,7 @@
         "source": "Dimensions (Overall): 3.46 Inches (H) x 3.07 Inches (W)"
       },
       "material": "Container Material: Ceramic; Material: Soy Wax Blend",
-      "short_description": "Weight: 6 Ounces",
+      "short_description": "Medium ceramic candle with a wooden wick in Marshmallow Suede, soy wax blend, by Threshold.",
       "why_this": "Threshold wooden-wick ceramic candle, Marshmallow Suede.",
       "tags": [
         "New find",
@@ -10501,18 +10479,14 @@
       "image_file": "images/LB-CANDLE-02.jpg",
       "color_variants": [],
       "dimensions": {
-        "w_in": null,
-        "d_in": null,
-        "h_in": null,
-        "estimated": [
-          "w",
-          "d",
-          "h"
-        ],
-        "source": "IKEA measurements: "
+        "w_in": 2.5,
+        "d_in": 2.5,
+        "h_in": 5.75,
+        "estimated": [],
+        "source": "IKEA product details: 5 candles, (H x diameter) 3.5x2.375, 4.75x2.375, 5.75x2.375, 3x2.5, 5x2.5 in; the 3D size is the largest candle. Checked in the browser Oct 21, 2026"
       },
       "material": "Materialparaffin wax, plant based waxCareKeep in a cool, dry place, away from heat sources.",
-      "short_description": "FENOMEN Unscented pillar candle, set of 5 - natural. The set includes 5 candles in different heights, a convenient way to create beautiful arrangements on a large candle dish. Block candles have a long burn time – so you can enjoy their glow for longer. Never leave a burning cand",
+      "short_description": "Set of 5 unscented natural pillar candles in different heights, for grouping on a tray. Long burn time.",
       "why_this": "FENOMEN unscented pillars, set of 5, natural.",
       "tags": [
         "New find"
@@ -10555,16 +10529,15 @@
       "dimensions": {
         "w_in": null,
         "d_in": null,
-        "h_in": null,
+        "h_in": 11.4,
         "estimated": [
           "w",
-          "d",
-          "h"
+          "d"
         ],
-        "source": "IKEA measurements: "
+        "source": "IKEA product details: 2 candlesticks, 9.8 in and 11.4 in tall; base diameter not listed. Checked in the browser Oct 21, 2026"
       },
       "material": "MaterialCandleholder:GlassCandlecup:Aluminum",
-      "short_description": "BLOMSTER Candlestick, set of 2 - brown. Enhance your table setting with these decorative glass candlesticks in a warm brown tone. Offers both mood lighting and is beautiful on its own. Comprises: 2 candlesticks (height 9.8 in and 11.4 in).",
+      "short_description": "Set of 2 brown glass candlesticks, 9.8 in and 11.4 in tall, for warm mood lighting.",
       "why_this": "BLOMSTER brown candlesticks, set of 2.",
       "tags": [
         "New find"
@@ -10612,7 +10585,7 @@
         "source": "IKEA measurements: Height15 ¼ \"Diameter21 ¼ \""
       },
       "material": "MaterialBasket/ Binding:Rattan, Clear lacquerFeet:Polyethylene, Steel, GalvanizedCareWipe clean with a dry cloth.",
-      "short_description": "SNIDAD Basket - rattan 21 ¼x15 ¼ \". A slightly larger size that you can have on the floor for pillows, throws and other things that you want close at hand. Rattan is a natural material which ages beautifully and develops its own unique character over time. Recommended for indoor ",
+      "short_description": "Large rattan floor basket for pillows and throws; the rattan ages beautifully.",
       "why_this": "SNIDAD rattan basket for throws by the sofa.",
       "tags": [
         "Top pick",
@@ -10661,7 +10634,7 @@
         "source": "IKEA measurements: Width12 ½ \"Depth13 \"Height12 ½ \""
       },
       "material": "MaterialSeagrass, Clear acrylic lacquer, Steel, Epoxy/polyester powder coatingCareThe material can dry out and deteriorate if placed near a heat source.",
-      "short_description": "KNIPSA Basket - seagrass 12 ½x13x12 ½ \". Perfect for newspapers, photos or other memorabilia. Sea grass has natural color variations which makes every basket unique. The box fits perfectly in KALLAX shelf. Each basket is woven by hand and is therefore unique.",
+      "short_description": "Handwoven seagrass basket with natural color variations; fits a KALLAX shelf.",
       "why_this": "KNIPSA seagrass.",
       "tags": [
         "New find"
@@ -10709,7 +10682,7 @@
         "source": "IKEA measurements: Width12 ½ \"Depth13 ½ \"Height12 ½ \""
       },
       "material": "MaterialMain parts:Rattan, Clear acrylic lacquerFrame:Solid woodHinges:PolypropyleneStaple/ Screw:Steel, GalvanizedFelt pads:100 % polyesterCareWipe clean with a dry cloth.",
-      "short_description": "BRANÄS Basket - rattan 12 ½x13 ½x12 ½ \". Perfect for newspapers, photos or other memorabilia. Easy to pull out and lift as the basket has handles. Each basket is woven by hand and is therefore unique. The box fits perfectly in KALLAX shelf. Protective pads underneath.",
+      "short_description": "Handwoven rattan basket with handles and protective pads; fits a KALLAX shelf.",
       "why_this": "BRANÄS rattan, fits KALLAX.",
       "tags": [
         "New find"
@@ -10741,10 +10714,10 @@
       "price": 25.92,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/1953770684",
       "backup_search_url": null,
       "image_file": "images/LB-BASKET-04.jpg",
@@ -10757,7 +10730,7 @@
         "source": "Walmart page text: 19.3 in L x 14.2 in W x 16.9 in H"
       },
       "material": "Material: Water Hyacinth; Lining material: No Lining; Handle material: Water Hyacinth",
-      "short_description": "Esta canasta extra grande con forma de barco te brinda una manera fácil de organizar artículos cotidianos mientras añade textura natural a tu espacio. Tejida a mano con jacinto de agua de origen sostenible sobre un marco de acero, combina estilo decorativo con almacenamiento resi",
+      "short_description": "Extra large boat-shaped basket hand-woven from water hyacinth over a steel frame.",
       "why_this": "BH&G water hyacinth boat basket, XL.",
       "tags": [
         "New find"
@@ -10805,7 +10778,7 @@
         "source": "Dimensions (Overall): 11 Inches (H) x 14.25 Inches (W) x 13 Inches (D)"
       },
       "material": "Material: Water Hyacinth",
-      "short_description": "",
+      "short_description": "Large braided water hyacinth basket with faux leather handles, by Threshold.",
       "why_this": "Threshold braided water hyacinth with faux-leather handles.",
       "tags": [
         "New find",
@@ -10835,27 +10808,23 @@
       "price": 22.48,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/6029151914",
       "backup_search_url": null,
       "image_file": "images/LB-BASKET-06.jpg",
       "color_variants": [],
       "dimensions": {
-        "w_in": null,
-        "d_in": null,
-        "h_in": null,
-        "estimated": [
-          "w",
-          "d",
-          "h"
-        ],
-        "source": "Size descriptor: Medium"
+        "w_in": 14.25,
+        "d_in": 11.25,
+        "h_in": 8.5,
+        "estimated": [],
+        "source": "Walmart: about 14.25 in x 11.25 in x 8.5 in. Checked in the browser Oct 21, 2026"
       },
       "material": "Material: Polyester; Lining material: Polyester, Iron; Handle material: Rope",
-      "short_description": "Esta canasta tejida a mano agrega almacenamiento decorativo en un tamaño mediano que cabe fácilmente en un estante, mesa o mostrador. El acabado blanco le da un aspecto limpio y sencillo que funciona bien en dormitorios, salas de estar, salas familiares, closets y baños. Dos asas",
+      "short_description": "Medium hand-woven white rope basket with two handles, sized for a shelf or tabletop.",
       "why_this": "BH&G rope basket (white).",
       "tags": [
         "New find"
@@ -10912,7 +10881,7 @@
         "source": "IKEA measurements: Height20 5/8 \"Diameter17 1/2 \"Max. load22 lb"
       },
       "material": "MaterialSteel, Epoxy/polyester powder coatingCareWipe clean with a damp cloth.Wipe dry with a clean cloth.Check regularly that all assembly fastenings are properly tightened and retighten when necessary.",
-      "short_description": "GLADOM Tray table - black 17 1/2x20 5/8 \". You can use the removable tray for serving. The tray’s edges make it easy to carry and reduces the risk of glasses or bowls sliding off. You can easily lift and move the entire table, for example from the sofa to the reading chair. Only ",
+      "short_description": "Black steel tray table with a removable tray for serving; light enough to move around.",
       "why_this": "GLADOM tray table, black, $19.99.",
       "tags": [
         "Top pick",
@@ -10970,7 +10939,7 @@
         "source": "IKEA measurements: Diameter18 1/8 \"Height under furniture2 3/8 \"Height21 5/8 \"Max. load33 lbMax load/shelf18 lb"
       },
       "material": "MaterialPanel/ Block:Plywood, Birch veneer, Stain, Clear acrylic lacquerSide/ Leg:Layer-glued wood veneer, Birch veneer, Stain, Clear acrylic lacquerCareWipe clean with a damp cloth.Wipe dry with a clean cloth.Check regu",
-      "short_description": "BORGEBY Side table - birch veneer 18 1/8 \". The gently rounded expression is both simple and tastefully elegant, giving the table a sense of balance and harmony. Suitable for use in public environments. Max. load/shelf: 33 lbs. Max load on table top: 33 lbs.",
+      "short_description": "Round birch veneer side table with a gently rounded shape and a lower shelf.",
       "why_this": "BORGEBY birch veneer round.",
       "tags": [
         "New find",
@@ -11019,7 +10988,7 @@
         "source": "IKEA measurements: Diameter21 5/8 \"Height18 7/8 \"Max. load33 lb"
       },
       "material": "MaterialTable top:Particleboard, Oak veneer, Tinted lacquer, Paper foil, Oak veneerLeg:Solid oak, Tinted lacquerCareWipe clean with a damp cloth.Wipe dry with a clean cloth.Check regularly that all assembly fastenings ar",
-      "short_description": "STOCKHOLM 2025 Side table - oak veneer dark-brown 21 5/8 \". Modern Scandinavian design with honest, natural materials and a sleek, elegant shape. The side table is perfect as an extra surface for placing items or for showcasing your favorite items. Max load on table top: 33 lbs.",
+      "short_description": "Round side table in dark-brown oak veneer with solid oak legs, in a sleek Scandinavian shape.",
       "why_this": "STOCKHOLM 2025 dark-brown oak.",
       "tags": [
         "New find",
@@ -11077,7 +11046,7 @@
         "source": "IKEA measurements: Max. load33 lbMax load/shelf11 lbHeight under furniture2 3/4 \"Height20 1/2 \"Length31 1/2 \"Width12 1/4 \""
       },
       "material": "MaterialTop panel/ Bottom panel:Particleboard, Paper foil, Paper foil, Plastic edging, Plastic edgingSide panel/ Shelf/ Partition:Particleboard, Paper foil, Paper foilRail:Fiberboard, Paper foilSupport rail:Fiberboard, P",
-      "short_description": "HOLMERUD Side table - oak effect 31 1/2x12 1/4 \". The clean and stylish architectural form adds character to the room and makes the side table an eye-catcher. Designed to stand snug along the length of the sofa's armrest but can also be placed against a wall. Max load on table to",
+      "short_description": "Narrow oak-effect side table with shelves, made to stand along the sofa's arm or against a wall.",
       "why_this": "HOLMERUD oak-effect, slim 12.25 in deep.",
       "tags": [
         "New find"
@@ -11109,27 +11078,23 @@
       "price": 98.0,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/18555157703",
       "backup_search_url": null,
       "image_file": "images/LB-SIDETABLE-05.jpg",
       "color_variants": [],
       "dimensions": {
-        "w_in": null,
-        "d_in": null,
-        "h_in": null,
-        "estimated": [
-          "w",
-          "d",
-          "h"
-        ],
-        "source": ""
+        "w_in": 18.0,
+        "d_in": 18.0,
+        "h_in": 22.0,
+        "estimated": [],
+        "source": "Walmart: assembled 18 in diameter x 22 in H. Checked in the browser Oct 21, 2026"
       },
       "material": "Top material: Composite Wood; Base material: Composite Wood; Material: Composite Wood",
-      "short_description": "La Better Homes &amp; Gardens Lillian Fluted End Table with Walnut Finish es una incorporación impresionante para tu hogar. Su elegante diseño acanalado aporta sofisticación a cualquier habitación, mezclándose perfectamente con varios estilos de decoración. Con su tamaño compacto",
+      "short_description": "Round fluted side table in walnut finish, 18 in across and 22 in high; holds up to 30 lb.",
       "why_this": "BH&G Lillian fluted side table, walnut.",
       "tags": [
         "New find",
@@ -11162,10 +11127,10 @@
       "price": 71.16,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/14920801298",
       "backup_search_url": null,
       "image_file": "images/LB-SIDETABLE-06.jpg",
@@ -11178,7 +11143,7 @@
         "source": "Walmart: Dimensions 18.00 x 18.00 x 22.00 in"
       },
       "material": "Base material: wood; Top material: wood; Material: Wood",
-      "short_description": "La mesa auxiliar redonda Beautiful Drew aporta una función compacta a tu sala de estar o lounge. Su parte superior de 18 in te brinda un lugar práctico para una bebida, lámpara o decoración sin ocupar mucho espacio en el piso. El acabado Rich Black combina con un aspecto limpio d",
+      "short_description": "Round side table in Rich Black wood with an 18 in top for a drink, lamp or decor.",
       "why_this": "Beautiful by Drew Barrymore round drawn table, rich black.",
       "tags": [
         "New find",
@@ -11227,7 +11192,7 @@
         "source": "Dimensions (Overall): 18 Inches (H) x 14 Inches (W) x 14 Inches (D)"
       },
       "material": "Material: Metal, Wood, Stone (Frame); Tabletop Material: Wood",
-      "short_description": "Weight: 10 Pounds; Frame Color: Multicolored; Tabletop color: Brown",
+      "short_description": "Round side table with a brown wood top on a travertine base, designed with Studio McGee.",
       "why_this": "Threshold x Studio McGee brown top on a travertine base.",
       "tags": [
         "New find",
@@ -11274,7 +11239,7 @@
         "source": "Product Dimensions 11.8\"D x 43.3\"W x 17.3\"H"
       },
       "material": "Material Wood",
-      "short_description": "Product Dimensions 11.8\"D x 43.3\"W x 17.3\"H; Material Wood; Frame Material Wood; Color Natural; Style Farmhouse",
+      "short_description": "Reclaimed solid wood entry bench with a storage shelf, only 11.8 in deep.",
       "why_this": "Reclaimed solid wood, only 11.8 in deep: the safest fit in the 37 in gap.",
       "tags": [
         "Top pick",
@@ -11324,7 +11289,7 @@
         "source": "Product Dimensions 14\"D x 40\"W x 18.2\"H"
       },
       "material": "Material Rubber Wood and Woven Rope Seat",
-      "short_description": "Product Dimensions 14\"D x 40\"W x 18.2\"H; Material Rubber Wood and Woven Rope Seat; Frame Material Rubberwood; Color Light; Style Modern Farmhouse",
+      "short_description": "Rubberwood entry bench in a light finish with a woven rope seat.",
       "why_this": "Alaterre Newport solid wood with woven rope seat, 14 in deep.",
       "tags": [
         "New find",
@@ -11373,7 +11338,7 @@
         "source": "IKEA measurements: Length39 3/8 \"Height17 3/4 \"Seat width39 3/8 \"Tested for243 lbSeat depth9 7/8 \"Seat height17 3/4 \"Depth11 \""
       },
       "material": "MaterialSolid pineCareWipe dry with a clean cloth.Stains can be removed by using an eraser, fine sandpaper, soap, dishwashing detergent or paint thinner.Can be treated with oil, wax, lacquer or glazing paint for higher r",
-      "short_description": "PERJOHAN Bench with storage - pine 39 3/8 \". Place this sturdy wooden bench with storage by the dining table, at the foot of your bed, in your entrance or where you need seating. The storage space lets you utilize your space in the best way. Recommended for indoor use only. Seats",
+      "short_description": "Solid pine bench with storage underneath, for the foot of the bed or the entry.",
       "why_this": "PERJOHAN pine storage bench, 39 3/8 in.",
       "tags": [
         "New find",
@@ -11431,7 +11396,7 @@
         "source": "IKEA measurements: Length47 1/4 \"Width18 1/8 \"Height17 3/4 \"Tested for243 lb"
       },
       "material": "MaterialSolid acacia wood, Clear acrylic lacquerCareWipe clean with a damp cloth.Wipe dry with a clean cloth.Light stains can be removed with a textile cleaner or a damp sponge and a mild soapy solution.For increased sta",
-      "short_description": "SKOGSTA Bench with storage - acacia 47 1/4 \". The bench's warm, earthy tones and organic texture bring a touch of nature indoors, enhancing the overall ambiance of your home. Recommended for indoor use only. Product is possible to recycle or use for energy recovery, if available ",
+      "short_description": "Solid acacia bench with storage in warm, earthy tones.",
       "why_this": "SKOGSTA acacia storage bench, 47.25 in.",
       "tags": [
         "New find",
@@ -11480,7 +11445,7 @@
         "source": "IKEA measurements: Depth14 ½ \"Height18 \"Width47 ¼ \""
       },
       "material": "MaterialSeat frame/ Side frame:Solid pine, Rattan, Clear acrylic lacquerElastic webbing for seat:BambooBottom panel:Fiberboard, Clear acrylic lacquerLeg frame/ Binding:Rattan, Clear acrylic lacquerFeet:PolyethyleneCareWi",
-      "short_description": "TOLKNING Bench with storage - handmade rattan 47 ¼ \". Skilled craftspeople have woven the product by hand, so each one is one of a kind. The material brings a piece of nature into your home and spreads a calm, warm feeling. Works well in the living room, hallway, bedroom – or any",
+      "short_description": "Handwoven rattan bench with storage on a solid pine frame; each one is one of a kind.",
       "why_this": "TOLKNING handmade rattan storage bench.",
       "tags": [
         "New find",
@@ -11513,10 +11478,10 @@
       "price": 98.0,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/5303099442",
       "backup_search_url": null,
       "image_file": "images/LB-BENCH-06.jpg",
@@ -11529,7 +11494,7 @@
         "source": "Walmart page text: 44.5 in L x 18 in D x 18.5 in H"
       },
       "material": "Material: Velvet; Frame material: Wood; Leg material: wood; Fabric material name: Velvet",
-      "short_description": "Este elegante banco en cascada puede añadir un toque sofisticado a cualquier habitación. El Better Homes &amp; Gardens Juliet Velvet Waterfall Bench en Olive está completamente tapizado en una tela de terciopelo lujosamente suave con ricos tonos oliva. Sus elegantes esquinas redo",
+      "short_description": "44.5 in waterfall bench upholstered in soft olive velvet on a wood frame.",
       "why_this": "BH&G Juliet velvet waterfall bench in olive, 44.5 in.",
       "tags": [
         "New find",
@@ -11564,25 +11529,21 @@
       "on_sale": false,
       "price_checked_date": "2026-10-19",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
+      "stock_checked_date": "2026-10-21",
       "stock_note": "Target ship to 90066: IN_STOCK; Culver City Jefferson store: IN_STOCK",
       "product_url": "https://www.target.com/p/lumarco-woven-bench-natural-threshold-8482/-/A-76615522",
       "backup_search_url": null,
       "image_file": "images/LB-BENCH-07.jpg",
       "color_variants": [],
       "dimensions": {
-        "w_in": null,
-        "d_in": null,
-        "h_in": null,
-        "estimated": [
-          "w",
-          "d",
-          "h"
-        ],
-        "source": "Target page lists no overall dimensions"
+        "w_in": 32.0,
+        "d_in": 15.0,
+        "h_in": 16.0,
+        "estimated": [],
+        "source": "Target: Dimensions (Overall) 16 in (H) x 15 in (W) x 32 in (D); Target lists the 32 in length as D, so it is 32 in long and 15 in deep. Checked in the browser Oct 21, 2026"
       },
-      "material": "",
-      "short_description": "",
+      "material": "Solid wood frame; woven cotton seat",
+      "short_description": "Solid wood bench in a natural finish with a woven cotton seat in two neutral tones. No assembly; holds up to 300 lb.",
       "why_this": "Threshold Lumarco woven bench, natural.",
       "tags": [
         "New find",
@@ -11593,7 +11554,9 @@
       "qty_suggested": 1,
       "condition": "new",
       "taxed": true,
-      "notes": [],
+      "notes": [
+        "15 in deep: a little over the 12-14 in guide for the 37 in gap at the bed foot"
+      ],
       "used_label": null,
       "main_color_hex": "#CEC4B6",
       "model_3d_url": null,
@@ -11629,7 +11592,7 @@
         "source": "Product Dimensions 12\"L x 6\"W x 0.78\"H"
       },
       "material": "Material Travertine",
-      "short_description": "Brand Koville; Color Light Beige Travertine; Material Travertine; Product Dimensions 12\"L x 6\"W x 0.78\"H; Shape Rectangular",
+      "short_description": "12x6 in Italian travertine tray in light beige, for a catchall or candles.",
       "why_this": "Koville Italian travertine tray, 12x6 in; 4.8/5 from 610 reviews.",
       "tags": [
         "Top pick",
@@ -11678,7 +11641,7 @@
         "source": "Product Dimensions 5.71\"D x 2.55\"W x 2.32\"H"
       },
       "material": "Material Marble",
-      "short_description": "Material Marble; Product Dimensions 5.71\"D x 2.55\"W x 2.32\"H; Color Light Beige Travertine-7lb; Finish Type Polished; Brand Koville; Number of Pieces 2",
+      "short_description": "Pair of polished light beige travertine bookends, heavy enough to hold books.",
       "why_this": "Koville travertine bookends; 4.7/5 from 685 reviews.",
       "tags": [
         "New find"
@@ -11710,10 +11673,10 @@
       "price": 21.97,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/19555056567",
       "backup_search_url": null,
       "image_file": "images/LB-STONE-03.jpg",
@@ -11726,7 +11689,7 @@
         "source": "Walmart page text: 13.86 in W x 6.69 in D x 1.97 in H"
       },
       "material": "Material: resin",
-      "short_description": "Esta bandeja decorativa para interiores Better Homes &amp; Gardens aporta un aspecto de travertino falso a estantes, mesas y encimeras. Su diseño tallado y forma de cápsula oblonga le dan una presencia limpia y moderna, mientras que el acabado beige, inspirado en piedra, añade un",
+      "short_description": "Carved faux travertine tray in beige resin, with an oblong shape.",
       "why_this": "BH&G carved faux-travertine tray.",
       "tags": [
         "New find"
@@ -11758,10 +11721,10 @@
       "price": 28.99,
       "regular_price": null,
       "on_sale": false,
-      "price_checked_date": "2026-10-19",
+      "price_checked_date": "2026-10-21",
       "in_stock": true,
-      "stock_checked_date": "2026-10-19",
-      "stock_note": "Walmart.com IN_STOCK (location set to 90034, store 5604, next to 90066)",
+      "stock_checked_date": "2026-10-21",
+      "stock_note": "Walmart, opened Oct 21 in a real browser: IN_STOCK, ships to Los Angeles 90034 (browser location; next to 90066)",
       "product_url": "https://www.walmart.com/ip/17581706849",
       "backup_search_url": null,
       "image_file": "images/LB-STONE-04.jpg",
@@ -11774,7 +11737,7 @@
         "source": "Height: 3.15 in"
       },
       "material": "Material: Travertine",
-      "short_description": "Descubre la belleza atemporal de la esfera de mármol travertino amarillo Wabi-Sabi de Artisanal Abode. Esta bola de piedra natural pulida a mano aporta una presencia orgánica y sofisticada a cualquier espacio. Cada esfera muestra los patrones únicos y las sutiles variaciones de c",
+      "short_description": "Polished natural travertine sphere, 3.15 in, each with its own pattern.",
       "why_this": "Polished natural travertine sphere, 3.15 in.",
       "tags": [
         "New find"
@@ -11815,16 +11778,16 @@
       "image_file": "images/LB-STONE-05.jpg",
       "color_variants": [],
       "dimensions": {
-        "w_in": 8.0,
+        "w_in": 12.0,
         "d_in": 8.0,
         "h_in": 1.0,
         "estimated": [
           "h"
         ],
-        "source": "Dimensions (Overall): 12 Inches (L), 8 Inches (W)"
+        "source": "Target: Dimensions (Overall) 12 in (L), 8 in (W); height not listed (ESTIMATED 1 in). Checked in the browser Oct 21, 2026"
       },
       "material": "Material: Marble, Acacia",
-      "short_description": "",
+      "short_description": "8x12 in footed marble tray in warm beige with acacia, by Hearth & Hand.",
       "why_this": "Hearth & Hand footed marble tray, warm beige.",
       "tags": [
         "New find",

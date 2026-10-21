@@ -56,7 +56,7 @@ Every item from your list was opened on its exact product page today. Changes:
 - Walmart BH&G Burlwood coffee table: discontinued (page has no product). Replaced by BH&G Ezra round, $158.
 - IKEA STOCKHOLM 2025 coffee table: the oak/glass version is $299.99; the dark-brown version is $229.99 (shown first, oak/glass as a variant).
 - IKEA STRANDAD floor lamp: you had marked it skip, so it is not included.
-- Walmart KEESFU sconces: now $59.59 for the set of 2 (was $39). A single dark-wood KEESFU is $35.19 on sale.
+- Walmart KEESFU sconces: $59.59 for the set of 2 on Oct 19 (was $39); on Oct 21 they are $42.87 on sale (reg. $49.86). A single dark-wood KEESFU is $35.19 on sale.
 - IKEA STOENSE 4'4"x6'5" and 5'7"x7'10": no longer listed. Replaced by 5x7 and 5x8 rugs from IKEA, Target and Amazon.
 - IKEA TIOKRONA: in stock, but it is 7'10"x9'10", bigger than the 5'x8' rule.
 - Quince Organic Waffle and European Linen duvets: your prices were the Twin size. Full/Queen is $149.90 and $194.
@@ -80,10 +80,10 @@ Every item from your list was opened on its exact product page today. Changes:
 
 ## UNSURE
 
-- UNSURE: Walmart stock was checked with the browser location set to 90034 (Palms, next to 90066; Walmart store 5604), not 90066 itself.
+- UNSURE: Walmart stock was checked with the browser location set to 90034 (Palms, next to 90066; Walmart store 5604), not 90066 itself. Re-checked Oct 21: all 41 Walmart links in stock.
 - UNSURE: Amazon stock is the national listing; the browser had no delivery ZIP set.
 - UNSURE: World Market shows 'Price reduced from $349.99' on the jute rug, but the sale price did not display. $349.99 is used.
-- UNSURE: Target lists the Hearth & Hand 'round wood framed mirror' as 30 in in the title but 16 x 16 in in the specs.
+- RESOLVED Oct 21: the Hearth & Hand round wood mirror link is the 30 in size (30 x 30 x 1.5 in); the 16 in specs belong to the smaller size.
 - UNSURE: Delivery fees for Article and Quince, and whether your IKEA order qualifies for free pickup.
 - UNSURE: Instagram, TikTok, Pinterest and Reddit inspiration could not be verified, so none is included.
 - UNSURE: IKEA As-Is items are store-specific and were not checked.
