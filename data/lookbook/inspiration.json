@@ -1,0 +1,64 @@
+{
+  "checked": "2026-10-19",
+  "note": "Every source below was opened in the browser on Oct 19, 2026 and the creator was read from the page byline or structured data. Instagram, TikTok, Pinterest and Reddit posts could not be verified (login walls or blocked in the browser), so none are listed rather than guessing creators.",
+  "living": [
+    {
+      "title": "I've Moved 11 Times in 10 Years, and This Rental Essential Has Been My Saving Grace",
+      "source_url": "https://www.domino.com/content/wall-sconces/",
+      "creator": "Gabrielle Savoie",
+      "platform": "Domino",
+      "takeaway": "Plug-in wall sconces are the renter's way to get layered, low light without an electrician: exactly the role of the rattan pair on the TV wall."
+    },
+    {
+      "title": "Rental-Friendly Finds Transform This 700-Square-Foot NYC Living Room",
+      "source_url": "https://www.apartmenttherapy.com/living-room-makeover-molding-sconces-ba-37437977",
+      "creator": "Sarah Everett",
+      "platform": "Apartment Therapy",
+      "takeaway": "Renter-friendly upgrades (plug-in sconces, removable details, a better sofa setup) make a standard rental living room feel designed."
+    },
+    {
+      "title": "How to make a brown sofa work in your living room",
+      "source_url": "https://www.idealhome.co.uk/living-room/living-room-ideas/brown-sofa-living-room-ideas-302781",
+      "creator": "Lisa Fazzani",
+      "platform": "Ideal Home",
+      "takeaway": "A chocolate sofa looks richest with earthy neutrals, layered textures and warm reds: cream rug, oat linen curtains and rust pillows."
+    },
+    {
+      "title": "Styling With Shea: The Winter Living Room",
+      "source_url": "https://archive.studio-mcgee.com/style-shea-winter-living-room/",
+      "creator": "Shea McGee (Studio McGee)",
+      "platform": "Studio McGee",
+      "takeaway": "Balance a few dressed-up materials like burl wood and travertine with casual linen and texture: the 'push and pull' behind the tray and stone accents."
+    }
+  ],
+  "bedroom": [
+    {
+      "title": "Everything You Need To Know About Bedroom Styling (Bedroom Styling 101)",
+      "source_url": "https://archive.studio-mcgee.com/bedroom-styling-101/",
+      "creator": "Studio McGee",
+      "platform": "Studio McGee",
+      "takeaway": "Earth-toned bedrooms built from natural materials and layered linen bedding feel calm and designer: linen-look duvet, jute rug, wood nightstand."
+    },
+    {
+      "title": "20 men's bedroom ideas for a sleek and chic retreat",
+      "source_url": "https://www.livingetc.com/spaces/interior-inspiration/bedroom-ideas-for-men-233941",
+      "creator": "Hebe Hatton",
+      "platform": "Livingetc",
+      "takeaway": "Layer textures for softness and go warm with rusty tones: a terracotta or rust layer on the bed and a statement piece of art as the focal point."
+    },
+    {
+      "title": "10 men's bedroom ideas: simple, stylish, sophisticated",
+      "source_url": "https://www.realhomes.com/design/mens-bedroom-ideas",
+      "creator": "Hebe Hatton",
+      "platform": "Real Homes",
+      "takeaway": "Switching the bedding is the fastest upgrade, and natural textures and colors stop a man's bedroom from feeling hard."
+    },
+    {
+      "title": "15+ Mens Bedroom Ideas That Feel Collected, Not Decorated",
+      "source_url": "https://www.osmoz.com/inspiration/osmoz-magazine/1818/15-mens-bedroom-ideas-that-feel-collected-not-decorated",
+      "creator": "OSMOZ team",
+      "platform": "Osmoz Magazine",
+      "takeaway": "Walnut, a desk that actually gets used and warm terracotta make a bedroom feel collected; in a rental, bring those tones in through the desk, lamp and textiles instead of walls."
+    }
+  ]
+}
