@@ -122,8 +122,8 @@ class Lookbook {
       h('a', { class: 'wordmark', href: '#/cover' }, h('span', { class: 'wm-1' }, 'The'), h('span', { class: 'wm-2' }, 'Lookbook')),
       this.nav, this.picksBtn, this.menuBtn);
     this.main = h('main', { class: 'pages', id: 'main', tabindex: '-1' });
-    this.prevBtn = h('button', { class: 'edge-arrow prev', 'aria-label': 'Previous page', onclick: () => this.go(this.cur - 1) }, icon('arrowL'));
-    this.nextBtn = h('button', { class: 'edge-arrow next', 'aria-label': 'Next page', onclick: () => this.go(this.cur + 1) }, icon('arrowR'));
+    this.prevBtn = h('button', { class: 'edge-arrow prev', 'aria-label': 'Previous page', onclick: () => this.go(this.at - 1) }, icon('arrowL'));
+    this.nextBtn = h('button', { class: 'edge-arrow next', 'aria-label': 'Next page', onclick: () => this.go(this.at + 1) }, icon('arrowR'));
     this.pager = h('div', { class: 'pager', 'data-testid': 'pager' });
     this.drawer = h('aside', { class: 'drawer', hidden: true, role: 'dialog', 'aria-label': 'My Picks', 'data-testid': 'picks-drawer' });
     this.scrim = h('div', { class: 'scrim', hidden: true, onclick: () => this.closeOverlays() });
@@ -160,14 +160,19 @@ class Lookbook {
   }
 
   go(i) {
-    if (i < 0 || i >= this.pages.length || i === this.cur) return;
+    if (i < 0 || i >= this.pages.length || i === this.at) return;
+    this.target = i === this.cur ? null : i; // a second press before the hash change lands steps on from here
     location.hash = `#/${this.pages[i].id}`;
   }
+
+  // the page the reader is on or already heading to (keys and arrows step from here)
+  get at() { return this.target ?? this.cur; }
 
   show(i, focus = null, { keepOverlays = false } = {}) {
     const dir = i > this.cur ? 'fwd' : 'back';
     const changed = i !== this.cur;
     this.cur = i;
+    this.target = null;
     const page = this.pages[i];
     if (!keepOverlays) this.closeOverlays();
     const el = this.renderPage(page);
@@ -198,9 +203,9 @@ class Lookbook {
     this.prevBtn.title = prev ? `Previous: ${prev.title}` : '';
     this.nextBtn.title = next ? `Next: ${next.title}` : '';
     this.pager.replaceChildren(
-      h('button', { class: 'pg prev', 'data-testid': 'prev', disabled: !prev, onclick: () => this.go(this.cur - 1), 'aria-label': prev ? `Previous: ${prev.title}` : 'Previous' }, icon('arrowL'), h('span', { class: 'pg-label' }, prev ? prev.title : '')),
+      h('button', { class: 'pg prev', 'data-testid': 'prev', disabled: !prev, onclick: () => this.go(this.at - 1), 'aria-label': prev ? `Previous: ${prev.title}` : 'Previous' }, icon('arrowL'), h('span', { class: 'pg-label' }, prev ? prev.title : '')),
       h('span', { class: 'pg-count', 'data-testid': 'page-count' }, `${String(this.cur + 1).padStart(2, '0')} / ${this.pages.length}`),
-      h('button', { class: 'pg next', 'data-testid': 'next', disabled: !next, onclick: () => this.go(this.cur + 1), 'aria-label': next ? `Next: ${next.title}` : 'Next' }, h('span', { class: 'pg-label' }, next ? next.title : ''), icon('arrowR')));
+      h('button', { class: 'pg next', 'data-testid': 'next', disabled: !next, onclick: () => this.go(this.at + 1), 'aria-label': next ? `Next: ${next.title}` : 'Next' }, h('span', { class: 'pg-label' }, next ? next.title : ''), icon('arrowR')));
   }
 
   renderPage(page) {
@@ -817,8 +822,8 @@ class Lookbook {
       if (e.key === 'Escape') { if (this.closeModal()) return; if (!this.drawer.hidden) { this.closeOverlays(); return; } this.closeMenu(); return; }
       if (e.target.closest?.('input, textarea, select, [contenteditable]') || e.altKey || e.ctrlKey || e.metaKey) return;
       if (!this.modal.hidden || !this.drawer.hidden) return;
-      if (e.key === 'ArrowRight') { e.preventDefault(); this.go(this.cur + 1); }
-      if (e.key === 'ArrowLeft') { e.preventDefault(); this.go(this.cur - 1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); this.go(this.at + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); this.go(this.at - 1); }
     });
     document.addEventListener('click', (e) => {
       for (const m of document.querySelectorAll('.pick-menu:not([hidden])')) if (!m.parentElement.contains(e.target)) m.hidden = true;
@@ -836,7 +841,7 @@ class Lookbook {
       const dx = t.clientX - start.x, dy = t.clientY - start.y;
       const fast = performance.now() - start.t < 700;
       start = null;
-      if (fast && Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.6) this.go(this.cur + (dx < 0 ? 1 : -1));
+      if (fast && Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.6) this.go(this.at + (dx < 0 ? 1 : -1));
     }, { passive: true });
   }
 }
