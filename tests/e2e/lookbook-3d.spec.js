@@ -44,7 +44,7 @@ async function findSpot(page, roomId) {
   return null;
 }
 async function pickInLookbook(page, room, p) {
-  await page.goto(`/lookbook/#/${room}/${p.category}`);
+  await page.goto(`/lookbook/#p=${p.id}&room=${room}`); // the book opens at the page with this product
   await page.waitForFunction(() => document.body.classList.contains('ready'));
   const card = page.locator(`[data-testid=product-card][data-product="${p.id}"]`);
   await card.getByTestId('pick').click();
@@ -69,7 +69,7 @@ test('lookbook picks in the 3D rooms: swap, place, used, budget, store, un-pick,
   await pickInLookbook(page, 'bedroom', DESK);
   await pickInLookbook(page, 'living', SIDE);
   await pickInLookbook(page, 'living', TRAY);
-  await page.goto(`/lookbook/#/living/${NOSIZE.category}`);
+  await page.goto(`/lookbook/#p=${NOSIZE.id}`);
   await page.waitForFunction(() => document.body.classList.contains('ready'));
   await page.locator(`[data-testid=product-card][data-product="${NOSIZE.id}"] [data-testid=see3d]`).click();
   await page.waitForURL(/\?inv=lookbook/);
@@ -182,7 +182,7 @@ test('lookbook picks in the 3D rooms: swap, place, used, budget, store, un-pick,
   const saved = await page.evaluate(() => JSON.stringify(window.__app.layout));
 
   // un-pick the rug in the lookbook: it is placed, so the lookbook asks first; then it leaves the room
-  await page.goto(`/lookbook/#/living/LR-RUG`);
+  await page.goto(`/lookbook/#p=${RUG.id}`);
   await page.waitForFunction(() => document.body.classList.contains('ready'));
   const rugCard = page.locator(`[data-testid=product-card][data-product="${RUG.id}"]`);
   await expect(rugCard).toContainText('In 3D');

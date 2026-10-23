@@ -350,3 +350,49 @@ test('"View in lookbook" links: lookbook products and the 3D plan products it li
   const ref = c.lookbookRefs[0];
   assert.match(lookbookLink(c, c.products.get(ref)), /^lookbook\/#p=/);
 });
+
+// ---------------------------------------------------------------------------------------------
+// The book: chapters, comparison fields, room costs
+
+test('book chapters: every category is printed exactly once, shared ones marked', async () => {
+  const { SHARED_CHAPTER, CATEGORY_COPY } = await import('../../src/lookbook/copy.js');
+  const idx = index();
+  const living = C.chapterCategories(idx, 'living', SHARED_CHAPTER);
+  const bedroom = C.chapterCategories(idx, 'bedroom', SHARED_CHAPTER);
+  const all = [...living, ...bedroom].map((c) => c.id);
+  assert.equal(new Set(all).size, all.length, 'no category twice');
+  assert.deepEqual([...all].sort(), idx.categories.map((c) => c.id).sort(), 'no category left out');
+  for (const c of [...living, ...bedroom]) if (c.room !== 'both') assert.equal(living.includes(c) ? 'living' : 'bedroom', c.room, `${c.id} is in its own room's chapter`);
+  for (const id of all) assert.ok(CATEGORY_COPY[id]?.does, `${id} has an editorial intro`);
+});
+
+test('comparison fields: short material, rating, top pick', () => {
+  assert.equal(C.materialShort('MaterialUse surface:100 % polypropyleneBacking:100 % Synthetic rubberCareAiring and vacuuming.'), '100% polypropylene');
+  assert.equal(C.materialShort('MaterialCurtain rodRod:Steel, Epoxy/polyester powder coatingPlug/ Sleeve:Polypropylene'), 'Steel, Epoxy/polyester powder coating');
+  assert.equal(C.materialShort('Material: Polyester; Backing material: Non-Skid'), 'Polyester');
+  assert.equal(C.materialShort('Rug Material: 44% Wool, 43% Cotton, 13% Polyester; Backing Material: No Backing'), '44% Wool, 43% Cotton, 13% Polyester');
+  assert.equal(C.materialShort('MaterialSteel, Steel, Powder coating'), 'Steel, Powder coating');
+  assert.equal(C.materialShort(''), '');
+  assert.ok(C.materialShort('x'.repeat(80)).length <= 42);
+  assert.deepEqual(C.ratingOf({ rating: ['4.3', '257'] }), { stars: 4.3, count: 257 });
+  assert.deepEqual(C.ratingOf({ rating: ['4.6', '6,140'] }), { stars: 4.6, count: 6140 });
+  assert.equal(C.ratingOf({ rating: [null, null] }), null);
+  assert.equal(C.ratingOf({ rating: null }), null);
+  const idx = index();
+  for (const c of idx.categories) {
+    const top = C.topPick(idx, c.id);
+    if (top) assert.ok(top.tags.includes('Top pick') && c.product_ids.includes(top.id));
+  }
+});
+
+test('room costs: the two chapters of a package add up to the package', async () => {
+  const { SHARED_CHAPTER } = await import('../../src/lookbook/copy.js');
+  const idx = index();
+  for (const id of Object.keys(idx.doc.packages)) {
+    const t = C.packageTotals(idx, id);
+    const [l, b] = ['living', 'bedroom'].map((r) => C.roomPackageTotals(idx, id, r, SHARED_CHAPTER));
+    assert.equal(l.lines.length + b.lines.length, t.lines.length, `${id}: every line in one room`);
+    assert.equal(l.subtotalCents + b.subtotalCents, t.taxedCents + t.untaxedCents, `${id}: subtotals`);
+    assert.ok(Math.abs(l.taxCents + b.taxCents - t.taxCents) <= 1, `${id}: tax within a cent of rounding`);
+  }
+});

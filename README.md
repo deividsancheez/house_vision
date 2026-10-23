@@ -4,8 +4,8 @@ An interactive 3D model of the living room and the bedroom, built at true scale 
 with every product from `products.json` placed by the designer's layout. Walk through the rooms in
 first person, pick pieces up and put them somewhere else, store them, swap options, see the budget
 update live, switch day/night, and save layouts. Runs in any modern browser, on phones too.
-The same site has a shoppable **lookbook** at `/lookbook/` (see [The lookbook](#the-lookbook)): pick
-products there and place them in the 3D rooms. Built with [three.js](https://threejs.org) and [Vite](https://vite.dev), no framework.
+The same site has a shoppable **lookbook** at `/lookbook/`, made as a book you page through (see
+[The lookbook](#the-lookbook)): pick products there and place them in the 3D rooms. Built with [three.js](https://threejs.org) and [Vite](https://vite.dev), no framework.
 
 > **Privacy.** The deployed app is public. It never includes `../photos/` or `../plans/` (they show the
 > home and its address). The build script refuses to run if a file from those folders ends up in
@@ -115,11 +115,45 @@ changes your layout.
 ## The lookbook
 
 `/lookbook/` (for example <http://localhost:5173/lookbook/>, live at
-<https://deividsancheez.github.io/house_vision/lookbook/>) is an editorial, shoppable lookbook: cover,
-inspiration, a chapter per room (mood board with hotspots, then one page per category with all its
-options side by side), the three packages and the buying order. **My Picks** (the bag, top right)
-holds one product per category, with quantities for pillows and inserts, and adds up subtotal, 9.75%
-tax on new items, delivery and the total against the $1,000 goal (amber over $1,000, red over $1,200).
+<https://deividsancheez.github.io/house_vision/lookbook/>) is **The Organic Modern Edit**, a
+shoppable digital book. It opens closed on a linen ground; click the cover to open it. Two-page
+spreads on a computer (900 x 560 px and up), one page at a time on a phone.
+
+**In the book, in order:** front cover (title, palette, embossed linen) · welcome and how to use the
+book · contents (every line jumps to its page) · inspiration (each creator credited and linked) ·
+Chapter I, Living Room and Chapter II, Bedroom, each with: an opener spread (mood board + the
+concept), "Where things are now" (today, what's missing, what fixes it, from `design-notes.md`), one
+spread per category (left: what the piece does, the sizing rule, what to look for; right: the
+product cards, continued on the next spread when there are more), and a comparison at the end
+(price, size, material, store, rating and tags, the top pick marked, and the room at SAVE /
+BALANCED / UPGRADE) · the packages (every item, subtotal, 9.75% tax, delivery, total, "Load into
+my picks") · the buying order · the designer's notes · back cover (closing line, palette, the date
+prices were checked). Categories used in both rooms are printed once, in the chapter set in
+`src/lookbook/copy.js` (`SHARED_CHAPTER`).
+
+**Turning pages:** click or tap a page corner, swipe (or drag a page edge with the mouse), the
+arrow keys / Page Up / Page Down / Home / End, the arrows beside the book and in the bottom bar, or
+drag the progress bar. "Back to contents" is on every page and in the top bar. The page sound is off
+until the speaker button turns it on (remembered). **My Picks** (the bag, top right) opens as a side
+panel over the book: one product per category, quantities for pillows and inserts, subtotal, 9.75%
+tax on new items, delivery and the total against the $1,000 goal (amber over $1,000, red over
+$1,200), saved in this browser. **Filters** (store, price range and the "Show only" options) re-paginate the
+book and keep your place.
+
+**Links:** `#/cover`, `#/contents`, `#/inspiration`, `#/living`, `#/living/where`,
+`#/living/<CATEGORY>` (e.g. `#/living/LR-RUG`; a shared category opens in the chapter that prints
+it), `#/living/compare`, `#/packages`, `#/buying-order`, `#/notes`, `#/back`, `#/page/<n>`, and
+`#p=<product id>` (the page with that product; used by "View in lookbook" in the 3D app). The
+address follows the page you're on, so a reload or a shared link opens the same place.
+
+**How it's built** (`src/lookbook/`): `flipbook.js` is the page-turn engine (one leaf rotating on
+the spine with CSS 3D, shading and a cast shadow; mouse, touch and keys); `layout.js` paginates by
+measuring, so a block that doesn't fit moves to the next page and nothing is ever cut off;
+`main.js` builds the pages, the cards, My Picks and filters; `copy.js` holds the book's editorial
+text (titles, what each category does and what to look for, "where things are now"), written from
+`design-notes.md` and the rules in `products.json`; `core.js` is the cart math, packages, filters and
+text helpers (unit-tested). Pages have a fixed design size (540 x 760 per page on a computer, 370
+wide on a phone) and the book is scaled to fit the window.
 
 **Its data** is `../../Lookbook Handoff/products.json` (the single source of truth), with
 `inspiration.json`, `design-notes.md`, `MANUAL-ACTION-NEEDED.md` and `images/` next to it. It is a
@@ -183,8 +217,9 @@ src/
                       input.js (keys, mouse, touch), audio.js (Web Audio sounds)
   core/lookbook.js    lookbook picks as 3D products: refs, slots, free placement, "From lookbook" cards
   shared/lbstore.js   what the lookbook and the 3D app share in localStorage (My Picks)
-  lookbook/           the lookbook page: core.js (cart math, packages, filters; unit-tested),
-                      main.js (pages, cards, My Picks), lookbook.css
+  lookbook/           the lookbook book: core.js (cart math, packages, filters; unit-tested),
+                      main.js (pages, cards, My Picks), flipbook.js (page turns), layout.js
+                      (pagination), copy.js (the book's editorial text), lookbook.css
   ui/ui.js            the top bar, item card, menus, budget and layouts dialogs
   ui/                 also walkHud.js (dot, labels, joystick, buttons), inventory.js, warnings.js,
                       goals.js, tutorial.js
@@ -289,8 +324,11 @@ Development helpers:
 
 `tests/unit/lookbook.test.mjs` validates the lookbook's products.json and checks the package totals
 ($908.30, $988.16, $1,186.77), custom mixes and the 3D integration; `tests/e2e/lookbook.spec.js`
-screenshots every lookbook page and checks swatches, Buy links, filters, hotspots, navigation and My
-Picks; `tests/e2e/lookbook-3d.spec.js` takes picks into the 3D rooms (swap, place, budget, un-pick).
+screenshots every spread at 1440 px and on a 390 px phone (`test-results/shots/book-<project>/`) and
+checks that every image loads and nothing overflows or is cut off, page turns by corner, key, arrow,
+progress bar and swipe, every contents line, every Buy link and swatch, My Picks and the three
+packages against independent math, filters, sound and links (`npm run test:perf` also times page
+turns on a phone with the CPU slowed 4x); `tests/e2e/lookbook-3d.spec.js` takes picks into the 3D rooms (swap, place, budget, un-pick).
 
 ## Redeploy
 
