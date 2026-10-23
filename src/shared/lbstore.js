@@ -13,6 +13,22 @@ function storage() {
   try { return globalThis.localStorage || null; } catch { return null; }
 }
 
+/** A lookbook product's color variants, each with a key naming it alone: its color, or "White (2)" for
+ *  a color listed again (the same color in another size or scent, with its own link and price). */
+export function variantList(p) {
+  const seen = new Map();
+  return (p.color_variants || []).map((v) => {
+    const n = (seen.get(v.color) || 0) + 1;
+    seen.set(v.color, n);
+    return { ...v, key: n > 1 ? `${v.color} (${n})` : v.color };
+  });
+}
+
+/** The variant saved under this key (see variantList), or null. */
+export function findVariant(p, key) {
+  return key ? variantList(p).find((v) => v.key === key) || null : null;
+}
+
 export function emptyPicks() {
   return { v: 1, picks: {}, try3d: [], updated: null };
 }

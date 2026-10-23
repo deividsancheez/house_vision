@@ -12,7 +12,7 @@
 // "Swap into slot", with that slot's placement rules) or placed freely in layout.lookbook
 // [{uid: 'K1', product: 'lb:...', room, poses}] (floor, wall or on top of any piece). Only placed
 // pieces count in the budget; taking one out of the room puts it back in "From lookbook".
-import { refsOf, parseRef } from '../shared/lbstore.js';
+import { refsOf, parseRef, findVariant } from '../shared/lbstore.js';
 import { productKind } from './items.js';
 
 /** Lookbook categories whose free-placed pieces stand on the floor (the rest go on any surface). */
@@ -30,8 +30,8 @@ export function indexLookbook(doc) {
 
 /** The lookbook product shown in a color: price, stock, link and photo of the variant. */
 export function variantOf(lbp, color) {
-  const v = color ? (lbp.color_variants || []).find((x) => x.color === color) : null;
-  return v ? { color: v.color, hex: v.hex, price: v.price, regular: null, inStock: v.in_stock, url: v.product_url, image: v.image_file }
+  const v = findVariant(lbp, color);
+  return v ? { color: v.key, hex: v.hex, price: v.price, regular: null, inStock: v.in_stock, url: v.product_url, image: v.image_file }
     : { color: null, hex: lbp.main_color_hex, price: lbp.price, regular: lbp.on_sale ? lbp.regular_price : null, inStock: lbp.in_stock, url: lbp.product_url, image: lbp.image_file };
 }
 

@@ -2,6 +2,7 @@
 // filters and text. Everything comes from the lookbook products.json (and the 3D slots for the pick
 // labels); nothing is made up. Unit-tested in tests/unit/lookbook.test.mjs.
 
+import { findVariant } from '../shared/lbstore.js';
 export const ROOMS = ['living', 'bedroom'];
 export const ROOM_NAME = { living: 'Living room', bedroom: 'Bedroom' };
 
@@ -112,10 +113,10 @@ export function categoryProducts(index, catId) {
 
 /** A product as shown in a color: image, price, stock and Buy link swap to the variant's. */
 export function view(p, color = null) {
-  const v = color ? (p.color_variants || []).find((x) => x.color === color) : null;
+  const v = findVariant(p, color);
   if (v) {
     return {
-      color: v.color, hex: v.hex, image: v.image_file, price: v.price, regular: null, onSale: false,
+      color: v.key, hex: v.hex, image: v.image_file, price: v.price, regular: null, onSale: false,
       inStock: v.in_stock, stockNote: null, url: v.product_url, variant: true,
     };
   }
@@ -268,6 +269,73 @@ export function matchesFilters(p, f, color = null) {
   if (f.used && p.condition !== 'used') return false;
   if (f.top && !(p.tags || []).includes('Top pick')) return false;
   return true;
+}
+
+// ---------------------------------------------------------------------------------------------
+// Book helpers: chapters, comparison fields, room totals
+
+/**
+ * The categories of each book chapter. A category shared by both rooms is printed once, in the
+ * chapter given by `sharedChapter` ({catId: 'living' | 'bedroom'}; living when not listed).
+ */
+export function chapterCategories(index, room, sharedChapter = {}) {
+  return index.categories.filter((c) => (c.room === 'both' ? (sharedChapter[c.id] || 'living') : c.room) === room);
+}
+
+/** The material in a few words: "MaterialUse surface:100 % polypropyleneBacking:..." -> "100% polypropylene". */
+export function materialShort(text, max = 42) {
+  let t = decodeEntities(text || '').replace(/\s+/g, ' ').trim();
+  if (!t) return '';
+  t = t.replace(/Care(?=[A-Z]).*$/, '');
+  t = t.replace(/^Material(?=[A-Z0-9])/, '').replace(/^Material:?\s*/i, '');
+  // "Top panel:Solid oak, ...Back panel:..." (IKEA) or "Material: Wood; Top material: ..." (Walmart, Target): first part
+  // ("Curtain rodRod:Steel..." has a heading without a colon first: take the first labelled part)
+  const parts0 = t.split(/;\s*/)[0].split(/(?<=[a-z0-9%)\].])(?=[A-Z][A-Za-z/ -]{1,80}:)/);
+  t = parts0.find((s) => /^[A-Za-z/ -]{1,80}:/.test(s)) || parts0[0];
+  t = t.replace(/^[A-Za-z/ -]{1,80}:\s*/, '').replace(/\s*%/g, '%').replace(/\s+/g, ' ').trim();
+  t = [...new Set(t.split(/,\s*/))].join(', '); // "Steel, Steel, Powder coating"
+  if (t.length <= max) return t;
+  const parts = t.split(/,\s*/);
+  let out = parts[0];
+  for (const p of parts.slice(1)) { if ((out + ', ' + p).length > max) break; out += ', ' + p; }
+  return out.length > max ? `${out.slice(0, max - 1).replace(/\s+\S*$/, '')}…` : out;
+}
+
+/** The store rating as {stars, count}, or null when the store page had none. */
+export function ratingOf(p) {
+  const [s, n] = Array.isArray(p.rating) ? p.rating : [];
+  const stars = Number(s);
+  if (!s || !Number.isFinite(stars) || stars <= 0) return null;
+  const count = Number(String(n ?? '').replace(/[^\d]/g, ''));
+  return { stars, count: Number.isFinite(count) && count > 0 ? count : null };
+}
+
+/** The category's designer top pick (tagged "Top pick"), or null when the designer named none. */
+export function topPick(index, catId) {
+  return categoryProducts(index, catId).find((p) => (p.tags || []).includes('Top pick')) || null;
+}
+
+/** Lowest and highest listed price (dollars) of a list of products. */
+export function priceRange(list) {
+  const prices = list.map((p) => p.price).filter((x) => typeof x === 'number');
+  return prices.length ? { min: Math.min(...prices), max: Math.max(...prices) } : null;
+}
+
+/**
+ * A package's lines for one book chapter: each line's pick slot room, else the chapter its category is
+ * printed in. Totals for that room (tax on its new items, rounded half up like the package).
+ */
+export function roomPackageTotals(index, id, room, sharedChapter = {}) {
+  const t = packageTotals(index, id);
+  const { picks } = packagePicks(index, id);
+  const keyOf = new Map(Object.entries(picks).map(([k, v]) => [v.id, k]));
+  const chapterOf = (p) => (p.room === 'both' || !ROOMS.includes(p.room) ? (sharedChapter[p.category] || 'living') : p.room);
+  const lines = t.lines.filter((l) => l.product && (roomOfPick(index, keyOf.get(l.id), l.product) || chapterOf(l.product)) === room);
+  const taxed = lines.filter((l) => l.taxed).reduce((a, l) => a + l.cents, 0);
+  const untaxed = lines.filter((l) => !l.taxed).reduce((a, l) => a + l.cents, 0);
+  const delivery = lines.reduce((a, l) => a + l.deliveryCents, 0);
+  const tax = taxOf(taxed, index.taxRate);
+  return { id, room, lines, taxedCents: taxed, untaxedCents: untaxed, subtotalCents: taxed + untaxed, taxCents: tax, deliveryCents: delivery, totalCents: taxed + untaxed + tax + delivery };
 }
 
 // ---------------------------------------------------------------------------------------------
