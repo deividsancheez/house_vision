@@ -35,6 +35,11 @@ Only if you like one of these: message the seller for the width and height in in
 - [ ] LB-ART-WOVEN-05 woven square panels ($20). https://www.facebook.com/marketplace/item/1861368138164062/
 - [ ] LB-ART-WOVEN-06 rattan wall flowers, set of 3 ($5). https://www.facebook.com/marketplace/item/2032839584102951/
 
+## Done Oct 23, 2026
+
+- [x] All 37 used listings re-opened. 35 are still up. Gone: LB-ART-WOVEN-04 (wicker and shell disc, marked Sold) and LB-ART-EARTHY-05 (sun and arch prints, listing removed); both now show Out of stock with their backup search.
+- [x] Price changes: LB-ART-DESERT-01 Joshua Tree print went up from $30 to $40; LB-ART-DESERT-07 neutral landscape set dropped from $75 to $65.
+
 ## Done Oct 21, 2026
 
 Sizes found (now in products.json, so these can be placed in 3D):

@@ -124,12 +124,16 @@ book · contents (every line jumps to its page) · inspiration (each creator cre
 Chapter I, Living Room and Chapter II, Bedroom, each with: an opener spread (mood board + the
 concept), "Where things are now" (today, what's missing, what fixes it, from `design-notes.md`), one
 spread per category (left: what the piece does, the sizing rule, what to look for; right: the
-product cards, continued on the next spread when there are more), and a comparison at the end
+product cards, continued on the next spread when there are more), an "Also for this room" page
+(the shared categories printed in the other chapter, each a link to its page), and a comparison at the end
 (price, size, material, store, rating and tags, the top pick marked, and the room at SAVE /
 BALANCED / UPGRADE) · the packages (every item, subtotal, 9.75% tax, delivery, total, "Load into
 my picks") · the buying order · the designer's notes · back cover (closing line, palette, the date
 prices were checked). Categories used in both rooms are printed once, in the chapter set in
-`src/lookbook/copy.js` (`SHARED_CHAPTER`).
+`src/lookbook/copy.js` (`SHARED_CHAPTER`); the other chapter lists them on its "Also for this room"
+page. Each product card shows the store, stock (tap it for the check dates, the stock note and, for
+used pieces, the backup search), name, price, tags, a short description, "Why this", the notes in
+small text, the size, color swatches, Buy, Add to my picks and See in 3D.
 
 **Turning pages:** click or tap a page corner, swipe (or drag a page edge with the mouse), the
 arrow keys / Page Up / Page Down / Home / End, the arrows beside the book and in the bottom bar, or

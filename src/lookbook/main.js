@@ -318,6 +318,7 @@ class Book {
           ],
         });
       });
+      if (this.sharedElsewhere(room).length) out.push({ id: `${room}/shared`, title: chap, start: 'left', parts: [{ blocks: this.sharedBlocks(room) }] });
       out.push({ id: `${room}/compare`, title: `${chap} · Comparison`, start: 'left', parts: [{ blocks: this.compareBlocks(room), kind: 'compare', head: (n) => (n ? this.compareHead() : null) }] });
     }
     const pk = Object.keys(idx.doc.packages);
@@ -458,6 +459,7 @@ class Book {
       ch.classList.add('chapter');
       out.push(ch, row(`${room}/where`, 'Where things are now'));
       for (const cat of this.chapters[room]) out.push(row(`${room}/${cat.id}`, cat.label, { badge: cat.shared ? 'Both rooms' : null }));
+      if (this.sharedElsewhere(room).length) out.push(row(`${room}/shared`, 'Also for this room'));
       out.push(row(`${room}/compare`, 'Comparison & room cost'));
     }
     out.push(row('packages', 'Packages: SAVE, BALANCED, UPGRADE', { level: 1 }), row('buying-order', 'Buying order', { level: 1 }), row('notes', 'Designer’s notes', { level: 1 }), row('back', 'Back cover', { level: 1 }));
@@ -519,7 +521,33 @@ class Book {
     ];
     const head = blk('sub mini-toc-head', h('h3', {}, 'In this chapter'));
     head.dataset.keep = 'next';
-    out.push(head, blk('mini-toc', ...[['where', 'Where things are now'], ...cats.map((x) => [x.id, x.label]), ['compare', 'Comparison & room cost']].map(([id, label]) => h('button', { class: 'mt-row', 'data-goto': `${room}/${id}` }, h('span', {}, label), h('span', { class: 'mt-pg', 'data-pageof': `${room}/${id}` }, PAGE_NO)))));
+    out.push(head, blk('mini-toc', ...[['where', 'Where things are now'], ...cats.map((x) => [x.id, x.label]), ...(this.sharedElsewhere(room).length ? [['shared', 'Also for this room']] : []), ['compare', 'Comparison & room cost']].map(([id, label]) => h('button', { class: 'mt-row', 'data-goto': `${room}/${id}` }, h('span', {}, label), h('span', { class: 'mt-pg', 'data-pageof': `${room}/${id}` }, PAGE_NO)))));
+    return out;
+  }
+
+  /** Categories for both rooms that are printed in the other chapter. */
+  sharedElsewhere(room) {
+    return this.index.categories.filter((c) => c.room === 'both' && this.chapterOfCat.get(c.id) && this.chapterOfCat.get(c.id) !== room);
+  }
+
+  /** "Also for this room": the shared categories printed in the other chapter, each a link to its page. */
+  sharedBlocks(room) {
+    const other = C.ROOMS.find((r) => r !== room);
+    const cats = this.sharedElsewhere(room);
+    const out = [
+      blk('page-title', h('p', { class: 'kicker' }, `Chapter ${CHAPTER_NO[room]} · ${CHAPTER_NAME[room]}`), h('h2', {}, 'Also for this room')),
+      blk('does', h('p', { 'data-testid': 'shared-intro' }, `These ${cats.length} categories work in both rooms. To keep the book short they are printed once, in Chapter ${CHAPTER_NO[other]} · ${CHAPTER_NAME[other]}. Everything there can go in the ${CHAPTER_NAME[room].toLowerCase()} too: My Picks and the 3D rooms let you choose the room.`)),
+    ];
+    for (const c of cats) {
+      const list = C.categoryProducts(this.index, c.id);
+      const range = C.priceRange(list);
+      const money = (v) => C.fmtMoney(C.toCents(v), { whole: true });
+      const b = h('button', { class: 'mt-row shared-row', 'data-goto': `${other}/${c.id}`, 'data-testid': 'shared-link' },
+        h('span', {}, h('b', {}, c.label), h('small', { class: 'shared-meta' }, ` · ${list.length} options${range ? `, ${range.min === range.max ? money(range.min) : `${money(range.min)}–${money(range.max)}`}` : ''}`)),
+        h('span', { class: 'mt-pg' }, 'p. ', h('span', { 'data-pageof': `${other}/${c.id}` }, PAGE_NO)));
+      out.push(blk('shared-item', b));
+    }
+    out.push(blk('fineprint', h('p', {}, 'Tap a line to turn to that page; "Back to contents" brings you back.')));
     return out;
   }
 
@@ -600,6 +628,9 @@ class Book {
     // one whole sentence, or two when they are short: the card shows its text in full
     const two = C.sentences(p.short_description, 2, p.name);
     const desc = two.length <= 150 ? two : C.sentences(p.short_description, 1, p.name);
+    // why the designer chose it (one sentence; "Used, may sell fast" is already a tag) and the warnings
+    const why = C.sentences(p.why_this, 1, p.name);
+    const notes = (p.notes || []).map((t) => C.decodeEntities(t).trim()).filter(Boolean);
     const swatches = [{ color: null, hex: p.main_color_hex, label: 'As listed' }, ...variantList(p).map((x) => ({ color: x.key, hex: x.hex, label: x.key }))];
     const card = h('article', { class: `pcard ${v.inStock ? '' : 'oos'} ${tags.includes('Top pick') ? 'is-top' : ''}`, 'data-product': p.id, 'data-n': String(n), 'data-room': room, 'data-testid': 'product-card' },
       h('div', { class: 'pc-media' },
@@ -619,6 +650,8 @@ class Book {
           ? h('span', { class: 'tag tag-used', 'data-testid': 'used-label' }, p.used_label || 'Used')
           : h('span', { class: `tag tag-${t.toLowerCase().replace(/\s+/g, '-')}` }, t)))) : null,
         desc ? h('p', { class: 'pc-desc' }, desc) : null,
+        why ? h('p', { class: 'pc-why', 'data-testid': 'why' }, h('span', { class: 'pc-why-k' }, 'Why this '), why) : null,
+        notes.length ? h('ul', { class: 'pc-notes', 'data-testid': 'notes' }, ...notes.map((t) => h('li', {}, t))) : null,
         h('p', { class: 'pc-spec' }, h('span', { 'data-testid': 'size' }, ...size), rating ? h('span', { class: 'rating', title: `${rating.stars} stars${rating.count ? ` from ${rating.count} reviews` : ''}` }, icon('star', 'ico xs'), `${rating.stars}${rating.count ? ` (${rating.count.toLocaleString('en-US')})` : ''}`) : null),
         swatches.length > 1 ? h('div', { class: 'swatches', role: 'radiogroup', 'aria-label': 'Color' },
           ...swatches.map((s) => h('button', { class: 'sw', role: 'radio', 'aria-checked': String((s.color || null) === (color || null)), 'aria-label': s.label, title: s.label, 'data-color': s.color || '', 'data-testid': 'swatch', 'data-act': 'swatch', style: { '--sw': s.hex } })),

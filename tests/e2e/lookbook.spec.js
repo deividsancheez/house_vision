@@ -202,7 +202,7 @@ test('contents: every entry opens its page, and every page has Back to contents'
     const lb = window.__lookbook;
     return lb.pages.flatMap((el, i) => [...el.querySelectorAll('[data-testid=toc-entry]')].map((b) => ({ page: i, target: b.dataset.goto, printed: b.querySelector('.toc-pg').textContent })));
   });
-  expect(entries.length).toBe(lb.categories.length + 12);
+  expect(entries.length).toBe(lb.categories.length + 14); // + an "Also for this room" line in each chapter
   for (const e of entries) {
     await showPage(page, e.page);
     const target = await startOf(page, e.target);
@@ -300,6 +300,28 @@ test('product card details: sale price, stock note, used label and backup search
   const est = lb.products.find((p) => p.dimensions.estimated?.length && p.dimensions.w_in && p.dimensions.d_in && p.dimensions.h_in);
   card = await showProduct(page, est.id);
   await expect(card.getByTestId('size')).toContainText('est.');
+});
+
+test('cards show why this and the notes; each chapter links to the shared categories printed in the other', async ({ page }, info) => {
+  await openBook(page, '#/contents');
+  const noted = lb.products.find((p) => p.notes.length && p.why_this);
+  const card = await showProduct(page, noted.id);
+  await expect(card.getByTestId('why')).toContainText(noted.why_this.split('. ')[0].replace(/\.$/, '').slice(0, 25));
+  for (const n of noted.notes) await expect(card.getByTestId('notes')).toContainText(n.slice(0, 25));
+  for (const room of ['living', 'bedroom']) {
+    await showPage(page, await startOf(page, `${room}/shared`));
+    const elsewhere = await page.evaluate((r) => window.__lookbook.sharedElsewhere(r).map((c) => c.id), room);
+    expect(elsewhere.length).toBeGreaterThan(0);
+    // every shared category is listed once on this chapter's page(s), in order
+    const printed = await page.evaluate((r) => window.__lookbook.pages.filter((el) => el.dataset.section === `${r}/shared`).flatMap((el) => [...el.querySelectorAll('[data-testid=shared-link]')].map((b) => b.dataset.goto)), room);
+    expect(printed).toEqual(elsewhere.map((id) => `${room === 'living' ? 'bedroom' : 'living'}/${id}`));
+    const links = page.locator(`.stage [data-section="${room}/shared"] [data-testid=shared-link]`);
+    const other = room === 'living' ? 'bedroom' : 'living';
+    await expect(links.first()).toHaveAttribute('data-goto', `${other}/${elsewhere[0]}`);
+    await links.first().click();
+    await settled(page);
+    expect(await visible(page)).toContain(await startOf(page, `${other}/${elsewhere[0]}`));
+  }
 });
 
 test('My Picks: add from a card, total with tax, kept after reload, side panel over the book', async ({ page }) => {

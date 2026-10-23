@@ -203,7 +203,7 @@ body[data-mode="single"] .fb-host { overflow: hidden; }
 }
 .page.m-spread { font-size: 13px; }
 .page-blank { background: var(--noise, none), #F3EDE3; }
-.page.framed { padding: 30px 44px 16px; }
+.page.framed { padding: 30px 45px 16px; } /* 90px across, like a left or right page (40 + 50), so text measures at its final width */
 .page.framed.side-left { padding-left: 40px; padding-right: 50px; }
 .page.framed.side-right { padding-left: 50px; padding-right: 40px; }
 .page.framed.m-single { padding: 16px 20px 8px; }
@@ -450,6 +450,13 @@ body[data-mode="single"] .fb-host { overflow: hidden; }
 .pc-price .sale { padding: 0 5px; background: var(--rust); color: #fff; font-size: 8.5px; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 2px; }
 .pc-price .per { font-size: 10px; color: var(--muted); }
 .pc-desc { font-size: 11px; line-height: 1.38; color: #4d443e; }
+.pc-why { font-size: 10.5px; line-height: 1.38; color: #4d443e; }
+.pc-why-k { font-size: 8.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--rust); margin-right: 2px; }
+.pc-notes { list-style: none; margin: 0; padding: 0; font-size: 10px; line-height: 1.35; color: var(--muted); }
+.pc-notes li { padding-left: 9px; position: relative; }
+.pc-notes li::before { content: '·'; position: absolute; left: 1px; }
+.shared-row { width: 100%; padding: 6px 0; font-size: 12px; }
+.shared-meta { color: var(--muted); font-weight: 400; }
 .pc-spec { font-size: 10px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0 8px; }
 .est { text-decoration: none; color: var(--camel); }
 .rating { display: inline-flex; align-items: center; gap: 2px; color: var(--camel); }
